@@ -1,19 +1,4 @@
-<?php
-    $hidden = array('.','..','index.html','index.php','shared','unfinished');
-    $dir = substr($_SERVER['SCRIPT_FILENAME'], 0, -10); 
-    $files = scandir($dir); 
-    
-    $list = '<ul>'.PHP_EOL;
-    foreach($files as $ind_file){ 
-        if (!in_array($ind_file, $hidden)) {
-            $list.= '    <li><a href="http://lab.robertvanderelst.nl/'.$ind_file.'">'.$ind_file.'</li>'.PHP_EOL;
-        }
-    } 
-    $list.= '</ul>'.PHP_EOL;
-
-?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-            "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
     <head>
         <title>Lab: Index</title>
@@ -36,8 +21,7 @@
     <body>
         <div class="base">
 		<h1>Front-End Lab</h1>
-		<p>A small collection of tests and experiments in HTML, CSS and jQuery. Some are done, some are not.</p>
-		<?php echo $list; ?>
+        <p>This should be a list a of tests and experiments...</p>
 		</div>
 	</body>
 </html>
