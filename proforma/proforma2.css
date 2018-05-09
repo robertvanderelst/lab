@@ -1,0 +1,288 @@
+/* Generic form styling */
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font: 100%/1.5 Arial, sans-serif;
+	padding: 32px 0;
+}
+
+.container {
+	width: 90%;
+	max-width: 40em;
+	margin: 0 auto 1.5em;
+}
+
+fieldset {
+	border: 1px solid #c0c0c0;
+	padding: 16px;
+	margin-bottom: 1.5em;
+}
+
+legend {
+	background: #fff;
+	padding: 0 8px;
+}
+
+.form-row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+label {
+	float: left;
+	width: 20%;
+}
+
+label + div {
+	position: relative;
+	float: left;
+	width: 80%;
+}
+
+h1 {
+	clear: both;
+}
+
+ul {
+	list-style: none;
+}
+
+ul.todo {
+	margin-left: 1.5em;
+}
+
+ul.todo li {
+	list-style: disc;
+}
+
+ul li label {
+	float: none;
+
+}
+
+p {
+	clear: both;
+	margin-bottom: 1.5em;
+}
+
+a {
+	color: #090;
+}
+
+a:hover,
+a:focus {
+	color: #0c0;
+	text-decoration: none;
+}
+
+/* PROFORMA */
+.proforma {
+	position: relative;
+	display: block;
+}
+
+.proforma input[type="radio"],
+.proforma input[type="checkbox"],
+.proforma input[type="file"],
+.proforma select,
+.proforma select option {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	z-index: 2;
+	-webkit-appearance: none;
+}
+
+.proforma select.pf-is-desktop {
+	left: -9999em;
+}
+/* Radiobuttons and checkboxes */
+.pf-radio,
+.pf-checkbox {
+	float: left;
+	width: 16px;
+	height: 16px;
+	margin-right: 8px;
+	background: #ccc;
+}
+
+.pf-radio {
+	border-radius: 50%;
+}
+
+.pf-select .pf-selected a {
+	background: #090;
+	color: #fff;
+}
+
+.pf-radio.hover,
+.pf-checkbox.hover,
+.pf-radio.focus,
+.pf-checkbox.focus {
+	background: #999;
+}
+
+.pf-radio.checked,
+.pf-checkbox.checked {
+	background: #090;
+}
+
+.pf-radio.checked.hover,
+.pf-checkbox.checked.hover {
+	background: #0c0;
+}
+
+/* File upload */
+.pf-file {
+	overflow: hidden;
+}
+
+.pf-file-value,
+.pf-file-button {
+	display: block;
+}
+
+.pf-file-value {
+	padding-left: .5em;
+	margin-right: 8em;
+	background: #f0f0f0;
+}
+
+.pf-file-button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 8em;
+	text-align:center;
+	background: #090;
+	color: #fff;
+}
+
+.pf-file.hover .pf-file-value,
+.pf-file.focus .pf-file-value {
+	background: #ccc;
+}
+
+.pf-file.hover .pf-file-button,
+.pf-file.focus .pf-file-button {
+	background: #0c0;
+}
+
+/* Select */
+.pf-select {
+	background: #fff;
+}
+
+.pf-select-value {
+	position: relative;
+	display: block;
+	padding-left: .5em;
+	border: 1px solid #ccc;
+    cursor: default;
+}
+
+.pf-select-value:after {
+	position: absolute;
+	top: .5em;
+	right: .5em;
+	content: "";
+	width: 0;
+	height: 0;
+	border: 8px solid transparent;
+	border-top: 8px solid #090;
+}
+
+.pf-select-value span {
+	display: block;
+}
+
+.pf-select > ul {
+	position: absolute;
+	top: 1.75em;
+	left: 1px;
+	display: none;
+	border: 1px solid #ccc;
+	background: #fff;
+	padding: 8px;
+	-webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.64);
+	-moz-box-shadow:    0px 2px 4px 0px rgba(0, 0, 0, 0.64);
+	box-shadow:         0px 2px 4px 0px rgba(0, 0, 0, 0.64);
+	z-index: 100;
+}
+
+.pf-select > ul.reverse {
+	top: auto;
+	bottom: 2em;
+}
+
+.pf-select ul li {
+	border-top: 1px solid #ccc;
+}
+
+.pf-select ul li.pf-optgroup {
+	padding: 4px 8px;
+}
+
+.pf-select ul li.pf-optgroup li {
+	border-top: none;
+	padding-left: 8px;
+}
+
+.pf-select ul li:first-child {
+	border-top: 0;
+}
+
+.pf-select ul li a {
+	display: block;
+	padding: 4px 8px;
+	text-decoration: none;
+}
+
+.pf-select ul li a:hover,
+.pf-select ul li a:focus {
+	background: #ccc;
+	color: #090;
+}
+
+.pf-select ul.pf-visible {
+	display: inline-block;
+}
+
+.pf-select.focus,
+.pf-select.hover {
+	background: #ccc;
+}
+
+/* Submit button */
+input[type="submit"] {
+	background: #090;
+	border: 0;
+	padding: 4px 16px;
+	color: #fff;
+	font-family: Arial, sans-serif;
+	font-size: 100%;
+}
+
+input[type="submit"]:hover {
+	background: #0c0;
+}
+
+@media screen and (max-width: 767px) {    
+    label,
+    label + div {
+    	display: block;
+      float: none;
+      width: 100%;
+    }
+
+    label {
+    	margin-bottom: .25em;
+    }
+}

@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 75%;
+	padding: 2em 4em;
+}
+.center {
+	width: 48em;
+	margin: 0 auto;
+}
+
+fieldset {    position: relative;    padding: 0;    margin: 0;    margin-bottom: 1em;
+	border: 1px solid #E0E0E0;
+	border-radius: 0 0 .5em .5em;
+	box-sizing: padding-box;
+}
+legend {    position: static;    left: 0;    padding: 0;    width: 100%;}
+legend > span {
+	display: block;    padding: 0.5em 1em;    margin: 0;    font-size: 125%;    font-weight: bold;
+	background: #E0E0E0;
+	border-radius: .5em .5em 0 0;}
+legend label {    display: inline;}fieldset.mandatory div.wrapper,fieldset.optional div.wrapper {    padding: 0.5em 0.5em 0;}
+fieldset.optional div.wrapper {    display: none;}
+.row {    overflow: hidden;    clear: both;    padding: 0.25em;    margin-bottom: 0.5em;    border: 1px solid #FFFFFF;}
+.valid {    color: #006600;}
+.invalid {    color: #CC0000;    background: #FFEEEE;    border: 1px solid #FFCCCC;}
+.neighbors {    float: left;    clear: none;    margin-right: 1em;}
+.neighbors input {    margin-right: 0;}
+.multiple {    overflow: hidden;}
+label {    display: block;    overflow: hidden;    line-height: 150%;}
+label.before {    float: left;    width: 10em;}
+label em {
+	float: right;
+	font-style: normal;
+	font-weight: bold;    margin-right: 0.5em;}
+label input {    margin-right: 0;}
+input {    display: inline;    width: 10em;    margin: 0;    margin-right: 1em;}
+input[type="checkbox"],input[type="radio"] {    width: auto;    border: none;}
+
+input[type="submit"] {
+    display: inline-block;
+    color: #FFFFFF;
+    padding: .25em 0;
+	margin: 0;
+	width: 5em;
+    text-decoration: none;
+	background: #709540;
+	border: 1px solid #49612a;
+	border-radius: .25em;
+}
+textarea {    display: inline;    border: none;    margin: 0;    height: 8em;    font-family: Arial, sans-serif;    font-size: 125%;}
+/* FORM STYLING */input,textarea,select,button {    padding: 0 3px;    color: #333;}
+/* Perfectform specific, still needs work! */
+/* Radio */ .pf-radio {    display: inline-block;    width: 16px;    height: 16px;    background: url(pf-sprite.png) -32px 0 no-repeat; /* New sprite needed */}
+.pf-radio.checked {   background: url(pf-sprite.png) -48px 0 no-repeat; /* New sprite needed */}
+/* Checkbox */
+.pf-checkbox {    display: inline-block;    width: 16px;    height: 16px;    background: url(pf-sprite.png) 0 0 no-repeat; /* New sprite needed */}
+.pf-checkbox.checked {    background: url(pf-sprite.png) -16px 0 no-repeat; /* New sprite needed */}
+/* File */ 
+.pf-file_value {    display: inline-block;    width: 200px;    padding: .25em;
+    margin-right: 10px;	border: 1px solid #c0c0c0;
+	border-radius: .25em;}
+.pf-file_select {    display: inline-block;    color: #FFFFFF;    padding: .25em .75em;    text-decoration: none;
+	background: #709540;
+	border: 1px solid #49612a;
+	border-radius: .25em;}
+/* Select */
+.pf-select {
+    display: inline-block;
+}
+
+.pf-select  > span {
+    position: relative;
+    display: inline-block;
+    padding: .25em 2em .25em .25em;
+	border: 1px solid #c0c0c0;
+	border-radius: .25em;
+    cursor: pointer;
+}
+
+.pf-select  > span:after  {
+    content: "";
+    position: absolute;
+    top: .25em;
+    right: .25em;
+    width: 10px;
+    height: 1.25em;
+    background: url(pf-sprite.png) -64px center no-repeat;
+    z-index: 2;
+}
+
+.pf-select  > ul {
+    position: absolute;
+    z-index: 10;
+    visibility: hidden;
+    padding: .25em;
+	border: 1px solid #c0c0c0;
+    border-radius: .25em;
+    list-style: none;
+    margin: 0;
+    background: #fff;
+}
+
+.pf-select ul .selected {
+    background: #c0c0c0;
+}
+
+.pf-select li {
+    padding: .25em .5em;
+}
+
+.pf-select .pf-select-optgroup {
+    padding: 0;
+}
+
+.pf-select-optgroup span {
+    display: block;
+    padding: .25em .5em;
+    font-weight: bold;
+}
+
+.pf-select-optgroup ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pf-select-optgroup ul li {
+    padding: .25em .5em .25em 1.5em;
+}

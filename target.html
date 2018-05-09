@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Target!</title>
+	<style>
+		body {
+			padding: 1em;
+		}
+		
+		ul {
+			overflow: hidden;
+			padding: .5em;
+			margin: 0;
+			background: #f0f0f0;
+		}
+		
+		ul li {
+			float: left;
+			list-style: none;			
+		}
+		
+		a[href="#search"],
+		a[href="#menu"] {
+			display: block;
+			width: 3em;
+			height: 3em;
+			background: #090;
+			margin-right: .5em;
+		}
+		
+		#search, #menu {
+			position: relative;
+		}
+	
+		#search .content,
+		#menu .content {
+			height: 0;
+			overflow: hidden;
+			box-sizing: border-box;
+			background: #e0e0e0;
+			transition: .4s;
+		}
+		
+		#search:target .content,
+		#menu:target .content {	
+			height: 3em;
+			transition: .4s;
+		}
+		
+		#menu:target .content {	
+			height: 10em;
+		}
+		
+		a[href="#off"] {
+			position: fixed;
+			top: 2em;
+			left: 2em;
+			width: 3em;
+			height: 0;
+			overflow: hidden;
+			background: rgb(255,0,0);
+			transition: .4s;
+		}
+		
+		#menu a[href="#off"] {
+			left: 5.5em;
+		}
+		
+		#search:target a[href="#off"],
+		#menu:target a[href="#off"] {
+			height: 3em;
+			transition: .4s;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>
+			<a href="#search">Zoeken</a>
+		</li>
+		<li><a href="#menu">Menu</a></li>
+	</ul>
+	
+	<div id="search">
+		<div class="content">
+			Zoek!
+		</div>
+		<a href="#off">X</a>
+	</div>
+	
+	<div id="menu">
+		<div class="content">
+			Menu!
+		</div>
+		<a href="#off">X</a>
+	</div>
+	
+</body>
+</html>

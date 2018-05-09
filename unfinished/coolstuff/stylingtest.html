@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>CS - Stylingtest</title>
+	<script>
+		(function (){
+			var s,
+			ModuleWhatever = {
+				settings: {
+					step: 0,
+					delay: 400,
+					codeArea: "#code-area",
+					counter: "#step-counter"
+				},
+
+				init: function () {
+					s = this.settings;
+					
+					console.log("INIT!");
+					
+					// Event handler for known buttons in app
+					console.log(this.bindUIfunctions());
+					// etc....
+				},
+
+				nextMethod: function () {
+					s = this.settings;
+					// whatever code here...
+				},
+				
+				bindUIfunctions: function () {
+					//elem.style.display ? : "none"
+					var txt = "BTNHNDLR";
+					return txt;
+				}
+				
+				setMap: function () {
+				}
+
+				//... etc ...
+
+			};
+			
+			// Initialize!
+			ModuleWhatever.init();
+			
+		}());
+	</script>
+	<style>
+		body {
+			font: normal 100% Arial, sans-serif;
+			background: #c0c0c0;
+			color: #333;
+		}
+		
+		nav {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 48px;
+			background: rgba(255,255,255, .72);
+			-webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.24);
+			-moz-box-shadow:    0px 0px 2px rgba(0, 0, 0, 0.24);
+			box-shadow:         0px 0px 2px rgba(0, 0, 0, 0.24);
+		}
+		
+		section {
+			padding-top: 56px;
+		}
+		
+		li {
+			line-height: 1.5;
+		}
+		
+		.one {
+			font-family: Arial;
+		}
+		
+		.two {
+			font-family: Verdana;
+		}
+		
+		.three {
+			font-family: Tahoma;
+		}
+		
+		.four {
+			font-family: "Trebuchet MS";
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<form>
+			<fieldset>
+				<legend>Search</legend>
+				<div class="row">
+					<input type="text">
+					<input type="submit" class="b-submit" value="Search">
+				</div>
+			</fieldset>
+			
+			<a href="#toggle-filter" class="b-filter">Filter</a>
+			<ul class="filter-items">
+				<li>Item 1</li>
+				<li>Item 2</li>
+				<li>Item 3</li>
+				<li>Item 4</li>
+				<li>Item 5</li>
+			</ul>
+			
+			<a href="#toggle-header">Header</a>
+		</form>
+	</nav>
+	<section>
+		<h1>Type</h1>
+		<ul>
+			<li>
+				<ul class="one">
+					<li style="font-size: 12px">
+						12px Arial<br>
+						xylofoon grizzly fiddle breakfast loaf
+					</li>
+					<li style="font-size: 14px">
+						14px Arial<br>
+						xylofoon grizzly fiddle breakfast loaf
+					</li>
+					<li style="font-size: 16px">
+						16px Arial<br>
+						xylofoon grizzly fiddle breakfast loaf
+					</li>
+				</ul>
+			</li>
+			<li>
+				<ul class="two">
+					<li style="font-size: 12px">
+						12px Verdana<br>
+						xylofoon grizzly fiddle breakfast loaf
+					</li>
+					<li style="font-size: 14px">
+						14px Verdana<br>
+						xylofoon grizzly fiddle breakfast loaf
+					</li>
+					<li style="font-size: 16px">
+						16px Verdana<br>
+						xylofoon grizzly fiddle breakfast loaf
+					</li>
+				</ul>
+			</li>
+			<li>
+				<ul class="three">
+					<li style="font-size: 12px">
+						12px Tahoma<br>
+						xylofoon grizzly fiddle breakfast loaf
+					</li>
+					<li style="font-size: 14px">
+						14px Tahoma<br>
+						xylofoon grizzly fiddle breakfast loaf
+					</li>
+					<li style="font-size: 16px">
+						16px Tahoma<br>
+						xylofoon grizzly fiddle breakfast loaf
+					</li>
+				</ul>
+			</li>
+			<li>
+				<ul class="four">
+					<li style="font-size: 12px">
+						12px Trebuchet MS<br>
+						xylofoon grizzly fiddle breakfast loaf
+					</li>
+					<li style="font-size: 14px">
+						14px Trebuchet MS<br>
+						xylofoon grizzly fiddle breakfast loaf
+					</li>
+					<li style="font-size: 16px">
+						16px Trebuchet MS<br>
+						xylofoon grizzly fiddle breakfast loaf
+					</li>
+				</ul>
+			</li>			
+		</ul>
+	</section>
+</body>
+</html>

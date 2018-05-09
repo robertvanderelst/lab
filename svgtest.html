@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hamburger test</title>
+    <style>
+        a path {
+            -webkit-transition: all .4s cubic-bezier(0.645, 0.045, 0.355, 1);
+            -o-transition: all .4s cubic-bezier(0.645, 0.045, 0.355, 1);
+            transition: all .4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+        a:hover .topbar {
+            d: path("M1.5 1.5 L 13.5 13.5");
+        }
+
+        a:hover .middlebar {
+            opacity: 0;
+        }
+
+        a:hover .bottombar {
+            d: path("M1.5 13.5 L 13.5 1.5");
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="#menu">
+            <svg viewbox="0 0 15 15" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
+                <path class="topbar" d="M1.5 1.5 L 13.5 1.5" stroke="#000" stroke-width="3px" stroke-linecap="round" />
+                <path class="middlebar" d="M1.5 7.5 L 13.5 7.5" stroke="#000" stroke-width="3px" stroke-linecap="round" />
+                <path class="bottombar" d="M1.5 13.5 L 13.5 13.5" stroke="#000" stroke-width="3px" stroke-linecap="round" />
+            </svg>
+            Menu
+        </a>
+    </div>
+</body>
+</html>

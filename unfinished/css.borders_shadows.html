@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>CSS grid (1120)</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+line-height: 150%;
+}
+
+#wrapper {
+    padding: 0 8px 0 20px;
+}
+
+.row {
+    width: 100%;
+    /*max-width: 1140px;
+    min-width: 755px;*/
+    overflow: hidden;
+    background: #F0F0F0;
+    margin-bottom: 12px;
+}
+
+.row div {
+    background: #303030;
+    color: #FFF;
+    text-align: center;
+    padding: 2em 0;
+}
+
+.row .onecol {
+width: 79px;
+}
+
+.row .twocol {
+width: 170px;
+}
+
+.row .threecol {
+width: 261px;
+}
+
+.row .fourcol {
+width: 30.75%;
+}
+
+.row .fivecol {
+width: 39.45%;
+}
+
+.row .sixcol {
+width: 48%;
+}
+
+/*1140 vs 1080 (1120, indien outer gutter van 20 (links 20, rechts 8))
+
+gutter = 12
+
+
+(1080 - (0 * 12)) / 1 = 1080
+(1080 - (1 * 12)) / 2 = 534
+(1080 - (2 * 12)) / 3 = 352
+(1080 - (3 * 12)) / 4 = 261
+(1080 - (5 * 12)) / 6 = 170
+(1080 - (11 * 12)) / 12 = 79*/
+
+</style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="row">
+            <div class="onecol">One col</div>
+            <div class="onecol">One col</div>
+            <div class="onecol">One col</div>
+            <div class="onecol">One col</div>
+            <div class="onecol">One col</div>
+            <div class="onecol">One col</div>
+            <div class="onecol">One col</div>
+            <div class="onecol">One col</div>
+            <div class="onecol">One col</div>
+            <div class="onecol">One col</div>
+            <div class="onecol">One col</div>
+            <div class="onecol">One col</div>
+        </div>
+        <div class="row">
+            <div class="twocol">Two col</div>
+            <div class="twocol">Two col</div>
+            <div class="twocol">Two col</div>
+            <div class="twocol">Two col</div>
+            <div class="twocol">Two col</div>
+            <div class="twocol">Two col</div>
+        </div>
+        <div class="row">
+            <div class="threecol">Three col</div>
+            <div class="threecol">Three col</div>
+            <div class="threecol">Three col</div>
+        </div>
+        <div class="row">
+        </div>
+        <div class="row">
+        </div>
+        <div class="row">
+        </div>
+        <div class="row">
+        </div>
+        <div class="row">
+        </div>
+    </div>
+</body>
+</html>

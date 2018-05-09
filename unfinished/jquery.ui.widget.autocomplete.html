@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title> jQueryUI: Autocomplete
+		<script src="assets/jquery-1.4.2.min.js" type="text/javascript"></script>
+		<script src="assets/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>		
+		<script type="text/javascript">
+			$(document).ready(function() {
+			var availableTags = ["c++", "java", "php", "coldfusion", "javascript", "asp", "ruby", "python", "c", "scala", "groovy", "haskell", "perl"];
+			$("#tags").autocomplete({
+				source: availableTags
+			});
+
+
+			});
+		</script>
+		<style type="text/css">
+			body {
+				background: #F0F0F0;
+			}
+			
+			.base {
+				width: 960px;
+				margin: 0 auto;
+				background: #FFFFFF;
+			}
+			
+			.example {
+				position: relative;
+				width: 960px;
+				height: 600px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="base">
+			<h1>jQueryUI: Autocomplete</h1>
+			<p>The Autocomplete widgets provides suggestions while you type into the field. Here the suggestions are tags for programming languages, give "ja" (for Java or JavaScript) a try.</p>
+			<p>The datasource is a simple JavaScript array, provided to the widget using the source-option. </p>
+			<code>
+				$(function() {
+					var availableTags = ["","", etc.]; // define array
+					$(input element).autocomplete({source: availableTags});
+			</code>
+			<div class="example">
+				<label for="tags">Tags: </label><input id="tags">
+			</div>
+		</div>
+	</body>
+</html>

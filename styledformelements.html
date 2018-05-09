@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Styled form elements</title>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+        /*jslint
+            browser: true
+        */
+
+        /*global
+            $, jQuery
+        */
+
+        (function () {
+            "use strict";
+
+            var selected_file, val;
+
+            function setFileValue(el, val) {
+                val = val.substring(val.lastIndexOf('\\') + 1, val.length);
+                val = val.substring(val.lastIndexOf('/') + 1, val.length);
+                el.next().find('.styled-file-value').text(val);
+            }
+
+            $(document).ready(function () {
+                $('body').addClass('has-js');
+
+                $('.styled-file-button').text('Choose file');
+
+                $('.styled-file input[type="file"]').on('touchstart click', function (e) {
+                    console.log('Ooooh');
+                    e.stopPropagation();
+                    selected_file = $(this).val(); // IE
+
+                    if (selected_file.length > 0) {
+                        setFileValue(el, selected_file);
+                    } else { // FF, Chrome
+                        $(this).on('change', function () {
+                            setFileValue($(this), $(this).val());
+                        });
+                    }
+                });
+            })
+        }());
+    </script>
+  <style>
+    * {
+      font-family: Arial, sans-serif;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      outline: 0;
+    }
+
+    .clearfix:before,
+    .clearfix:after {
+        content: "";
+        display: table;
+        width: 100%;
+    }
+
+    body {
+        padding: 4em;
+    }
+
+    fieldset {
+        border: none;
+        padding: 0;
+        margin: 0 0 1em;
+    }
+
+    legend {
+        font-size: 21px;
+        margin-bottom: .5em;
+    }
+
+    label {
+        line-height: 2;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        margin: 0;
+    }
+
+    .styled-radio,
+    .styled-checkbox {
+        display: inline-block;
+        position: relative;
+        width: 1em;
+        height: 1em;
+        vertical-align: top;
+        margin: .25em .25em 0 0;
+    }
+
+    .styled-radio input,
+    .styled-radio span,
+    .styled-checkbox input,
+    .styled-checkbox span {
+        display: block;
+        vertical-align: top;
+        width: 100%;
+        height: 100%;
+    }
+
+    .styled-radio input,
+    .styled-checkbox input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        z-index: 2;
+    }
+
+    .styled-radio input + span,
+    .styled-checkbox input + span {
+        position: relative;
+        display: inline-block;
+        border: 1px solid #b8b8b8;
+        -webkit-transition: .4s;
+        -o-transition: .4s;
+        transition: .4s;
+    }
+
+    .styled-radio input + span {
+        border-radius: 50%;
+    }
+
+    .styled-checkbox input + span {
+        text-align: center;
+    }
+
+    .styled-radio input + span:after {
+        position: absolute;
+        content: "";
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        border-radius: 50%;
+        -webkit-transition: .4s;
+        -o-transition: .4s;
+        transition: .4s;
+    }
+
+    .styled-checkbox input + span:after {
+        display: inline-block;
+        vertical-align: top;
+        content: "✓";
+        font-size: .75em;
+        font-weight: bold;
+        color: transparent;
+        line-height: 1.33333;
+        -webkit-transition: .4s;
+        -o-transition: .4s;
+        transition: .4s;
+    }
+
+    .styled-radio input:hover + span,
+    .styled-checkbox input:hover + span {
+        border: 1px solid hsl(133, 47%, 50%);
+    }
+
+    .styled-radio input:focus + span,
+    .styled-checkbox input:focus + span {
+        border: 1px solid hsl(133, 47%, 50%);
+    }
+
+    .styled-radio input:checked + span,
+    .styled-checkbox input:checked + span {
+        border: 1px solid hsl(133, 47%, 50%);
+    }
+
+    .styled-radio input:checked + span:after {
+        background: hsl(133, 47%, 50%);
+    }
+
+    .styled-checkbox input:checked + span:after {
+        color: hsl(133, 47%, 50%);
+    }
+
+    .styled-select {
+        display: inline-block;
+        background: #fff;
+        vertical-align: top;
+    }
+
+    .styled-select select {
+        width: 100%;
+        border-radius: 0;
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiAgIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgICB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgICB4bWxuczpzb2RpcG9kaT0iaHR0cDovL3NvZGlwb2RpLnNvdXJjZWZvcmdlLm5ldC9EVEQvc29kaXBvZGktMC5kdGQiICAgeG1sbnM6aW5rc2NhcGU9Imh0dHA6Ly93d3cuaW5rc2NhcGUub3JnL25hbWVzcGFjZXMvaW5rc2NhcGUiICAgd2lkdGg9IjI0IiAgIGhlaWdodD0iMTYiICAgdmlld0JveD0iMCAwIDI0IDE2IiAgIGlkPSJzdmcyIiAgIHZlcnNpb249IjEuMSIgICBpbmtzY2FwZTp2ZXJzaW9uPSIwLjkxIHIxMzcyNSIgICBzb2RpcG9kaTpkb2NuYW1lPSJjYXJldC5zdmciPiAgPGRlZnMgICAgIGlkPSJkZWZzNCIgLz4gIDxzb2RpcG9kaTpuYW1lZHZpZXcgICAgIGlkPSJiYXNlIiAgICAgcGFnZWNvbG9yPSIjZmZmZmZmIiAgICAgYm9yZGVyY29sb3I9IiM2NjY2NjYiICAgICBib3JkZXJvcGFjaXR5PSIxLjAiICAgICBpbmtzY2FwZTpwYWdlb3BhY2l0eT0iMC4wIiAgICAgaW5rc2NhcGU6cGFnZXNoYWRvdz0iMiIgICAgIGlua3NjYXBlOnpvb209IjUuNjU2ODU0MiIgICAgIGlua3NjYXBlOmN4PSI5LjY4MTUzNDEiICAgICBpbmtzY2FwZTpjeT0iMi42ODE1MzQxIiAgICAgaW5rc2NhcGU6ZG9jdW1lbnQtdW5pdHM9InB4IiAgICAgaW5rc2NhcGU6Y3VycmVudC1sYXllcj0ibGF5ZXIxIiAgICAgc2hvd2dyaWQ9ImZhbHNlIiAgICAgdW5pdHM9InB4IiAgICAgaW5rc2NhcGU6d2luZG93LXdpZHRoPSIxOTIwIiAgICAgaW5rc2NhcGU6d2luZG93LWhlaWdodD0iMTAxNyIgICAgIGlua3NjYXBlOndpbmRvdy14PSIxOTEyIiAgICAgaW5rc2NhcGU6d2luZG93LXk9Ii04IiAgICAgaW5rc2NhcGU6d2luZG93LW1heGltaXplZD0iMSI+ICAgIDxpbmtzY2FwZTpncmlkICAgICAgIHR5cGU9Inh5Z3JpZCIgICAgICAgaWQ9ImdyaWQ0MTM2IiAvPiAgPC9zb2RpcG9kaTpuYW1lZHZpZXc+ICA8bWV0YWRhdGEgICAgIGlkPSJtZXRhZGF0YTciPiAgICA8cmRmOlJERj4gICAgICA8Y2M6V29yayAgICAgICAgIHJkZjphYm91dD0iIj4gICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PiAgICAgICAgPGRjOnR5cGUgICAgICAgICAgIHJkZjpyZXNvdXJjZT0iaHR0cDovL3B1cmwub3JnL2RjL2RjbWl0eXBlL1N0aWxsSW1hZ2UiIC8+ICAgICAgICA8ZGM6dGl0bGU+PC9kYzp0aXRsZT4gICAgICA8L2NjOldvcms+ICAgIDwvcmRmOlJERj4gIDwvbWV0YWRhdGE+ICA8ZyAgICAgaW5rc2NhcGU6bGFiZWw9IkxheWVyIDEiICAgICBpbmtzY2FwZTpncm91cG1vZGU9ImxheWVyIiAgICAgaWQ9ImxheWVyMSIgICAgIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsLTEwMzYuMzYyMikiPiAgICA8cGF0aCAgICAgICBzdHlsZT0iZmlsbDojMDAwMDAwO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpldmVub2RkO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDoxcHg7c3Ryb2tlLWxpbmVjYXA6YnV0dDtzdHJva2UtbGluZWpvaW46bWl0ZXI7c3Ryb2tlLW9wYWNpdHk6MSIgICAgICAgZD0ibSAzLDEwNDAuODYyMiA1LDYgNSwtNiAxLDEgLTYsNyAtNiwtNyB6IiAgICAgICBpZD0icGF0aDQxMzgiICAgICAgIGlua3NjYXBlOmNvbm5lY3Rvci1jdXJ2YXR1cmU9IjAiICAgICAgIHNvZGlwb2RpOm5vZGV0eXBlcz0iY2NjY2NjYyIgLz4gIDwvZz48L3N2Zz4=) right center no-repeat;
+        padding: 0 2em 0 .25em;
+        margin: 0;
+        border: 1px solid #e2e2e2;
+        line-height: 1.75;
+        height: 2em;
+        font-size: 1em;
+        -ms-appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+    }
+
+    .styled-select select:hover,
+    .styled-select select:focus {
+        border: 1px solid hsl(133, 47%, 50%);
+    }
+
+    .styled-select select::-ms-expand {
+        display: none;
+    }
+
+    .has-js .styled-file {
+        position: relative;
+        display: block;
+        width: 20em;
+        line-height: 1.75;
+        height: 2em;
+    }
+
+    .has-js .styled-file input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 2;
+    }
+
+    .has-js .styled-file .styled-file-value {
+        display: block;
+        border: 1px solid #e2e2e2;
+        line-height: 1.75;
+        height: 2em;
+        padding: 0 .5em;
+    }
+
+    .has-js .styled-file .styled-file-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 .5em;
+        background: hsl(133, 47%, 50%);
+        -webkit-transition: .2s;
+        -o-transition: .2s;
+        transition: .2s;
+        color: #fff;
+        line-height: 2;
+        z-index: 1;
+    }
+
+    .has-js .styled-file input:hover + span .styled-file-button {
+        background: hsl(133, 47%, 40%);
+    }
+  </style>
+</head>
+<body>
+    <form action="post">
+        <fieldset>
+            <legend>Radio buttons</legend>
+            <div class="clearfix">
+                <label for="radio-1">
+                    <span class="styled-radio">
+                        <input type="radio" name="radiobuttons" id="radio-1">
+                        <span></span>
+                    </span>
+
+                    Radio 1
+                </label>
+            </div>
+            <div class="clearfix">
+                <label for="radio-2">
+                    <span class="styled-radio">
+                        <input type="radio" name="radiobuttons" id="radio-2">
+                        <span></span>
+                    </span>
+
+                    Radio 2
+                </label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Checkboxes</legend>
+            <div class="clearfix">
+                <label for="checkbox-1">
+                    <span class="styled-checkbox">
+                        <input type="checkbox" name="checkbox-1" id="checkbox-1">
+                        <span></span>
+                    </span>
+
+                    Radio 1
+                </label>
+            </div>
+
+            <div class="clearfix">
+                <label for="checkbox-2">
+                    <span class="styled-checkbox">
+                        <input type="checkbox" name="checkbox-2" id="checkbox-2">
+                        <span></span>
+                    </span>
+
+                    Radio 2
+                </label>
+            </div>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Select</legend>
+            <div class="field">
+                <span class="styled-select">
+                  <select name="select" id="select">
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                    <option value="4">Longer option 4</option>
+                  </select>
+                </span>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>File</legend>
+            <div class="field">
+                <span class="styled-file">
+                    <input type="file" name="styled-file" id="styled-file">
+                    <span>
+                        <span class="styled-file-value"></span>
+                        <span class="styled-file-button"></span>
+                    </span>
+                </span>
+            </div>
+        </fieldset>
+    </form>
+    <div>
+
+</body>
+</html>

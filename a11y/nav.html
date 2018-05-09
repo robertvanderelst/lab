@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A11Y - Navigation</title>
+
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            padding: 0;
+            margin: 0;
+            outline: 0;
+        }
+
+        body {
+            padding-top: 5rem;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: #00adef;
+        }
+
+        a:focus {
+            outline: 1px solid #00adef;
+        }
+
+        .has-flex {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #262626;
+        }
+
+        .center {
+            width: 100%;
+            max-width: 80em;
+            margin: 0 auto;
+        }
+
+        figure a {
+            display: block;
+            width: 5rem;
+            height: 2rem;
+            background: #606060;
+        }
+
+        figure a:focus {
+            outline: 2px solid #fff;
+        }
+
+        .primary-nav button {
+            all: inherit;
+            color: #fff;
+        }
+
+        .primary-nav button:focus {
+            background: #909090;
+        }
+
+        .primary-nav a {
+            color: #fff;
+            display: block;
+            padding: .5rem 1rem;
+            background: #00adef;
+            white-space: nowrap;
+            text-decoration: none;
+            transition: .25s;
+        }
+
+        .primary-nav li:hover > a,
+        .primary-nav a:hover,
+        .primary-nav a:focus {
+            background: #00638a;
+            text-decoration: underline;
+            outline: 0;
+        }
+
+        .primary-nav > div {
+            position: fixed;
+            top: 3.5rem;
+            left: -100%;
+            bottom: 0;
+            overflow: auto;
+            width: 100%;
+            background: #00adef;
+            transition: .4s;
+        }
+
+        .primary-nav > div.in-viewport {
+            left: 0;
+        }
+
+        .primary-nav ul {
+            list-style: none;
+        }
+
+        .primary-nav .has-children div {
+            display: none;
+        }
+
+        .primary-nav .has-children div a {
+            padding-left: 2rem;
+        }
+
+        .primary-nav .is-visible div,
+        .primary-nav .has-children:hover div {
+            display: block;
+        }
+
+        @media (min-width: 48em) {
+            .primary-nav button {
+                display: none;
+            }
+
+            .primary-nav > div {
+                position: static;
+                width: auto;
+                overflow: visible;
+            }
+
+            .primary-nav > div > ul {
+                display: -webkit-box;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex
+            }
+
+            .primary-nav .has-children {
+                position: relative;
+                flex: 1 1 auto;
+            }
+
+            .primary-nav .has-children div {
+                position: absolute;
+                top: 2.5rem;
+                left: 0;
+                min-width: 100%;
+            }
+
+            .primary-nav .has-children div a {
+                padding-left: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="center">
+            <figure>
+                <a href="#"><img src="" alt="Logo"></a>
+            </figure>
+            <nav class="primary-nav">
+                <button>
+                    <span class="hamburger-bar"></span>
+                    Menu
+                </button>
+                <div>
+                    <!-- Robert's versie -->
+                    <ul>
+                        <li class="has-children">
+                            <a href="/binnenverlichting"><span>Binnenverlichting</span></a>
+                            <div id="submenu-1">
+                                <ul>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/hanglampen">Hanglampen</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/inbouwspots">Inbouwspots</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/spots">Opbouwspots</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/vloerlampen">Vloerlampen</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/wandlampen">Wandlampen</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/plafondlampen">Plafondlampen</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/tafellampen">Tafellampen</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="has-children">
+                            <a href="/buitenverlichting"><span>Buitenverlichting</span></a>
+                            <div id="submenu-2">
+                                <ul>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/buitenlampen">Buitenlampen met sensor</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/buitenlampen?q=544">Spots voor buiten</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/buitenlampen?q=543">Wandlamp voor buiten</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/grondprikkers">Schemerlamp voor buiten</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/grondspots">Hanglamp voor buiten</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/huisnummerlampen">Vloerlamp voor buiten</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/binnenverlichting">Alle buitenverlichting</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="has-children">
+                            <a href="/stijl"><span>Per stijl</span></a>
+                            <div id="submenu-3">
+                                <ul>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/buitenlampen">Industrieel</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/buitenlampen">Design</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/buitenlampen?q=544">Landelijk</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/buitenlampen?q=543">Modern</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/grondprikkers">Retro</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/grondspots">Klassiek</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/binnenverlichting">Alle stijlen</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="has-children">
+                            <a href="/accessoires"><span>Accessoires</span></a>
+                            <div id="submenu-3">
+                                <ul>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/buitenlampen">Lampenkappen</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/buitenlampen?q=544">Lichtbronnen</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/buitenlampen?q=543">Lichtdimmers</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/grondprikkers">Onderdelen</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="has-children">
+                            <a href="/inspiratie"><span>Inspiratie</span></a>
+                            <div id="submenu-4">
+                                <ul>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/buitenlampen">Blog</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/buitenlampen?q=544">Kennisbank</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/buitenlampen?q=543">Stijlengids</a></li>
+                                    <li><a href="/rietveld/rietveldlicht.nl/trunk/grondprikkers">Keuzehulp</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="has-children">
+                            <a href="/service"><span>Service</span></a>
+                            <div id="submenu-5">
+                                <ul>
+                                    <li>
+                                        <a href="/rietveld/rietveldlicht.nl/trunk/contact"><span>Contact</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="/rietveld/rietveldlicht.nl/trunk/faq"><span>Veelgestelde vragen</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="/rietveld/rietveldlicht.nl/trunk/saved">
+                                            <span>Uw bewaarlijst<span class="sr-only">:</span> (<span class="amount">0</span>)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/rietveld/rietveldlicht.nl/trunk/compare">
+                                            <span>Uw vergelijker<span class="sr-only">:</span> (<span class="amount">0</span>)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/rietveld/rietveldlicht.nl/trunk/seen">
+                                            <span>Recent bekeken<span class="sr-only">:</span> (<span class="amount">7</span>)</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="center">
+            <p>Tekstje met inline <a href="#">link</a></p>
+        </div>
+    </main>
+
+    <script>
+    (function() {
+        function QS(el) {
+            return document.querySelector(el);
+        }
+
+        function QSA(el) {
+            return document.querySelectorAll(el);
+        }
+
+        // Mobile
+        QS('.primary-nav button').addEventListener('click', function () {
+            QS('.primary-nav > div').classList.toggle('in-viewport');
+        });
+
+        // Desktop
+
+        [].forEach.call(QSA('.has-children > a'), function (item, i) {
+            item.addEventListener('focus', function () {
+                if (!this.parentNode.classList.contains('is-visible')) {
+                    [].forEach.call(QSA('.has-children'), function (item, i) {
+                        item.classList.remove('is-visible');
+                    });
+
+                    this.parentNode.classList.add('is-visible');
+                }
+            });
+
+            item.addEventListener('mouseover', function () {
+                [].forEach.call(QSA('.has-children'), function (item, i) {
+                    item.classList.remove('is-visible');
+                });
+            });
+        });
+
+        window.onkeyup = function(e) {
+            if (e.keyCode == 9) {
+                if (!document.activeElement.closest('.primary-nav')) {
+                    [].forEach.call(QSA('.has-children'), function (item, i) {
+                        item.classList.remove('is-visible');
+                    });
+                }
+            }
+
+            if (e.keyCode == 27) {
+                [].forEach.call(QSA('.has-children'), function (item, i) {
+                    item.classList.remove('is-visible');
+                });
+            }
+        };
+    })()
+    </script>
+</body>
+</html>

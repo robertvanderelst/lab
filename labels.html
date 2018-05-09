@@ -1,0 +1,127 @@
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>label test</title>
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+        }
+
+        html {
+          font-size: 100%;
+        }
+
+        body {
+          font-family: Arial, sans-serif;
+          font-size: 100%;
+          padding: 4em;
+        }
+
+        fieldset {
+          border: none;
+          padding: 1em;
+        }
+
+        fieldset > div {
+          border: 1px solid #c0c0c0;
+          padding: .5em;
+          margin-bottom: 1rem;
+        }
+
+        fieldset label {
+          display: block;
+          font-size: .75rem;
+          font-weight: bold;
+          margin-bottom: .5em;
+          color: #666;
+        }
+
+        fieldset input[type="text"] {
+          border: none;
+          display: block;
+          width: 100%;
+          font-size: 1.25rem;
+          line-height: 1.5;
+          color: #333;
+          height: 1.5em;
+          font-family: Arial, sans-serif;
+        }
+
+        fieldset input[type="text"]:focus {
+          outline: 0;
+          border-bottom: 1px solid #333;
+          transition: .4s;
+        }
+
+        .has-focus {
+          border-color: #333;
+          transition: .4s;
+        }
+
+        .has-focus label {
+          color: #000;
+          transition: .4s;
+        }
+
+        .ohno  {
+          color: #900;
+        }
+
+        .error.has-focus {
+          border-color: #900;
+        }
+
+        .error input[type="text"],
+        .error input[type="text"]:focus {
+          border-bottom: 1px solid #900;
+          color: #900;
+        }
+
+        .error p {
+          margin-top: .5rem;
+          font-size: .75rem;
+          color: #900;
+        }
+      </style>
+      <script src="jquery-2.1.1.min.js"></script>
+      <script>
+        jQuery(document).ready(function() {
+          jQuery('fieldset input')
+            .on('focus', function () {
+              jQuery(this).parent().addClass('has-focus');
+            })
+            .on('blur', function () {
+              jQuery(this).parent().removeClass('has-focus');
+            });
+          });
+      </script>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>Infield top labels demo</legend>
+        <div>
+          <label for="test">Label</label>
+          <input type="text" id="test" name="test" placeholder="useful placeholder goes here">
+        </div>
+
+        <div>
+          <label for="test2">Label</label>
+          <input type="text" id="test2" name="test2" placeholder="useful placeholder goes here">
+        </div>
+
+        <div class="error">
+          <label for="test3">
+              Label
+              <span class="ohno">Testing</span>
+          </label>
+          <input type="text" id="test3" name="test3" placeholder="useful placeholder goes here" value="wrong text">
+          <p>Reason why there is an error</p>
+        </div>
+
+      </fieldset>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery: My Youtube</title>
+		<script src="assets/jquery-1.4.4.min.js"></script>
+        <script src="assets/swfobject.js"></script>    
+        <script>
+			$(document).ready(function() {
+                //Get Playlists data
+				$.getJSON('http://gdata.youtube.com/feeds/api/users/rvanderelstyt/playlists?alt=json', function(data) {
+					showPlaylists(data.feed);
+					$("div#playlists a").click(function(e) {
+						e.preventDefault();
+                        showPlaylist($(this).attr("href"));
+					});
+				});		  
+
+                // Show all playlists
+				var showPlaylists = function(feeddata) {
+                    var title = '<h2>'+feeddata.title['$t']+'</h2>';
+
+					var playlists = feeddata.entry;
+					if (playlists.length > 0) {
+						var list = '<ul>';
+						$.each(playlists, function(){
+							list += '<li><a href="'+$(this)[0].gd$feedLink[0]['href']+'">'+$(this)[0].title['$t']+'</a></li>';
+						});
+						list+= '</ul>';
+					}
+					
+					$(title).appendTo($("#playlists"));
+                    $(list).appendTo($("#playlists"));
+				}
+				
+                // Show single playlist
+				var showPlaylist = function(feedurl, start) {
+                    var maxresults = 50;
+                    if (start == null){
+                        start = 1;
+                    }
+					$.getJSON(feedurl+'?alt=json&start-index='+start+'&max-results='+maxresults, function(data) {
+                        
+                        var output = "";
+                        var title = '<h2>'+data.feed.title['$t']+'</h2>';
+
+						var playlistdata = data.feed.entry;
+                        if (playlistdata.length > 0) {
+                            var list = '<ul class="clips">';
+                            $.each(playlistdata, function(){
+                                list += '<li><a href="#fake">'+$(this)[0].title['$t']+'</a></li>';
+                                //list += '<li><a href="'+$(this)[0].link[0].href+'">'+$(this)[0].title['$t']+'</a></li>';
+                            });
+                        }
+                        list+= '</ul>';
+
+                        var pagelink = "";
+                        var totalitems = data.feed.openSearch$totalResults['$t'];
+                        
+                        console.log(totalitems);
+                        console.log(start);
+                        console.log(maxresults);
+
+                        if (totalitems > 0 && start+maxresults < totalitems) {
+                            var offset;
+                            var pagelink = '<a href="#'+start+'" class="next">Volgende 50</a> ('+totalitems+')';
+                        } 
+                        
+                        var itemsstart = start + 50;
+                
+                        output+= title;
+                        output+= list;
+                        output+= pagelink;
+                        
+                        $("#items").html(output);
+					});
+				};
+
+                $("a").click(function(e) {
+                    alert("WTF?!");
+                    e.preventDefault();
+                    //console.log($(this).attr("href"));
+
+                    var params = { allowScriptAccess: "always" };
+                    var atts = { id: "myytplayer" };
+                    swfobject.embedSWF("http://www.youtube.com/e/VIDEO_ID?enablejsapi=1&playerapiid=ytplayer",
+                       "ytapiplayer", "425", "356", "8", null, null, params, atts);                 
+                });
+
+                $("a.next").click(function(e) {
+                    e.preventDefault();
+                    console.log($(this).attr('href'));
+                    showPlaylist(feedurl, 50);
+                });
+			});
+		</script>
+		<style type="text/css">
+			body {
+				font-size: 75%;
+				font-family: Arial;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>jQuery: My Youtube</h1>
+        <div id="playlists"></div>
+        <div id="items"></div>
+    </body>
+</html>

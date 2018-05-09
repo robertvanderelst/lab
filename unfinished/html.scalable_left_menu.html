@@ -1,0 +1,159 @@
+<html>
+<head>
+<title>scalable left menu</title>
+<style>
+	body {
+		padding: 0;
+		margin: 0;
+		background: #F0F0F0;	
+	}
+
+	div.header {
+		position: relative;
+		padding: 12px;
+		background: #FFFFFF;
+		border-bottom: 2px solid #909090;
+	}
+
+	div.logo {
+		width: 150px;
+		height: 50px;
+		background: #CCCCCC;
+	}
+
+	div.header ul {
+		position: absolute;
+		bottom: 12px;
+		right: 12px;
+		list-style: none;
+		margin: 0;
+	}
+
+	div.header ul li {
+		float: left;
+		padding-right: 0.25em;
+		border-right: 1px solid #F0F0F0;
+		margin-right: 0.25em;
+	}
+
+	div.header ul li.logout {
+		padding-right: 0;
+		border: none;
+		margin-right: 0;
+	}
+	
+	div.left {
+		float: left;
+		background: #E0E0E0;
+		border-right: 4px solid #909090;
+	}
+			
+	div.left select {
+	}
+	
+	div.left select option {
+		font-weight: bold;
+	}
+	
+	div.left_container div.logo {
+		position: relative;
+		bottom: 16px;
+		left: 16px;
+		right: 16px;
+		background: #000099;
+		height: 100px;	
+	}
+	
+	div.right {
+		background: #F0F0F0;	
+		padding: 32px;
+		overflow: hidden;
+	}
+</style>
+</head>
+<body>
+<div class="header">
+	<ul>
+		<li class="loggedin">Ingelogd als: <span>Robert van der Elst</li>
+		<li class="preferences"><a href="#">Instellingen</a></li>
+		<li class="logout"><a href="#">Uitloggen</a></li>
+	</ul>
+	<div class="logo">logo</div>
+</div>
+<div class="left">
+	<select>
+		<optgroup label="Mediums">
+			<option>Internet</option>
+			<option>Intranet</option>
+		</optgroup>
+		<optgroup label="Subsites">
+			<option>Brandweer</option>
+			<option>Jongeren</option>
+		</optgroup>
+	</select>
+	<div class="pages">
+		<ul>
+			<li>Hoofdpagina 1</li>
+			<ul>
+				<li>Subpagina 1</li>
+				<li>Subpagina 2</li>
+				<li>Subpagina 3</li>
+				<li>Subpagina 4</li>
+				<li>Subpagina 5 met een hele lange titel</li>
+			</ul>
+			<li>Hoofdpagina 2</li>
+			<ul>
+				<li>Subpagina 1</li>
+				<li>Subpagina 2</li>
+				<li>Subpagina 3</li>
+				<li>Subpagina 4</li>
+				<li>Subpagina 5 met een hele lange titel</li>
+			</ul>
+			<li>Hoofdpagina 3</li>
+						<ul>
+				<li>Subpagina 1</li>
+				<li>Subpagina 2</li>
+				<li>Subpagina 3</li>
+				<li>Subpagina 4</li>
+				<li>Subpagina 5 met een hele lange titel</li>
+			</ul>
+			<li>Hoofdpagina 4</li>
+						<ul>
+				<li>Subpagina 1</li>
+				<li>Subpagina 2</li>
+				<li>Subpagina 3</li>
+				<li>Subpagina 4</li>
+				<li>Subpagina 5 met een hele lange titel</li>
+			</ul>
+			<li>Hoofdpagina 5</li>		
+						<ul>
+				<li>Subpagina 1</li>
+				<li>Subpagina 2</li>
+				<li>Subpagina 3</li>
+				<li>Subpagina 4</li>
+				<li>Subpagina 5 met een hele lange titel</li>
+			</ul>
+			<li>Hoofdpagina 5</li>		
+						<ul>
+				<li>Subpagina 1</li>
+				<li>Subpagina 2</li>
+				<li>Subpagina 3</li>
+				<li>Subpagina 4</li>
+				<li>Subpagina 5 met een hele lange titel</li>
+			</ul>			
+		</ul>
+	</div>
+</div>
+<div class="right">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fermentum posuere leo sit amet mattis. Aenean nunc sem, vulputate quis scelerisque at, placerat sit amet risus. Suspendisse ante neque, facilisis sed mollis vitae, tristique quis ipsum. Pellentesque sit amet consequat augue. Phasellus at lectus ac enim sodales blandit nec non turpis. Aliquam interdum pellentesque eros, ut porttitor elit sodales nec. Nunc pharetra suscipit enim, convallis vehicula lacus dapibus eget. Mauris a imperdiet ligula. Sed lacus nisl, luctus sed blandit eu, scelerisque dapibus ligula. Sed pellentesque adipiscing nulla, in vestibulum arcu bibendum eu. Fusce mattis cursus lectus non lobortis. Nulla mollis nibh tellus, mollis semper metus. Donec et velit a sem ultricies aliquam in eu eros. Nullam ultrices feugiat ornare. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam facilisis, erat et placerat ultrices, leo erat molestie odio, sit amet fringilla libero lacus vel tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi luctus, mi eget cursus accumsan, massa tellus tristique purus, ac convallis nibh augue eu sem. Donec molestie scelerisque elit, ac interdum ipsum condimentum ut. Suspendisse nec nunc eget eros volutpat sagittis.
+
+Morbi sed elit et arcu porta feugiat. Vestibulum a libero massa. Nulla ornare, mi nec euismod ornare, nisi sapien interdum arcu, venenatis gravida lacus nisi eu risus. Suspendisse hendrerit ante ut leo pretium bibendum. Donec ut volutpat velit. Vivamus venenatis metus eu odio volutpat sit amet tempor sapien blandit. Morbi tincidunt vestibulum eleifend. Quisque mattis scelerisque massa quis sodales. Vivamus quis viverra ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent eleifend enim et neque consectetur suscipit. Integer lacinia semper orci, at pulvinar eros dapibus eu. Maecenas et feugiat sapien. Donec et felis massa. Nulla interdum ante sit amet nisl fermentum bibendum. Integer vitae lorem erat.
+
+Duis id sollicitudin enim. Donec accumsan augue id sapien pulvinar a suscipit justo mollis. Aliquam blandit porttitor mi eget facilisis. Etiam elementum sagittis rhoncus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras vel purus nec nulla semper sagittis. Etiam quis risus vitae ligula rutrum bibendum ut et nunc. Maecenas porttitor rutrum ultricies. Mauris metus elit, dignissim nec volutpat nec, ornare vitae libero. Donec posuere, dui a congue lacinia, dui turpis posuere dolor, ut tincidunt magna purus fringilla neque. Cras dictum tristique accumsan. Curabitur suscipit lacinia elementum. Integer ornare pretium mattis. Fusce aliquam dapibus vestibulum. Donec ut lacus nibh. Duis quis sapien id libero tincidunt vulputate nec id sem.
+
+Quisque lobortis ipsum eu ligula elementum porta. Proin dui ante, congue in faucibus nec, facilisis et est. Donec feugiat quam vitae elit hendrerit adipiscing. Praesent auctor nibh nec magna faucibus consequat. Donec iaculis scelerisque tellus, eu mattis elit luctus sodales. Duis facilisis mollis felis, ut elementum tortor congue eu. Phasellus lacinia ipsum nec urna rutrum id interdum lorem fermentum. Morbi vitae rutrum mi. Ut sed sagittis ante. Curabitur porta nisl et felis iaculis tincidunt. Cras quis ipsum mauris. Mauris vitae arcu a quam adipiscing imperdiet. Aenean nulla nisl, vulputate non pulvinar sit amet, tristique id mi. Suspendisse tortor risus, interdum eu sagittis a, molestie vitae justo. Nulla id lectus odio. Donec dictum lacinia nisl quis ultricies. Mauris accumsan porta odio, quis dapibus erat semper ac. In hac habitasse platea dictumst.
+
+Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis porta massa turpis, at dapibus nisl. Phasellus non est orci, a placerat dolor. Proin quis sollicitudin nisl. Curabitur ullamcorper nisl vitae magna dictum a vestibulum orci faucibus. Nulla et lectus in erat sagittis tempus. Nunc a metus diam, sed rhoncus elit. Cras leo arcu, malesuada nec vulputate a, pulvinar quis orci. Nulla fringilla elit ut dolor blandit euismod. Integer sed risus quam. Nullam molestie, orci id euismod consectetur, nibh nibh gravida nunc, at iaculis magna tellus varius tellus. Quisque vulputate dolor id nisi pellentesque in dignissim magna faucibus. In turpis diam, tempus sit amet tincidunt nec, adipiscing in lacus. Nunc id turpis justo. Pellentesque a nibh eu lacus suscipit egestas ac a eros. Nunc ultrices nulla sed dolor ultrices id egestas tortor fringilla. 
+</div>
+</body>
+</html>

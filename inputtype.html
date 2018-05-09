@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Input type testing</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+	<ul id="result"></ul>
+	
+	<script>
+		var aTypes = ['search','number','range', 'color', 'tel', 'url', 'email', 'date', 'month', 'week', 'time', 'datetime', 'datetime-local'];
+		
+		var aLength = aTypes.length;
+		var el = document.getElementById('result');
+		
+		for (var i = 0; i < aLength; i++) {
+			var input = document.createElement("input");
+			input.setAttribute("type", aTypes[i]);
+			
+			var li = document.createElement("li");
+			var el_item = el.appendChild(li);
+			
+			if (input.type !== "text") {
+				el_item.textContent = 'Input[type="' + aTypes[i] + '"] : TRUE';
+			} else {
+				el_item.textContent = 'Input[type="' + aTypes[i] + '"] : FALSE';
+			}
+		}
+	</script>
+</body>
+</html>

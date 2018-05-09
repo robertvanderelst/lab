@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Type test thingy</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: monospace;
+            font-size: 8rem;
+            font-weight: bold;
+            line-height: 1.5;
+            padding: 4rem;
+        }
+
+        p > span {
+            position: relative;
+            display: inline-block;
+            color: #000;
+            margin-right: .25em;
+            width: .275em;
+            height: 1.5em;
+            overflow: hidden;
+        }
+
+        p .reverse {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <p>
+    <span>A</span><span><span class="reverse">B</span></span><span>C</span><span>D</span><span><span class="reverse">E</span></span><span><span class="reverse">F</span></span><span><span class="reverse">G</span></span><span>H</span><span>I</span><span>J</span><span><span class="reverse">K</span></span><span>L</span><span>M</span><span>N</span><span>O</span><span><span class="reverse">P</span></span><span><span class="reverse">Q</span></span><span><span class="reverse">R</span></span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span>
+    </p>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>horizontal</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		
+		html {
+			height: 100%;
+			overflow: hidden;
+			overflow-x: auto;
+		}
+		
+		body {
+			height: 100%;
+		}
+		
+		main {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			height: 92vh;
+			width: 391vh;
+		}
+		
+		section {
+			float: left;
+			width: 92vh;
+			height: 92vh;
+		}
+		
+		footer {
+			float: left;
+			width: 23vh;
+			height: 92vh;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<section style="background: #f00">
+			First
+		</section>
+	
+		<section style="background: #0f0">
+			<div style="float: left; width: 46vh; height: 46vh; background: rgba(0,0,0,.2)">Test</div>
+			<div style="float: left; width: 46vh; height: 23vh; background: rgba(0,0,0,.4)">Test</div>
+			<div style="float: left; width: 46vh; height: 23vh; background: rgba(0,0,0,.6)">Test</div>
+			<div style="clear: both; width: 92vh; height: 46vh; background: rgba(0,0,0,.8)">Test</div>
+		</section>
+		
+		<section style="background: #00f">
+			Third
+		</section>
+		
+		<section style="background: #f0f">
+			Fourth
+		</section>
+		
+		<footer style="background: #ff0">
+			Footer
+		</footer>
+	</main>
+</body>
+</html>

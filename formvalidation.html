@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Formtest</title>
+	<style>
+		* {
+			font-family: Arial, sans-serif;
+			padding: 0;
+			margin: 0;
+		}
+		
+		body {
+			padding: 4em;
+		}
+		
+		fieldset {
+			border: 1px solid #c0c0c0;
+			padding: 2em;
+		}
+		
+		p {
+			margin-bottom: 2em;
+		}
+		
+		.form-row {
+			position: relative;
+		}
+		
+		.form-row + .form-row {
+			margin-top: 2em;
+		}
+		
+		label {
+			font-weight: bold;
+			color: #333;
+			display: block;
+			margin-bottom: .25em;
+		}
+		
+		input[type="text"],
+		input[type="password"],
+		textarea {
+			width: 100%;
+			font-family: Arial, sans-serif;
+			font-size: 100%;
+			margin-bottom: .5em;
+			padding: .25em 0;
+			text-indent: .5em;
+			border: 1px solid #c0c0c0;
+		}
+		
+		.form-row p {
+			font-size: .75rem;
+			margin: 0;
+			color: #666;
+			height: 0;
+			overflow: hidden;
+			transition: .2s;
+		}
+		
+		input[type="text"]:focus,
+		input[type="password"]:focus,
+		textarea:focus {	
+			outline: 0;
+			
+			-webkit-box-shadow: 0px 0px 4px 0px #99f;
+			-moz-box-shadow:    0px 0px 4px 0px #99f;
+			box-shadow:         0px 0px 4px 0px #99f;
+			border: 1px solid #99f;
+		}
+		
+		input[type="text"]:focus + p,
+		input[type="password"]:focus + p,
+		textarea:focus + p {
+			height: 1.2em;
+			transition: .2s;
+		}
+		
+		.error input[type="text"],
+		.error input[type="password"], 
+		.error textarea {
+			border: 1px solid #c00;
+		}
+		
+		.error input[type="text"]:focus,
+		.error input[type="password"]:focus, 
+		.error textarea:focus {
+			border: 1px solid #c00;
+			-webkit-box-shadow: 0px 0px 4px 0px #c00;
+			-moz-box-shadow:    0px 0px 4px 0px #c00;
+			box-shadow:         0px 0px 4px 0px #c00;
+		}
+		
+		.error p {
+			color: #c00;
+			height: 1.2em;
+		}
+		
+		.error:before {
+			content: "!";
+			position: absolute;
+			top: 1.7em;
+			left: -1em;
+			color: #c00;
+			font-weight: bold;
+		}
+		
+		.valid:before {
+			content: "✓";
+			position: absolute;
+			top: 1.5em;
+			left: -1em;
+			color: #0c0;
+			font-weight: bold;
+		}
+		
+		
+		.submit {
+			margin-top: 2em;
+		}
+		
+		a,
+		input[type="submit"] {
+			display: inline-block;
+			padding: 0 1.5em;
+			line-height: 2;
+			color: #fff;		
+			background: #0b0;
+			border: none;
+			border-radius: .25em;
+			text-decoration: none;
+			
+			-webkit-box-shadow: 0px 2px 0px 0px #060;
+			-moz-box-shadow: 0px 2px 0px 0px #060;
+	        box-shadow: 0px 2px 0px 0px #060;
+			
+			-webkit-transition: .15s;
+			-ms-transition: .15s;
+			transition: .15s;
+		}
+		
+		a:active,
+		input[type="submit"]:active {
+			margin: 2px 0 -2px;
+			-webkit-box-shadow: 0px 0px 0px 0px #060;
+			-moz-box-shadow: 0px 0px 0px 0px #060;
+	        box-shadow: 0px 0px 0px 0px #060;
+		}		
+	</style>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<h2>Allowed?</h2>
+			<p>Just testing to see if this is allowed as a legend</p>
+			
+			<div class="form-row">
+				<label for="test1">Email address</label>
+				<input type="text" name="test1" id="test1">
+				<p>What's your email address?</p>
+			</div>
+			
+			<div class="form-row error">
+				<label for="test2">Another field</label>
+				<input type="text" name="test2" id="test2">
+				<p>You need to fill a proper value!</p>
+			</div>
+			
+			<div class="form-row valid">
+				<label for="test3">Another valid field</label>
+				<input type="text" name="test3" id="test3" value="a nice value">
+			</div>
+			
+			<div class="form-row mandatory">
+				<label for="test4">Mandatory <abbr title="mandatory field">*</abbr></label>
+				<input type="text" name="test4" id="test4" required>
+				<p>This field is mandatory</p>
+			</div>
+			
+			<div class="cta-button submit">
+				<input type="submit" value="submit">
+			</div>
+		</fieldset>
+	</form>
+</body>
+</html>	

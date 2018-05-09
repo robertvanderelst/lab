@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Header concept</title>
+
+    <style>
+        @font-face {
+            font-family: "Lato";
+            font-style: normal;
+            font-weight: 400;
+            src: local("Lato Regular"), local("Lato-Regular"), url(https://fonts.gstatic.com/s/lato/v11/UyBMtLsHKBKXelqf4x7VRQ.woff2) format("woff2");
+            unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF
+        }
+        @font-face {
+            font-family: "Lato";
+            font-style: normal;
+            font-weight: 400;
+            src: local("Lato Regular"), local("Lato-Regular"), url(https://fonts.gstatic.com/s/lato/v11/1YwB1sO8YE1Lyjf12WNiUA.woff2) format("woff2");
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000
+        }
+        @font-face {
+            font-family: "Lato";
+            font-style: normal;
+            font-weight: 700;
+            src: local("Lato Bold"), local("Lato-Bold"), url(https://fonts.gstatic.com/s/lato/v11/ObQr5XYcoH0WBoUxiaYK3_Y6323mHUZFJMgTvxaG2iE.woff2) format("woff2");
+            unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF
+        }
+        @font-face {
+            font-family: "Lato";
+            font-style: normal;
+            font-weight: 700;
+            src: local("Lato Bold"), local("Lato-Bold"), url(https://fonts.gstatic.com/s/lato/v11/H2DMvhDLycM56KNuAtbJYA.woff2) format("woff2");
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000
+        }
+
+        * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        * + * {
+            margin-top: 1rem;
+        }
+
+        html {
+            font-size: 100%;
+            font-family: sans-serif;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+            background: #fff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0 0 4rem;
+            font-family: "Lato", Arial, sans-serif;
+            color: #484848;
+        }
+
+        .no-scroll {
+            max-height: 100%;
+            overflow: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: 700;
+            color: #484848;
+            line-height: 1.2
+        }
+        h3 + * {
+            margin-top: 0
+        }
+        h1 {
+            font-size: 1.728em
+        }
+        h2 {
+            font-size: 1.2em
+        }
+        h3 {
+            font-size: 1em
+        }
+        h4 {
+            font-size: 1em
+        }
+        a {
+            color: #00adef;
+            line-height: 1.5;
+            -webkit-transition: color .4s;
+            -o-transition: color .4s;
+            transition: color .4s;
+        }
+        a:hover {
+            color: #484848;
+        }
+        ul,
+        ol {
+            list-style: none;
+            margin: 0;
+        }
+
+        .center {
+            position: relative;
+            width: 100%;
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        .hide-on-mobile {
+            display: none;
+        }
+
+        .has-flex {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+        }
+
+        .has-wrap {
+            -webkit-flex-wrap: wrap;
+            -moz-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            -o-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+
+        header {
+            background: #262626;
+            padding: .5rem 0;
+        }
+
+        header * + * {
+            margin-top: 0;
+        }
+
+        /* NIEUWE HEADER */
+
+        /* Logo + payoff */
+        .header-branding {
+            flex-basis: 100%;
+            justify-content: center;
+        }
+
+        .header-branding-logo {
+            flex: 0 0 auto;
+            line-height: 1;
+        }
+
+        .header-branding-logo svg {
+            height: 2.5rem;
+        }
+
+        /* Navigation */
+
+        .mobile-nav {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #00adef;
+            justify-content: center;
+        }
+
+        .mobile-nav > * {
+            flex: 0 0 auto;
+        }
+
+        .header-nav > div {
+            display: none;
+        }
+
+        .header-nav {
+            order: 2;
+        }
+
+        .header-nav .has-children > div {
+            display: none;
+        }
+
+        .primary-nav-toggle {
+            position: relative;
+            display: inline-block;
+            padding: .75rem .5rem .75rem 2rem;
+            margin: 0 .5rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            text-shadow: 1px 1px rgba(0, 0, 0, .25);
+        }
+
+        .hamburger-bar {
+            top: 1.6rem;
+            left: .5rem;
+        }
+
+        .hamburger-bar,
+        .hamburger-bar:before,
+        .hamburger-bar:after {
+            content: "";
+            position: absolute;
+            width: .9375rem;
+            height: .1875rem;
+            background: #fff;
+            border-radius: .09375rem;
+            transition: .4s;
+            -webkit-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-box-shadow: 1px 1px 0 0 rgba(0, 0, 0, .25);
+            box-shadow: 1px 1px 0 0 rgba(0, 0, 0, .25);
+        }
+
+        .hamburger-bar:before {
+            top: -.375rem;
+        }
+
+        .hamburger-bar:after {
+            top: .375rem;
+        }
+
+        /* Search */
+
+        .header-search {
+            order: 1;
+        }
+
+        .header-search-toggle {
+            display: block;
+            width: 3.5rem;
+            height: 3.5rem;
+            padding: .5rem;
+        }
+
+        .header-search-toggle svg {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+
+        .header-search-field {
+            display: none;
+        }
+
+        /* Cart */
+        .header-cart {
+            position: relative;
+            display: block;
+            width: 3.5rem;
+            height: 3.5rem;
+            padding: .5rem;
+            order: 3;
+        }
+
+        .header-cart svg {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+
+        .header-cart .cart-amount {
+            position: absolute;
+            top: .5rem;
+            right: .25rem;
+            width: 1.25rem;
+            height: 1.25rem;
+            text-align: center;
+            line-height: 1.33333;
+            font-size: .75rem;
+            font-weight: bold;
+            background: #fff;
+            color: #484848;
+            border-radius: 50%;
+            border: .125rem solid #00adef;
+        }
+
+        main {
+            padding: 1rem;
+            margin: 0;
+        }
+
+        @media (min-width: 48em) {
+            body {
+                padding: 3rem 0 1rem;
+            }
+
+            header {
+                background: #262626;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                padding: .5rem 1rem;
+                height: 5rem;
+            }
+
+            .hide-on-mobile {
+                display: block;
+            }
+
+            .mobile-nav {
+                position: static;
+                background: none;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <div class="center has-flex">
+            <section class="header-branding has-flex">
+                <a href="/rietveld/rietveldlicht.nl/trunk/" class="header-branding-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175 48"><g fill-rule="evenodd"><path fill="#ed1c23" d="M0 .353h12.037v47.11H0V.354"/><path fill="#fecb09" d="M14.164 35.435h79.37V47.48h-79.37V35.436"/><path fill="#00adef" d="M95.66 35.45H175v12.03H95.66V35.45"/></g><g fill="#fff"><path d="M148.876 37.888c-.38 0-.685.254-.685.57v6.015c0 .316.307.57.686.57h2.969c.316-.004.57-.243.57-.57 0-.327-.254-.57-.57-.57h-2.296l-.023-2.018h2.32c.315 0 .57-.244.57-.57 0-.328-.255-.568-.57-.572h-2.333l-.02-1.713h2.352c.316 0 .57-.244.57-.57 0-.328-.254-.567-.57-.572h-2.968M160.9 37.868c-.38 0-.685.217-.685.533v6.016c0 .316.306.57.685.57.38 0 .685-.254.685-.57v-3.75c.65.89 2.342 3.155 3.022 4.067.067.09.204.32.403.33.38.015.685-.255.685-.57v-6.016c0-.316-.306-.57-.685-.57-.38 0-.685.254-.685.57v3.885c-.378-.515-2.208-3.05-2.996-4.127-.17-.232-.263-.358-.43-.366M135.292 37.868c-.38 0-.685.217-.685.533v6.016c0 .316.305.57.685.57.38 0 .685-.254.685-.57v-3.75c.648.89 2.342 3.155 3.02 4.067.068.09.206.32.404.33.38.015.686-.255.686-.57v-6.016c0-.316-.306-.57-.685-.57-.378 0-.684.254-.684.57v3.885c-.378-.515-2.208-3.05-2.996-4.127-.17-.232-.262-.358-.43-.366M123.477 37.774c-1.88 0-3.406 1.053-3.406 3.692 0 2.515 1.526 3.692 3.407 3.692 1.88 0 3.405-1.177 3.405-3.692 0-2.63-1.525-3.692-3.405-3.692m0 1.18c1.103 0 1.997.62 1.997 2.512 0 1.844-.894 2.512-1.997 2.512-1.104 0-1.998-.792-1.998-2.512 0-1.892.893-2.512 1.997-2.512"/><path fill-rule="evenodd" d="M105.678 37.898s.485-.02.552.4l.713 4.53 1.15-4.435s.125-.512.658-.495c.59.02.647.533.647.533l1.247 4.397.675-4.463s.018-.457.532-.476c.513-.02.6.352.58.486l-.913 5.995s-.115.655-.78.665c-.667.01-.762-.562-.762-.562l-1.208-4.406-1.266 4.597s-.19.388-.656.38c-.58-.01-.76-.39-.818-.628-.12-.494-.913-5.966-.913-5.966s-.077-.533.56-.552"/></g><rect width="1.37" height="7.156" x="40.581" y="37.88" rx=".685" ry=".571"/><path d="M29.356 37.937c-.38 0-.685.255-.685.57v5.835c0 .305.286.614.648.635v.002h2.513c.315 0 .57-.245.57-.572 0-.327-.255-.566-.57-.57h-1.79v-5.33c.002-.316-.305-.57-.684-.57M63.64 37.88c-.38 0-.685.255-.685.57v6.015c0 .317.306.57.685.57.38 0 .685-.253.685-.57v-2.55h2.816v2.55c0 .317.307.57.686.57.38 0 .685-.253.685-.57V38.45c0-.315-.305-.57-.684-.57-.38 0-.685.255-.685.57v2.323h-2.815V38.45c0-.315-.305-.57-.685-.57M75.627 37.88c-.317 0-.57.255-.57.57 0 .318.253.572.57.572h1.103v5.443c0 .317.306.57.685.57.38 0 .685-.253.685-.57v-5.443h1.134c.316 0 .57-.254.57-.57 0-.317-.254-.572-.57-.572h-3.607M53.152 37.785c-3.02-.03-3.732 2.31-3.732 3.705 0 2.516 1.81 3.647 3.844 3.64.676 0 1.697-.108 2.41-.992.448-.456-.388-1.11-.846-.718-.598.36-.73.54-1.673.54-1.292 0-2.26-1.057-2.26-2.554 0-1.484.94-2.474 2.233-2.474.663 0 1.122.393 1.565.582.464.28 1.216-.355.663-.866-.383-.55-1.64-.843-1.904-.852-.102-.004-.202-.01-.3-.01"/><g fill="#fff" fill-rule="evenodd"><path d="M21.746 20.85c1.12 1.52 2.296 3.173 3.274 4.454 1.674 2.333 3.04 3.812 5.462 7.682l-.082-.015.068.06h-7.4v-.036l-.01.003c-.708-.903-4.438-5.61-8.505-12.103h-.02v-4.617h6.37v-.013c2.253-.115 3.996-2.47 4.233-5.465.028-2.79-2.245-4.73-4.232-5.066V5.72h-.087c-.146-.02-.29-.034-.432-.038-.044 0-.088.002-.13.004h-5.722V.354h6.328c.14-.008.28-.012.422-.012 4.896-.005 8.78 4.596 8.796 10.26-.023 5.49-3.642 9.966-8.332 10.248M33.31 8.503h6.028v24.803H33.31V8.503"/></g><path fill="#ed1c23" fill-rule="evenodd" d="M33.315 0h6v6.368h-6V0"/><g fill="#fff" fill-rule="evenodd"><path d="M68.568 23.38h-7.992v.006H49.21c.652 3.133 3.488 5.492 6.887 5.492 2.57 0 4.817-1.348 6.043-3.36h5.847c-1.81 4.97-6.492 8.51-11.98 8.51-7.06 0-12.783-5.855-12.783-13.08 0-7.224 5.723-13.08 12.783-13.08s12.782 5.856 12.782 13.08c0 .832-.077 1.645-.222 2.433m-12.47-10.713c-3.62 0-6.602 2.675-6.985 6.112h13.97c-.385-3.438-3.365-6.113-6.986-6.113M82.906 13.818h-3.554v19.488h-6.007V13.818h-2.833V8.51h2.833V.353h6.007V8.51h3.554v5.308M135.082 23.42h-7.992v.004h-11.365c.65 3.134 3.487 5.492 6.887 5.492 2.57 0 4.817-1.348 6.042-3.36h5.847c-1.81 4.97-6.49 8.51-11.98 8.51-7.06 0-12.782-5.855-12.782-13.08 0-7.223 5.723-13.08 12.783-13.08s12.784 5.857 12.784 13.08c0 .832-.077 1.645-.222 2.433m-12.47-10.715c-3.62 0-6.6 2.675-6.985 6.112h13.97c-.385-3.437-3.365-6.112-6.985-6.112M138.896.01h5.994v33.314h-5.994V.01M168.657 33.324v-1.726c-2.093 1.53-4.655 2.43-7.423 2.43-7.06 0-12.783-5.855-12.783-13.08 0-7.223 5.724-13.08 12.784-13.08 2.768 0 5.33.9 7.423 2.43V.01h5.994v33.314h-5.993m-7.227-20.307c-3.992 0-7.228 3.557-7.228 7.944 0 4.39 3.236 7.945 7.228 7.945 3.992 0 7.228-3.556 7.228-7.944 0-4.386-3.236-7.943-7.228-7.943M85.455 8.454h6.108l6.084 18.95 6.037-18.923h6.014l-9.094 24.968-5.933.027z"/></g></svg>
+                </a>
+
+                <p class="header-branding-payoff hide-on-mobile">
+                    Verlichtingsspecialist sinds 1955<br>
+                    Webwinkels sinds 2006<br>
+                    Lampen op voorraad: <strong>197970</strong>
+                </p>
+            </section>
+
+            <div class="mobile-nav has-flex">
+                <nav class="header-nav">
+                    <a href="#menu" class="primary-nav-toggle">
+                        <span class="hamburger-bar"></span>
+                        Menu
+                    </a>
+                    <div>
+                        <ul id="menu">
+                            <li>
+                                <a href="/rietveld/rietveldlicht.nl/trunk/">Home</a>
+                            </li>
+                            <li class="has-children">
+                                <a href="#submenu-1"><span>Binnenverlichting</span></a>
+                                <div id="submenu-1">
+                                    <ul>
+                                        <li><a href="/rietveld/rietveldlicht.nl/trunk/badkamerlampen">Badkamerlampen</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/booglampen">Booglampen</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/hanglampen">Hanglampen</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/inbouwlampen">Inbouwlampen</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/inbouwspots">Inbouwspots</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/kroonluchters">Kroonluchters</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/leeslampen">Leeslampen</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/lichtbronnen">Lichtbronnen</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/plafondlampen">Plafondlampen</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/railspots">Railspots</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/spanningsrail-sets">Spanningsrail sets</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/spots">Spots</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/tafellampen">Tafellampen</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/vloerlampen">Vloerlampen</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/wandlampen">Wandlampen</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="has-children">
+                                <a href="#submenu-2"><span>Buitenverlichting</span></a>
+                                <div id="submenu-2">
+                                    <ul>
+                                        <li><a href="/rietveld/rietveldlicht.nl/trunk/buitenlampen">Buitenlampen</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/buitenlampen?q=544">Bewegingssensor</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/buitenlampen?q=543">Schemerschakelaar</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/grondprikkers">Grondprikkers</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/grondspots">Grondspots</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/huisnummerlampen">Huisnummerlampen</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/buitenlampen?q=461">Plafondlampen voor buiten</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/buitenlampen?q=549">Staande buitenlampen</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/tuinverlichting">Tuinverlichting</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/buitenlampen?q=488">Wandlampen voor buiten</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="has-children">
+                                <a href="#submenu-3"><span>LED</span></a>
+                                <div id="submenu-3">
+                                    <ul>
+                                        <li><a href="/rietveld/rietveldlicht.nl/trunk/lichtbronnen?q=556">LED lichtbronnen</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/buitenlampen?q=9">LED buitenlampen</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/hanglampen?q=9">LED hanglampen</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/inbouwspots?q=9">LED inbouwspots</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/plafondlampen?q=9">LED plafondlampen</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/vloerlampen?q=9">LED vloerlampen</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/wandlampen?q=9">LED wandlampen</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/spots?q=9">LED spots</a></li><li><a href="/rietveld/rietveldlicht.nl/trunk/tafellampen?q=9">LED tafellampen</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="/rietveld/rietveldlicht.nl/trunk/lichtbronnen">Lichtbronnen</a>
+                            </li>
+                            <li>
+                                <a href="/rietveld/rietveldlicht.nl/trunk/allproducts">Alle producten</a>
+                            </li>
+                            <li class="sale">
+                                <a href="/rietveld/rietveldlicht.nl/trunk/sale">Sale</a>
+                            </li>
+                        </ul>
+
+                        <!--<div class="my-rietveld">
+                            <ul id="my-rietveld-list" class="my-rietveld-list has-flex">
+                                <li class="faq">
+                                    <a href="/rietveld/rietveldlicht.nl/trunk/faq"><span>Veelgestelde vragen</span></a>
+                                </li>
+                                <li class="save">
+                                    <a href="/rietveld/rietveldlicht.nl/trunk/saved">
+                                        <span>Uw bewaarlijst<span class="sr-only">:</span> (<span class="amount">0</span>)</span>
+                                    </a>
+                                </li>
+                                <li class="compare">
+                                    <a href="/rietveld/rietveldlicht.nl/trunk/compare">
+                                        <span>Uw vergelijker<span class="sr-only">:</span> (<span class="amount">0</span>)</span>
+                                    </a>
+                                </li>
+                                <li class="seen">
+                                    <a href="/rietveld/rietveldlicht.nl/trunk/seen">
+                                        <span>Recent bekeken<span class="sr-only">:</span> (<span class="amount">3</span>)</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>-->
+
+                        <div class="country-selector has-flex">
+                            <a href="#country-list" class="country-selector-link">
+                                <span class="icon-nl"></span>
+                                <span class="sr-only">Nederland</span>
+                            </a>
+
+                            <ul id="country-list" class="country-selector-list has-flex">
+                                <li><a href="https://www.rietveldlicht.nl"><span class="icon-nl"></span><span class="sr-only">Nederland</span></a></li>
+                                <li><a href="https://www.rietveldlicht.be"><span class="icon-be"></span><span class="sr-only">België</span></a></li>
+                                <li><a href="https://www.lumidora.com/de"><span class="icon-de"></span><span class="sr-only">Deutschland</span></a></li>
+                                <li><a href="https://www.lumidora.com/fr"><span class="icon-fr"></span><span class="sr-only">France</span></a></li>
+                                <li><a href="https://www.lumidora.com/es"><span class="icon-es"></span><span class="sr-only">España</span></a></li>
+                                <li><a href="https://www.lumidora.com/en"><span class="icon-uk"></span><span class="sr-only">United Kingdom</span></a></li>
+                            </ul>
+                        </div>
+                </nav>
+
+                <section class="header-search">
+                    <a href="#header-search" class="header-search-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                            <filter id="blurMe">
+                                <feGaussianBlur in="SourceAlpha" stdDeviation="0"/>
+                                <feOffset dx="1" dy="1" result="offsetblur"/>
+                                <feComponentTransfer>
+                                    <feFuncA type="linear" slope="0.25"></feFuncA>
+                                </feComponentTransfer>
+                                <feMerge>
+                                    <feMergeNode/>
+                                    <feMergeNode in="SourceGraphic"></feMergeNode>
+                                </feMerge>
+                            </filter>
+
+                            <path fill="#ffffff" filter="url(#blurMe)" d="M6.55 18.96q1.293 1.292 2.9 1.953 1.605.662 3.306.662 1.543 0 3.024-.536 1.448-.536 2.708-1.544l1.606 3.937 4.095 4.095q.66.472 1.416.472.945 0 1.67-.756.693-.724.693-1.67 0-.818-.474-1.417l-4.063-4.094-3.968-1.606q1.007-1.197 1.543-2.677.535-1.48.535-3.056 0-2.362-1.228-4.378-1.165-1.984-3.18-3.15Q15.117 4 12.786 4 10.425 4 8.41 5.228q-1.985 1.166-3.182 3.15-1.197 2.047-1.197 4.378 0 1.764.63 3.338.63 1.638 1.89 2.867zM16.6 16.6q-.787.756-1.795 1.166-1.008.41-2.047.41-1.417 0-2.646-.725-1.26-.726-1.984-1.954-.724-1.26-.724-2.71 0-1.48.755-2.707.725-1.23 1.953-1.954 1.23-.724 2.677-.724 1.418 0 2.678.755 1.228.725 1.984 1.953.723 1.23.723 2.646 0 1.07-.41 2.08-.41 1.007-1.165 1.762z"></path></svg>
+                        <span class="sr-only">Zoeken</span>
+                    </a>
+
+                    <div id="header-search" class="header-search-field">
+                        <form action="/rietveld/rietveldlicht.nl/trunk/find" method="get" class="has-flex">
+                            <input type="text" name="search" value="" placeholder="Bv. artikelnr. of trefwoord(en)">
+                            <input type="submit" value="Zoek" class="button">
+                            <a href="#close" class="header-search-close"><span class="sr-only">Sluiten</span></a>
+                        </form>
+                    </div>
+                </section>
+
+                <a href="/rietveld/rietveldlicht.nl/trunk/cart" class="header-cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+                        <filter id="blurMe">
+                            <feGaussianBlur in="SourceAlpha" stdDeviation="0"/>
+                            <feComponentTransfer>
+                                <feFuncA type="linear" slope="0.25"></feFuncA>
+                            </feComponentTransfer>
+                            <feMerge>
+                                <feMergeNode/>
+                                <feMergeNode in="SourceGraphic"></feMergeNode>
+                            </feMerge>
+                        </filter>
+
+                        <path fill="#ffffff" filter="url(#blurMe)" d="M13.525 26.3c1.162 0 2.106-.946 2.106-2.108 0-.483-.16-.94-.45-1.31h5.74c-.29.37-.45.827-.45 1.31 0 1.162.95 2.107 2.11 2.107 1.17 0 2.11-.95 2.11-2.11 0-.49-.16-.94-.45-1.31h.366c.548 0 .994-.45.994-1s-.45-1-.998-1H12.61l-.35-1.42h13.26c.32 0 .6-.23.663-.546l1.805-9.13c.04-.2-.012-.405-.14-.56-.13-.157-.32-.247-.522-.247H9.668L9.29 7.5c-.06-.288-.185-.58-.36-.844h.002c-.276-.44-.914-.955-1.8-.955h-.04.003-2.1c-.55 0-.995.45-.995 1s.446 1 .995 1H7.09c.125.01.134.02.167.05.006.01.012.01.02.02.028.04.06.12.068.15 0 0 0-.01-.002-.01l.002.01.01.05.002.01 3.505 14.16c.11.45.506.76.965.76h.047c-.294.37-.457.828-.457 1.31 0 1.163.946 2.108 2.108 2.108zm-.153-8.17h-1.45l-.54-2.196h1.743l.247 2.195zm2.832 0h-1.832l-.246-2.196h2.02l.058 2.195zm2.948 0h-1.954l-.06-2.196h2.073l-.05 2.195zm2.927 0h-1.94l.05-2.196h2.07l-.19 2.195zm2.88 0h-1.89l.19-2.196h2.13l-.44 2.195zm-11.95-3.19h-1.88l-.45-1.798h2.12l.2 1.8zm3.1 0h-2.1l-.21-1.798h2.26l.05 1.8zm3.12 0h-2.12l-.05-1.798h2.22l-.05 1.8zm3.12 0h-2.12l.05-1.798h2.23l-.16 1.8zm3.23 0h-2.24l.152-1.798h2.44l-.356 1.8zM12.7 12.15h-2.253l-.445-1.804h2.495l.203 1.804zm3.344 0H13.7l-.203-1.804h2.5l.047 1.804zm3.268 0h-2.274l-.048-1.804h2.37l-.048 1.804zm3.288 0h-2.294l.048-1.804h2.403L22.6 12.15zm3.547 0h-2.55l.157-1.804h2.75l-.357 1.804"></path></svg>
+                    <span class="sr-only">Winkelwagen</span> <span class="sr-only">(</span> <span class="cart-amount">99</span><span class="sr-only"> items)</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
+
+        <p>Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.</p>
+
+        <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.</p>
+
+        <p>Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum.</p>
+
+        <p>Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac</p>
+    </main>
+</body>
+</html>

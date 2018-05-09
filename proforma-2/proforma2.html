@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Proforma 2</title>
+    <link rel="stylesheet" href="proforma2.css">
+</head>
+<body>
+    <main>
+        <h1>Proforma 2</h1>
+        <p>This is an (almost) non Javascript solution for the former Proforma. It keeps the workings intact (accessibility and all). There's just a little bit of Javascript needed for the file upload, but that weighs in  at a little over 500 bytes. That code can be integrated in your own Javascript file for less HTTP requests.</p>
+
+        <p>The CSS is pretty much self explanatory, I've added some comments for clarification. Further styling is up to you!</p>
+
+        <p>This should work in pretty much all browsers, but keep in mind that Internet Explorer support is from version 10 and up.</p>
+
+        <p>&mdash; Robert (<a href="https://twitter.com/rvanderelst">@rvanderelst</a>)</p>
+
+        <hr>
+
+        <form action="post">
+            <fieldset>
+                <legend>Radio buttons</legend>
+                <div class="clearfix">
+                    <label for="radio-1">
+                        <span class="styled-radio">
+                            <input type="radio" name="radiobuttons" id="radio-1">
+                            <span></span>
+                        </span>
+
+                        Radio 1
+                    </label>
+                </div>
+                <div class="clearfix">
+                    <label for="radio-2">
+                        <span class="styled-radio">
+                            <input type="radio" name="radiobuttons" id="radio-2">
+                            <span></span>
+                        </span>
+
+                        Radio 2
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Checkboxes</legend>
+                <div class="clearfix">
+                    <label for="checkbox-1">
+                        <span class="styled-checkbox">
+                            <input type="checkbox" name="checkbox-1" id="checkbox-1">
+                            <span></span>
+                        </span>
+
+                        Checkbox 1
+                    </label>
+                </div>
+
+                <div class="clearfix">
+                    <label for="checkbox-2">
+                        <span class="styled-checkbox">
+                            <input type="checkbox" name="checkbox-2" id="checkbox-2">
+                            <span></span>
+                        </span>
+
+                        Checkbox 2
+                    </label>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Select</legend>
+                <div class="field">
+                    <span class="styled-select">
+                      <select name="select" id="select">
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                        <option value="4">Longer option 4</option>
+                      </select>
+                    </span>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>File</legend>
+                <div class="field">
+                    <span class="styled-file">
+                        <input type="file" name="styled-file" id="styled-file">
+                        <span>
+                            <span class="styled-file-value"></span>
+                            <span class="styled-file-button"></span>
+                        </span>
+                    </span>
+                </div>
+            </fieldset>
+        </form>
+
+        <hr>
+
+    </main>
+
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="proforma2.min.js"></script>
+</body>
+</html>

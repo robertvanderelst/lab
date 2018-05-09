@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Grid test</title>
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .grid {
+            width: 100%;
+            max-width: 1280px;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            -webkit-flex-wrap: wrap;
+            -moz-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            -o-flex-wrap: wrap;
+            flex-wrap: wrap;
+            display: flex;
+            margin: 0 auto;
+        }
+
+        .grid div {
+            height: 8rem;
+        }
+
+        .grid > div {
+            background: #e2e2e2;
+            flex-grow: 0;
+            flex-shrink: 0;
+            padding: 1rem;
+        }
+
+        .g-sm {
+            flex-basis: 100%;
+        }
+
+        .grid > div div {
+            height: 6rem;
+            background: #ccc;
+        }
+
+        /* 6 koloms */
+        @media (min-width: 37.5rem) {
+            .g-md-1 {
+                width: 16.66667%;
+            }
+
+            .g-md-2 {
+                flex-basis: 33.33333%;
+            }
+
+            .g-md-3 {
+                flex-basis: 50%;
+            }
+
+            .g-md-4 {
+                flex-basis: 66.66667%;
+            }
+
+            .g-md-5 {
+                flex-basis: 83.33333%;
+            }
+
+            .g-md-6 {
+                flex-basis: 100%;
+            }
+        }
+
+        /* 12 koloms */
+        @media (min-width: 60rem) {
+            .g-lg-1 {
+                flex-basis: 8.33333%;
+            }
+
+            .g-lg-2 {
+                flex-basis: 16.66667%;
+            }
+
+            .g-lg-3 {
+                flex-basis: 25%;
+            }
+
+            .g-lg-4 {
+                flex-basis: 33.33333%;
+            }
+
+            .g-lg-5 {
+                flex-basis: 41.66667%;
+            }
+
+            .g-lg-6 {
+                flex-basis: 50%;
+            }
+
+            .g-lg-7 {
+                flex-basis: 58.33333%;
+            }
+
+            .g-lg-8 {
+                flex-basis: 66.66667%;
+            }
+
+            .g-lg-9 {
+                flex-basis: 75%;
+            }
+
+            .g-lg-10 {
+                flex-basis: 83.33333%;
+            }
+
+            .g-lg-11 {
+                flex-basis: 91.66667%;
+            }
+
+            .g-lg-12 {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="g-lg-1 g-md-2 g-sm">
+            <div></div>
+        </div>
+        <div class="g-lg-2 g-md-4 g-sm">
+            <div></div>
+        </div>
+        <div class="g-lg-3 g-md-4 g-sm">
+            <div></div>
+        </div>
+        <div class="g-lg-1 g-md-2 g-sm">
+            <div></div>
+        </div>
+        <div class="g-lg-2 g-md-3 g-sm">
+            <div></div>
+        </div>
+        <div class="g-lg-3 g-md-3 g-sm">
+            <div></div>
+        </div>
+
+        <div class="g-lg-4 g-md-2 g-sm">
+            <div></div>
+        </div>
+        <div class="g-lg-4 g-md-2 g-sm">
+            <div></div>
+        </div>
+        <div class="g-lg-4 g-md-2 g-sm">
+            <div></div>
+        </div>
+        <div class="g-lg-6 g-md-3 g-sm">
+            <div></div>
+        </div>
+        <div class="g-lg-6 g-md-3 g-sm">
+            <div></div>
+        </div>
+        <div class="g-lg-12 g-md-6 g-sm">
+            <div></div>
+        </div>
+    </div>
+</body>
+</html>

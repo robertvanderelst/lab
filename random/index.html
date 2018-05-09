@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab: Random generator</title>
+        <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .overlay {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 3001;
+                background: #FFF;
+            }
+            
+            .canvas {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+            
+            h1 {
+                position: absolute;
+                font-family: 'Droid Serif', serif;
+                font-size: 500%;
+                z-index: 3000;
+                color: #FFF;
+                margin-left: 1em;
+                text-shadow: 2px 2px rgba(0,0,0,0.25);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="canvas">
+            <h1>Circles &amp; Squares</h1>
+            <div class="overlay">Loading...</div>
+        </div>
+        <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                var aOpacity = new Array('0.1','0.3','0.5','0.7','0.9');
+                var cycle = 750;
+                var z = 1;
+                
+                for(var o in aOpacity) {
+                    var i = 1;
+                    while (i <= cycle) {
+                        //random
+                        if (window.location.search.substring(1) != 'text') {
+                            var r_size = Math.floor((Math.random()*32)+32);
+                            var is_circle = Math.round(Math.random());
+                            var r_radius = 0;
+                            if (is_circle == 1) {
+                                r_radius = Math.floor(r_size/2);
+                            }
+                        }
+                        
+                        var r_top = Math.floor((Math.random()*(window.innerHeight+r_size))-r_size);
+                        var r_left = Math.floor((Math.random()*(window.innerWidth+r_size))-r_size);
+                        
+                        if (window.location.search.substring(1) == 'grey' || window.location.search.substring(1) == 'gray' || window.location.search.substring(1) == 'text') {
+                            var color = Math.floor((Math.random()*204)+51);
+                            var r_color_r = color;
+                            var r_color_g = color;
+                            var r_color_b = color;
+                        } else {
+                            var r_color_r = Math.floor((Math.random()*204)+51);
+                            var r_color_g = Math.floor((Math.random()*204)+51);
+                            var r_color_b = Math.floor((Math.random()*204)+51);
+                        }
+                        var r_rotate = Math.floor((Math.random()*178)-89);
+                        
+                        if (window.location.search.substring(1) == 'text') {
+                            var r_size = Math.floor((Math.random()*128)+48);
+                            var letters = new Array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
+                            
+                            var r_letter = Math.floor((Math.random()*26));
+                        }
+                        
+                        if (window.location.search.substring(1) == 'text') {
+                            $(".canvas").append(
+                                $(document.createElement('span'))
+                                .css({'position':'absolute','top':r_top,'left':r_left,'z-index':'1','width':r_size,'height':r_size,'color':'rgba('+r_color_r+','+r_color_g+','+r_color_b+','+aOpacity[o]+')','-webkit-transform':'rotate('+r_rotate+'deg)','-o-transform':'rotate('+r_rotate+'deg)','-moz-transform':'rotate('+r_rotate+'deg)','font-size':r_size+'px'})
+                                .html(letters[r_letter])
+                            );
+                        } else {
+                            $(".canvas").append(
+                                $(document.createElement('div'))
+                                .css({'position':'absolute','top':r_top,'left':r_left,'z-index':'1','width':r_size,'height':r_size,'background':'rgba('+r_color_r+','+r_color_g+','+r_color_b+','+z+')','opacity':aOpacity[o],'-webkit-transform':'rotate('+r_rotate+'deg)','-o-transform':'rotate('+r_rotate+'deg)','-moz-transform':'rotate('+r_rotate+'deg)','border-radius':r_radius+'px'})
+                            );
+                        }
+                        i++;
+                    }
+                }
+                
+                $(".overlay").hide();
+            });
+        </script>        
+    </body>
+</html>

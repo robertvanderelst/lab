@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thumbtest</title>
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: "Lato";
+            font-style: normal;
+            font-weight: 400;
+            src: local("Lato Regular"), local("Lato-Regular"), url(https://fonts.gstatic.com/s/lato/v11/UyBMtLsHKBKXelqf4x7VRQ.woff2) format("woff2");
+            unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF
+        }
+        @font-face {
+            font-family: "Lato";
+            font-style: normal;
+            font-weight: 400;
+            src: local("Lato Regular"), local("Lato-Regular"), url(https://fonts.gstatic.com/s/lato/v11/1YwB1sO8YE1Lyjf12WNiUA.woff2) format("woff2");
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000
+        }
+        @font-face {
+            font-family: "Lato";
+            font-style: normal;
+            font-weight: 700;
+            src: local("Lato Bold"), local("Lato-Bold"), url(https://fonts.gstatic.com/s/lato/v11/ObQr5XYcoH0WBoUxiaYK3_Y6323mHUZFJMgTvxaG2iE.woff2) format("woff2");
+            unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF
+        }
+        @font-face {
+            font-family: "Lato";
+            font-style: normal;
+            font-weight: 700;
+            src: local("Lato Bold"), local("Lato-Bold"), url(https://fonts.gstatic.com/s/lato/v11/H2DMvhDLycM56KNuAtbJYA.woff2) format("woff2");
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000
+        }
+
+        html,
+        body {
+            font-family: "Lato", Arial, sans-serif;
+            font-size: 100%;
+            margin: 0;
+        }
+        .has-flex {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        nav {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #484848;
+            justify-content: center;
+        }
+
+        nav a {
+            position: relative;
+        }
+
+        nav a + a {
+            margin-left: 6px;
+        }
+
+        nav a + a:before {
+            content: "";
+            position: absolute;
+            width: 2px;
+            left: -4px;
+            top: .5rem;
+            bottom: .5rem;
+            background: #909090;
+        }
+
+        .secondary-nav-link {
+            display: block;
+            width: 3.5rem;
+            flex-basis: 3.5rem;
+            height: 3.5rem;
+            padding: .5rem;
+        }
+
+        .secondary-nav-link:hover,
+        .secondary-nav-link:active {
+            background: #606060;
+        }
+
+        .secondary-nav-link svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .menu {
+            display: block;
+            height: 3.5rem;
+            padding: 0 1rem 0 3rem;
+            color: #fff;
+            font-size: 1.5rem;
+            line-height: 2.25;
+            text-decoration: none;
+        }
+
+        .hamburger-bar {
+            top: 1.5rem;
+            left: 1rem;
+        }
+
+        .hamburger-bar,
+        .hamburger-bar:before,
+        .hamburger-bar:after {
+            content: "";
+            position: absolute;
+            width: 1.5rem;
+            height: .25rem;
+            background: #fff;
+            border-radius: .09375rem;
+            transition: .4s;
+            -webkit-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+
+        .hamburger-bar:before {
+            top: -.5rem;
+            left: 0;
+        }
+
+        .hamburger-bar:after {
+            top: .5rem;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="has-flex">
+            <a href="" class="secondary-nav-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="#b8b8b8" d="M6.55 18.96q1.293 1.292 2.9 1.953 1.605.662 3.306.662 1.543 0 3.024-.536 1.448-.536 2.708-1.544l1.606 3.937 4.095 4.095q.66.472 1.416.472.945 0 1.67-.756.693-.724.693-1.67 0-.818-.474-1.417l-4.063-4.094-3.968-1.606q1.007-1.197 1.543-2.677.535-1.48.535-3.056 0-2.362-1.228-4.378-1.165-1.984-3.18-3.15Q15.117 4 12.786 4 10.425 4 8.41 5.228q-1.985 1.166-3.182 3.15-1.197 2.047-1.197 4.378 0 1.764.63 3.338.63 1.638 1.89 2.867zM16.6 16.6q-.787.756-1.795 1.166-1.008.41-2.047.41-1.417 0-2.646-.725-1.26-.726-1.984-1.954-.724-1.26-.724-2.71 0-1.48.755-2.707.725-1.23 1.953-1.954 1.23-.724 2.677-.724 1.418 0 2.678.755 1.228.725 1.984 1.953.723 1.23.723 2.646 0 1.07-.41 2.08-.41 1.007-1.165 1.762z"></path></svg>
+                <span class="sr-only">Zoeken</span>
+            </a>
+            <a href="" class="menu">
+                <span class="hamburger-bar"></span>
+                Menu
+            </a>
+            <a href="" class="secondary-nav-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32"><path fill="#b8b8b8" d="M13.525 26.3c1.162 0 2.106-.946 2.106-2.108 0-.483-.16-.94-.45-1.31h5.74c-.29.37-.45.827-.45 1.31 0 1.162.95 2.107 2.11 2.107 1.17 0 2.11-.95 2.11-2.11 0-.49-.16-.94-.45-1.31h.366c.548 0 .994-.45.994-1s-.45-1-.998-1H12.61l-.35-1.42h13.26c.32 0 .6-.23.663-.546l1.805-9.13c.04-.2-.012-.405-.14-.56-.13-.157-.32-.247-.522-.247H9.668L9.29 7.5c-.06-.288-.185-.58-.36-.844h.002c-.276-.44-.914-.955-1.8-.955h-.04.003-2.1c-.55 0-.995.45-.995 1s.446 1 .995 1H7.09c.125.01.134.02.167.05.006.01.012.01.02.02.028.04.06.12.068.15 0 0 0-.01-.002-.01l.002.01.01.05.002.01 3.505 14.16c.11.45.506.76.965.76h.047c-.294.37-.457.828-.457 1.31 0 1.163.946 2.108 2.108 2.108zm-.153-8.17h-1.45l-.54-2.196h1.743l.247 2.195zm2.832 0h-1.832l-.246-2.196h2.02l.058 2.195zm2.948 0h-1.954l-.06-2.196h2.073l-.05 2.195zm2.927 0h-1.94l.05-2.196h2.07l-.19 2.195zm2.88 0h-1.89l.19-2.196h2.13l-.44 2.195zm-11.95-3.19h-1.88l-.45-1.798h2.12l.2 1.8zm3.1 0h-2.1l-.21-1.798h2.26l.05 1.8zm3.12 0h-2.12l-.05-1.798h2.22l-.05 1.8zm3.12 0h-2.12l.05-1.798h2.23l-.16 1.8zm3.23 0h-2.24l.152-1.798h2.44l-.356 1.8zM12.7 12.15h-2.253l-.445-1.804h2.495l.203 1.804zm3.344 0H13.7l-.203-1.804h2.5l.047 1.804zm3.268 0h-2.274l-.048-1.804h2.37l-.048 1.804zm3.288 0h-2.294l.048-1.804h2.403L22.6 12.15zm3.547 0h-2.55l.157-1.804h2.75l-.357 1.804"></path></svg>
+                <span class="sr-only">Winkelwagen</span> <span class="sr-only">(</span> <span class="cart-amount">1</span><span class="sr-only"> items)</span>
+            </a>
+            </a>
+        </nav>
+    </header>
+</body>
+</html>

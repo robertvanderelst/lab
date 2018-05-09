@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        * + * {
+            margin-top: 1rem;
+        }
+
+        .has-flex {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0
+        }
+
+        body {
+            padding: 4rem;
+            font-family: Tahoma, sans-serif
+        }
+
+        .filter-list {
+            width: 30vw;
+            background: #f0f0f0;
+        }
+
+        .filter-range * {
+            margin-top: 0;
+        }
+
+        .slider-track {
+            position: relative;
+            height: 1rem;
+            background: #e2e2e2;
+            margin: 2rem 0;
+        }
+
+        .slider-handle {
+            position: absolute;
+            top: -1rem;
+            width: 3rem;
+            height: 3rem;
+            text-align: center;
+            line-height: 3rem;
+            background: #00adef;
+            color: #fff;
+            font-weight: bold;
+            font-size: .75rem;
+            margin: 0;
+            border-radius: .25rem;
+            cursor: ew-resize;
+        }
+
+        .slider-handle:active {
+            background: #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <div class="filter-group">
+        <a href="#filter-range" class="filter-group-toggle filter-group-visible"><span>Prijs</span></a>
+        <div class="filter-list" data-rangeid="price_range" data-url="/rietveld/rietveldlicht.nl/trunk/hanglampen">
+            <div class="filter-range has-flex">
+                <label for="test-input" class="sr-only">Minimum prijs</label><input type="text" maxlength="4" id="test-min" class="test-input" placeholder="50">
+                <p>t/m</p>
+                <label for="test-input" class="sr-only">Maximum prijs</label><input type="text" maxlength="4" id="test-max" class="test-input" placeholder="1000">
+            </div>
+            <div class="slider slider-track">
+                <div class="slider-handle slider-handle-min">min</div>
+                <div class="slider-handle slider-handle-max">max</div>
+            </div>
+            <div class="filter-range-cta has-flex">
+                <button class="button">Toepassen</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="slider.js"></script>
+</body>
+</html>

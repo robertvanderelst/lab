@@ -1,0 +1,4 @@
+body {margin: 0; padding: 0;}
+div#map{width:100%;height:100%;}
+.infobox{background: #FFFFFF; border: 1px solid #AEAEAE; line-height: 1.5em; white-space: nowrap; padding: 0 5px 0 20px;color:#010101;}
+.infobox a img{ vertical-align: text-bottom; border: none;}

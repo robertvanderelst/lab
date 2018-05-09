@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Owl selector (extended)</title>
+		<style>
+			* {
+				font-family: Arial, sans-serif;
+			}
+
+			body {
+				padding: 40px;
+				margin: 0;
+			}
+
+			/* Mini reset */
+			h1, h2, p, ol, ul {
+				padding: 0;
+				margin: 0;
+			}
+
+			h1 {
+				font-size: 2em;
+			}
+
+			h2 {
+				font-size: 1.5em;
+			}
+
+			p, ol, ul {
+				line-height: 1.5;
+			}
+
+			ol, ul {
+				margin-left: 1.5em;
+			}
+
+			main {
+				width: 30em;
+				padding: 40px;
+				margin: 0 auto;
+				background: #e0e0e0;
+			}
+
+			/* Owl selector principle, with backgrounds for clarity */
+
+			.block-output {
+				background: #c0c0c0;
+			}
+
+			.block-output + .block-output {
+				margin-top: 40px;
+			}
+
+			.block-output > * {
+			}
+
+			.block-output * + * {
+				background: #a0a0a0;
+				margin-top: 1.5em;
+			}
+
+			.block-output > * > * > * {
+				margin-top: 0;
+			}
+
+			/* Change margins, but keep in mind to use the selector AFTER the selector you want for control */
+
+			.block-output h1 + * {
+				margin-top: 0; /* Set margin below H1 to 0 */
+			} 
+
+			.block-output h2 {
+				margin-top: 1em; /* Set margin above H2 to 1em (1.5em for 16px) */
+			}
+			.block-output h2 + * {
+				margin-top: .5em; /* Set margin below H2 to .5em */
+			} 
+		</style>
+	</head>
+	<body>
+
+		<main>
+			<div class="block-output displayarticleblock">
+				<div class="plain-text autolinked">
+					<h1>Jouw talent,&nbsp;<br />onze ontwikkeling&nbsp;</h1>
+					<p>Techniek, dat is jouw passie. Daarvan gaat je hart sneller kloppen. Daarin blink jij uit. Steeds op zoek naar nieuwe uitdagingen. Naar mogelijkheden om jouw talent verder te laten groeien. Je wilt bijdragen aan de wereld om je heen. Werken aan projecten die er toe doen. In een functie die naadloos aansluit bij je opleiding, ervaring en ambitie. En of je nu 0 of 25 jaar ervaring hebt. Wij brengen jouw talent naar een hoger, steeds professioneler niveau.&nbsp;</p>
+					<ul>
+						<li>Item 1</li>
+						<li>Item 2</li>
+						<li>Item 3</li>
+					</ul>
+					<h2>Test</h2>
+					<p>Techniek, dat is jouw passie. Daarvan gaat je hart sneller kloppen. Daarin blink jij uit. Steeds op zoek naar nieuwe uitdagingen. Naar mogelijkheden om jouw talent verder te laten groeien. Je wilt bijdragen aan de wereld om je heen. Werken aan projecten die er toe doen. In een functie die naadloos aansluit bij je opleiding, ervaring en ambitie. En of je nu 0 of 25 jaar ervaring hebt. Wij brengen jouw talent naar een hoger, steeds professioneler niveau.&nbsp;</p>
+					<ol>
+						<li>Item 1</li>
+						<li>Item 2</li>
+						<li>Item 3</li>
+					</ol>
+					<p>Techniek, dat is jouw passie. Daarvan gaat je hart sneller kloppen. Daarin blink jij uit. Steeds op zoek naar nieuwe uitdagingen. Naar mogelijkheden om jouw talent verder te laten groeien. Je wilt bijdragen aan de wereld om je heen. Werken aan projecten die er toe doen. In een functie die naadloos aansluit bij je opleiding, ervaring en ambitie. En of je nu 0 of 25 jaar ervaring hebt. Wij brengen jouw talent naar een hoger, steeds professioneler niveau.&nbsp;</p>
+				</div>
+			</div>
+
+			<div class="block-output displayarticleblock">
+				<div class="plain-text autolinked">
+					<h1>Jouw talent,&nbsp;<br />onze ontwikkeling&nbsp;</h1>
+					<p>Techniek, dat is jouw passie. Daarvan gaat je hart sneller kloppen. Daarin blink jij uit. Steeds op zoek naar nieuwe uitdagingen. Naar mogelijkheden om jouw talent verder te laten groeien. Je wilt bijdragen aan de wereld om je heen. Werken aan projecten die er toe doen.</p><p> In een functie die naadloos aansluit bij je opleiding, ervaring en ambitie. En of je nu 0 of 25 jaar ervaring hebt. Wij brengen jouw talent naar een hoger, steeds professioneler niveau.&nbsp;</p>
+				</div>
+			</div>
+
+			<div class="block-output displayarticleblock">
+				<div class="plain-text autolinked">
+					<h1>Jouw talent,&nbsp;<br />onze ontwikkeling&nbsp;</h1>
+					<p>Techniek, dat is jouw passie. Daarvan gaat je hart sneller kloppen. Daarin blink jij uit. Steeds op zoek naar nieuwe uitdagingen. Naar mogelijkheden om jouw talent verder te laten groeien. Je wilt bijdragen aan de wereld om je heen. Werken aan projecten die er toe doen.</p><p> In een functie die naadloos aansluit bij je opleiding, ervaring en ambitie. En of je nu 0 of 25 jaar ervaring hebt. Wij brengen jouw talent naar een hoger, steeds professioneler niveau.&nbsp;</p>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>

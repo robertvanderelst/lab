@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>Lab: External links</title>
+		<style type="text/css">
+            a {
+                font-family: Arial;
+                color: #990000;
+                position: relative;
+            }
+            
+            a[href^="http://lab.robertvanderelst.nl/"]:after {
+                position: absolute;
+                top: 0;
+                right: -24px;
+                content: "";
+                width: 16px;
+                height: 16px;
+                background: #999;
+            }
+		</style>
+	</head>
+	<body>
+		<ul>
+            <li><a href="http://www.google.nl">Google</a></li>
+            <li><a href="http://lab.robertvanderelst.nl/type">Type test</a></li>
+        </ul>
+	</body>
+</html>

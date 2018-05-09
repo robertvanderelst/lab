@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="nl">
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <title>HTML: Font testing (nested)</title>
+		<style type="text/css">
+			body {
+				font-size: 62.5%;
+				font-family: Arial;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>HTML: Font testing (nested)</h1>
+        <p>This is 10px</p>
+        <p style="font-size: 10px;">10px reference</p>
+        <p style="font-size: 12px">12px reference</p>
+        <p style="font-size: 16px;">16px reference</p>
+
+        <div style="font-size: 120%">
+            This should be 12px<br>
+            <div style="font-size: 160%">This is 160% ... 12px or 16px? &#x2713;</div>
+        </div>		
+    </body>
+</html>

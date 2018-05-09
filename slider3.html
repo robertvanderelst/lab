@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        * + * {
+            margin-top: 1rem;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=“number”] {
+            -moz-appearance: textfield;
+        }
+
+        input[type=“number”]:hover,
+        input[type=“number”]:focus {
+            -moz-appearance: number-input;
+        }
+
+        .has-flex {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0
+        }
+
+        body {
+            padding: 1rem;
+            font-family: Tahoma, sans-serif
+        }
+
+        .filter-range * {
+            margin-top: 0;
+        }
+
+        .filter-range p {
+            margin: 0 .5rem;
+            flex: 0 0 auto;
+        }
+
+        .filter-range div {
+            flex: 1 0 1%;
+        }
+
+        .filter-range input {
+            width: 100%;
+        }
+
+        .rangeslider {
+            height: 1rem;
+            background: #e2e2e2;
+            margin: 2rem 0;
+            padding: 0 1.5rem;
+        }
+
+        .slider-track {
+            position: relative;
+            height: 1rem;
+        }
+
+        .slider-handle {
+            position: absolute;
+            top: -1rem;
+            width: 3rem;
+            height: 3rem;
+            text-align: center;
+            line-height: 3rem;
+            background: #00adef;
+            color: #fff;
+            font-weight: bold;
+            font-size: .75rem;
+            margin: 0;
+            border-radius: .25rem;
+            cursor: ew-resize;
+            transform: translateX(-50%);
+            -webkit-transition: left .4s;
+            -o-transition: left .4s;
+            transition: left .4s;
+        }
+
+        .slider-handle.dragging {
+            -webkit-transition: none;
+            -o-transition: none;
+            transition: none;
+        }
+
+        .slider-handle-min {
+            left: 0;
+        }
+
+        .slider-handle:active {
+            background: #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <div class="filter-group">
+        <a href="#filter-range" class="filter-group-toggle filter-group-visible"><span>Prijs</span></a>
+        <div class="filter-list" data-rangeid="price_range" data-url="/rietveld/rietveldlicht.nl/trunk/hanglampen">
+            <div class="filter-range has-flex">
+                <div><label for="test-input" class="sr-only">Minimum prijs</label><input type="number" maxlength="4" id="test-min" class="test-input" placeholder="0"></div>
+                <p>t/m</p>
+                <div><label for="test-input" class="sr-only">Maximum prijs</label><input type="number" maxlength="4" id="test-max" class="test-input" placeholder="1000"></div>
+            </div>
+            <div class="rangeslider">
+                <div class="slider slider-track">
+                    <div class="slider-handle slider-handle-min">min</div>
+                    <div class="slider-handle slider-handle-max">max</div>
+                </div>
+            </div>
+            <div class="filter-range-cta has-flex">
+                <button class="button">Toepassen</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="filter-group">
+        <a href="#filter-range" class="filter-group-toggle filter-group-visible"><span>Lumen</span></a>
+        <div class="filter-list" data-rangeid="price_range" data-url="/rietveld/rietveldlicht.nl/trunk/hanglampen">
+            <div class="filter-range has-flex">
+                <div><label for="test-input" class="sr-only">Minimum lumen</label><input type="number" maxlength="4" id="test2-min" class="test-input" placeholder="100"></div>
+                <p>t/m</p>
+                <div><label for="test-input" class="sr-only">Maximum lumen</label><input type="number" maxlength="4" id="test2-max" class="test-input" placeholder="200"></div>
+            </div>
+            <div class="rangeslider">
+                <div class="slider slider-track">
+                    <div class="slider-handle slider-handle-min">min</div>
+                    <div class="slider-handle slider-handle-max">max</div>
+                </div>
+            </div>
+            <div class="filter-range-cta has-flex">
+                <button class="button">Toepassen</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="slider3.js"></script>
+</body>
+</html>

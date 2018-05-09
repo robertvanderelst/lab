@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+    <div class="swipetest" style="width: 200px; height: 200px; border: 1px solid #f00"></div>
+
+    <button class="remove">remove</button>
+
+    <div class="swipetest2" style="width: 200px; height: 200px; border: 1px solid #00f"></div>
+
+    <script>
+    function prev() {
+        confirm('PREV!');
+    }
+
+    function next() {
+        confirm('NEXT!');
+    }
+
+    function up() {
+        confirm('UP!');
+    }
+
+    function down() {
+        confirm('DOWN!');
+    }
+
+    // SWIPE
+
+    (function () {
+        "use strict";
+
+        var swipeleft,
+            swiperight,
+            swipeup,
+            swipedown,
+            ev,
+            sd = 40,
+            nm = true,
+            sp = {x: 0, y: 0},
+            ep = {x: 0, y: 0};
+
+        // Determine swipe
+        document.addEventListener('touchstart', function (e) {
+            sp = {x: e.touches[0].pageX, y: e.touches[0].pageY};
+        });
+
+        document.addEventListener('touchmove', function (e) {
+            nm = false;
+            ep = {x: e.touches[0].pageX, y: e.touches[0].pageY};
+        });
+
+        document.addEventListener('touchend', function (e) {
+            if (!nm) {
+                var x = ep.x - sp.x,
+                    xr = Math.abs(x),
+                    y = ep.y - sp.y,
+                    yr = Math.abs(y);
+
+                if (Math.max(xr, yr) > sd) {
+                    ev = (xr > yr ? (x < 0 ? 'swipeleft' : 'swiperight') : (y < 0 ? 'swipeup' : 'swipedown'));
+                }
+            }
+
+            nm = true;
+
+            swipeleft = new CustomEvent('swipeleft');
+            if (ev === 'swipeleft') {
+                e.target.dispatchEvent(swipeleft);
+            }
+
+            swiperight = new CustomEvent('swiperight');
+            if (ev === 'swiperight') {
+                e.target.dispatchEvent(swiperight);
+            }
+
+            swipeup = new CustomEvent('swipeup');
+            if (ev === 'swipeup') {
+                e.target.dispatchEvent(swipeup);
+            }
+
+            swipedown = new CustomEvent('swipedown');
+            if (ev === 'swipedown') {
+                e.target.dispatchEvent(swipedown);
+            }
+        });
+
+        document.addEventListener('touchcancel', function (e) {
+            nm = false;
+        });
+    }());
+
+    document.querySelector('.swipetest').addEventListener('swipeleft', prev);
+    document.querySelector('.swipetest').addEventListener('swiperight', next);
+
+    document.querySelector('.swipetest2').addEventListener('swipeup', up);
+    document.querySelector('.swipetest2').addEventListener('swipedown', down);
+
+    document.querySelector('.remove').addEventListener('click', function () {
+        document.querySelector('.swipetest').removeEventListener('swipeleft', prev);
+    });
+    </script>
+</body>
+</html>

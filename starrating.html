@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Star rating</title>
+
+    <style>
+    body {
+  font-family: Arial;
+}
+.rating {
+  position: relative;
+  display: inline-block;
+}
+.rating-stars {
+  font-size: 0;
+}
+.icon-star {
+  width: 2rem;
+  height: 2rem;
+  stroke-width: 2px;
+  stroke: #000;
+  fill: none;
+}
+.icon-star-full {
+  fill: #000;
+}
+.rating-labels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.rating-labels label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+  text-indent: -999em;
+}
+.rating-labels input[type="radio"] {
+  position: absolute;
+  top: -999rem;
+}
+input:focus + label {
+  outline: 1px dotted #ccc;
+}
+label[for="radio_1"] {
+  z-index: 10;
+}
+label:hover ~ .rating-stars {
+  opacity: 0.8;
+}
+label[for="radio_1"],
+label[for="radio_1"]:hover ~ .rating-stars,
+.radio-rating-1:checked ~ .rating-stars {
+  width: 10%;
+}
+label[for="radio_2"] {
+  z-index: 9;
+}
+label[for="radio_2"],
+label[for="radio_2"]:hover ~ .rating-stars,
+.radio-rating-2:checked ~ .rating-stars {
+  width: 20%;
+}
+label[for="radio_3"] {
+  z-index: 8;
+}
+label[for="radio_3"],
+label[for="radio_3"]:hover ~ .rating-stars,
+.radio-rating-3:checked ~ .rating-stars {
+  width: 30%;
+}
+label[for="radio_4"] {
+  width: 40%;
+  z-index: 7;
+}
+label[for="radio_4"],
+label[for="radio_4"]:hover ~ .rating-stars,
+.radio-rating-4:checked ~ .rating-stars {
+  width: 40%;
+}
+label[for="radio_5"] {
+  z-index: 6;
+}
+label[for="radio_5"],
+label[for="radio_5"]:hover ~ .rating-stars,
+.radio-rating-5:checked ~ .rating-stars {
+  width: 50%;
+}
+label[for="radio_6"] {
+  z-index: 5;
+}
+label[for="radio_6"],
+label[for="radio_6"]:hover ~ .rating-stars,
+.radio-rating-6:checked ~ .rating-stars {
+  width: 60%;
+}
+label[for="radio_7"] {
+  z-index: 4;
+}
+label[for="radio_7"],
+label[for="radio_7"]:hover ~ .rating-stars,
+.radio-rating-7:checked ~ .rating-stars {
+  width: 70%;
+}
+label[for="radio_8"] {
+  z-index: 3;
+}
+label[for="radio_8"],
+label[for="radio_8"]:hover ~ .rating-stars,
+.radio-rating-8:checked ~ .rating-stars {
+  width: 80%;
+}
+label[for="radio_9"] {
+  z-index: 2;
+}
+label[for="radio_9"],
+label[for="radio_9"]:hover ~ .rating-stars,
+.radio-rating-9:checked ~ .rating-stars {
+  width: 90%;
+}
+label[for="radio_10"] {
+  z-index: 1;
+}
+label[for="radio_10"],
+label[for="radio_10"]:hover ~ .rating-stars,
+.radio-rating-10:checked ~ .rating-stars {
+  width: 100%;
+}
+.rating-labels .rating-stars {
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.description {
+  display: none;
+}
+
+input:focus ~ .description {
+  display: block;
+}
+
+
+    </style>
+</head>
+<body>
+<svg style="display: none;">
+<symbol viewBox="0 0 60 60" id="shape-star"><title> Star </title> <g> <path d="M46.645 54.568L29.65 45.633l-16.997 8.935L15.9 35.643 2.15 22.24l19-2.76 8.5-17.22 8.497 17.22 19.002 2.76L43.4 35.643z"></path> </g> </symbol></svg>
+
+<div class="rating">
+<div class="rating-stars">
+<svg class="icon icon-star" aria-hidden="true">
+  <use class="header-shape-star" xlink:href="#shape-star"></use>
+</svg>
+<svg class="icon icon-star" aria-hidden="true">
+  <use class="header-shape-star" xlink:href="#shape-star"></use>
+</svg>
+<svg class="icon icon-star" aria-hidden="true">
+  <use class="header-shape-star" xlink:href="#shape-star"></use>
+</svg>
+<svg class="icon icon-star" aria-hidden="true">
+  <use class="header-shape-star" xlink:href="#shape-star"></use>
+</svg>
+<svg class="icon icon-star" aria-hidden="true">
+  <use class="header-shape-star" xlink:href="#shape-star"></use>
+</svg>
+</div>
+<div class="rating-labels">
+<input type="radio" name="rating" id="radio_1" class="radio-rating-1" value="1">
+<label for="radio_1">Radio 1</label>
+<input type="radio" name="rating" id="radio_2" class="radio-rating-2" value="2">
+<label for="radio_2">Radio 2</label>
+<input type="radio" name="rating" id="radio_3" class="radio-rating-3" value="3">
+<label for="radio_3">Radio 3</label>
+<input type="radio" name="rating" id="radio_4" class="radio-rating-4" value="4">
+<label for="radio_4">Radio 4</label>
+<input type="radio" name="rating" id="radio_5" class="radio-rating-5" value="5">
+<label for="radio_5">Radio 5</label>
+<input type="radio" name="rating" id="radio_6" class="radio-rating-6" value="6">
+<label for="radio_6">Radio 6</label>
+<input type="radio" name="rating" id="radio_7" class="radio-rating-7" value="7">
+<label for="radio_7">Radio 7</label>
+<input type="radio" name="rating" id="radio_8" class="radio-rating-8" value="8">
+<label for="radio_8">Radio 8</label>
+<input type="radio" name="rating" id="radio_9" class="radio-rating-9" value="9">
+<label for="radio_9">Radio 9</label>
+<input type="radio" name="rating" id="radio_10" class="radio-rating-10" value="10">
+<label for="radio_10">Radio 10</label>
+
+<div class="rating-stars">
+  <svg class="icon icon-star icon-star-full" aria-hidden="true">
+    <use class="header-shape-star" xlink:href="#shape-star"></use>
+  </svg>
+  <svg class="icon icon-star icon-star-full" aria-hidden="true">
+    <use class="header-shape-star" xlink:href="#shape-star"></use>
+  </svg>
+  <svg class="icon icon-star icon-star-full" aria-hidden="true">
+    <use class="header-shape-star" xlink:href="#shape-star"></use>
+  </svg>
+  <svg class="icon icon-star icon-star-full" aria-hidden="true">
+    <use class="header-shape-star" xlink:href="#shape-star"></use>
+  </svg>
+  <svg class="icon icon-star icon-star-full" aria-hidden="true">
+    <use class="header-shape-star" xlink:href="#shape-star"></use>
+  </svg>
+</div>
+<p class="description">User arrow keys for navigation</p>
+</div>
+</div>
+</body>
+</html>

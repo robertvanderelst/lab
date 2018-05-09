@@ -1,0 +1,126 @@
+﻿<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Proforma 2.0</title>
+		<link href="proforma2.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<h1>Proforma 2.0</h1>
+			
+			<form action="results.php" method="post" enctype="multipart/form-data">
+				<fieldset>
+					<legend>Radiobuttons</legend>
+					<p>
+						Since more and more forms are created dynamically, using Knockout for example, a way to update the styling of the (new) form elements is necessary. With Proforma it's just a matter of running the plugin again. It will run through all form elements and only add the styling to the ones that are new.
+					</p>
+					<p>
+						<a href="#" class="test">Add radiobutton(s)</a> and then <a href="#" class="update">update the form</a>
+					</p>
+
+					<div class="form-row">
+						<label>Radio multiple</label>
+						<div class="radios">
+							<ul>
+								<li><label><input type="radio" name="radio-multiple"> Radio 1</label></li>
+								<li><label><input type="radio" name="radio-multiple"> Radio 2</label></li>
+								<li><label><input type="radio" name="radio-multiple"> Radio 3</label></li>
+								<li><label><input type="radio" name="radio-multiple"> Radio 4</label></li>
+								<li><label><input type="radio" name="radio-multiple"> Radio 5</label></li>
+							</ul>
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>Select</legend>
+					<div class="form-row">
+						<label for="select-single">Select</label>
+						<div>
+							<select id="select-single" name="select-single">
+								<option value="">Pick one!</option>
+								<option value="option-1">Option 1</option>
+								<option value="option-2">Option 2</option>
+								<option value="option-3" selected>Option 3</option>
+								<option value="option-4">Option 4</option>
+								<option value="option-5">Option 5</option>
+							</select>
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>Checkboxes</legend>
+					<div class="form-row">
+						<label>Checkbox</label>
+						<div>
+							<ul>
+								<li><label><input type="checkbox" name="checkbox-multiple[]" value="checkbox-1"> Checkbox 1</label></li>
+								<li><label><input type="checkbox" name="checkbox-multiple[]" value="checkbox-2"> Checkbox 2</label></li>
+								<li><label><input type="checkbox" name="checkbox-multiple[]" value="checkbox-3"> Checkbox 3</label></li>
+								<li><label><input type="checkbox" name="checkbox-multiple[]" value="checkbox-4"> Checkbox 4</label></li>
+								<li><label><input type="checkbox" name="checkbox-multiple[]" value="checkbox-5"> Checkbox 5</label></li>
+							</ul>
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>File</legend>
+					<div class="form-row">
+						<label for="file-single">File</label>
+						<div>
+							<input type="file" id="file-single" name="file-single">
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>Select with optgroups</legend>
+					<div class="form-row">
+						<label for="select-with-optiongroups">Select</label>
+						<div>
+							<select id="select-with-optiongroups" name="select-with-optiongroups">
+								<option value="">Pick one!</option>
+								<optgroup label="Optgroup 1">
+									<option value="option-1-1">Option 1-1</option>
+									<option value="option-1-2">Option 1-2</option>
+								</optgroup>
+								<option value="option-2">Option 2</option>
+								<optgroup label="Optgroup 2">
+									<option value="option-1-1">Option 3-1</option>
+									<option value="option-1-2">Option 3-2</option>
+								</optgroup>
+								<option value="option-3">Option 4</option>
+							</select>
+						</div>
+					</div>
+				</fieldset>
+
+	      <input type="submit" value="Send">
+			</form>
+		</div>
+
+		<script src="jquery-2.1.1.min.js"></script>
+		<!--<script src="http://code.jquery.com/jquery-1.7.0.min.js"></script> -->
+		<script src="proforma2.js"></script>
+		
+		<script>
+			jQuery(document).ready(function () {
+				jQuery("input, select").proforma();
+				
+				// Add new radiobuttons
+				jQuery('.test').on('click', function () {
+					jQuery('.radios ul').append('<li><label><input type="radio" name="radio-multiple">Radio X</label></li>');
+				});
+				
+				// Run Proforma again to update
+				jQuery('.update').on('click', function () {
+					jQuery("input, select").proforma();
+				});
+			});
+		</script>
+	</body>
+</html>

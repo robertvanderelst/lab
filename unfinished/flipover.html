@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Flipover test</title>
+	<style type="text/css">
+/* simple */
+		.flip-container {
+			-webkit-perspective: 1000;
+			-moz-perspective: 1000;
+			perspective: 1000;
+
+		}
+
+		/*.flip-container:hover .flipper, .flip-container.hover .flipper {
+			-webkit-transform: rotateY(180deg);
+			-moz-transform: rotateY(180deg);
+			transform: rotateY(180deg);
+		}*/
+
+		.flip-container, .front, .back {
+			width: 320px;
+			height: 420px;
+		}
+
+		.flipper {
+			-webkit-transition: 0.5s;
+			-webkit-transform-style: preserve-3d;
+
+			-moz-transition: 0.5s;
+			-moz-transform-style: preserve-3d;
+
+			transition: 0.5s;
+			transform-style: preserve-3d;
+
+			position: relative;
+		}
+		
+		.go {
+			-webkit-transform: rotateY(180deg);
+			-moz-transform: rotateY(180deg);
+			transform: rotateY(180deg)
+		}
+
+		.front, .back {
+			-webkit-backface-visibility: hidden;
+			-moz-backface-visibility: hidden;
+			backface-visibility: hidden;
+
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.front {
+			background: #F0F0F0;
+			z-index: 2;
+		}
+
+		.back {
+			background: #C0C0C0;
+		}
+	</style>
+</head>
+<body>
+<div class="flip-container">
+	<div class="flipper">
+		<div class="front">
+			<p>This is the front!</p>
+		</div>
+		<div class="back">
+			<p>This is the back!</p>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.front').click(function() {
+			$('.flipper').addClass('go');
+			$('.back').addClass('go');
+			
+		})
+		
+		$('.back').click(function() {
+			$('.flipper').removeClass('go');
+		})		
+	});
+
+</script>
+</body>
+</html>

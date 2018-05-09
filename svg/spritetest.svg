@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <defs>
+        <symbol id="icon-seen">
+            <path fill="none" stroke="#484848" stroke-linecap="round" stroke-width="2" d="M23 12c0 1.75-4.925 7-11 7S1 14.625 1 12c0-1.75 4.925-7 11-7s11 5.25 11 7z"/>
+            <path fill="#909090" d="M17 12a5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5z"/>
+        </symbol>
+    </defs>
+</svg>

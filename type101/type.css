@@ -1,0 +1,50 @@
+/*GENERAL*/
+body{color:#505050;font-family: Georgia, Times New Roman, serif;font-size:100%;line-height:1.5em;margin:0;padding:3em;background: #e0e0e0}
+div.container{margin:0 auto;overflow:hidden;width:59.5em;}
+div.base{float:left;width:30em;padding:3em;margin-right:4em;background:#FFF;}
+div.aside{float:left;width:18em;padding:4em;background:#FFF;font-size:75%;line-height:150%;}
+/*TYPOGRAPHY*/
+h1,h2,h3,h4,h5,h6{font-family:'Noto Sans';font-weight:normal;margin:0;padding:0;}
+h1{font-size:2em;line-height:1.5em;margin:0 0 .75em;}
+h2{font-size:1.5em;line-height:1em;margin-bottom:1em;}
+h3{font-size:1.25em;line-height:1.20em;margin-bottom:1.2em;}
+h4{font-size:1em;margin-bottom:0;}
+p,ul,ol,dl,blockquote{margin:0 0 1.5em;padding:0;}
+ul,ol{margin-left:2em;padding:0;}
+dl dt{font-style:italic;}
+dl dd{margin:0 0 1.5em 2em;}
+blockquote{font-style:italic;margin:0 2em 1.5em;text-indent:-.5em;}
+blockquote p{margin:0;}
+blockquote p.cite{display:block;font-size:.75em;font-style:normal;text-indent:.5em;}
+a{display:inline-block;padding:0 .25em;margin:0 -.25em;color:#900;border-radius:.25em;-webkit-transition: all .5s ease-in-out;-moz-transition: all .5s ease-in-out;-o-transition: all .5s ease-in-out;-ms-transition: all .5s ease-in-out;transition: all .5s ease-in-out;}
+a:hover,a:active{color:#FFF;background:#900;}
+/*EXTRA ELEMENTS*/
+table{border-collapse:collapse;margin:0 0 1.5em;width:100%;}
+table caption{font-style:italic;line-height:1.5em;}
+table th,table td{line-height:1.5em;margin:0;padding:0;}
+div.articledata{font-size:.75em;font-style:italic;line-height:2em;margin:-2em 0 2em;}
+.hr{border:none;border-top:1px solid #A0A0A0;margin:-1px auto 1.5em;width:50%;}
+p .dropcap{float:left;font-size:3em;line-height:1em;margin:.0675em .25em -.0675em 0;}
+/*SHOW BASELINE*/
+form{margin: 0 0 1.5em;}
+form fieldset{border:0;padding:0 .25em;}
+form fieldset input{vertical-align:text-bottom;}
+
+body.baseline {background: url(baseline-24px.png) #e0e0e0}
+body.baseline .base,body.baseline .aside{background: rgba(255, 255, 255, .5);}
+body.baseline h1,
+body.baseline h2,
+body.baseline h3,
+body.baseline h4,
+body.baseline h5,
+body.baseline h6,
+body.baseline p,
+body.baseline ul,
+body.baseline ol,
+body.baseline dl,
+body.baseline blockquote,
+body.baseline table, 
+body.baseline .hr{background:yellow;background:rgba(255,255,0,.5);}
+
+body.baseline .articledata{background:red;background:rgba(255,0,0,.5);}
+body.baseline blockquote p{background:none;}

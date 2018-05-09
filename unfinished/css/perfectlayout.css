@@ -1,0 +1,191 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 0.75em;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: #CC0000;
+}
+
+div#globalwrapper {
+    position: relative;
+    width: 960px;
+    text-align: left;
+    margin: 0 auto;
+    padding: 5em 0 0 0;
+}
+
+p#shortcuts {
+    display: none;
+}
+
+div#headerimage {
+    float: left;
+    width: 960px;
+    height: 120px;
+    background: #009900;
+}
+
+
+div#contentcontainer {
+    float: right;
+    width: 720px;
+    background: #F0F0F0;
+}
+
+div#content {
+    position: relative;
+    float: left;
+    width: 516px;
+    padding: 12px;
+    font-size: 120%;
+}
+
+div#content h1 {
+    font-size: 200%;
+}
+
+div#content h2 {
+    font-size: 160%;
+}
+
+div#content ul#pageoptions {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    list-style: none;
+}
+
+div#content ul#pageoptions li {
+    float: left;
+    margin: 0 0 0 12px;
+}
+
+div#content p {
+    margin-bottom: 1em;
+}
+
+div#aside {
+    float: left;
+    width: 156px;
+    padding: 12px;
+    background: #E0E0E0;
+    font-size: 120%;
+}
+
+div#aside ul {
+    list-style: disc;
+    margin-left: 1.5em;
+}
+
+div#navigation {
+    float: right;
+    width: 200px;
+    padding: 12px;
+    background: #CCCCCC;
+    font-size: 120%;
+    margin-right: 16px;
+}
+
+div#navigation ul li a {
+    display: block;
+    background: #EEEEEE;
+    margin-bottom: 1px;
+    padding: 3px 6px;
+}
+
+div#navigation ul li a:hover,
+div#navigation ul li.active a:hover {
+    background: #FF6633;
+    color: #EEEEEE;
+
+}
+
+div#navigation ul li.active a {
+    background: #CC0000;
+    color: #EEEEEE;
+    margin-bottom: 0;
+}
+
+div#navigation ul li.active ul {
+    border: 1px solid #CC0000;
+    margin-bottom: 1px;
+}
+div#navigation ul li.active ul li a {
+    padding-left: 18px;
+    background: #EEEEEE;
+    color: #CC0000;
+}
+
+p#crumbtrail {
+    margin: 120px 0 0 0;
+    padding: 3px 12px;
+}
+
+div#header {
+    position: absolute;
+    top: 0;
+    width: 960px;
+    height: 5em;
+    background: #999999;
+}
+
+div#header a.home_button {
+    width: 150px;
+    height: 50px;
+    background: #333333;
+    border: none;
+}
+
+div#search {
+    float: right;
+    background: #FF0000;
+    margin: 12px 12px 0 0;
+}
+
+div#search h2,
+div#search legend {
+    display: none;
+}
+
+div#search fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+div#search fieldset input.keyword {
+    width: 112px;
+    padding: 1px 4px;
+    border: 1px solid #000000;
+    border-right: none;
+}
+
+div#search fieldset input.submitbutton {
+    border: 1px solid #000000;
+    border-left: none;
+    background: #EEEEEE;
+}
+
+div#footer {
+    float: left;
+    clear: both;
+    padding: 3px 12px;
+    margin: 2em 0 0 0;
+    width: 936px;
+    background: #A0A0A0;
+}
+
+div#footer h3 {
+    display: none;
+}

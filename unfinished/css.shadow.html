@@ -1,0 +1,54 @@
+﻿<html>
+    <head>
+        <style type="text/css">
+            body {
+                background: #E0E0E0;
+            }
+            
+            #shadow {
+                position: relative;
+                padding: 1em;
+            }
+            
+            #shadow:before {
+                -moz-border-radius: 50% / 25%; 
+                -webkit-border-radius: 50% / 25%; 
+                border-radius: 50% / 25%;
+                
+                -webkit-box-shadow:0 0.25em 0.5em rgba(255,0,0,.48);
+                -moz-box-shadow:0 0.25em 0.5em rgba(255,0,0,0.48);
+                box-shadow:0 0.25em 0.5em rgba(255,0,0,0.48);
+                
+                position:absolute;
+                bottom: -0.25em;
+                z-index:-1;
+                left: 0;
+                width:80%;
+                height:1px;
+                content:"";
+            }
+            
+            #shadow:after{
+                -moz-border-radius: 50% / 25%; 
+                -webkit-border-radius: 50% / 25%; 
+                border-radius: 50% / 25%;
+                
+                -webkit-box-shadow:0 0.25em 0.5em rgba(0,0,0,.48);
+                -moz-box-shadow:0 0.25em 0.5em rgba(0,0,0,0.48);
+                box-shadow:0 0.25em 0.5em rgba(0,0,0,0.48);
+                
+                position:absolute;
+                bottom: -1px;
+                z-index:-1;
+                left: 0;
+                width:80%;
+                height:1px;
+                content:"";
+            }
+        </style>
+    </head>
+    <body>
+    
+        <div id="shadow">Check the shadow!</div>
+    </body>
+</html>

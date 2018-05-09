@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Grid system based on Flexbox</title>
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .center {
+            width: 100%;
+            max-width: 1280px;
+            padding: 0 1rem;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            -webkit-flex-wrap: wrap;
+            -moz-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            -o-flex-wrap: wrap;
+            flex-wrap: wrap;
+            display: flex;
+            margin: .5rem auto;
+            padding: 0 .5rem 1rem;
+        }
+
+        .g-item {
+            flex-grow: 0;
+            flex-shrink: 0;
+            margin-top: 1rem;
+            padding: 0 .5rem;
+            flex-basis: 100%;
+        }
+
+        /* Just to give the grid items some body */
+        .g-item div {
+            height: 6rem;
+            background: #ccc;
+        }
+
+        /* 2 columns, 480px and up */
+        @media (min-width: 30em) {
+            .g-sm-1 {
+                flex-basis: 50%;
+            }
+        }
+
+        /* 6 columns, 768px and up */
+        @media (min-width: 48em) {
+            .g-md-1 {
+                width: 16.66667%;
+            }
+
+            .g-md-2 {
+                flex-basis: 33.33333%;
+            }
+
+            .g-md-3 {
+                flex-basis: 50%;
+            }
+
+            .g-md-4 {
+                flex-basis: 66.66667%;
+            }
+
+            .g-md-5 {
+                flex-basis: 83.33333%;
+            }
+
+            .g-md-full {
+                flex-basis: 100%;
+            }
+        }
+
+        /* 12 columns, 1024px and up */
+        @media (min-width: 64em) {
+            .g-lg-1 {
+                flex-basis: 8.33333%;
+            }
+
+            .g-lg-2 {
+                flex-basis: 16.66667%;
+            }
+
+            .g-lg-3 {
+                flex-basis: 25%;
+            }
+
+            .g-lg-4 {
+                flex-basis: 33.33333%;
+            }
+
+            .g-lg-5 {
+                flex-basis: 41.66667%;
+            }
+
+            .g-lg-6 {
+                flex-basis: 50%;
+            }
+
+            .g-lg-7 {
+                flex-basis: 58.33333%;
+            }
+
+            .g-lg-8 {
+                flex-basis: 66.66667%;
+            }
+
+            .g-lg-9 {
+                flex-basis: 75%;
+            }
+
+            .g-lg-10 {
+                flex-basis: 83.33333%;
+            }
+
+            .g-lg-11 {
+                flex-basis: 91.66667%;
+            }
+
+            .g-lg-full {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="center">
+        <h1>Flexbox based grid system</h1>
+    </header>
+    <main class="grid">
+        <section class="g-item g-lg-1 g-md-2">
+            <div>1</div>
+        </section>
+        <section class="g-item g-lg-2 g-md-4">
+            <div>2</div>
+        </section>
+        <section class="g-item g-lg-3 g-md-4">
+            <div>3</div>
+        </section>
+        <section class="g-item g-lg-1 g-md-2">
+            <div>4</div>
+        </section>
+        <section class="g-item g-lg-2 g-md-3">
+            <div>5</div>
+        </section>
+        <section class="g-item g-lg-3 g-md-3">
+            <div>6</div>
+        </section>
+
+        <section class="g-item g-lg-4 g-md-2">
+            <div>7</div>
+        </section>
+        <section class="g-item g-lg-4 g-md-2">
+            <div>8</div>
+        </section>
+        <section class="g-item g-lg-4 g-md-2">
+            <div>9</div>
+        </section>
+        <section class="g-item g-lg-6 g-md-3">
+            <div>10</div>
+        </section>
+        <section class="g-item g-lg-6 g-md-3 g-sm-1">
+            <div>11</div>
+        </section>
+        <section class="g-item g-lg-full g-md-full g-sm-1">
+            <div>12</div>
+        </section>
+    </div>
+</body>
+</html>

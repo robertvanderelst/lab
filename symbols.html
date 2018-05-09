@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG test</title>
+    <style>
+        .cart,
+        .user {
+            width: 2em;
+            height: 2em;
+            background: #e2e2e2;
+        }
+
+        .cart:hover *,
+        .user:hover * {
+            fill: #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <h1>SVG test using &lt;use&gt;</h1>
+
+    <div>
+        <svg class="cart">
+            <use xlink:href="symbols.svg#cart" />
+        </svg>
+    </div>
+
+    <div>
+        <svg class="user">
+            <use xlink:href="symbols.svg#user" />
+        </svg>
+    </div>
+</body>
+</html>

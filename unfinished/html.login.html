@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="utf-8">
+        <title>HTML: Login form</title>
+		<style type="text/css">
+			body {
+				font-size: 75%;
+				font-family: Arial;
+			}
+
+			fieldset {
+				border: 0;
+			}
+
+            .field,
+            .submit {
+                display: inline;
+            }
+            
+            label {
+                display: none;
+            }
+            
+			input {
+				border: 1px inset #999999;
+				padding: 4px 4px 4px 24px;
+				-moz-border-radius: 4px;
+				margin-right: 4px;
+			}
+
+			input.username {
+				background: url(assets/user.png) 4px center no-repeat #F0F0F0;
+			}
+
+			input.password {
+				background: url(assets/lock.png) 4px center no-repeat #F0F0F0;
+			}
+
+			input[type="submit"] {
+				padding: 3px;
+				background: #999999;
+				border: 1px outset #999999;
+				color: #FFFFFF;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>HTML: Login form</h1>
+		<form>
+			<fieldset>
+				<legend>Login</legend>
+				<div class="field"><label for="username">Username</label><input type="text" name="username" class="username"></div>
+                <div class="field"><label for="password">Password</label><input type="password" name="password" class="password"></div>
+                <div class="submit"><input type="submit" class="submit" value="login"></div>
+				<div class="forgot_password">
+					<p>Oh no, I <a href="#">forgot my password</a>!</p>
+				</div>
+			</fieldset>
+		</form>
+    </body>
+</html>

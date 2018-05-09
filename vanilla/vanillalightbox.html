@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lightbox + caroussel</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            font-size: 100%;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .lb-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.8);
+            z-index: 10000;
+            overflow: hidden;
+        }
+
+        .lb-overlay img {
+            display: inline;
+        }
+
+        .lb-overlay button {
+            position: absolute;
+            background: rgba(255, 255, 255, 0);
+            -webkit-transition: .4s;
+            -o-transition: .4s;
+            transition: .4s;
+            padding: 0;
+            margin: 0;
+            border: none;
+            outline: 0;
+        }
+
+        .lb-overlay button:hover {
+            background: rgba(255, 255, 255, .1);
+        }
+
+        .is-mobile .lb-overlay button:hover {
+            background: rgba(255, 255, 255, 0);
+        }
+
+        .lb-close {
+            top: 1rem;
+            right: 1rem;
+            z-index: 2000;
+            border: none;
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .lb-prev,
+        .lb-next {
+            top: 0;
+            bottom: 0;
+            z-index: 1000;
+            width: 4rem;
+        }
+
+        .lb-prev svg,
+        .lb-next svg {
+            top: 50%;
+        }
+
+        .lb-prev {
+            left: 0;
+        }
+
+        .lb-next {
+            right: 0;
+        }
+
+        .lb-container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .has-transition {
+            -webkit-transition: .25s;
+            -o-transition: .25s;
+            transition: .25s;
+        }
+
+        .lb-container li {
+            position: relative;
+            flex: 0 0 100%;
+            align-self: center;
+            text-align: center;
+        }
+
+        .lb-overlay li img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .has-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: .5rem;
+            list-style: none;
+            width: 100%;
+            max-width: 32em;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .has-grid .first {
+            grid-column: span 4;
+        }
+
+        a span {
+            display: block;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <header style="height: 5rem; padding: 1rem;">
+        <p>TEST</p>
+    </header>
+    <div class="article-photos-list">
+        <ul class="has-grid">
+            <li class="caroussel-item first">
+                <a href="https://www.rietveldlicht.nl/fotos/groot/30005.jpg">
+                    <span class="article-thumbnail" itemscope="" itemtype="https://schema.org/WebPage">
+                        <img src="https://www.rietveldlicht.nl/fotos/groot/30005.jpg" alt="30005: 1">
+                    </span>
+                </a>
+            </li>
+            <li class="caroussel-item">
+                <a href="https://www.rietveldlicht.nl/fotos/groot/30005_1.jpg">
+                    <span class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/klein/30005_1.jpg" alt="30005: 1">
+                    </span>
+                </a>
+            </li>
+            <li class="caroussel-item">
+                <a href="https://www.rietveldlicht.nl/fotos/groot/30005_2.jpg">
+                    <span class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/klein/30005_2.jpg" alt="30005: 2">
+                    </span>
+                </a>
+            </li>
+            <li class="caroussel-item">
+                <a href="https://www.rietveldlicht.nl/fotos/groot/30005_3.jpg">
+                    <span class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/klein/30005_3.jpg" alt="30005: 3">
+                    </span>
+                </a>
+            </li>
+            <li class="caroussel-item">
+                <a href="https://www.rietveldlicht.nl/fotos/groot/30005_4.jpg">
+                    <span class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/klein/30005_4.jpg" alt="30005: 4">
+                    </span>
+                </a>
+            </li>
+            <li class="caroussel-item">
+                <a href="https://www.rietveldlicht.nl/fotos/groot/30005_5.jpg">
+                    <span class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/klein/30005_5.jpg" alt="30005: 5">
+                    </span>
+                </a>
+            </li>
+            <li class="caroussel-item">
+                <a href="https://www.rietveldlicht.nl/fotos/groot/30005_6.jpg">
+                    <span class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/klein/30005_6.jpg" alt="30005: 6">
+                    </span>
+                </a>
+            </li>
+            <li class="caroussel-item">
+                <a href="https://www.rietveldlicht.nl/fotos/groot/30005_7.jpg">
+                    <span class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/klein/30005_7.jpg" alt="30005: 7">
+                    </span>
+                </a>
+            </li>
+            <li class="caroussel-item">
+                <a href="https://www.rietveldlicht.nl/fotos/groot/30005_8.jpg">
+                    <span class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/klein/30005_8.jpg" alt="30005: 8">
+                    </span>
+                </a>
+            </li>
+            <li class="caroussel-item">
+                <a href="https://www.rietveldlicht.nl/fotos/groot/30005_9.jpg">
+                    <span class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/klein/30005_9.jpg" alt="30005: 9">
+                    </span>
+                </a>
+            </li>
+            <li class="caroussel-item">
+                <a href="https://www.rietveldlicht.nl/fotos/groot/30005_10.jpg">
+                    <span class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/klein/30005_10.jpg" alt="30005: 10">
+                    </span>
+                </a>
+            </li>
+            <li class="caroussel-item">
+                <a href="https://www.rietveldlicht.nl/fotos/groot/30005_11.jpg">
+                    <span class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/klein/30005_11.jpg" alt="30005: 11">
+                    </span>
+                </a>
+            </li>
+            <li class="caroussel-item">
+                <a href="https://www.rietveldlicht.nl/fotos/groot/30005_12.jpg">
+                    <span class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/klein/30005_12.jpg" alt="30005: 12">
+                    </span>
+                </a>
+            </li>
+            <li class="caroussel-item">
+                <a href="https://www.rietveldlicht.nl/fotos/groot/30005_13.jpg">
+                    <span class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/klein/30005_13.jpg" alt="30005: 13">
+                    </span>
+                </a>
+            </li>
+            <li class="caroussel-item">
+                <a href="https://www.rietveldlicht.nl/fotos/groot/30005_14.jpg">
+                    <span class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/klein/30005_14.jpg" alt="30005: 14">
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <script src="vanilla-lightbox.js"></script>
+</body>
+</html>

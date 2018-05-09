@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="nl-NL">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>New layout for Lab?</title>
+        <link href='http://fonts.googleapis.com/css?family=Coustard' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Quattrocento:400,700' rel='stylesheet' type='text/css'>
+        <style type="text/css">
+			body {
+				font-size: 100%;
+                line-height: 150%;
+				font-family: "Quattrocento", serif;
+                background: url(http://www.robertvanderelst.nl/_img/bg.png);
+                /*background: url(http://lab.robertvanderelst.nl/type/baseline-24px.png);*/
+                padding: 0;
+                margin: 0;
+			}
+            
+            h2 {
+                font-family: "Coustard";
+                font-weight: normal;
+                font-size: 150%;
+                line-height: 100%;
+                padding: 0;
+                margin: 0 1.25em 1em;
+            }
+            
+            .page {
+                position: relative;
+                width: 52em;
+                margin: 0 auto;
+            }
+            
+            .profilepic {
+                position: relative;
+                display: block;
+                width: 12em;
+                height: 12em;
+                -moz-border-radius: 50%;
+				-webkit-border-radius: 50%;
+				border-radius: 50%;
+                margin: 0 2em 1.5em;
+            }
+            
+            .profilepic img {
+                width: 12em;
+                height: 12em;
+                -moz-border-radius: 50%;
+				-webkit-border-radius: 50%;
+				border-radius: 50%;
+            }
+            
+            .profilepic:before,
+            .profilepic:after {
+                content: "";
+                position: absolute;
+                top: -0.3125em;
+                left: -0.3125em;
+                width: 12em;
+                height: 12em;
+                padding: 0.25em;
+                -moz-border-radius: 50%;
+				-webkit-border-radius: 50%;
+				border-radius: 50%;
+                border: 0.0625em solid #000;
+                z-index: 2;
+            }
+            
+            .profilepic:after {
+                top: -0.125em;
+                left: -0.125em;
+                padding: 0;
+                border: 0.125em solid #000;
+            }
+            
+            nav {
+                position: relative;
+                padding-top: 1.5em;
+                float: left;
+                width: 16em;
+                margin-right: 2em;
+            }
+            
+            nav ul {
+                padding: 0;
+                margin: 0 0 1.5em 2em;
+				list-style: none;
+            }
+            
+            nav > p {
+                position: absolute;
+                bottom: -4em;
+                font-family: "Quattrocento Sans", sans-serif;
+                font-style: italic;
+                font-size: 75%;
+                text-align: center;
+            }
+			
+			nav li a {
+				color: #A00;
+				text-decoration: none;
+				-webkit-transition: all .1s ease-in-out;
+				-moz-transition: all .1s ease-in-out;
+				-o-transition: all .1s ease-in-out;
+				transition: all .1s ease-in-out;
+			}
+            
+			nav li a:hover {
+				padding-left: 1em;
+				-webkit-transition: all .1s ease-in-out;
+				-moz-transition: all .1s ease-in-out;
+				-o-transition: all .1s ease-in-out;
+				transition: all .1s ease-in-out;
+			}
+			
+			nav li a:before {
+				content: ">";
+				color: #A00;
+				display: none;
+				-webkit-transition: all .1s ease-in-out;
+				-moz-transition: all .1s ease-in-out;
+				-o-transition: all .1s ease-in-out;
+				transition: all .1s ease-in-out;
+			}
+			
+			nav li a:hover:before {
+				display: inline;
+				-webkit-transition: all .1s ease-in-out;
+				-moz-transition: all .1s ease-in-out;
+				-o-transition: all .1s ease-in-out;
+				transition: all .1s ease-in-out;
+			}
+			
+            section {
+                position: relative;
+                float: left;
+                width: 30em;
+                background: rgba(255,255,255,.75);
+                padding: 1.5em 2em;
+            }
+            
+            nav:before,
+            section:before {
+                content: "";
+                position: absolute;
+                top: -5px;
+                left: 0;
+                width: 16em;
+                border-top: 1px solid rgba(0,0,0,.75);
+                height: 2px;
+                border-bottom: 2px solid rgba(0,0,0,.75);
+            }
+            
+            section:before {
+                width: 34em;
+            }
+            
+            nav:after,
+            section:after {
+                content: "";
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 16em;
+                border-top: 2px solid rgba(0,0,0,.75);
+                height: 2px;
+                border-bottom: 1px solid rgba(0,0,0,.75);
+            }
+            
+            section:after {
+                width: 34em;
+            }
+            
+            header {
+                
+            }
+            
+            header .social {
+                background: rgba(0,0,0,.5);
+				border-bottom: 1px solid rgba(0,0,0,.75);
+                margin: 0 auto;
+				overflow: hidden;
+				-webkit-box-shadow: 0 .25em .5em rgba(0,0,0,.24);
+				-moz-box-shadow: 0 2em 1.5em rgba(0,0,0,0.24);
+				box-shadow: 0 .25em .5em rgba(0,0,0,0.24);
+            }
+            
+            header .social ul {
+                width: 52em;
+				float: right;
+				margin: .25em 0;
+            }
+			
+			header .social ul li {
+				float: left;
+			}
+			
+			header .social ul li a {
+				color: #fff;
+			}
+			
+            
+            header .logo {
+                background: rgba(255,255,255,.5);
+                height: 24em;
+                margin: 0 auto;
+            }
+            
+            footer {
+                display: none;
+                clear: both;
+                background: #f0f0f0;
+            }
+        </style>
+	</head>
+	<body>
+		<header>
+            <div class="social">
+                <ul>
+                    <li><a href="#">Google+</a></li>
+                    <li><a href="#">LinkedIN</a></li>
+                </ul>
+            </div>
+            <div class="logo">
+                <img src="img/test.svg" style="width: 40em;">
+            </div>
+        </header>
+        
+<div class="profilepic"><img src="http://www.robertvanderelst.nl/_img/profielfoto.jpg" alt="foto van mezelf"></div>
+        <div class="page">
+        <nav>
+            <h2>Nav title spread across several lines</h2>
+            <ul>
+                <li><a href="#">Lab item 1</a></li>
+                <li><a href="#">Lab item 2</a></li>
+                <li><a href="#">Lab item 3</a></li>
+            </ul>
+            <p class="copyright">&copy; 2012</p>
+        </nav>
+        <section class="content">
+            Hier komt het experiment te staan en om even te kijken hoe breed alles is zet ik hier veel tekst neer om te kijken hoe het afloopt.
+        </section>
+        <footer>Footer, maar wat komt er in?</footer>
+        </div>
+    </body>
+</html>

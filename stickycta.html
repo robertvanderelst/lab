@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            padding: 1rem;
+        }
+
+        button {
+            position: relative;
+        }
+
+        .button {
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 0 .75em;
+            margin: 0;
+            line-height: 2;
+            height: 2em;
+            border-radius: .25rem;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
+            background: #00adef;
+            box-shadow: 0 2px 0 0 hsl(207,44%,29%);
+            flex-shrink: 0;
+            -webkit-transition: background .2s,color .2s;
+            transition: background .2s,color .2s;
+        }
+
+        .sticky-cta {
+            display: block;
+            position: fixed;
+            left: 1rem;
+            right: 1rem;
+            bottom: 1rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="article-cta-list">
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+        <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p>
+
+        <p>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+
+        <p>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.</p>
+
+        <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
+
+        <input type="submit" class="button button-orange" value="Test!">
+
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+        <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p>
+
+        <p>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+
+        <p>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.</p>
+
+        <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
+    </div>
+
+
+    <script>
+        (function () {
+            function debounce(func, wait, immediate) {
+                var timeout;
+                return function() {
+                    var context = this, args = arguments;
+                    var later = function() {
+                        timeout = null;
+                        if (!immediate) func.apply(context, args);
+                    };
+                    var callNow = immediate && !timeout;
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                    if (callNow) func.apply(context, args);
+                };
+            };
+
+            var cta = document.querySelector('.article-cta-list .button-orange'),
+                cta_offset =  cta.offsetTop,
+                cta_clone = cta.cloneNode(true);
+                cta_clone.classList.add('sticky-cta'),
+                window_height = window.innerHeight,
+                document_scrolled = document.querySelector('html').scrollTop;
+
+                document.querySelector('body').appendChild(cta_clone);
+
+                if (window_height + document_scrolled > (cta_offset + 48)) {
+                    cta_clone.classList.add('hidden');
+                }
+
+            var myEfficientFn = debounce(function() {
+                window_height = window.innerHeight;
+                document_scrolled = document.querySelector('html').scrollTop;
+
+                if ((window_height + document_scrolled) < (cta_offset + 48)) {
+                    cta_clone.classList.remove('hidden');
+                } else {
+                    cta_clone.classList.add('hidden');
+                }
+            }, 10);
+
+            window.addEventListener('scroll', myEfficientFn);
+        }());
+    </script>
+</body>
+</html>

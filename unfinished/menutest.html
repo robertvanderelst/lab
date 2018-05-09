@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<title>Menu test in CSS3</title>
+		<style>
+			body {
+				padding: 64px 0 0 0;
+				margin: 0;
+			}
+			
+			div.container {
+				width: 960px;
+				margin: 0 auto;
+			}
+			ul {
+				float: left; 
+				width: 960px;
+				list-style: none;
+			}
+			
+			ul li {
+				position: relative;
+				float: left;
+				width: 100px;
+				margin: 0 10px 0 0;		
+			}
+			
+			ul li a {
+				position: absolute;
+				top: -64px;
+				left: 0;
+				bottom: 0;
+				background: #8FA43D;
+				z-index: 100;
+			}
+			
+			ul li a span {
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<ul>
+				<li><a href="#Home"><span>Home</span></a></li>
+				<li><a href="#Producten"><span>Producten</span></a></li>
+				<li><a href="#Klanten"><span>Klanten</span></a></li>			
+			</ul>
+		</div>
+	</body>
+</html>

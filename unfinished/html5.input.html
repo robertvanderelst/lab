@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="utf-8">
+        <title>HTML5 input variations</title>
+		<style>
+			div.row span.rounded {
+				display: block;
+				border: 1px solid #CCCCCC;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+				padding: 1px;
+				margin: 0;
+			}
+
+			div.row span.rounded span {
+				display: block;
+				border: 1px solid #999999;
+				-moz-border-radius: 3px;
+				border-radius: 3px;
+				background: #FFFFFF;
+			}
+
+			div.row span.rounded span input {
+				border: 0;
+			}
+
+			div.row span.rounded:hover {
+				border: 1px solid #009900;
+			}
+
+			div.row span.rounded:hover span {
+				border: 1px solid #006600;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>HTML5 input variations</h1>
+		<form>
+			<fieldset>
+				<legend></legend>
+				<div class="row">
+					<label>Number</label>
+					<div><input type="number"></div>
+				</div>
+				<div class="row">
+					<label>Color</label>
+					<div><input type="color"></div>
+				</div>
+				<div class="row">
+					<label>Date</label>
+					<div><input type="date"></div>
+				</div>
+				<div class="row">
+					<label>Search</label>
+					<div><input type="search" placeholder="Trefwoord..."></div>
+				</div>
+				<div class="row">
+					<label>Email</label>
+					<span class="rounded"><span><input type="email"></span></span>
+				</div>
+			</fieldset>
+		</form>
+
+<!--datetime
+datetime-local
+month
+range
+tel
+time
+url
+week -->
+    </body>
+</html>

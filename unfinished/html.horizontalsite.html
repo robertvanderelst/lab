@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Vertical site</title>
+		<style>
+			body {
+                height: 100%;
+                padding: 0;
+                margin: 0;
+			}
+            
+            body * {
+                padding: 0;
+                margin: 0;
+            }
+            
+            
+            div.nav {
+                position: fixed;
+                left: 0;
+                top: 50%;
+                background: #000;
+                z-index: 10;
+            }
+                                   
+            div.page {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+            
+            div.one {
+                left: 0;
+                background: #F0F0F0;
+            }
+			
+            div.two {
+                top: 100%;
+                background: #C0C0C0;
+            }
+
+            div.three {
+                top: 200%;
+                background: #909090;
+            }
+
+            div.four {
+                top: 300%;
+                background: #606060;
+            }	
+		</style>
+        <script type="text/javascript" src="code.jquery.com/jquery.min.js"></script>
+        <script type="text/javascript">
+            jQuery(document).ready(function() {
+                jQuery(".nav a").click(function(e) {
+                    e.preventDefault();
+                    console.log(jQuery(this).className);
+                    var moveleft = 0;
+                    
+                    
+                    jQuery('body').animate({
+                    'top': '100%'
+                    
+                }, 2000)
+                    
+                })
+            });
+        </script>
+	</head>
+	<body>
+        <div class="nav">
+            <ul>
+                <li><a href="#page1" class="page1">Page 1</a></li>
+                <li><a href="#page2" class="page2">Page 2</a></li>
+                <li><a href="#page3" class="page3">Page 3</a></li>
+                <li><a href="#page4" class="page4">Page 4</a></li>
+            </ul>
+        </div>
+        
+        <div class="page one">
+               <a name="page1"></a>
+                <h2>Page 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque ipsum a nunc luctus at faucibus orci lacinia. Vivamus egestas sapien sed neque porttitor varius. Sed mattis dapibus tellus, a convallis orci porttitor vel. Aenean varius, lectus in pellentesque vulputate, nunc erat faucibus dolor, a feugiat erat eros at sem. Proin vestibulum nibh non nulla mattis mattis. Etiam id massa turpis. Integer velit magna, laoreet eu egestas id, rutrum et neque. Aenean eu elit a erat ultricies hendrerit. Cras nec leo risus. Praesent vitae nisl ipsum. Etiam in mi arcu, in elementum dolor. In arcu tortor, ultrices vitae mollis vel, varius et lectus. In hac habitasse platea dictumst. Integer pulvinar metus hendrerit felis consectetur non pulvinar nisi vulputate. In bibendum ante nec elit bibendum nec fringilla massa fermentum.</p>
+                <p>Vivamus volutpat augue eget ipsum euismod auctor. Aenean nisi sapien, ultrices non pulvinar eu, congue a erat. Cras tincidunt velit id risus hendrerit sit amet vulputate sem pulvinar. Nulla libero quam, pretium quis porta sit amet, imperdiet eget quam. Mauris sed lectus sem. Suspendisse potenti. Duis mauris neque, semper in condimentum et, dictum ac turpis. Integer leo nulla, volutpat vel tristique vel, facilisis quis nunc. Proin luctus facilisis faucibus. Etiam aliquam semper pulvinar. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            </div>
+        </div>
+        
+        <div class="pagecontainer">
+            <div class="page two">
+                <a name="page2"></a>
+                <h2>Page 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque ipsum a nunc luctus at faucibus orci lacinia. Vivamus egestas sapien sed neque porttitor varius. Sed mattis dapibus tellus, a convallis orci porttitor vel. Aenean varius, lectus in pellentesque vulputate, nunc erat faucibus dolor, a feugiat erat eros at sem. Proin vestibulum nibh non nulla mattis mattis. Etiam id massa turpis. Integer velit magna, laoreet eu egestas id, rutrum et neque. Aenean eu elit a erat ultricies hendrerit. Cras nec leo risus. Praesent vitae nisl ipsum. Etiam in mi arcu, in elementum dolor. In arcu tortor, ultrices vitae mollis vel, varius et lectus. In hac habitasse platea dictumst. Integer pulvinar metus hendrerit felis consectetur non pulvinar nisi vulputate. In bibendum ante nec elit bibendum nec fringilla massa fermentum.</p>
+                <p>Vivamus volutpat augue eget ipsum euismod auctor. Aenean nisi sapien, ultrices non pulvinar eu, congue a erat. Cras tincidunt velit id risus hendrerit sit amet vulputate sem pulvinar. Nulla libero quam, pretium quis porta sit amet, imperdiet eget quam. Mauris sed lectus sem. Suspendisse potenti. Duis mauris neque, semper in condimentum et, dictum ac turpis. Integer leo nulla, volutpat vel tristique vel, facilisis quis nunc. Proin luctus facilisis faucibus. Etiam aliquam semper pulvinar. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            </div>
+        </div>
+        
+        <div class="pagecontainer">
+            <div class="page three">
+                <a name="page3"></a>
+                <h2>Page 3</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque ipsum a nunc luctus at faucibus orci lacinia. Vivamus egestas sapien sed neque porttitor varius. Sed mattis dapibus tellus, a convallis orci porttitor vel. Aenean varius, lectus in pellentesque vulputate, nunc erat faucibus dolor, a feugiat erat eros at sem. Proin vestibulum nibh non nulla mattis mattis. Etiam id massa turpis. Integer velit magna, laoreet eu egestas id, rutrum et neque. Aenean eu elit a erat ultricies hendrerit. Cras nec leo risus. Praesent vitae nisl ipsum. Etiam in mi arcu, in elementum dolor. In arcu tortor, ultrices vitae mollis vel, varius et lectus. In hac habitasse platea dictumst. Integer pulvinar metus hendrerit felis consectetur non pulvinar nisi vulputate. In bibendum ante nec elit bibendum nec fringilla massa fermentum.</p>
+                <p>Vivamus volutpat augue eget ipsum euismod auctor. Aenean nisi sapien, ultrices non pulvinar eu, congue a erat. Cras tincidunt velit id risus hendrerit sit amet vulputate sem pulvinar. Nulla libero quam, pretium quis porta sit amet, imperdiet eget quam. Mauris sed lectus sem. Suspendisse potenti. Duis mauris neque, semper in condimentum et, dictum ac turpis. Integer leo nulla, volutpat vel tristique vel, facilisis quis nunc. Proin luctus facilisis faucibus. Etiam aliquam semper pulvinar. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            </div>        
+        </div>
+        
+        <div class="pagecontainer">            
+            <div class="page four">
+                <a name="page4"></a>
+                <h2>Page 4</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque ipsum a nunc luctus at faucibus orci lacinia. Vivamus egestas sapien sed neque porttitor varius. Sed mattis dapibus tellus, a convallis orci porttitor vel. Aenean varius, lectus in pellentesque vulputate, nunc erat faucibus dolor, a feugiat erat eros at sem. Proin vestibulum nibh non nulla mattis mattis. Etiam id massa turpis. Integer velit magna, laoreet eu egestas id, rutrum et neque. Aenean eu elit a erat ultricies hendrerit. Cras nec leo risus. Praesent vitae nisl ipsum. Etiam in mi arcu, in elementum dolor. In arcu tortor, ultrices vitae mollis vel, varius et lectus. In hac habitasse platea dictumst. Integer pulvinar metus hendrerit felis consectetur non pulvinar nisi vulputate. In bibendum ante nec elit bibendum nec fringilla massa fermentum.</p>
+                <p>Vivamus volutpat augue eget ipsum euismod auctor. Aenean nisi sapien, ultrices non pulvinar eu, congue a erat. Cras tincidunt velit id risus hendrerit sit amet vulputate sem pulvinar. Nulla libero quam, pretium quis porta sit amet, imperdiet eget quam. Mauris sed lectus sem. Suspendisse potenti. Duis mauris neque, semper in condimentum et, dictum ac turpis. Integer leo nulla, volutpat vel tristique vel, facilisis quis nunc. Proin luctus facilisis faucibus. Etiam aliquam semper pulvinar. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            </div>
+        </div>
+	</body>
+</html>

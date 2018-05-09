@@ -1,0 +1,432 @@
+<html>
+	<head>
+		<title>Media Queries Test</title>
+		<style type="text/css">
+            /* GENERAL LAYOUT */
+            /* 960px - 1280px, default, 3 or more columns */
+            body {
+                text-align: center;
+                background: #F0F0F0;
+                padding: 0 0 40px 0;
+                margin: 0;
+            }
+            
+            .globalwrapper {
+                text-align: left;
+                width: 940px;
+                padding: 0 10px 10px;
+                margin: 0 auto;
+                background: #FFFFFF;
+            }
+            
+            .logo {
+                display: block;
+                width: 220px;
+                height: 80px;
+                background: #909090;
+            }
+            
+            .nav {
+                float: right;
+                margin: 0;
+            }
+            
+            .nav li {
+                float: left;
+                margin-left: 20px;
+            }
+            
+            .tagline {
+                padding: 20px;
+            }
+            
+            .header {
+                overflow: hidden;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+                border-bottom: 1px solid #C0C0C0;
+            }
+            
+            .welcome {
+                background: #F0F0F0;
+                float: right;
+                width: 300px;
+            }
+            
+            .headerimage {
+                float: right;
+                background: #909090;
+                width: 620px;
+                height: 240px;
+                margin-right: 20px;
+            }
+            
+            
+            
+            .features {
+                overflow: hidden;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+                border-bottom: 1px solid #C0C0C0;
+            }
+            
+            .features > div {
+                float: left;
+                width: 300px;
+                margin-right: 20px;
+            }
+            
+            .features > div.last {
+                margin-right: 0;
+            }
+            
+            .contentwrapper {
+                overflow: hidden;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+                border-bottom: 1px solid #C0C0C0;
+            }
+            
+            .content {
+                float: left;
+                width: 620px;
+                margin-right: 20px;
+            }
+            
+            .aside {
+                float: left;
+                width: 300px;
+            }
+            
+            .referrals {
+                overflow: hidden;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+                border-bottom: 1px solid #C0C0C0;
+            }
+            
+            .referrals > div {
+                float: left;
+                width: 220px;
+                margin-right: 20px;
+                background: #E0E0E0;
+            }
+            
+            .referrals > div.last {
+                margin-right: 0;
+            }
+            
+            .footer {
+                overflow: hidden;
+            }
+            
+            .footer .socialmedia {
+                float: left;
+                width: 220px;
+                margin-right: 20px;
+                background: #A0A0A0;
+            }
+            
+            .footer .tagcloud {
+                float: left;
+                width: 380px;
+                margin-right: 20px;
+                background: #B0B0B0;
+            }
+            
+            .footer .contactform {
+                float: right;
+                width: 300px;
+                background: #C0C0C0;
+            }
+            
+            .footer .contactform form {
+                position: relative;
+            }
+            
+            .footer .contactform fieldset {
+                padding: 1.5em 10px;
+                margin: 0;
+                border: 0;
+            }
+            
+            .footer .contactform legend {
+                position: absolute;
+                top: 0;
+                left: 10px;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .footer .contactform .row {
+                overflow: hidden;
+            }
+            
+            .footer .contactform .submit {
+                padding-left: 100px;
+            }
+            
+            .footer .contactform label {
+                float: left;
+                width: 100px;
+            }
+            
+            .footer .contactform input,
+            .footer .contactform textarea {
+                width: 180px;
+            }
+            
+            .footer .contactform input[type="submit"] {
+                width: auto;
+            }
+            
+            /* SIZE SPECIFIC */
+            
+            /* smaller than 640px, single column*/
+            @media screen and (max-width: 640px) {
+                .globalwrapper {
+                    width: 440px;
+                }
+                
+                .logo {
+                    margin: 0 auto;
+                }
+                
+                .nav {
+                    float: none;
+                    margin: 0 auto;
+                }
+                
+                .welcome {
+                    float: none;
+                    width: 440px;
+                }
+                
+                .headerimage {
+                    float: none;
+                    margin-right: 0;
+                    width: 440px;
+                }
+                
+                .referrals {
+                    padding-bottom: 10px;
+                    margin-bottom: 10px;
+                }
+                
+                .features > div,
+                .content,
+                .aside,
+                .referrals > div,
+                .footer .socialmedia,
+                .footer .contactform,
+                .footer .tagcloud {
+                    float: none;
+                    width: 440px;
+                    margin-bottom: 10px;
+                    margin-right: 0;
+                }                
+                
+                .footer .tagcloud {
+                    margin-bottom: 0;
+                }
+            }
+            
+            /* 641px - 960px,  smaller version, two columns */
+            @media screen and (min-width: 641px) and (max-width: 959px) {
+                .globalwrapper {
+                    width: 620px;
+                }
+                
+                .nav {
+                    float: none;
+                }
+                
+                .welcome {
+                    float: none;
+                    width: 620px;
+                }
+                
+                .headerimage {
+                    float: none;
+                    margin-right: 0;
+                }
+                
+                #feature1 {
+                    float: none;
+                    width: 620px;
+                }
+                
+                #feature2,
+                #feature3 {
+                    width: 300px;
+                }
+                
+                .content {
+                    width: 380px;
+                }
+                
+                .aside {
+                    width: 220px;
+                }
+                
+                .referrals > div {
+                    width: 300px;
+                    margin-bottom: 20px;
+                }
+                .referrals > div:nth-child(2n) {
+                    margin-right: 0;
+                }
+                
+                .referrals > div:nth-child(2n+1) {
+                    clear: left;
+                }
+                
+                .footer .socialmedia {
+                    width: 300px;
+                    margin-bottom: 20px;
+                }
+                
+                .footer .contactform {
+                    float: left;
+                    width: 300px;
+                    margin-bottom: 20px;
+                }
+                
+                .footer .tagcloud {
+                    float: none;
+                    clear: both;
+                    width: 620px;
+                    margin-right: 0;
+                }
+                
+            }
+            
+            /* 1280 and larger zoomed version */
+            @media screen and (min-width: 1280px) {
+                /* then what?*/
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+        <div class="globalwrapper">
+            <a class="logo" href="#home">Logo, link home</a>
+            <ul class="nav">
+                <li>Home</li>
+                <li>About us</li>
+                <li>Products</li>
+                <li>Blog</li>
+                <li>Etc.</li>
+            </ul>
+            <div class="tagline">
+                <strong>Here comes an amazing tagline</strong>
+            </div>
+            
+            <div class="header">
+                <div class="welcome">
+                    <p>Hi and welcome to the most amazing template you'll ever find on Themeforest!</p>
+                </div>
+                <div class="headerimage">Header image</div>
+            </div>
+            
+            <div class="features">
+                <div id="feature1">
+                    <h2>Feature 1</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat nisi sed nisl aliquam tincidunt. Etiam posuere interdum dictum. Suspendisse lacus dolor, blandit et mollis id, congue commodo nibh. Nullam porttitor vulputate lobortis. Mauris pellentesque nunc non metus luctus in sodales libero pharetra.</p>
+                </div>
+                
+                <div id="feature2">
+                    <h2>Feature 2</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat nisi sed nisl aliquam tincidunt. Etiam posuere interdum dictum. Suspendisse lacus dolor, blandit et mollis id, congue commodo nibh. Nullam porttitor vulputate lobortis. Mauris pellentesque nunc non metus luctus in sodales libero pharetra.</p>
+                </div>                
+                
+                <div id="feature3" class="last">
+                    <h2>Feature 3</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat nisi sed nisl aliquam tincidunt. Etiam posuere interdum dictum. Suspendisse lacus dolor, blandit et mollis id, congue commodo nibh. Nullam porttitor vulputate lobortis. Mauris pellentesque nunc non metus luctus in sodales libero pharetra.</p>
+                </div>                
+            </div>
+            
+            <div class="contentwrapper">
+                <div class="content">
+                    <h1>Main title</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat nisi sed nisl aliquam tincidunt. Etiam posuere interdum dictum. Suspendisse lacus dolor, blandit et mollis id, congue commodo nibh. Nullam porttitor vulputate lobortis. Mauris pellentesque nunc non metus luctus in sodales libero pharetra. Mauris eros enim, congue ut eleifend eget, semper id nibh. Vestibulum nisi risus, egestas nec euismod eu, iaculis vitae dui. Maecenas eget mauris accumsan quam tristique tempus. Integer et est non quam feugiat elementum. Donec non facilisis lectus. Maecenas tristique enim in ligula placerat ut mattis ligula egestas. Curabitur eu nisl mauris, sit amet laoreet risus. Nullam condimentum vehicula sapien in scelerisque. Cras et arcu in lorem luctus suscipit sit amet id justo.</p>
+                </div>
+                
+                <div class="aside">
+                    <h2>Aside</h2>
+                    <ul>
+                        <li>item 1</li>
+                        <li>item 2</li>
+                        <li>item 3</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="referrals">
+                <div>
+                    <h2>Referral 1</h2>
+                    <p>Oh ... my ... god! It's PERFECT!</p>
+                </div>
+                
+                <div>
+                    <h2>Referral 2</h2>
+                    <p>Oh ... my ... god! It's PERFECT!</p>
+                </div>
+                
+                <div>
+                    <h2>Referral 3</h2>
+                    <p>Oh ... my ... god! It's PERFECT!</p>
+                </div>
+                
+                <div class="last">
+                    <h2>Referral 4</h2>
+                    <p>Oh ... my ... god! It's PERFECT!</p>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <div class="socialmedia">
+                    <h2>Social Media</h2>
+                    <p>We provide news, information and trick tips via the following social media:</p>
+                    <ul>
+                        <li>Twitter</li>
+                        <li>Facebook</li>
+                        <li>Google+</li>
+                    </ul>
+                </div>
+                
+                <div class="contactform">
+                    <form action="">
+                        <fieldset>
+                            <legend>Contact us</legend>
+                            <div class="row">
+                                <label>Message</label>
+                                <textarea></textarea>
+                            </div>
+                            
+                            <div class="row">
+                                <label>Name</label>
+                                <input type="text">
+                            </div>
+                            <div class="row">
+                                <label>E-mail address</label>
+                                <input type="text">
+                            </div>                        
+                            <div class="row submit">
+                                <input type="submit" value="Send">
+                            </div>                        
+                        </fieldset>
+                    </form>
+                </div>
+                
+                <div class="tagcloud">
+                    <h2>Tag cloud</h2>
+                    <span>tag 1</span><span>tag 1</span><span>tag 1</span><span>tag 1</span><span>tag 1</span><span>tag 1</span>
+                </div>
+                
+                
+            </div>
+        </div>
+	</body>
+</html>

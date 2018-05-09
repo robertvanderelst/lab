@@ -1,0 +1,203 @@
+﻿/*
+1280 view
+    column: 84px
+    gutter: 12px
+    width : 1164px (1040 + 12px sidegutters)
+
+1024 view
+    column: 70px
+    gutter: 10px
+    width : 970px (950 + 10px sidegutters)
+    
+800 view
+    column: 56px
+    gutter: 8px
+    width : 776px (760 + 8px sidegutters)
+
+640 view
+    column: 36px
+    gutter: 6px
+    width : 516px (504 + 6px sidegutters)
+
+Add 32px to min-width for scrollbar    
+
+Select a default width for browsers that don't support CSS3, by removing the @media line for that width
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 150%;
+}
+
+.wrapper {  
+    overflow: hidden;
+    background: #FFFF;
+    margin: 0 auto;
+}
+
+.row {
+    overflow: hidden;
+}
+
+.onecol,
+.twocol,
+.threecol,
+.fourcol,
+.fivecol,
+.sixcol,
+.sevencol,
+.eightcol,
+.ninecol,
+.tencol,
+.elevencol,
+.twelvecol {
+    float: left;
+    text-align: center;
+    padding: 2em 0;
+}
+
+/*@media (min-width: 1196px) {*/
+    .wrapper        {width: 1152px; padding-left: 12px;}
+    .row            {margin-bottom: 12px;}
+    
+    .onecol,
+    .twocol,
+    .threecol,
+    .fourcol,
+    .fivecol,
+    .sixcol,
+    .sevencol,
+    .eightcol,
+    .ninecol,
+    .tencol,
+    .elevencol,
+    .twelvecol {
+        margin-right: 12px;
+        background: #F0F0F0;
+    }
+    
+    .row .onecol    {width: 84px;}
+    .row .twocol    {width: 180px;}
+    .row .threecol  {width: 276px;}
+    .row .fourcol   {width: 372px;}
+    .row .fivecol   {width: 468px;}
+    .row .sixcol    {width: 564px;}
+    .row .sevencol  {width: 660px;}
+    .row .eightcol  {width: 756px;}
+    .row .ninecol   {width: 852px;}
+    .row .tencol    {width: 948px;}
+    .row .elevencol {width: 1044px;}
+    .row .twelvecol {width: 1140px;}
+/*}*/
+
+@media (min-width: 1002px) AND (max-width: 1196px) {
+    .wrapper        {width: 960px; padding-left: 10px;}
+    .row            {margin-bottom: 10px;}
+    
+    .onecol,
+    .twocol,
+    .threecol,
+    .fourcol,
+    .fivecol,
+    .sixcol,
+    .sevencol,
+    .eightcol,
+    .ninecol,
+    .tencol,
+    .elevencol,
+    .twelvecol {
+        margin-right: 10px;
+    }
+    
+    .row .onecol    {width: 70px;}
+    .row .twocol    {width: 150px;}
+    .row .threecol  {width: 230px;}
+    .row .fourcol   {width: 310px;}
+    .row .fivecol   {width: 390px;}
+    .row .sixcol    {width: 470px;}
+    .row .sevencol  {width: 550px;}
+    .row .eightcol  {width: 630px;}
+    .row .ninecol   {width: 710px;}
+    .row .tencol    {width: 790px;}
+    .row .elevencol {width: 870px;}
+    .row .twelvecol {width: 950px;}
+}
+
+@media (min-width: 792px) AND (max-width: 1002px) {
+    .wrapper        {width: 768px; padding-left: 8px;}
+    .row            {margin-bottom: 8px;}
+    
+    .onecol,
+    .twocol,
+    .threecol,
+    .fourcol,
+    .fivecol,
+    .sixcol,
+    .sevencol,
+    .eightcol,
+    .ninecol,
+    .tencol,
+    .elevencol,
+    .twelvecol {
+        margin-right: 8px;
+    }
+    
+    .row .onecol    {width: 56px;}
+    .row .twocol    {width: 120px;}
+    .row .threecol  {width: 184px;}
+    .row .fourcol   {width: 248px;}
+    .row .fivecol   {width: 312px;}
+    .row .sixcol    {width: 376px;}
+    .row .sevencol  {width: 440px;}
+    .row .eightcol  {width: 504px;}
+    .row .ninecol   {width: 568px;}
+    .row .tencol    {width: 632px;}
+    .row .elevencol {width: 696px;}
+    .row .twelvecol {width: 760px;}
+}
+
+@media (max-width: 792px) {
+    .wrapper        {width: 504px; padding-left: 6px;}
+    .row            {margin-bottom: 6px;}
+
+    .onecol,
+    .twocol,
+    .threecol,
+    .fourcol,
+    .fivecol,
+    .sixcol,
+    .sevencol,
+    .eightcol,
+    .ninecol,
+    .tencol,
+    .elevencol,
+    .twelvecol {
+        margin-right: 6px;
+    }
+    
+    .row .onecol    {width: 36px;}
+    .row .twocol    {width: 78px;}
+    .row .threecol  {width: 120px;}
+    .row .fourcol   {width: 162px;}
+    .row .fivecol   {width: 204px;}
+    .row .sixcol    {width: 246px;}
+    .row .sevencol  {width: 288px;}
+    .row .eightcol  {width: 330px;}
+    .row .ninecol   {width: 372px;}
+    .row .tencol    {width: 414px;}
+    .row .elevencol {width: 456px;}
+    .row .twelvecol {width: 498px;}
+}
+
+/* GENERIC */
+.lastcol {
+    margin-right: 0;
+}
+
+img, object, embed {
+    max-width: 100%;
+}
+
+img {
+	height: auto;
+}

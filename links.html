@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Linktest</title>
+    <link href="http://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet" type="text/css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 1em;
+        }
+
+        body {
+            padding: 4rem;
+            font-family: "Lato", Arial, sans-serif;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #484848;
+        }
+
+        * + * {
+            margin-top: 1rem;
+        }
+
+        p {
+            width: 20em;
+        }
+
+        a {
+            position: relative;
+            color: #00f;
+            text-decoration: none;
+            -webkit-transition: color .2s;
+            -o-transition: color .2s;
+            transition: color .2s;
+        }
+
+        .underline a:before,
+        .underline a:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-top: 1px solid #b8b8b8;
+            -webkit-transition: right .2s;
+            -o-transition: right .2s;
+            transition: right .2s;
+        }
+
+        .underline a:after {
+            right: 100%;
+            border-color: #4682b4;
+        }
+
+        .underline a:hover:after {
+            right: 0;
+        }
+
+        .swipe a {
+            display: inline-block;
+            padding: 0 .125rem;
+            margin: 0 -.125rem;
+            color: #4682b4;
+            background: #e2e2e2;
+            text-decoration: underline;
+        }
+
+        .swipe a:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 100%;
+            background: #fff;
+            -webkit-transition: .2s;
+            -o-transition: .2s;
+            transition: .2s;
+            z-index: 1;
+        }
+
+        .swipe a:hover {
+            color: #fff;
+        }
+
+        .swipe a:hover:after {
+            right: 0;
+            background: #4682b4;
+        }
+
+        .test a {
+            position: relative;
+            display: inline-block;
+            padding: 0 .125rem;
+            margin: 0 -.125rem;
+            color: #4682b4;
+        }
+
+        .test a:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 1px;
+            bottom: .125rem;
+            background: #4682b4;
+            z-index: -1;
+            -webkit-transition: .4s;
+            -o-transition: .4s;
+            transition: .4s;
+        }
+
+        .test a:hover:before {
+            height: 1.25rem;
+            background: #e2e2e2;
+        }
+    </style>
+</head>
+<body>
+    <p class="underline">
+        Dit is een tekst met een <a href="#">link</a> erin in meerdere regels, zodat je ziet hoe het werkt.
+    </p>
+
+    <p class="swipe">
+        Dit is een tekst met een <a href="#"><span>link</span></a> erin in meerdere regels, zodat je ziet hoe het werkt.
+    </p>
+
+    <p class="test">
+        Dit is een tekst met een <a href="#">link</a> erin in meerdere regels, zodat je ziet hoe het werkt.
+    </p>
+</body>
+</html>

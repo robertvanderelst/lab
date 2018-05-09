@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+	<title>Inset menu</title>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	<script>
+		(function () {
+			"use strict";
+			
+			var map, el_main, el_nav, el_trigger_nav, el_filters, el_trigger_filters, el_overlay, cssclass;
+			
+			function addClass(el, css_class) {
+				if (el.classList) {
+					el.classList.add(css_class);
+				} else {
+					el.css_class += ' ' + css_class;
+				}
+			}
+			
+			function removeClass(el, css_class) {
+				if (el.classList) {
+					el.classList.remove(css_class);
+				} else {
+					el.css_class = el.css_class.replace(new RegExp('(^|\\b)' + css_class.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+				}
+			}
+			
+			function hasClass(el, css_class) {
+				if (el.classList) {
+					return el.classList.contains(css_class);
+				} else {
+					return new RegExp('(^| )' + css_class + '( |$)', 'gi').test(css_class);
+				}
+			}
+			
+			function fadeIn(el) {
+				el.style.opacity = 0;
+
+				var last = +new Date();
+				var tick = function() {
+					el.style.opacity = +el.style.opacity + (new Date() - last) / 400;
+					last = +new Date();
+
+					if (+el.style.opacity < 1) {
+						(window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16)
+					}
+				};
+
+				tick();
+			}
+			
+			document.addEventListener('DOMContentLoaded', function () {
+				// Google Maps Init
+				function initialize() {
+					var mapOptions = {
+						zoom: 12,
+						center: new google.maps.LatLng(51.9279723, 4.4904063),
+						disableDefaultUI: true
+					};
+				
+					map = new google.maps.Map(document.getElementById('map'), mapOptions);
+				}  
+				
+				google.maps.event.addDomListener(window, 'load', initialize);
+							
+				// UI
+				
+				// Nav
+				el_trigger_nav = document.querySelectorAll('.trigger-navigation');
+				el_nav = document.querySelectorAll('.navigation');
+				el_main = document.querySelectorAll('main');
+				el_overlay = document.querySelectorAll('overlay');
+				
+				el_trigger_nav[0].addEventListener('click', function () {
+					if (hasClass(el_nav[0], 'is-visible')) {
+						removeClass(el_nav[0], 'is-visible');
+						removeClass(el_main[0], 'moved-right');
+						//removeClass(el_overlay[0], 'is-visible');
+					} else {
+						addClass(el_nav[0], 'is-visible');
+						addClass(el_main[0], 'moved-right');
+						//addClass(el_overlay[0], 'is-visible');
+					}
+					
+					// If Nav doesn't have class is-visible
+						// addclass visible X
+						// main view gets class moved-right X
+						// show overlay <<
+						
+					// else
+						// remove class visible X
+						// remove class moved-right X
+						// hide overlay <<
+				});
+				
+				// Filters
+				el_trigger_filters = document.querySelectorAll('.trigger-filters');
+				el_filters = document.querySelectorAll('.filters');
+				el_trigger_filters[0].addEventListener('click', function () {
+					if (hasClass(el_filters[0], 'is-visible')) {
+						removeClass(el_filters[0], 'is-visible');
+						removeClass(el_main[0], 'moved-left');
+					} else {
+						addClass(el_filters[0], 'is-visible');
+						addClass(el_main[0], 'moved-left');
+					}
+					
+					// If Filters doesn't have class is-visible
+						// addclass visible X
+						// main view gets class moved-left X
+						// show overlay (class is-visible)
+						
+					// else						
+						// remove class visible X
+						// remove class moved-left X
+						// hide overlay
+				
+				});
+
+				// Overlay
+				
+				/*var el_overlay = document.querySelectorAll('.overlay');
+				if (hasClass(el_overlay[0], 'is-visible')) {
+					document.addEventListener('mousedown', handleTouchStart, false);
+					document.addEventListener('mouseup', handleTouchMove, false);
+				}*/
+				
+
+				/*el.addEventListener('mousedown', function () {
+					// If has class is-visible
+						// remove all is-visible classes
+						// remove classes moved-left, moved-right
+				});*/
+			});
+			
+			/*document.addEventListener('touchstart', handleTouchStart, false);        
+			document.addEventListener('touchmove', handleTouchMove, false);*/
+
+			var xDown = null;                                                        
+			var yDown = null;                                                        
+
+			function handleTouchStart(evt) {                                         
+				/*xDown = evt.touches[0].clientX;                                      
+				yDown = evt.touches[0].clientY;*/
+				console.log("S: " + evt.clientX + " - " + evt.clientY);
+			};                                                
+
+			function handleTouchMove(evt) {
+				console.log("E: " + evt.clientX + " - " + evt.clientY);
+				/*if ( ! xDown || ! yDown ) {
+					return;
+				}
+
+				var xUp = evt.touches[0].clientX;                                    
+				var yUp = evt.touches[0].clientY;
+
+				var xDiff = xDown - xUp;
+				var yDiff = yDown - yUp;
+
+				if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) { //most significant
+					if ( xDiff > 0 ) {
+						// left swipe 
+						alert("SWIPE LEFT");
+					} else {
+						// right swipe
+						alert("SWIPE RIGHT");
+					}                       
+				} else {
+					if ( yDiff > 0 ) {
+						// up swipe 
+						alert("SWIPE UP");
+					} else { 
+						// down swipe
+						alert("SWIPE DOWN");
+					}                                                                 
+				}
+
+				// reset values
+				xDown = null;
+				yDown = null;*/                                             
+			};
+		})();
+    </script>
+    <style>
+    	* {
+    		-webkit-box-sizing: border-box; 
+    		-moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+    	}
+
+		html,
+    	body {
+			font-size: 100%;
+			font-family: sans-serif;
+			width: 100%;
+			height: 100%
+			overflow: hidden;
+		}
+
+		h1, h2 {
+			display: none;
+			color: #fff;
+		}
+		
+    	p, main, ul {
+	      	list-style: none;
+	      	padding: 0;
+	      	margin: 0 0 1.5em;
+		}
+		
+		.toolbar {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 3em;
+			background: rgba(0, 0, 0, .75);
+			z-index: 100;
+		}
+		
+		.toolbar fieldset {
+			position: relative;
+			display: block;
+			border: none;
+			padding: .5em 0;
+			margin: 0 49px;
+			background: #666;
+		}
+
+		.toolbar fieldset input[type="text"] {
+			border: 1px solid #c0c0c0;
+			line-height: 2em;
+			height: 2em;
+			margin-right: 3em;
+		}
+
+		.toolbar fieldset input[type="submit"] {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 3em;
+			height: 3em;
+			border: none;
+			background: #0f0;
+		}
+			
+		.toolbar .trigger-navigation,
+		.toolbar .trigger-filters {
+			position: absolute;
+			top: 0;
+			display: block;
+			overflow: hidden;
+			width: 48px;
+			height: 48px;
+			background: #999;
+			z-index: 4;
+		}
+		
+		.toolbar .trigger-navigation {
+			left: 0;
+		}
+		
+		.toolbar .trigger-filters {
+			right: 0;
+		}
+
+		main, #map {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			margin: 0;
+			z-index: 0;
+			overflow: hidden;
+		}
+		
+		main {
+			-webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out; 
+		}
+
+		main.moved-left {
+			margin-left: -240px;
+			-webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out; 			
+		}
+
+		main.moved-right {
+			margin-left: 240px;
+			-webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out; 
+		}
+
+		.filters,
+		.navigation {
+			position: absolute;
+			top: 3em;
+			width: 240px;
+			background: rgba(255, 0, 0, .75);
+			color: #fff;
+			margin: 0;
+			-webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+		}
+		
+		.filters {
+			right: -240px;
+		}
+
+		.filters.is-visible {
+			right: 0;
+			-webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out; 
+		}
+
+		.navigation {
+			left: -240px;
+		}
+		
+		.navigation.is-visible {
+			left: 0;
+			-webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out; 
+		}
+		
+		.overlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, .75);
+			display: none;
+		}
+
+		.overlay.is-visible {
+			display: block;
+		}
+		
+		/* Move menu to the left expanded and all */
+		@media screen and (min-width: 769px) {
+			h2 {
+				display: block;
+			}
+			
+			.toolbar {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 240px;
+				height: 100%;
+				padding: 1em;
+			}
+			
+			.toolbar fieldset {
+				margin: 0;
+			}
+			
+			.toolbar .trigger-navigation,
+			.toolbar .trigger-filters {
+				display: none;
+			}
+			
+			.filters,
+			.navigation {
+				position: static;
+				background: none;
+			}
+		}
+    </style>
+</head>
+<body>
+	<!--
+	Plan:
+		- Naamgeving (Kek/Whispr?)
+		- Style bepalen (kleuren, icons etc.)
+		- HTML layout bepalen (staat al deels)
+		- Interactie (menu's, slide-ins etc., via AJAX?)
+		- Dynamisch maken m.b.v. DB (welke?)
+		- Backend in elkaar draaien voor DB manipulatie
+	-->
+	<menu type="toolbar" class="toolbar">
+		<fieldset>
+			<input type="text">
+			<input type="submit" value="search">
+		</fieldset>
+
+		<a href="#filters" class="trigger-filters">Filter icon!</a>
+		<h2>Filters</h2>
+		<menu type="list" class="filters">
+			<li>Eten &amp; drinken</li>
+			<li>Kleding</li>
+			<li>Cadeaus & accessoires</li>
+			<li>Hobby</li>
+			<li>Sport</li>
+			<li>Cultuur</li>
+			<li>Groen</li>
+		</menu>
+		
+		<h2>Navigatie</h2>
+		<a href="#navigation" class="trigger-navigation is-visible">Menu icon!</a>
+		<nav class="navigation">
+			<ul>
+				<li>About</li>
+				<li>Etc.</li>
+				<li>Etc.</li>
+				<li>Etc.</li>
+				<li>Etc.</li>
+			</ul>
+		</nav>
+	</menu>
+	
+    <main>
+        <div class="overlay"></div>
+        <h1>The main page</h1>
+        <div id="map"></div>
+    </main>
+</body>
+</html>

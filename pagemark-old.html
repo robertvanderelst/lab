@@ -1,0 +1,113 @@
+<html>
+  <head>
+      <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Pagemark</title>
+      <script src="jquery-2.1.1.min.js"></script>
+      <script>
+        function createCookie(name,value,days) {
+          if (days) {
+              var date = new Date();
+              date.setTime(date.getTime()+(days*24*60*60*1000));
+              var expires = "; expires="+date.toGMTString();
+          }
+          else var expires = "";
+            document.cookie = name+"="+value+expires+"; path=/";
+        }
+
+        function readCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+
+        function eraseCookie(name) {
+            createCookie(name,"",-1);
+        }
+
+        jQuery(document).ready(function() {
+
+
+          /*if (readCookie('pagemark') > 0) {
+            jQuery('.mark').bind('click.smoothscroll',function (e) {
+              e.preventDefault();
+              jQuery('html, body').stop().animate({
+                'scrollTop': (readCookie('pagemark'))
+              }, 1000, 'swing');
+            });
+          }*/
+
+          /*var cookie = readCookie('pagemark'); 
+          console.log("Cookie: " + cookie);
+          var marked = false;*/
+          jQuery('.mark').on('click', function (e) {
+            e.preventDefault();
+            console.log('clicked');
+
+            // Setcookie
+            createCookie('pagemark', jQuery(document).scrollTop(), 365);
+
+
+            /*if (marked === true || readCookie('pagemark')) {
+              console.log('is marked');
+              console.log(readCookie('pagemark'));
+              jQuery('body').scrollTo(readCookie('pagemark'));
+            } else {
+              eraseCookie('pagemark');
+              var handle = createCookie('pagemark', 'hallo', 365);
+              console.log(handle);
+              jQuery(this).addClass('marked');
+              marked = true;
+            }*/
+
+          });
+
+        });
+      </script>
+      <style>
+        main {
+          max-width: 50%;
+          margin: 0 auto;
+        }
+
+        .mark {
+          position: fixed;
+          top: 10%;
+          right: 0;
+          display: block;
+          width: 40px;
+          height: 40px;
+          background: #f00;
+        }
+
+        .marked {
+          background: #0f0;
+        }
+
+      </style>
+    </head>
+    <body>
+      <a class="mark" href="#mark">Mark</a>
+      <main>
+        <p>Small script to show a button to mark a location in the page to which you can scroll back to (infinite scrolling for example, or when clicked on a link to other website and return).</p>
+        <p>
+          Design needs to be simple. One click to set, one click to go to mark. Seperate button (or other interaction?) to erase mark.
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu magna dapibus, semper nisi ut, laoreet mi. Ut condimentum ipsum vitae imperdiet lobortis. Quisque eu lectus dolor. Curabitur sed nisl egestas, varius dolor non, tincidunt augue. Cras efficitur quam sed turpis lacinia, quis sagittis augue vestibulum. Ut neque erat, consequat lobortis erat feugiat, pharetra feugiat eros. Pellentesque bibendum mauris vel pharetra vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper lacus non lacus bibendum tempor ut commodo felis.</p>
+        <p>Phasellus augue odio, aliquam eget hendrerit non, iaculis ac mauris. Pellentesque hendrerit neque ac nisi rhoncus placerat. In molestie venenatis nisi, nec pellentesque dolor. Integer quis urna at velit dignissim congue quis vel eros. Fusce libero quam, porta ac maximus ac, blandit eget augue. Proin lorem elit, feugiat non aliquet id, mollis in ante. Morbi nec erat vel tortor malesuada lobortis. Etiam volutpat justo a odio eleifend, non vulputate dolor imperdiet. In hac habitasse platea dictumst. Sed tincidunt eros vitae nisl vehicula, quis sodales tellus malesuada.</p>
+        <p>Fusce augue lectus, feugiat sed commodo eu, accumsan quis nisl. Praesent lorem mi, aliquet feugiat sem a, pulvinar lobortis sem. Curabitur a turpis in erat rutrum pretium quis quis libero. Nullam enim enim, vehicula eu metus maximus, semper facilisis nisi. Phasellus eget neque malesuada, tempor est a, laoreet leo. Vivamus non massa at justo consequat scelerisque quis id quam. Cras mollis nunc ligula, non tincidunt ligula ornare in. Duis nulla mi, tincidunt eget finibus sit amet, laoreet nec justo. Ut nec ligula magna. Vestibulum a sapien ut sem laoreet dapibus ut sit amet enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque aliquam nisl ac ornare tristique.</p>
+        <p>Fusce lacinia cursus mauris a blandit. Donec at auctor dui, ac vehicula enim. Nam viverra volutpat lacinia. Phasellus vestibulum ut ipsum vel sodales. Proin odio diam, accumsan eu malesuada at, pulvinar non erat. Aliquam erat volutpat. Fusce posuere est urna. Suspendisse massa magna, pulvinar ut tortor sed, blandit luctus risus. Aenean mattis lectus nec ex pretium, sit amet iaculis nisi varius. Praesent consectetur non dui ut condimentum.</p>
+        <p>Etiam suscipit fringilla dignissim. Curabitur vitae diam dictum felis suscipit luctus eu ac justo. Phasellus commodo tellus porta leo tincidunt auctor. Aliquam eu velit maximus, pulvinar neque vitae, tristique eros. Suspendisse sit amet diam nec augue dapibus rhoncus. Donec eget elit lorem. Mauris non semper est. Duis at maximus tellus. Maecenas consectetur odio ac neque venenatis accumsan. Suspendisse ut sollicitudin dui, in blandit nunc. Ut at vestibulum leo. Aliquam ex eros, dapibus non scelerisque ac, scelerisque sit amet mi. Etiam a urna eu mauris euismod placerat quis eu nulla.</p>
+        <p>Donec quis posuere orci. Mauris nec luctus est. Sed neque nibh, mollis ut bibendum sed, egestas sed turpis. In in dolor vel nisi porta convallis vitae id ex. Fusce quis lacus pellentesque, commodo urna bibendum, euismod quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur auctor fermentum ante, et pulvinar massa tristique et. Vestibulum rutrum elit odio, ut hendrerit neque vestibulum vitae. Vestibulum eros nisl, pharetra vel consequat in, luctus nec leo. Morbi tellus eros, pharetra in porttitor nec, blandit et risus. Morbi id lobortis augue. Duis euismod et leo vitae elementum. Donec ut orci vel metus dictum dictum. Nunc vehicula nec magna in aliquet. Proin vulputate justo nec odio rhoncus, ut efficitur ante dignissim.</p>
+        <p>Aenean euismod massa a imperdiet interdum. Cras cursus ipsum vel tincidunt semper. Duis molestie ut urna a faucibus. Integer vel arcu laoreet, tincidunt leo accumsan, efficitur est. Duis scelerisque, leo at egestas sollicitudin, neque leo commodo lectus, eu ornare odio tellus in velit. Nullam molestie pharetra lorem et posuere. Suspendisse potenti. Cras eleifend nisi a diam fermentum tincidunt. Donec non nunc nunc. Phasellus vitae scelerisque nulla. In vitae molestie massa, et egestas nunc. Cras lobortis rhoncus enim. Integer sit amet sem ac lacus maximus ullamcorper eget vel nibh. Mauris a purus mi. Vivamus at sodales lectus.</p>
+        <p>Sed venenatis, neque non tincidunt vestibulum, dui nibh posuere justo, quis vestibulum eros tellus nec ex. Duis quis tortor ut nunc ultrices mollis. Fusce id enim aliquam, consequat erat at, dictum sapien. Curabitur a odio libero. Aliquam erat volutpat. Pellentesque eu nulla a magna dignissim gravida eu at mi. Etiam molestie eu risus egestas rhoncus. Vestibulum hendrerit vitae nunc in fringilla.</p>
+        <p>Duis ac turpis nec ex pretium condimentum. Fusce id dolor eget neque fringilla eleifend. Aenean vestibulum consectetur justo. In consequat lectus nec interdum consequat. Mauris leo leo, aliquet non tempus sed, gravida sed ex. Mauris a posuere mauris, non ultrices diam. Etiam id condimentum orci. Ut id ex erat. Donec tellus mi, porttitor eget metus non, cursus finibus nunc.</p>
+        <p>Quisque sapien velit, sollicitudin ac augue ac, aliquet fermentum felis. Sed scelerisque, massa nec imperdiet convallis, tellus metus efficitur lorem, a consequat dui sem et erat. Aenean tempor ut metus ultricies fringilla. Sed consequat, urna ut semper luctus, augue sapien fringilla quam, at blandit ex tellus quis est. Cras posuere leo purus, non iaculis massa commodo et. Quisque gravida malesuada tortor vel mattis. Mauris tempus aliquam odio, eget euismod est ultrices vitae. Suspendisse potenti. Donec dignissim ligula nec quam convallis luctus. Nunc malesuada turpis eu mi pharetra finibus sit amet a eros. Nam euismod euismod eros nec sagittis. Phasellus sem dolor, aliquam sit amet bibendum at, aliquet ac augue.</p>
+      </main>
+    </body>
+</html>

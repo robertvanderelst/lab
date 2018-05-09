@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="nl">
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <title>Form: Using A for submitting?</title>
+		<style type="text/css">
+			* {
+				font-family: Arial;
+			}
+			input,
+			a {
+				display: inline-block;
+				box-sizing: content-box; 
+				-moz-box-sizing: border-box;
+			    -webkit-box-sizing: border-box;
+			    -ms-box-sizing: border-box;
+				box-sizing: border-box;
+				line-height: 1.5em;
+				height: 1.5em;
+				padding: 0;
+				margin: 0;
+				border: none;
+				background: #A00;
+				text-decoration: underline;
+				font-family: Arial;
+				font-size: 100%;
+				color: #FFF;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	
+	
+	<body>
+		<form action="https://www.google.nl" method="get">
+			<input type="hidden" name="q" value="EUREKA">
+			<a href="#">Testlink</a> <input type="submit" value="Search!">
+		</form>
+	</body>
+</html>

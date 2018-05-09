@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="nl-NL">
+<head>
+	<meta charset="UTF-8">
+	<title>Classes vs Blocks</title>
+    <style type="text/css">
+    .test {
+        overflow: hidden;
+        width: 600px;
+        
+        margin: 0 auto 20px;
+        background: #F0F0F0;
+    }
+    
+    .box {
+        width: 290px;
+        height: 100px;
+        margin: 0 10px 10px 0;
+        background: #C0C0C0;
+    }
+    
+    .b .box {
+        display: inline-block;
+    }
+    
+    .f .box {
+        float: left;
+    }
+    </style>
+</head>
+<body>
+	<div class="test b">
+        <div class="box">1</div><div class="box">2</div><div class="box">3</div><div class="box">4</div><div class="box">5</div>
+    </div>
+    <div class="test f">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>    
+    </div>
+</body>
+</html>
