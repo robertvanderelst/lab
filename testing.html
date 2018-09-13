@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding: 4rem;
+        }
+
+        h3 {
+            font-size: 100%;
+            line-height: 3rem;
+        }
+        ul {
+            display: flex;
+            list-style: none;
+        }
+
+        li a {
+            white-space: nowrap;
+            line-height: 3rem;
+        }
+
+        .container {
+            width: 20rem;
+            height: 3rem;
+            background: #fcc;
+            margin: 0 auto;
+        }
+
+        .viewport {
+            position: relative;
+            display: flex;
+            overflow-x: auto;
+            z-index: 2;
+        }
+
+        .viewport:before,
+        .viewport:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 1rem;
+            background: #fff;
+            z-index: 1;
+        }
+
+        .viewport:before {
+            left: 0;
+        }
+
+        .viewport:after {
+            right: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="viewport">
+            <h3>Populair</h3>
+            <ul>
+                <li><a href="#">item 1</a></li>
+                <li><a href="#">item 2</a></li>
+                <li><a href="#">item 3</a></li>
+                <li><a href="#">item 4</a></li>
+                <li><a href="#">item 5</a></li>
+                <li><a href="#">item 6</a></li>
+                <li><a href="#">item 7</a></li>
+                <li><a href="#">item 8</a></li>
+                <li><a href="#">item 9</a></li>
+                <li><a href="#">item 10</a></li>
+                <li><a href="#">item 11</a></li>
+                <li><a href="#">item 12</a></li>
+                <li><a href="#">item 13</a></li>
+                <li><a href="#">item 14</a></li>
+                <li><a href="#">item 15</a></li>
+                <li><a href="#">item 16</a></li>
+                <li><a href="#">item 17</a></li>
+                <li><a href="#">item 18</a></li>
+                <li><a href="#">item 19</a></li>
+                <li><a href="#">item 20</a></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
