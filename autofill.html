@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Autofill test</title>
+</head>
+<body>
+<form action="/jx_form" method="post" id="frm_order" class="orderform" _lpchecked="1">
+
+<fieldset>
+<legend>Uw gegevens</legend>
+<div class="has-flex has-wrap">
+    <label for="orderform-name">Naam</label>
+    <div class="field">
+        <input type="text" id="orderform-name" name="aOrder_form[name]" value="" autocomplete="name"><span class="validation-icon"></span>
+        <p class="error-message error-message-name">Vul uw volledige naam in.</p>
+    </div>
+ </div>
+<div class="has-flex has-wrap">
+    <label for="orderform-email">E-mailadres</label>
+    <div class="field">
+        <input type="email" id="orderform-email" name="aOrder_form[email]" value="" autocomplete="home email"><span class="validation-icon"></span>
+        <p class="error-message error-message-email">Vul een geldig e-mailadres in.</p>
+    </div>
+</div>
+
+<div class="has-flex has-wrap">
+    <label for="orderform-email2">E-mailadres (nogmaals)</label>
+    <div class="field">
+        <input type="email" id="orderform-email2" name="aOrder_form[email2]" value="" autocomplete="home email"><span class="validation-icon"></span>
+        <p class="error-message error-message-email2">Dit e-mailadres is niet gelijk aan het eerste e-mailadres.</p>
+    </div>
+</div>
+<div class="has-flex has-wrap">
+    <label for="orderform-phone">Telefoonnummer</label>
+    <div class="field">
+        <input type="tel" id="orderform-phone" name="aOrder_form[phone]" value="" autocomplete="home tel"><span class="validation-icon"></span>
+        <p class="error-message error-message-phone">Vul een geldig telefoonnummer in.</p>
+        <p class="extra-info">Alleen bij vragen over de levering zullen wij contact met u opnemen.</p>
+    </div>
+</div>
+</fieldset>
+<fieldset id="deliveryaddress" class="orderform-deliveryaddress address_autocomplete">
+<legend>Afleveradres</legend>
+<div class="has-flex has-wrap">
+    <label for="aOrder_form[country]">Land</label>
+    <div class="field">
+        <span class="styled-select">
+            <select name="aOrder_form[country]">
+                <option value="Netherlands">Nederland</option>
+            </select>
+        </span>
+    </div>
+</div>
+
+
+    <div class="has-flex has-wrap">
+        <label for="aOrder_form[postcode]">Postcode</label>
+        <div class="field half">
+            <input type="text" class="postcode" name="aOrder_form[postcode]" value="" autocomplete="shipping postal-code"><span class="validation-icon"></span>
+            <p class="error-message error-message-postcode">Vul een geldige postcode in.</p>
+        </div>
+    </div>
+    <div class="has-flex has-wrap">
+        <label for="orderform-streetnumber">Huisnummer</label>
+        <div class="field half">
+            <input type="text" class="streetnumber" id="" name="aOrder_form[streetnumber]" value="" autocomplete="off"><span class="validation-icon"></span>
+            <p class="error-message error-message-streetnumber">Vul een geldig huisnummer in.</p>
+        </div>
+    </div>
+    <div class="has-flex has-wrap">
+        <label for="orderform-street">Straat</label>
+        <div class="field">
+            <input type="text" class="street" id="orderform-street" name="aOrder_form[street]" value="" autocomplete="off"><span class="validation-icon"></span>
+            <p class="error-message error-message-street">Vul een geldige straatnaam in.</p>
+        </div>
+    </div>
+    <div class="has-flex has-wrap">
+        <label for="orderform-city">Woonplaats</label>
+        <div class="field">
+            <input type="text" class="city" id="orderform-city" name="aOrder_form[city]" value="" autocomplete="off"><span class="validation-icon"></span>
+            <p class="error-message error-message-city">Vul een geldige woonplaats in.</p>
+        </div>
+    </div>
+    <div class="has-flex has-wrap">
+        <label for="orderform-company">Bedrijf (optioneel)</label>
+        <div class="field"><input type="text" id="orderform-company" name="aOrder_form[company]" value="" autocomplete="off"></div>
+    </div>
+    <div class="has-flex has-wrap">
+        <label for="orderform-tav">Ter attentie van (optioneel)</label>
+        <div class="field"><input type="text" id="orderform-tav" name="aOrder_form[tav]" value="" autocomplete="off"></div>
+    </div>
+    <div class="has-flex has-wrap">
+        <label for="orderform-vat">BTW nr. (optioneel)</label>
+        <div class="field">
+            <input type="text" class="vat" id="" name="aOrder_form[vat]" value="" autocomplete="off">
+        </div>
+    </div>
+
+</fieldset>
+
+<p><a id="toggle-billingaddress" href="#afleveradres">Factuuradres niet gelijk aan afleveradres? → <strong><u>Klik hier</u></strong></a></p>
+<input type="hidden" id="billing_address" name="aOrder_form[billing_address]" value="">
+
+<fieldset id="fieldsetbillingaddress" class="address_autocomplete2">
+<legend>Factuuradres</legend>
+
+
+    <div class="has-flex has-wrap">
+        <label for="aOrder_form[billing_postcode]">Postcode</label>
+        <div class="field half">
+            <input type="text" class="postcode" name="aOrder_form[billing_postcode]" value="" autocomplete="off"><span class="validation-icon"></span>
+            <p class="error-message error-message-billing_postcode">Vul een geldige postcode in.</p>
+        </div>
+    </div>
+    <div class="has-flex has-wrap">
+        <label for="orderform-billing_streetnumber">Huisnummer</label>
+        <div class="field half">
+            <input type="text" class="streetnumber" id="" name="aOrder_form[billing_streetnumber]" value="" autocomplete="off"><span class="validation-icon"></span>
+            <p class="error-message error-message-billing_streetnumber">Vul een geldig huisnummer in.</p>
+        </div>
+    </div>
+    <div class="has-flex has-wrap">
+        <label for="orderform-billing_street">Straat</label>
+        <div class="field">
+            <input type="text" class="street" id="orderform-billing_street" name="aOrder_form[billing_street]" value="" autocomplete="off"><span class="validation-icon"></span>
+            <p class="error-message error-message-billing_street">Vul een geldige straatnaam in.</p>
+        </div>
+    </div>
+    <div class="has-flex has-wrap">
+        <label for="orderform-billing_city">Woonplaats</label>
+        <div class="field">
+            <input type="text" class="city" id="orderform-billing_city" name="aOrder_form[billing_city]" value="" autocomplete="off"><span class="validation-icon"></span>
+            <p class="error-message error-message-billing_city">Vul een geldige woonplaats in.</p>
+        </div>
+    </div>
+    <div class="has-flex has-wrap">
+        <label for="orderform-billing_company">Bedrijf (optioneel)</label>
+        <div class="field"><input type="text" id="orderform-billing_company" name="aOrder_form[billing_company]" value="" autocomplete="off"></div>
+    </div>
+    <div class="has-flex has-wrap">
+        <label for="orderform-tav">Ter attentie van (optioneel)</label>
+        <div class="field"><input type="text" id="orderform-billing_tav" name="aOrder_form[billing_tav]" value="" autocomplete="off"></div>
+    </div>
+    <div class="has-flex has-wrap">
+        <label for="orderform-billing_vat">BTW nr. (optioneel)</label>
+        <div class="field">
+            <input type="text" class="vat" id="" name="aOrder_form[billing_vat]" value="" autocomplete="off">
+        </div>
+    </div>
+
+</fieldset>
+
+<fieldset class="payment-method">
+<legend>Manier van betaling</legend>
+
+<div class="has-flex has-wrap">
+<label for="payment-ideal" class="has-radio">
+    <span class="styled-radio">
+        <input type="radio" name="aOrder_form[payment]" id="payment-ideal" value="ideal" checked=""><span></span>
+    </span>
+    <span class="has-icon-ideal">iDeal</span>
+</label>
+</div>
+<div class="has-flex has-wrap">
+<label for="payment-paypal" class="has-radio">
+    <span class="styled-radio">
+        <input type="radio" name="aOrder_form[payment]" id="payment-paypal" value="paypal"><span></span>
+    </span>
+    <span class="has-icon-paypal">PayPal</span>
+</label>
+<p>U kunt bij Paypal ook met uw Mastercard, Visa, AMEX of Discover creditcard betalen.</p>
+</div>
+<div class="has-flex has-wrap">
+<label for="payment-bank" class="has-radio">
+    <span class="styled-radio">
+        <input type="radio" name="aOrder_form[payment]" id="payment-bank" value="bank"><span></span>
+    </span>
+    <span class="has-icon-banktransfer">Bankoverschrijving</span>
+</label>
+<p>Na verwerking van uw betaling worden de artikelen voor u gereserveerd en ontvangt u <br>
+een e-mail waarmee u de gewenste leverdatum aan kunt geven. </p>
+</div>
+</fieldset>
+
+
+
+<fieldset class="choose-date">
+<legend>Datum van bezorging</legend>
+<div class="has-flex has-wrap">
+    <label>Welke dag komt u het beste uit?</label>
+    <div class="field">
+        <span class="styled-select">
+
+<select name="aOrder_form_delivery_date[1]"><option value=""></option><optgroup label="&nbsp;vandaag 22 november"><option value="001542841200">22-11-18 tussen 17:00-22:00 &nbsp; € 2,50 toeslag</option></optgroup><optgroup label="&nbsp;vrijdag 23 november"><option value="1542927600">23-11-18 tussen 08:00-18:00 &nbsp; *GRATIS BEZORGING*</option><option value="001542927600">23-11-18 tussen 17:00-22:00 &nbsp; € 2,50 toeslag</option></optgroup><optgroup label="&nbsp;zaterdag 24 november"><option value="1543014000">24-11-18 tussen 08:00-15:00 &nbsp; *GRATIS BEZORGING*</option></optgroup><optgroup label="&nbsp;maandag 26 november"><option value="1543186800">26-11-18 tussen 08:00-18:00 &nbsp; *GRATIS BEZORGING*</option><option value="001543186800">26-11-18 tussen 17:00-22:00 &nbsp; € 2,50 toeslag</option></optgroup><optgroup label="&nbsp;dinsdag 27 november"><option value="1543273200">27-11-18 tussen 08:00-18:00 &nbsp; *GRATIS BEZORGING*</option><option value="001543273200">27-11-18 tussen 17:00-22:00 &nbsp; € 2,50 toeslag</option></optgroup><optgroup label="&nbsp;woensdag 28 november"><option value="1543359600">28-11-18 tussen 08:00-18:00 &nbsp; *GRATIS BEZORGING*</option><option value="001543359600">28-11-18 tussen 17:00-22:00 &nbsp; € 2,50 toeslag</option></optgroup><optgroup label="&nbsp;donderdag 29 november"><option value="1543446000">29-11-18 tussen 08:00-18:00 &nbsp; *GRATIS BEZORGING*</option><option value="001543446000">29-11-18 tussen 17:00-22:00 &nbsp; € 2,50 toeslag</option></optgroup><optgroup label="&nbsp;vrijdag 30 november"><option value="1543532400">30-11-18 tussen 08:00-18:00 &nbsp; *GRATIS BEZORGING*</option><option value="001543532400">30-11-18 tussen 17:00-22:00 &nbsp; € 2,50 toeslag</option></optgroup><optgroup label="&nbsp;zaterdag 01 december"><option value="1543618800">01-12-18 tussen 08:00-15:00 &nbsp; *GRATIS BEZORGING*</option></optgroup><optgroup label="&nbsp;maandag 03 december"><option value="1543791600">03-12-18 tussen 08:00-18:00 &nbsp; *GRATIS BEZORGING*</option><option value="001543791600">03-12-18 tussen 17:00-22:00 &nbsp; € 2,50 toeslag</option></optgroup><optgroup label="&nbsp;dinsdag 04 december"><option value="1543878000">04-12-18 tussen 08:00-18:00 &nbsp; *GRATIS BEZORGING*</option><option value="001543878000">04-12-18 tussen 17:00-22:00 &nbsp; € 2,50 toeslag</option></optgroup><optgroup label="&nbsp;woensdag 05 december"><option value="1543964400">05-12-18 tussen 08:00-18:00 &nbsp; *GRATIS BEZORGING*</option><option value="001543964400">05-12-18 tussen 17:00-22:00 &nbsp; € 2,50 toeslag</option></optgroup><optgroup label="&nbsp;donderdag 06 december"><option value="1544050800">06-12-18 tussen 08:00-18:00 &nbsp; *GRATIS BEZORGING*</option><option value="001544050800">06-12-18 tussen 17:00-22:00 &nbsp; € 2,50 toeslag</option></optgroup><optgroup label="&nbsp;vrijdag 07 december"><option value="1544137200">07-12-18 tussen 08:00-18:00 &nbsp; *GRATIS BEZORGING*</option><option value="001544137200">07-12-18 tussen 17:00-22:00 &nbsp; € 2,50 toeslag</option></optgroup><optgroup label="&nbsp;zaterdag 08 december"><option value="1544223600">08-12-18 tussen 08:00-15:00 &nbsp; *GRATIS BEZORGING*</option></optgroup><optgroup label="&nbsp;maandag 10 december"><option value="1544396400">10-12-18 tussen 08:00-18:00 &nbsp; *GRATIS BEZORGING*</option><option value="001544396400">10-12-18 tussen 17:00-22:00 &nbsp; € 2,50 toeslag</option></optgroup><optgroup label="&nbsp;dinsdag 11 december"><option value="1544482800">11-12-18 tussen 08:00-18:00 &nbsp; *GRATIS BEZORGING*</option><option value="001544482800">11-12-18 tussen 17:00-22:00 &nbsp; € 2,50 toeslag</option></optgroup><optgroup label="&nbsp;woensdag 12 december"><option value="1544569200">12-12-18 tussen 08:00-18:00 &nbsp; *GRATIS BEZORGING*</option><option value="001544569200">12-12-18 tussen 17:00-22:00 &nbsp; € 2,50 toeslag</option></optgroup><optgroup label="&nbsp;donderdag 13 december"><option value="1544655600">13-12-18 tussen 08:00-18:00 &nbsp; *GRATIS BEZORGING*</option><option value="001544655600">13-12-18 tussen 17:00-22:00 &nbsp; € 2,50 toeslag</option></optgroup><optgroup label="&nbsp;vrijdag 14 december"><option value="1544742000">14-12-18 tussen 08:00-18:00 &nbsp; *GRATIS BEZORGING*</option><option value="001544742000">14-12-18 tussen 17:00-22:00 &nbsp; € 2,50 toeslag</option></optgroup><optgroup label="&nbsp;zaterdag 15 december"><option value="1544828400">15-12-18 tussen 08:00-15:00 &nbsp; *GRATIS BEZORGING*</option></optgroup><optgroup label="&nbsp;maandag 17 december"><option value="1545001200">17-12-18 tussen 08:00-18:00 &nbsp; *GRATIS BEZORGING*</option><option value="001545001200">17-12-18 tussen 17:00-22:00 &nbsp; € 2,50 toeslag</option></optgroup><optgroup label="&nbsp;dinsdag 18 december"><option value="1545087600">18-12-18 tussen 08:00-18:00 &nbsp; *GRATIS BEZORGING*</option><option value="001545087600">18-12-18 tussen 17:00-22:00 &nbsp; € 2,50 toeslag</option></optgroup><optgroup label="&nbsp;woensdag 19 december"><option value="1545174000">19-12-18 tussen 08:00-18:00 &nbsp; *GRATIS BEZORGING*</option><option value="001545174000">19-12-18 tussen 17:00-22:00 &nbsp; € 2,50 toeslag</option></optgroup><optgroup label="&nbsp;donderdag 20 december"><option value="1545260400">20-12-18 tussen 08:00-18:00 &nbsp; *GRATIS BEZORGING*</option><option value="001545260400">20-12-18 tussen 17:00-22:00 &nbsp; € 2,50 toeslag</option></optgroup><optgroup label="&nbsp;vrijdag 21 december"><option value="1545346800">21-12-18 tussen 08:00-18:00 &nbsp; *GRATIS BEZORGING*</option><option value="001545346800">21-12-18 tussen 17:00-22:00 &nbsp; € 2,50 toeslag</option></optgroup><optgroup label="&nbsp;zaterdag 22 december"><option value="1545433200">22-12-18 tussen 08:00-15:00 &nbsp; *GRATIS BEZORGING*</option></optgroup></select>
+<p class="error-message error-message-delivery_date">Kies een datum en tijdvak</p>
+            <input type="hidden" name="aOrder_form[delivery_date_mandatory]" value="1">
+        </span>
+    </div>
+</div>
+
+</fieldset>
+
+
+<fieldset>
+<legend>Voorwaarden</legend>
+<div class="terms-conditions">
+    <label>
+        <div class="styled-checkbox">
+            <input type="checkbox" name="aOrder_form[agreement]" id="agreement" value="agreement">
+            <span></span>
+            <span class="terms-text">Ik ga akkoord met de <a href="/pdf_terms">voorwaarden</a></span>
+            <span class="validation-icon"></span>
+            <p class="error-message error-message-agreement">U dient akkoord te gaan met de voorwaarden.</p>
+        </div>
+    </label>
+</div>
+</fieldset>
+                <div class="orderform-cta">
+                    <input type="submit" class="button button-orange" value="Doorgaan met bestellen">
+                </div>
+            </form>
+</body>
+</html>
