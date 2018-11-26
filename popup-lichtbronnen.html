@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup lichtbronnen</title>
+    <style>
+    @font-face{
+       font-family:"Lato";
+       font-style:normal;
+       font-weight:400;
+       src:local("Lato Regular"),local(Lato-Regular),url(https://fonts.gstatic.com/s/lato/v11/1YwB1sO8YE1Lyjf12WNiUA.woff2) format("woff2");
+       unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000;
+       font-display: swap;
+    }
+    @font-face{
+       font-family:"Lato";
+       font-style:normal;
+       font-weight:700;
+       src:local("Lato Bold"),local(Lato-Bold),url(https://fonts.gstatic.com/s/lato/v11/H2DMvhDLycM56KNuAtbJYA.woff2) format("woff2");
+       unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000;
+       font-display: swap;
+    }
+
+    /* DEFAULTS */
+    *{
+        padding:0;
+        margin:0;
+        -webkit-box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        box-sizing:border-box
+    }
+    *+*{
+        margin-top:1rem
+    }
+    html{
+        font-size:100%;
+        font-family:sans-serif;
+        -ms-text-size-adjust:100%;
+        -webkit-text-size-adjust:100%;
+        background:#fff
+    }
+    body{
+        margin:0;
+        padding:3rem 0 1rem;
+        font-family:"Lato",Arial,sans-serif;
+        color:#484848
+    }
+    h1,h2,h3,h4{
+        font-weight:700;
+        color:#484848;
+        line-height:1.2
+    }
+    h3+*{
+        margin-top:0
+    }
+    h1{
+        font-size:1.728em
+    }
+    h2{
+        font-size:1.2em
+    }
+    h3{
+        font-size:1em
+    }
+    h4{
+        font-size:1em
+    }
+    a{
+        color:#00adef;
+        line-height:1.5;
+        -webkit-transition:color 0.4s;
+        -o-transition:color 0.4s;
+        transition:color 0.4s
+    }
+    a:hover{
+        color:#484848
+    }
+    ol,ul{
+        list-style:none;
+        margin:0
+    }
+    img {
+        display: block;
+        width: 100%;
+    }
+    br,li,option{
+        margin:0
+    }
+
+    table {
+        width: 100%;
+    }
+
+    th {
+        text-align: left;
+    }
+    th,
+    td {
+        padding: .5rem;
+    }
+
+    .button {
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        font-size: 1rem;
+        text-align: center;
+        padding: 0 .75em;
+        margin: 0;
+        line-height: 2;
+        height: 2em;
+        border-radius: .25rem;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        -webkit-transform: translateY(-2px);
+        transform: translateY(-2px);
+        background: #00adef;
+        box-shadow: 0 2px 0 0 hsl(207, 44%, 29%);
+        flex-shrink: 0;
+        -webkit-transition: background .2s, color .2s;
+        transition: background .2s, color .2s;
+    }
+
+    .button:hover {
+        background: #24c1ff;
+        color: #fff;
+    }
+
+    .button:active {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        box-shadow: none;
+        -webkit-transition: margin .2s, box-shadow .2s;
+        transition: margin .2s, box-shadow .2s;
+    }
+
+    .button-orange {
+        background: #fc7b0a;
+        box-shadow: 0 2px 0 0 hsl(28, 98%, 31%);
+    }
+
+    .button-orange:hover {
+        background: #fd953a;
+    }
+
+    .button-secondary {
+        display: inline-block;
+        border: 1px solid #00adef;
+        font-size: 1rem;
+        line-height: 1.75;
+        height: 2em;
+        color: #00adef;
+        text-align: center;
+        text-decoration: none;
+        padding: 0 .75rem;
+        -webkit-transition: border-color .4s, color .4s;
+        transition: border-color .4s, color .4s;
+        cursor: pointer;
+    }
+
+    .button-secondary:hover {
+        border-color: #484848;
+        color: #484848;
+    }
+
+    .sr-only{
+        position:absolute;
+        width:1px;
+        height:1px;
+        padding:0;
+        margin:-1px;
+        overflow:hidden;
+        clip:rect(0,0,0,0);
+        border:0
+    }
+
+    .has-flex{
+        display:-webkit-box;
+        display:-moz-box;
+        display:-ms-flexbox;
+        display:-webkit-flex;
+        display:flex
+    }
+
+    .has-wrap{
+        -webkit-flex-wrap:wrap;
+        -moz-flex-wrap:wrap;
+        -ms-flex-wrap:wrap;
+        -o-flex-wrap:wrap;
+        flex-wrap:wrap
+    }
+
+    /* Overlay */
+
+    .lb-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.8);
+        z-index: 10000;
+        overflow: hidden;
+        margin-top: 0;
+        padding: 1rem;
+        -webkit-transition: .4s;
+        -o-transition: .4s;
+        transition: .4s;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .is-popup {
+        background: #fff;
+        width: 100%;
+        max-width: 40rem;
+        margin: 1rem;
+    }
+
+    .o-lightsourceselection {
+        padding: 1rem;
+    }
+
+    .o-lightsourceselection h2 {
+        color: #29a00a;
+    }
+
+    .m-lightsourceselection-table {
+        border-collapse: collapse;
+    }
+
+    .m-lightsourceselection-table th[scope="col"] {
+        border-bottom: 2px solid #909090;
+    }
+
+    .m-lightsourceselection-table th,
+    .m-lightsourceselection-table td {
+        white-space: nowrap;
+    }
+
+    .m-lightsourceselection-table tr th,
+    .m-lightsourceselection-table tr td {
+        border-bottom: 1px solid #e2e2e2;
+    }
+
+    .m-lightsourceselection-table picture {
+        display: block;
+        width: 3rem;
+    }
+
+    .cta {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cta a {
+        flex: 0 0 auto;
+    }
+
+    @media (min-width: 30em) {
+        .cta {
+            flex-direction: row-reverse;
+        }
+
+        .cta div {
+            margin-top: 0;
+        }
+
+        .cta div + div {
+            margin-right: 1rem;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <div class="lb-overlay">
+        <div class="o-lightsourceselection is-popup">
+            <h2>Product 30747 is toegevoegd aan uw winkelwagen!</h2>
+
+            <p>Wilt u ook direct bijbehorende lichtbronnen meebestellen?</p>
+
+            <div style="overflow-x: scroll;margin-top: .5rem;">
+                <table class="m-lightsourceselection-table">
+                    <tr>
+                        <th scope="col"><span class="sr-only">Artikelnr</span></th>
+                        <th scope="col"><span class="sr-only">Foto</span></th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Wattage</th>
+                        <th scope="col">Lumen</th>
+                        <th scope="col">Per stuk</th>
+                        <th scope="col">Aantal</th>
+                        <th scope="col">Totaal</th>
+                        <th scope="col"></th>
+                    </tr>
+                    <tr>
+                        <th scope="row"><a href="#118">118</a></th>
+                        <td>
+                            <picture>
+                                <img src="https://www.rietveldlicht.nl/fotos/klein/118.jpg">
+                            </picture>
+                        </td>
+                        <td>LED</td>
+                        <td>2,5W</td>
+                        <td>200 lm</td>
+                        <td>&euro; 4,99</td>
+                        <td>2</td>
+                        <td style="width: 100%;">&euro; 9,98</td>
+                        <td style="padding: .5rem 0"><button class="button">Toevoegen</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><a href="#118">118</a></th>
+                        <td>
+                            <picture>
+                                <img src="https://www.rietveldlicht.nl/fotos/klein/118.jpg">
+                            </picture>
+                        </td>
+                        <td>LED</td>
+                        <td>2,5W</td>
+                        <td>200 lm</td>
+                        <td>&euro; 4,99</td>
+                        <td>2</td>
+                        <td style="width: 100%;">&euro; 9,98</td>
+                        <td style="padding: .5rem 0"><button class="button">Toevoegen</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><a href="#118">118</a></th>
+                        <td>
+                            <picture>
+                                <img src="https://www.rietveldlicht.nl/fotos/klein/118.jpg">
+                            </picture>
+                        </td>
+                        <td>LED</td>
+                        <td>2,5W</td>
+                        <td>200 lm</td>
+                        <td>&euro; 4,99</td>
+                        <td>2</td>
+                        <td style="width: 100%;">&euro; 9,98</td>
+                        <td style="padding: .5rem 0"><button class="button">Toevoegen</button></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="cta" style="padding-top:1rem; margin-top: 0">
+                <div style="text-align: right;"><a href="#" class="button button-orange">Naar winkelwagen</a></div>
+                <div style="text-align: right;"><a href="#" class="button-secondary">Verder winkelen</a></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
