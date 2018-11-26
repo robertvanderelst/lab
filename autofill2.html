@@ -55,7 +55,7 @@
     <label for="aOrder_form[country]">Land</label>
     <div class="field">
         <span class="styled-select">
-            <select name="aOrder_form[country]">
+            <select name="aOrder_form[country]" autocomplete="country-name">
                 <option value="Netherlands">Nederland</option>
             </select>
         </span>
@@ -66,21 +66,21 @@
     <div class="has-flex has-wrap">
         <label for="aOrder_form[postcode]">Postcode</label>
         <div class="field half">
-            <input type="text" class="postcode" name="aOrder_form[postcode]" autocomplete="home postal-code"><span class="validation-icon"></span>
+            <input type="text" data-formfield="postcode" name="aOrder_form[postcode]" autocomplete="home postal-code"><span class="validation-icon"></span>
             <p class="error-message error-message-postcode">Vul een geldige postcode in.</p>
         </div>
     </div>
     <div class="has-flex has-wrap">
         <label for="orderform-street">Straatnaam + Huisnummer</label>
         <div class="field">
-            <input type="text" name="aOrder_form[address]" autocomplete="shipping street-address"><span class="validation-icon"></span>
+            <input type="text" data-formfield="street" name="aOrder_form[address]" autocomplete="shipping street-address"><span class="validation-icon"></span>
             <p class="error-message error-message-street">Vul een geldige straatnaam + huisnummer in.</p>
         </div>
     </div>
     <div class="has-flex has-wrap">
         <label for="orderform-city">Woonplaats</label>
         <div class="field">
-            <input type="text" name="aOrder_form[city]" autocomplete="shipping address-level2"><span class="validation-icon"></span>
+            <input type="text" data-formfield="city" name="aOrder_form[city]" autocomplete="shipping address-level2"><span class="validation-icon"></span>
             <p class="error-message error-message-city">Vul een geldige woonplaats in.</p>
         </div>
     </div>
@@ -101,13 +101,11 @@
 
 </fieldset>
 
-<p><a id="toggle-billingaddress" href="#afleveradres">Factuuradres niet gelijk aan afleveradres? → <strong><u>Klik hier</u></strong></a></p>
+<!--<p><a id="toggle-billingaddress" href="#afleveradres">Factuuradres niet gelijk aan afleveradres? → <strong><u>Klik hier</u></strong></a></p>
 <input type="hidden" id="billing_address" name="aOrder_form[billing_address]" value="">
 
 <fieldset id="fieldsetbillingaddress" class="address_autocomplete2">
 <legend>Factuuradres</legend>
-
-
     <div class="has-flex has-wrap">
         <label for="aOrder_form[billing_postcode]">Postcode</label>
         <div class="field half">
@@ -151,7 +149,7 @@
         </div>
     </div>
 
-</fieldset>
+</fieldset>-->
 
 <fieldset class="payment-method">
 <legend>Manier van betaling</legend>
@@ -222,5 +220,93 @@ een e-mail waarmee u de gewenste leverdatum aan kunt geven. </p>
                     <input type="submit" class="button button-orange" value="Doorgaan met bestellen">
                 </div>
             </form>
+
+    <script>
+        function QS(el) {
+            return document.querySelector(el);
+        }
+
+        function QSA(el) {
+            return document.querySelectorAll(el);
+        }
+
+        function AJAX(url, success, fail) {
+            var request = new XMLHttpRequest();
+
+            request.open('GET', url, true);
+            request.onload = function () {
+                if (this.status >= 200 && this.status < 400) {
+                    if (typeof success === 'function') {
+                        success.call(request);
+                    }
+                } else {
+                    if (typeof success === 'function') {
+                        fail();
+                    }
+                }
+            };
+
+            request.send();
+        }
+
+        var components = {
+            autocomplete: function (postcode, streetnumber) {
+                function escapeHtml(unsafe) {
+                    // Some characters that are received from the webservice should be escaped when used in HTML
+                    return unsafe
+                        .replace(/&/g, '&amp;')
+                        .replace(/</g, '&lt;')
+                        .replace(/>/g, '&gt;')
+                        .replace(/"/g, '&quot;')
+                        .replace(/'/g, '&#039;');
+                }
+
+                //var pro6pp_auth_key = "WHnKf9dym89t1UUW"; //DEMO
+                var pro6pp_auth_key = 'eYLECZgfEgt55GuF', //PAYED
+                    NL_SIXPP_REGEX = /[0-9]{4,4}\s?[a-zA-Z]{2,2}/,
+                    url,
+                    result;
+
+                if (NL_SIXPP_REGEX.test(postcode)) {
+                    url = 'https://api.pro6pp.nl/v1/autocomplete'
+                        + '?auth_key=' + pro6pp_auth_key
+                        + '&nl_sixpp=' + postcode
+                        + '&streetnumber=' + streetnumber;
+
+                    url = encodeURI(url);
+
+                    AJAX(url,
+                        function () {
+                            result = JSON.parse(this.response);
+
+                            if (result.status === 'ok') {
+                                QS('[data-formfield="street"]').value = escapeHtml(result.results[0].street);
+                                QS('[data-formfield="city"]').value = escapeHtml(result.results[0].city);
+                            }
+
+                            // if (result.status === 'error' && result.error.message === 'nl_sixpp not found') {
+                            //     QS('.postcode').setCustomValidity(' ');
+                            // } else {
+                            //     QS('.postcode').setCustomValidity('');
+                            // }
+                            //
+                            // if (result.status === 'error' && result.error.message === 'Streetnumber not found') {
+                            //     QS('.streetnumber').setCustomValidity(' ');
+                            // } else {
+                            //     QS('.streetnumber').setCustomValidity('');
+                            // }
+                        },
+                        function () {
+                            console.log('FAIL');
+                        });
+                }
+            }
+        }
+
+        // Autocomplete
+        QS('[data-formfield="postcode"]').addEventListener('blur', function () {
+            components.autocomplete(this.value);
+        });
+    </script>
 </body>
 </html>
