@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid </title>
+    <style>
+        /*
+            PL = Plain, where organisms live
+            Standard single colume for mobile, may be overruled
+        */
+        [class^="pl-"] {
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 48em) {
+            /* Using MQs for defining columns */
+            .pl-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="pl-row">
+            <div class="o-intro">
+                <h1>Test</h1>
+                <p>Je weet zelf</p>
+            </div>
+
+            <div class="o-second">
+                <p>Tweede</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
