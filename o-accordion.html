@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organism - Accordion</title>
+
+    <style>
+        @font-face{
+            font-family:"Lato";
+            font-style:normal;
+            font-weight:400;
+            src:local("Lato Regular"),local(Lato-Regular),url(https://fonts.gstatic.com/s/lato/v11/1YwB1sO8YE1Lyjf12WNiUA.woff2) format("woff2");
+            unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000
+        }
+
+        @font-face{
+            font-family:"Lato";
+            font-style:normal;
+            font-weight:700;
+            src:local("Lato Bold"),local(Lato-Bold),url(https://fonts.gstatic.com/s/lato/v11/H2DMvhDLycM56KNuAtbJYA.woff2) format("woff2");
+            unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+
+        * + * {
+            margin-top: 1rem;
+        }
+
+        body {
+            font-family: "Lato", Tahoma, sans-serif;
+            padding: 1rem;
+        }
+
+        main {
+            width: 100%;
+            max-width: 40rem;
+            margin: 0 auto;
+        }
+
+        /* ICONS */
+
+        .is-icon-button {
+            display: block;
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .is-icon-button [class^="icon-"],
+        .has-icon [class^="icon-"] {
+            fill: #484848;
+            transition: fill .4s;
+        }
+
+        .has-icon {
+            line-height: 1.5;
+        }
+
+        .has-icon .icon {
+            display: inline-block;
+            width: 1.5rem;
+            height: 1.5rem;
+            margin: -.25rem 0 0 0;
+            vertical-align: middle;
+        }
+
+        .has-icon span svg {
+            width: 100%;
+            height: 100%;
+        }
+
+
+        /* ORGANISM - ACCORDION */
+        details, summary {
+            display: block;
+        }
+
+        .o-accordion details + details {
+            margin-top: 0;
+            border-top: 1px solid #e2e2e2;
+        }
+
+        .o-accordion summary {
+            position: relative;
+            display: block;
+            font-weight: 700;
+            padding: .5rem 1.5rem .5rem 0;
+            cursor: pointer;
+            outline: 0;
+        }
+
+        .o-accordion summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .o-accordion summary .icon {
+            position: absolute;
+            top: .75rem;
+            right: 0;
+            -webkit-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+            -webkit-transition: .4s;
+            -o-transition: .4s;
+            transition: .4s;
+        }
+
+        .o-accordion summary + div {
+            margin-top: 0;
+            padding-bottom: 1rem;
+        }
+
+        .o-accordion details[open] > summary .icon {
+            -webkit-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        /* Nested */
+        .m-accordion-nested summary .icon {
+            position: static;
+            top: auto;
+            right: auto;
+        }
+
+        .m-accordion-nested summary + div {
+            padding: 0 0 0 1.5rem;
+        }
+
+        .m-accordion-nested details + details {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" style="display: none;">
+        <defs>
+            <symbol id="icon-notification-info" viewBox="0 0 32 32">
+                <path d="M32 16a16 16 0 0 1-16 16A16 16 0 0 1 0 16 16 16 0 0 1 16 0a16 16 0 0 1 16 16z"/>
+                <path fill="#fff" d="M18.01 12.2V26h-4.126V12.2zm.478-3.778q0 .492-.2.931-.199.426-.545.759-.346.32-.812.519-.452.186-.97.186-.507 0-.946-.186-.439-.2-.785-.52-.332-.332-.532-.758-.186-.439-.186-.931 0-.506.186-.945.2-.44.532-.772.346-.332.785-.519.44-.186.945-.186.519 0 .971.186.466.187.812.52.346.332.546.771.2.44.2.945z"/>
+           </symbol>
+
+            <symbol id="icon-seen" viewBox="0 0 32 32">
+                <path fill="none" stroke="#909090" stroke-linecap="round" stroke-width="2" d="M23 12c0 1.75-4.925 7-11 7S1 14.625 1 12c0-1.75 4.925-7 11-7s11 5.25 11 7z"/>
+                <path d="M17 12a5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5z"/>
+            </symbol>
+
+            <symbol id="icon-instock" viewBox="0 0 32 32">
+                <path d="M6 12a3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3zM15 12a3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3zM24 12a3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3z"/>
+            </symbol>
+
+            <symbol id="icon-runningout" viewBox="0 0 32 32">
+                <path d="M10.5 12a3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3zM19.5 12a3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3z"/>
+            </symbol>
+
+            <symbol id="icon-outofstock" viewBox="0 0 32 32">
+                <path d="M15 12a3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3z"/>
+            </symbol>
+
+            <symbol id="icon-phone" viewBox="0 0 32 32">
+                  <path d="M32 25.284q0 .61-.244 1.589-.244.976-.488 1.546-.448 1.14-2.767 2.44Q26.385 32 24.309 32q-.65 0-1.22-.08-.567-.08-1.3-.286-.733-.204-1.059-.326l-2.4-.852q-2.199-.815-3.947-1.913-2.935-1.792-6.027-4.881-3.091-3.097-4.879-6.028-1.1-1.754-1.873-3.953l-.414-1.14q-.326-.936-.488-1.26-.16-.326-.328-1.06L.09 8.92Q-.03 8.347.01 7.74q0-2.12 1.18-4.233 1.26-2.32 2.4-2.77.57-.247 1.545-.49Q6.111 0 6.721 0q.33 0 .492.08.406.124 1.22 1.752.243.413.65 1.22.413.821.82 1.431.407.612.691 1.224.08.08.408.569.32.492.486.82.16.32.16.648 0 .444-.648 1.14-.656.688-1.43 1.22-.772.527-1.384 1.22-.607.691-.647 1.021 0 .2.12.524l.16.446q.04.12.325.568.284.449.284.409 1.71 3.13 3.948 5.37 2.24 2.241 5.329 3.95.04 0 .408.24.366.246.57.326l.445.204q.24.12.524.08.406 0 1.02-.606.608-.61 1.22-1.42.608-.82 1.26-1.429.652-.614 1.14-.654.28 0 .607.16.324.164.812.49.488.324.57.406l2.646 1.507q.771.448 1.26.692 1.587.776 1.709 1.18.08.164.08.49z"/>
+            </symbol>
+
+            <symbol id="icon-website" viewBox="0 0 32 32">
+                <path d="M31.962 14.933C31.437 6.946 25.054.561 17.067.036V0h-2.134v.036C6.946.561.561 6.946.036 14.933H0v2.134h.036c.525 7.987 6.91 14.37 14.897 14.895V32h2.134v-.038c7.987-.525 14.37-6.908 14.895-14.895H32v-2.134zM10.016 3.488c-1.03 1.37-1.886 3.087-2.509 5.045H4.311a13.94 13.94 0 0 1 5.705-5.045zm-6.82 7.179h3.75a25.335 25.335 0 0 0-.525 4.266H2.174a13.747 13.747 0 0 1 1.022-4.266zm-1.022 6.4H6.42c.058 1.487.24 2.918.525 4.266h-3.75a13.747 13.747 0 0 1-1.022-4.266zm2.137 6.4h3.194c.623 1.958 1.478 3.675 2.511 5.045a13.925 13.925 0 0 1-5.705-5.045zm10.622 6.263c-2.193-.587-4.08-2.942-5.226-6.263h5.226zm0-8.397H9.107c-.3-1.329-.49-2.764-.552-4.266h6.378zm0-6.4H8.555c.062-1.502.251-2.937.552-4.266h5.826zm0-6.4H9.707c1.145-3.321 3.033-5.676 5.226-6.261zm12.756 0h-3.192c-.625-1.958-1.478-3.675-2.513-5.045a13.953 13.953 0 0 1 5.705 5.045zM17.067 2.272c2.19.585 4.08 2.94 5.226 6.261h-5.226zm0 8.395h5.824c.303 1.329.488 2.764.554 4.266h-6.378zm0 6.4h6.378a23.648 23.648 0 0 1-.554 4.266h-5.824zm0 12.663v-6.263h5.226c-1.145 3.321-3.035 5.676-5.226 6.263zm4.917-1.218c1.03-1.372 1.888-3.087 2.513-5.045h3.192a13.938 13.938 0 0 1-5.705 5.045zm6.82-7.179h-3.75c.286-1.348.467-2.78.525-4.266h4.245a13.685 13.685 0 0 1-1.02 4.266zm-3.225-6.4a25.335 25.335 0 0 0-.525-4.266h3.75c.555 1.329.91 2.764 1.022 4.266z"/>
+            </symbol>
+
+            <symbol id="icon-email" viewBox="0 0 32 32">
+                <path d="M2.276 4.771h27.448L16 17.841 2.276 4.769zm20.44 11.16L32 7.191v18.344l-9.28-9.606zM0 25.535V7.187l9.354 8.776zm20.948-7.944l9.32 9.64h-28.5l9.356-9.532L16 22.279l4.948-4.692z"/>
+            </symbol>
+
+            <symbol id="icon-facebook" viewBox="0 0 32 32">
+                <path d="M27.688 0H4.312A4.312 4.312 0 0 0 0 4.312v23.376A4.312 4.312 0 0 0 4.312 32h11.529l.02-11.435H12.89a.7.7 0 0 1-.701-.698l-.014-3.686a.701.701 0 0 1 .7-.704h2.966v-3.562c0-4.133 2.524-6.383 6.211-6.383h3.026a.7.7 0 0 1 .7.7v3.109a.7.7 0 0 1-.7.7l-1.856.001c-2.006 0-2.394.953-2.394 2.352v3.083h4.406a.7.7 0 0 1 .696.784l-.437 3.686a.701.701 0 0 1-.696.618h-3.95L20.829 32h6.86A4.312 4.312 0 0 0 32 27.688V4.312A4.312 4.312 0 0 0 27.688 0z"/>
+            </symbol>
+
+            <symbol id="icon-instagram" viewBox="0 0 32 32">
+                <path d="M22.466 0H9.533C4.276 0 0 4.276 0 9.533v12.933c0 5.256 4.276 9.533 9.533 9.533h12.933c5.256 0 9.533-4.277 9.533-9.533V9.533C31.999 4.276 27.722 0 22.466 0zm6.313 22.466a6.314 6.314 0 0 1-6.313 6.313H9.533a6.314 6.314 0 0 1-6.314-6.313V9.533a6.313 6.313 0 0 1 6.314-6.314h12.933a6.313 6.313 0 0 1 6.313 6.314z"/>
+                <path d="M16 7.723c-4.564 0-8.277 3.713-8.277 8.276 0 4.564 3.713 8.276 8.276 8.276 4.564 0 8.276-3.712 8.276-8.276 0-4.563-3.712-8.276-8.276-8.276zm0 13.333a5.057 5.057 0 1 1 0-10.114 5.057 5.057 0 0 1 0 10.114zM26.274 7.785a1.983 1.983 0 0 1-1.983 1.984 1.983 1.983 0 0 1-1.983-1.984 1.983 1.983 0 0 1 1.983-1.983 1.983 1.983 0 0 1 1.983 1.983z"/>
+            </symbol>
+
+            <symbol id="icon-pinterest" viewBox="0 0 32 32">
+                <path d="M32 16a16 16 0 0 1-16 16A16 16 0 0 1 0 16 16 16 0 0 1 16 0a16 16 0 0 1 16 16z"/>
+                <path fill="#fff" d="M17.291 21.425c-1.21-.093-1.717-.693-2.666-1.269-.521 2.736-1.159 5.358-3.046 6.728-.583-4.135.855-7.24 1.523-10.536-1.138-1.917.137-5.775 2.539-4.824 2.955 1.169-2.56 7.127 1.143 7.87 3.865.778 5.443-6.706 3.046-9.14-3.463-3.514-10.08-.08-9.267 4.951.198 1.23 1.47 1.603.508 3.3-2.217-.49-2.878-2.239-2.793-4.57.137-3.814 3.428-6.485 6.728-6.855 4.174-.467 8.092 1.533 8.633 5.46.608 4.43-1.884 9.23-6.348 8.885z"/>
+            </symbol>
+
+            <symbol id="icon-googleplus" viewBox="0 0 32 32">
+                <path d="M32 16a16 16 0 0 1-16 16A16 16 0 0 1 0 16 16 16 0 0 1 16 0a16 16 0 0 1 16 16z"/>
+                <path fill="#fff" d="M5.57 16.716c-.129-3.402 2.851-6.545 6.256-6.586 1.736-.148 3.424.526 4.738 1.625a29.933 29.933 0 0 1-1.673 1.726c-1.156-.702-2.548-1.238-3.9-.762-2.18.62-3.5 3.194-2.693 5.326.668 2.227 3.377 3.45 5.5 2.514 1.1-.394 1.824-1.408 2.142-2.498-1.26-.025-2.52-.01-3.78-.044-.003-.75-.006-1.496-.003-2.246 2.1-.003 4.205-.01 6.309.01.13 1.836-.142 3.802-1.336 5.276-1.635 2.104-4.655 2.721-7.112 1.896-2.608-.857-4.504-3.484-4.447-6.237zM22.561 13.881h1.874c.003.627.01 1.257.013 1.884.626.006 1.256.01 1.883.012v1.878l-1.883.009c-.007.63-.01 1.257-.013 1.887-.627-.003-1.254 0-1.877 0-.006-.63-.006-1.257-.013-1.884-.627-.007-1.257-.01-1.883-.013v-1.877c.626-.003 1.253-.006 1.883-.013.003-.626.01-1.256.016-1.883z"/>
+            </symbol>
+
+            <symbol id="icon-arrow" viewBox="0 0 32 32">
+                <path d="M8 12.5l2-1 6 6 6-6 2 1-8 8z"/>
+            </symbol>
+
+            <symbol id="icon-arrow-small" viewBox="0 0 32 32">
+                <path d="M10 13.333l1.5-.75 4.5 4.5 4.5-4.5 1.5.75-6 6z"/>
+            </symbol>
+
+            <symbol id="icon-filter" viewBox="0 0 32 32">
+                <path d="M6 5.691h20l-8 10v8l-4 2v-10z" fill="none" stroke="#000" stroke-width="2"/>
+            </symbol>
+        </defs>
+    </svg>
+    <main>
+        <section class="o-accordion" data-component="accordion">
+            <details open>
+                <summary class="has-icon">Omschrijving
+                    <span class="icon">
+                        <svg viewBox="0 0 32 32" role="img">
+                            <use class="icon-filter" xlink:href="#icon-arrow"></use>
+                        </svg>
+                    </span>
+                </summary>
+                <div>
+                    <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.</p>
+                </div>
+            </details>
+            <details>
+                <summary class="has-icon">Item 2
+                    <span class="icon">
+                        <svg viewBox="0 0 32 32" role="img">
+                            <use class="icon-filter" xlink:href="#icon-arrow"></use>
+                        </svg>
+                    </span>
+                </summary>
+                <div>
+                    <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.</p>
+                </div>
+            </details>
+            <details open>
+                <summary class="has-icon">Item 3
+                    <span class="icon">
+                        <svg viewBox="0 0 32 32" role="img">
+                            <use class="icon-filter" xlink:href="#icon-arrow-small"></use>
+                        </svg>
+                    </span>
+                </summary>
+                <div>
+                    <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.</p>
+                </div>
+            </details>
+            <details>
+                <summary class="has-icon">Item 4
+                    <span class="icon">
+                        <svg viewBox="0 0 32 32" role="img">
+                            <use class="icon-filter" xlink:href="#icon-arrow-small"></use>
+                        </svg>
+                    </span>
+                </summary>
+                <div class="m-accordion-nested">
+                    <details>
+                        <summary class="has-icon">
+                            <span class="icon">
+                                <svg viewBox="0 0 32 32" role="img">
+                                    <use class="icon-filter" xlink:href="#icon-arrow"></use>
+                                </svg>
+                            </span>Nested item 1
+                        </summary>
+                        <div>
+                            <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary class="has-icon">
+                            <span class="icon">
+                                <svg viewBox="0 0 32 32" role="img">
+                                    <use class="icon-filter" xlink:href="#icon-arrow"></use>
+                                </svg>
+                            </span>Nested item 2
+                        </summary>
+                        <div>
+                            <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary class="has-icon">
+                            <span class="icon">
+                                <svg viewBox="0 0 32 32" role="img">
+                                    <use class="icon-filter" xlink:href="#icon-arrow-small"></use>
+                                </svg>
+                            </span>Nested item 3
+                        </summary>
+                        <div>
+                            <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary class="has-icon">
+                            <span class="icon">
+                                <svg viewBox="0 0 32 32" role="img">
+                                    <use class="icon-filter" xlink:href="#icon-arrow-small"></use>
+                                </svg>
+                            </span>Nested item 4
+                        </summary>
+                        <div>
+                            <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.</p>
+                        </div>
+                    </details>
+                </div>
+            </details>
+        </section>
+
+        <section data-component="primary-nav">
+        </section>
+    </main>
+    <script>
+    (function () {
+        "use strict";
+
+        // Helper functions
+        function QS(el) {
+            return document.querySelector(el);
+        }
+
+        function QSA(el) {
+            return document.querySelectorAll(el);
+        }
+
+        function MQL(breakpoint, listenerfunction) {
+            var mql = window.matchMedia(breakpoint);
+
+            mql.addListener(listenerfunction);
+
+            listenerfunction(mql);
+        }
+
+        if (!Element.prototype.matches) {
+            Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
+        }
+
+        if (!Element.prototype.closest) {
+            Element.prototype.closest = function (s) {
+                var el = this,
+                    ancestor = this;
+                if (!document.documentElement.contains(el)) {
+                    return null;
+                }
+
+                do {
+                    if (ancestor.matches(s)) {
+                        return ancestor;
+                    }
+                    ancestor = ancestor.parentElement;
+                } while (ancestor !== null);
+
+                return null;
+            };
+        }
+
+        var components = {
+            accordion: function () {
+                var test = document.createElement('details');
+
+                if (('open' in test) === false) {
+                    // Close all summaries
+                    [].forEach.call(QSA('.o-accordion summary + div'), function (anchor, i) {
+                        anchor.style.display = 'none';
+                    });
+
+                    // Open summaries which have the open attribute
+                    [].forEach.call(QSA('.o-accordion details'), function (anchor, i) {
+                        if (anchor.getAttribute('open') !== null) {
+                            anchor.querySelector('div').style.display = 'block';
+                        }
+                    });
+
+                    // Click events
+                    [].forEach.call(QSA('.o-accordion summary'), function (anchor, i) {
+                        anchor.addEventListener('click', function () {
+                            if (anchor.parentNode.getAttribute('open') !== null) {
+                                anchor.parentNode.removeAttribute('open');
+                                anchor.parentNode.querySelector('div').style.display = 'none';
+                            } else {
+                                anchor.parentNode.setAttribute('open','');
+                                anchor.parentNode.querySelector('div').style.display = 'block';
+                            }
+                        });
+                    });
+                }
+            }
+        }
+
+        // Check for components
+        var componentList = document.querySelectorAll('[data-component]');
+
+        // Run functions/methods
+        for (var i = 0; i < componentList.length; i++) {
+            if (components[componentList[i].dataset.component]) {
+                components[componentList[i].dataset.component]();
+            } else {
+                console.log(componentList[i].dataset.component + ' does not exist');
+            }
+        }
+    }());
+
+    </script>
+</body>
+</html>
