@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>display unset</title>
+</head>
+<body>
+    <h1>Display: unset</h1>
+
+    <p class="hide-on-mobile">
+        This is a test
+    </p>
+
+    <ul class="list hide-on-mobile">
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+    </ul>
+
+    <style>
+        p {
+            display: none;
+        }
+
+        .list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .hide-on-mobile {
+            background: #fcc;
+        }
+
+        @media (min-width: 30em) {
+            .hide-on-mobile {
+                background: none;
+                display: inherit;
+            }
+        }
+    </style>
+
+</body>
+</html>
