@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+        if ("MutationObserver" in window && "IntersectionObserver" in window) {
+            console.log("TEST");
+            // Initially remove SRC attribute from all images...
+            let mObserver = new MutationObserver(mutations => {
+                mutations.forEach(mutation => {
+                    Array.from(mutation.addedNodes)
+                        .filter(node => node.tagName === 'IMG')
+                        .forEach(img => {
+                            img.dataset.src = img.src;
+                            img.src = '';
+                        });
+                });
+            });
+
+            mObserver.observe(document.documentElement, {
+                childList: true,
+                subtree: true
+            });
+
+            // Then lazy load them back in via intersectionObserver
+
+            const io_config = {
+              rootMargin: '0px 0px 50px 0px',
+              threshold: 0
+            };
+
+            let iObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        console.log(entry);
+                    }
+                });
+            }, io_config);
+
+            const images = document.querySelectorAll('main img');
+            images.forEach(image => {
+                observer.observe(image);
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Lazyloading images</h1>
+    </header>
+
+    <main>
+        <ul class="has-grid">
+            <li class="article-card ">
+                <span id="article-13030" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/13030.jpg" alt="hanglamp 13030 design modern staal rvs metaal staalgrijs rond">
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>13030<span> · voorzien van stappendimmer · <strong>voorradig</strong></span></p>
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>149,00</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-13030-design-modern-staal_rvs-metaal-staalgrijs-rond" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-73113" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/73113.jpg" alt="hanglamp 73113 sale modern retro metaal grijs rond langwerpig">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>73113<span> · Lichtgrijs · <strong>voorradig</strong></span></p>
+                        </div>
+                        <div class="article-card-price">
+
+                            <p><span class="article-price-old">149,00</span></p>
+                            <p>89,90</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-73113-sale-modern-retro-metaal-grijs-rond-langwerpig" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-73322" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/73322.jpg" alt="hanglamp 73322 industrie look landelijk rustiek modern metaal zwart mat rond">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>73322<span> · 1.30m breed · <strong>voorradig</strong></span></p>
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>169,00</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-73322-industrie-look-landelijk-rustiek-modern-metaal-zwart-mat-rond" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-73225" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/73225.jpg" alt="hanglamp 73225 industrie look landelijk rustiek klassiek eigentijds klassiek metaal zwart mat brons roest bruin brons rond langwerpig">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>73225<span> · zwart/brons · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>179,00</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-73225-industrie-look-landelijk-rustiek-klassiek-eigentijds_klassiek-metaal-zwart-mat-brons-roest-bruin-brons-rond-langwerpig" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-30804" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/30804.jpg" alt="hanglamp 30804 modern retro kunststof acrylaat kunststofglas metaal zwart mat">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>30804<span> · zwart en rookglas (kunststof) · <strong>voorradig</strong></span></p>
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>265,00</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-30804-modern-retro-kunststof-acrylaat_kunststofglas-metaal-zwart-mat" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-72229" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/72229.jpg" alt="hanglamp 72229 industrie look landelijk rustiek aluminium metaal betongrijs rond">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>72229<span> · betongrijs · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>74,90</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-72229-industrie-look-landelijk-rustiek-aluminium-metaal-betongrijs-rond" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-72275" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/72275.jpg" alt="hanglamp 72275 sale modern aluminium aluminium rond">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>72275<span> · Ø 50cm · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p><span class="article-price-old">119,00</span></p>
+                            <p>99,90</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-72275-sale-modern-aluminium-aluminium-rond" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-72400" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/72400.jpg" alt="hanglamp 72400 industrie look design landelijk rustiek modern retro aluminium metaal betongrijs rond langwerpig">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>72400<span> · betongrijs · <strong>voorradig</strong></span></p>
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>159,00</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-72400-industrie-look-design-landelijk-rustiek-modern-retro-aluminium-metaal-betongrijs-rond-langwerpig" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-12420" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/12420.jpg" alt="hanglamp 12420 modern staal rvs metaal staalgrijs rond">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>12420<span> · dimmer ingebouwd · <strong>voorradig</strong></span></p>
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>215,00</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-12420-modern-staal_rvs-metaal-staalgrijs-rond" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-73321" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/73321.jpg" alt="hanglamp 73321 industrie look modern metaal zwart mat rond">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>73321<span> · Ø 51cm  · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>79,90</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-73321-industrie-look-modern-metaal-zwart-mat-rond" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-30798" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/30798.jpg" alt="hanglamp 30798 industrie look modern retro glas kunststof metaal grijs antraciet donkergrijs">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>30798<span> · ruw ijzer · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>144,00</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-30798-industrie-look-modern-retro-glas-kunststof-metaal-grijs-antraciet_donkergrijs" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-30729" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/30729.jpg" alt="hanglamp 30729 industrie look modern stof metaal zwart grijs antraciet donkergrijs">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>30729<span> · ruw ijzer · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>134,00</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-30729-industrie-look-modern-stof-metaal-zwart-grijs-antraciet_donkergrijs" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-73314" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/73314.jpg" alt="hanglamp 73314 industrie look modern stoer raw metaal zwart mat rond">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>73314<span> · mat zwarte kleur · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>59,90</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-73314-industrie-look-modern-stoer-raw-metaal-zwart-mat-rond" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-30140" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/30140.jpg" alt="hanglamp 30140 landelijk rustiek modern eigentijds klassiek stof taupe rond">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>30140<span> · taupe Ø 47cm · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>100,50</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-30140-landelijk-rustiek-modern-eigentijds_klassiek-stof-taupe-rond" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-73261" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/73261.jpg" alt="hanglamp 73261 sale modern metaal zwart mat">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>73261<span> · 44cm breed  · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p><span class="article-price-old">49,90</span></p>
+                            <p>39,90</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-73261-sale-modern-metaal-zwart-mat" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-73315" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/73315.jpg" alt="hanglamp 73315 industrie look modern metaal zwart mat rond">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>73315<span> · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>59,90</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-73315-industrie-look-modern-metaal-zwart-mat-rond" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-73316" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/73316.jpg" alt="hanglamp 73316 industrie look modern metaal zwart mat rond">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>73316<span> · mat zwart · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>59,90</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-73316-industrie-look-modern-metaal-zwart-mat-rond" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-12902" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/12902.jpg" alt="hanglamp 12902 design landelijk rustiek modern retro glas metaal goud ovaal">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>12902<span> · goud/messing · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>249,00</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-12902-design-landelijk-rustiek-modern-retro-glas-metaal-goud-ovaal" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-73502" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/73502.jpg" alt="hanglamp 73502 industrie look landelijk rustiek modern stoer raw hout metaal zwart oldmetal (gunmetal) rond">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>73502<span> · Ø 34cm  · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>99,90</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-73502-industrie-look-landelijk-rustiek-modern-stoer-raw-hout-metaal-zwart-oldmetal_(gunmetal)-rond" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-73245" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/73245.jpg" alt="hanglamp 73245 modern glas helder glas staal rvs metaal staalgrijs rond">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>73245<span> · geschikt voor led · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>49,90</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-73245-modern-glas-helder_glas-staal_rvs-metaal-staalgrijs-rond" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-73253" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/73253.jpg" alt="hanglamp 73253 modern metaal zwart mat antraciet donkergrijs rond">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>73253<span> · 20cm zwart · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>39,90</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-73253-modern-metaal-zwart-mat-antraciet_donkergrijs-rond" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-73250" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/73250.jpg" alt="hanglamp 73250 modern retro metaal zwart mat antraciet donkergrijs langwerpig">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>73250<span> · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>49,90</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-73250-modern-retro-metaal-zwart-mat-antraciet_donkergrijs-langwerpig" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-73251" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/73251.jpg" alt="hanglamp 73251 modern metaal zwart mat antraciet donkergrijs rond">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>73251<span> · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>29,90</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-73251-modern-metaal-zwart-mat-antraciet_donkergrijs-rond" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-72282" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/72282.jpg" alt="hanglamp 72282 industrie look modern metaal zwart langwerpig">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>72282<span> · 120cm · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>129,00</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-72282-industrie-look-modern-metaal-zwart-langwerpig" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-72284" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/72284.jpg" alt="hanglamp 72284 industrie look modern metaal zwart langwerpig">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>72284<span> · 150cm · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>149,00</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-72284-industrie-look-modern-metaal-zwart-langwerpig" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-73458" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/73458.jpg" alt="hanglamp 73458 modern retro glas metaal zwart mat grijs rond">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>73458<span> · Ø 20cm  · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>42,90</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-73458-modern-retro-glas-metaal-zwart-mat-grijs-rond" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-73460" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/73460.jpg" alt="hanglamp 73460 modern retro glas metaal zwart mat grijs rond">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>73460<span> · Ø 30cm  · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>69,90</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-73460-modern-retro-glas-metaal-zwart-mat-grijs-rond" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-73465" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/73465.jpg" alt="hanglamp 73465 modern retro glas zacht geel staal rvs metaal geel staalgrijs rond">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>73465<span> · Ø 20cm  · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>45,90</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-73465-modern-retro-glas-zacht_geel-staal_rvs-metaal-geel-staalgrijs-rond" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-73466" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/73466.jpg" alt="hanglamp 73466 modern retro glas zacht geel staal rvs metaal geel staalgrijs rond">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>73466<span> · Ø 30cm  · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>79,90</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-73466-modern-retro-glas-zacht_geel-staal_rvs-metaal-geel-staalgrijs-rond" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-73457" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/73457.jpg" alt="hanglamp 73457 modern retro glas helder glas metaal zwart mat rond">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>73457<span> · Ø 20cm  · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>42,90</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-73457-modern-retro-glas-helder_glas-metaal-zwart-mat-rond" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-73459" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/73459.jpg" alt="hanglamp 73459 modern retro glas helder glas staal rvs metaal rond">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>73459<span> · Ø 30cm  · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>69,90</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-73459-modern-retro-glas-helder_glas-staal_rvs-metaal-rond" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-73317" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/73317.jpg" alt="hanglamp 73317 sale modern hout zwart mat">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>73317<span> · Ø 37cm hout  · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p><span class="article-price-old">115,00</span></p>
+                            <p>59,90</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-73317-sale-modern-hout-zwart-mat" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-12951" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/12951.jpg" alt="hanglamp 12951 modern glas wit opaalglas metaal wit mat grijs rond">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>12951<span> · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>139,00</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-12951-modern-glas-wit_opaalglas-metaal-wit-mat-grijs-rond" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-73264" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/73264.jpg" alt="hanglamp 73264 modern metaal zwart mat antraciet donkergrijs rond">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>73264<span> · 38cm zwart · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>59,90</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-73264-modern-metaal-zwart-mat-antraciet_donkergrijs-rond" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-30802" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/30802.jpg" alt="hanglamp 30802 modern stof metaal zwart mat wit">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>30802<span> · zwart -wit · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>245,00</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-30802-modern-stof-metaal-zwart-mat-wit" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+            <li class="article-card ">
+                <span id="article-30803" class="anchor-shift"></span>
+
+                <div>
+                    <figure class="article-thumbnail">
+                        <img src="https://www.rietveldlicht.nl/fotos/middel/30803.jpg" alt="hanglamp 30803 modern stof metaal zwart mat zilvergrijs">
+
+                    </figure>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>30803<span> · zwart-zilver · <strong>voorradig</strong></span></p>
+
+                        </div>
+                        <div class="article-card-price">
+
+                            <p>255,00</p>
+                        </div>
+                    </div>
+                    <a href="/artikel/hanglamp-30803-modern-stof-metaal-zwart-mat-zilvergrijs" class="article-card-link"><span class="sr-only">Bekijk details</span></a>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+
+</body>
+</html>
