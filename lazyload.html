@@ -85,14 +85,14 @@
                   threshold: 0
                 };
 
-                const iObserver = new IntersectionObserver(function(entries) {
+                const iObserver = new IntersectionObserver(function(entries, observer) {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             entry.target.src = entry.target.dataset.src;
 
                             console.log(entry);
 
-                            this.unobserve(entry.target);
+                            observer.unobserve(entry.target);
                         }
                     });
                 }, io_config);
