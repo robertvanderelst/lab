@@ -7,45 +7,45 @@
     <title>Document</title>
     <script>
 
-        if ("MutationObserver" in window && "IntersectionObserver" in window) {
-            console.log("TEST");
-            // Initially remove SRC attribute from all images...
-            let mObserver = new MutationObserver(mutations => {
-                mutations.forEach(mutation => {
-                    Array.from(mutation.addedNodes)
-                        .filter(node => node.tagName === 'IMG')
-                        .forEach(img => {
-                            img.dataset.src = img.src;
-                            img.src = '';
-                        });
-                });
-            });
-
-            mObserver.observe(document.documentElement, {
-                childList: true,
-                subtree: true
-            });
-
-            // Then lazy load them back in via intersectionObserver
-
-            const io_config = {
-              rootMargin: '0px 0px 50px 0px',
-              threshold: 0
-            };
-
-            let iObserver = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        console.log(entry);
-                    }
-                });
-            }, io_config);
-
-            const images = document.querySelectorAll('main img');
-            images.forEach(image => {
-                observer.observe(image);
-            });
-        }
+        // if ("MutationObserver" in window && "IntersectionObserver" in window) {
+        //     console.log("TEST");
+        //     // Initially remove SRC attribute from all images...
+        //     let mObserver = new MutationObserver(mutations => {
+        //         mutations.forEach(mutation => {
+        //             Array.from(mutation.addedNodes)
+        //                 .filter(node => node.tagName === 'IMG')
+        //                 .forEach(img => {
+        //                     img.dataset.src = img.src;
+        //                     img.src = '';
+        //                 });
+        //         });
+        //     });
+        //
+        //     mObserver.observe(document.documentElement, {
+        //         childList: true,
+        //         subtree: true
+        //     });
+        //
+        //     // Then lazy load them back in via intersectionObserver
+        //
+        //     const io_config = {
+        //       rootMargin: '0px 0px 50px 0px',
+        //       threshold: 0
+        //     };
+        //
+        //     let iObserver = new IntersectionObserver(function(entries) {
+        //         entries.forEach(entry => {
+        //             if (entry.isIntersecting) {
+        //                 console.log(entry);
+        //             }
+        //         });
+        //     }, io_config);
+        //
+        //     const images = document.querySelectorAll('main img');
+        //     images.forEach(image => {
+        //         observer.observe(image);
+        //     });
+        // }
     </script>
 </head>
 <body>
