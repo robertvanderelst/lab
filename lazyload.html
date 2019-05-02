@@ -7,51 +7,103 @@
     <title>Document</title>
 
     <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding: 1rem;
+        }
+
         img {
+            display: block;
+            width: 100%;
+        }
+
+        ul {
+            display: grid;
+            list-style: none;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1rem;
+        }
+
+        li {
+
+        }
+
+        figure {
+            position: relative;
+            padding-bottom: 66.66667%;
             background: #e2e2e2;
+        }
+
+        figure img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (min-width: 30em) {
+            ul {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 48em) {
+            ul {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
     </style>
     <script>
+        if ("MutationObserver" in window && "IntersectionObserver" in window) {
+            // Initially remove SRC attribute from all images...
+            const mObserver = new MutationObserver(mutations => {
+                mutations.forEach(mutation => {
+                    Array.from(mutation.addedNodes)
+                        .filter(node => node.tagName === 'IMG')
+                        .forEach(img => {
+                            img.dataset.src = img.src;
+                            img.src = '';
+                        });
+                });
+            });
 
-        // if ("MutationObserver" in window && "IntersectionObserver" in window) {
-        //     console.log("TEST");
-        //     // Initially remove SRC attribute from all images...
-        //     let mObserver = new MutationObserver(mutations => {
-        //         mutations.forEach(mutation => {
-        //             Array.from(mutation.addedNodes)
-        //                 .filter(node => node.tagName === 'IMG')
-        //                 .forEach(img => {
-        //                     img.dataset.src = img.src;
-        //                     img.src = '';
-        //                 });
-        //         });
-        //     });
-        //
-        //     mObserver.observe(document.documentElement, {
-        //         childList: true,
-        //         subtree: true
-        //     });
-        //
-        //     // Then lazy load them back in via intersectionObserver
-        //
-        //     const io_config = {
-        //       rootMargin: '0px 0px 50px 0px',
-        //       threshold: 0
-        //     };
-        //
-        //     let iObserver = new IntersectionObserver(function(entries) {
-        //         entries.forEach(entry => {
-        //             if (entry.isIntersecting) {
-        //                 console.log(entry);
-        //             }
-        //         });
-        //     }, io_config);
-        //
-        //     const images = document.querySelectorAll('main img');
-        //     images.forEach(image => {
-        //         observer.observe(image);
-        //     });
-        // }
+            mObserver.observe(document.documentElement, {
+                childList: true,
+                subtree: true
+            });
+
+            // Then lazy load them back in via intersectionObserver
+
+            document.addEventListener('DOMContentLoaded', (event) => {
+                const io_config = {
+                  rootMargin: '0px 0px -100px 0px',
+                  threshold: 0
+                };
+
+                const iObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.src = entry.target.dataset.src;
+
+                            console.log(entry);
+
+                            this.unobserve(entry.target);
+                        }
+                    });
+                }, io_config);
+
+                const images = document.querySelectorAll('main img');
+                images.forEach(image => {
+                    iObserver.observe(image);
+                });
+
+            });
+        }
     </script>
 </head>
 <body>
