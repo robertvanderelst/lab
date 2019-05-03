@@ -19,6 +19,12 @@
         img {
             display: block;
             width: 100%;
+            opacity: 1;
+            transition: opacity 0.4s;
+        }
+
+        img[data-src] {
+        	opacity: 0;
         }
 
         ul {
@@ -60,25 +66,13 @@
     </style>
     <script>
         if ("MutationObserver" in window && "IntersectionObserver" in window) {
-            // Initially remove SRC attribute from all images...
-            // const mObserver = new MutationObserver(mutations => {
-            //     mutations.forEach(mutation => {
-            //         Array.from(mutation.addedNodes)
-            //             .filter(node => node.tagName === 'IMG')
-            //             .forEach(img => {
-            //                 img.dataset.src = img.src;
-            //                 img.src = '';
-            //             });
-            //     });
-            // });
-
             const mObserver = new MutationObserver(function (mutations) {
                 mutations.forEach(function (mutation) {
                     if (mutation.addedNodes) {
                         [].forEach.call(mutation.addedNodes, function (value, index) {
                             if (value.tagName === 'IMG') {
                                 value.dataset.src = value.src;
-                                value.src = '';
+                                value.removeAttribute('src');
                             }
                         });
                     }
@@ -99,9 +93,12 @@
                 };
 
                 const iObserver = new IntersectionObserver(function(entries, observer) {
-                    entries.forEach(entry => {
+                    entries.forEach(function (entry) {
                         if (entry.isIntersecting) {
                             entry.target.src = entry.target.dataset.src;
+                            entry.target.onload = function() {
+                        		entry.target.removeAttribute('data-src');
+                        	};
                             observer.unobserve(entry.target);
                         }
                     });
