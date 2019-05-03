@@ -16,14 +16,14 @@
             padding: 1rem;
         }
 
-        img {
+        main img {
             display: block;
             width: 100%;
             opacity: 1;
             transition: opacity 0.4s;
         }
 
-        img[data-src] {
+        main img[data-src] {
         	opacity: 0;
         }
 
@@ -93,7 +93,7 @@
                 };
 
                 const iObserver = new IntersectionObserver(function(entries, observer) {
-                    entries.forEach(function (entry) {
+                    entries.forEach(function (entry, observer) {
                         if (entry.isIntersecting) {
                             entry.target.src = entry.target.dataset.src;
                             entry.target.onload = function() {
