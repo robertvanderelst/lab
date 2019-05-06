@@ -97,13 +97,12 @@
                 });
             });
         } else {
-            console.log("WTF");
-            console.log(QSA('.bleh'));
-            // [].forEach.call(QSA('picture > img'), function (anchor) {
-            //     console.log("TEST");
-            //    console.log(anchor);
-            //   // anchor.src = anchor.dataset.src;
-            // });
+            document.addEventListener('DOMContentLoaded', function () {
+                [].forEach.call(QSA('picture > img'), function (anchor, i) {
+                   anchor.setAttribute('src', anchor.dataset.src);
+                   anchor.removeAttribute('data-src');
+                });
+            });
         }
     </script>
 </head>
@@ -119,7 +118,7 @@
 
                 <div>
                     <picture class="article-thumbnail">
-                        <img data-src="https://www.rietveldlicht.nl/fotos/middel/13030.jpg" alt="hanglamp 13030 design modern staal rvs metaal staalgrijs rond" class="bleh">
+                        <img data-src="https://www.rietveldlicht.nl/fotos/middel/13030.jpg" alt="hanglamp 13030 design modern staal rvs metaal staalgrijs rond">
                         <noscript><img src="https://www.rietveldlicht.nl/fotos/middel/13030.jpg" alt="hanglamp 13030 design modern staal rvs metaal staalgrijs rond"></noscript>
                     <noscript></noscript></picture>
                     <div class="article-card-data">
