@@ -93,7 +93,7 @@
                 };
 
                 const iObserver = new IntersectionObserver(function(entries, observer) {
-                    entries.forEach(function (entry, observer) {
+                    entries.forEach(function (entry) {
                         if (entry.isIntersecting) {
                             entry.target.src = entry.target.dataset.src;
                             entry.target.onload = function() {
