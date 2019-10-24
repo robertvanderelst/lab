@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>A11Y - Links and buttons</title>
+
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            -webkit-box-sizing:border-box;
+            -moz-box-sizing:border-box;
+            box-sizing:border-box
+        }
+        *+*{
+            margin-top:1rem
+        }
+        html{
+            font-size:100%;
+            font-family:sans-serif;
+            -ms-text-size-adjust:100%;
+            -webkit-text-size-adjust:100%;
+            background:#fff
+        }
+        body{
+            margin:0;
+            padding:4rem;
+            font-family:Arial,sans-serif;
+            color:#484848
+        }
+        h1,h2,h3,h4{
+            font-weight:700;
+            color:#484848;
+            line-height:1.2
+        }
+
+        a.link-default {
+            color: hsl(197, 100%, 47%);
+        }
+
+        a.link-alternate {
+            color: hsl(217, 100%, 40%);
+        }
+    </style>
+</head>
+<body>
+    <h1>A11y- Links and buttons</h1>
+
+    <p>In een lopende tekst worden ook wel 's <a href="#" class="link-default">links</a> geplaatst. Dit moet natuurlijk ook voldoende contrast hebben</p>
+    <p>In een lopende tekst worden ook wel 's <a href="#" class="link-alternate">links</a> geplaatst. Dit moet natuurlijk ook voldoende contrast hebben</p>
+
+    <button>Label</button>
+</body>
+</html>
