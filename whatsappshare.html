@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Whatsapp share button</title>
+    <style>
+        * {
+          font-family: Arial, sans-serif;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          outline: 0;
+        }
+
+        .button {
+            font-size: 1rem;
+            line-height: 2;
+
+            position: relative;
+
+            display: inline-block;
+            flex-shrink: 0;
+
+            height: 2em;
+            margin: 0;
+            padding: 0 .75em;
+
+            cursor: pointer;
+            -webkit-transition: background .2s, color .2s;
+                    transition: background .2s, color .2s;
+            -webkit-transform: translateY(-2px);
+                    transform: translateY(-2px);
+            text-align: center;
+            text-decoration: none;
+
+            color: #fff;
+            border: none;
+            border-radius: .25rem;
+            background: #00adef;
+            box-shadow: 0 2px 0 0 hsl(207, 44%, 29%);
+        }
+
+        .button.has-icon {
+            line-height: 2;
+
+            padding-left: 2.25rem;
+        }
+    </style>
+
+</head>
+<body>
+    <a href="whatsapp://send?text=Testing!" data-action="share/whatsapp/share" class="button">Deel via Whatsapp</a>
+</body>
+</html>
