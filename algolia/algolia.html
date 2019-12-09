@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Algolia uitbreiding</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            color: #484848;
+            box-sizing: border-box;
+        }
+
+        *:focus {
+            outline: 0;
+        }
+        @font-face {
+            font-family: "Lato";
+            font-style: normal;
+            font-weight: 400;
+            src: local("Lato Regular"), local("Lato-Regular"), url(DOMAIN_ROOT/v3/fonts/Lato-Regular.woff2) format("woff2");
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Lato";
+            font-style: normal;
+            font-weight: 700;
+            src: local("Lato Bold"), local("Lato-Bold"), url(DOMAIN_ROOT/v3/fonts/Lato-Bold.woff2) format("woff2");
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            font-display: swap;
+        }
+
+        html {
+            font-size: 100%;
+        }
+
+        body {
+            font-family: "Lato", Arial, sans-serif;
+            padding: 1rem;
+        }
+
+        form {
+            max-width: 40rem;
+            margin: 0 auto;
+        }
+
+        fieldset {
+            border: 0;
+            padding: 0;
+        }
+
+        input[type="search"] {
+            font-family: inherit;
+            font-size: 1em;
+            line-height: 2;
+            padding: 0 .5rem;
+            border: 1px solid #e2e2e2;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+
+        .button {
+            font-size: 1rem;
+            line-height: 2;
+
+            position: relative;
+
+            display: inline-block;
+            vertical-align: bottom;
+            flex-shrink: 0;
+
+            height: 2em;
+            margin: 0;
+            padding: 0 .75em;
+
+            cursor: pointer;
+            -webkit-transition: background .2s, color .2s;
+                    transition: background .2s, color .2s;
+            -webkit-transform: translateY(-2px);
+                    transform: translateY(-2px);
+            text-align: center;
+            text-decoration: none;
+
+            color: #fff;
+            border: none;
+            border-radius: .25rem;
+            background: #00adef;
+            box-shadow: 0 2px 0 0 hsl(207, 44%, 29%);
+        }
+
+        .button.has-icon {
+            line-height: 2;
+
+            padding-left: 2.25rem;
+        }
+
+        .button:hover {
+            color: #fff;
+            background: #24c1ff;
+        }
+
+        .button:active {
+            -webkit-transition: margin .2s, box-shadow .2s;
+                    transition: margin .2s, box-shadow .2s;
+            -webkit-transform: translateY(0);
+                    transform: translateY(0);
+
+            box-shadow: none;
+        }
+
+        .has-flex {
+            display: flex;
+        }
+
+
+        /* ALGOLIA AUTOCOMPLETE */
+        .algolia-autocomplete {
+            width: 100%;
+        }
+
+        .algolia-autocomplete h4 {
+            color: #707070;
+            text-align: right;
+            font-size: .8em;
+            font-weight: 400;
+            margin: 0 .5rem;
+        }
+
+        .algolia-autocomplete h5 {
+            font-size: 1rem;
+            color: #00adef;
+        }
+
+        .algolia-autocomplete p {
+            font-size: .8rem;
+        }
+
+        .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+            width: 100%;
+        }
+
+        .algolia-autocomplete .aa-hint {
+            color: #e2e2e2;
+        }
+
+        .algolia-autocomplete .aa-dropdown-menu {
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid #e2e2e2;
+            border-top: none;
+            margin: 0;
+            padding-top: .5rem;
+        }
+
+        .algolia-autocomplete .aa-dropdown-menu * + * {
+            margin-top: 0;
+        }
+
+        .algolia-autocomplete [class^="aa-dataset-"] +  [class^="aa-dataset-"] h4 {
+            padding-top: .25rem;
+            border-top: 1px solid #e2e2e2;
+        }
+
+        .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+            cursor: pointer;
+            font-size: .83333rem;
+            padding: .5rem;
+            color: #484848;
+        }
+
+        .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+            background-color: #e2e2e2;
+        }
+
+        .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+            font-style: normal;
+
+            margin: 0 -.125rem;
+            padding: 0 .125rem;
+
+            background: #fecb09;
+        }
+
+        @media (min-width: 30em) {
+
+        }
+
+    </style>
+</head>
+<body>
+    <form action="" data-component="algolia">
+        <fieldset>
+            <legend>Algolia</legend>
+            <div class="has-flex"><input type="search" id="topneedle"><button type="submit" class="button" style="margin-left: .5rem;">Z</button></div>
+        </fieldset>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+    <script src="algolia.js"></script>
+</body>
+</html>
