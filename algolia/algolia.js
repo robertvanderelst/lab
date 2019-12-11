@@ -31,18 +31,18 @@ var components = {
 
         var ac = autocomplete('#topneedle', { hint: false, },
             [
+            // {
+            //     source: autocomplete.sources.hits(client.initIndex('NL_URI'), { hitsPerPage: 3 }),
+            //     templates: {
+            //         header: '<h4>Categorie&euml;n</h4>',
+            //         footer: null,
+            //         suggestion: function(suggestion) {
+            //             return '<a href="' + suggestion.uri.value + '">' + suggestion._highlightResult.title.value + '</a>';
+            //         }
+            //     }
+            // },
             {
-                source: autocomplete.sources.hits(client.initIndex('NL_URI'), { hitsPerPage: 3 }),
-                templates: {
-                    header: '<h4>Categorie&euml;n</h4>',
-                    footer: null,
-                    suggestion: function(suggestion) {
-                        return '<a href="' + suggestion.uri.value + '">' + suggestion._highlightResult.title.value + '</a>';
-                    }
-                }
-            },
-            {
-              source: autocomplete.sources.hits(client.initIndex('NL_CATALOGUE'), { hitsPerPage: 3 }),
+              source: autocomplete.sources.hits(client.initIndex('NL_CATALOGUE'), { hitsPerPage: 5 }),
               templates: {
                 header: '<h4>Producten</h4>',
                 footer: null,
