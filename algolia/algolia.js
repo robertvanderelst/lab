@@ -57,7 +57,7 @@ var components = {
                         desc = desc.substring(0, l + 1);
                     }
 
-                    return '<div class="has-flex"><picture style="width: 6rem;"><img src="https://www.rietveldlicht.nl/fotos/klein/' + suggestion._highlightResult.art.value + '.jpg" alt=""></picture><div style="flex: 1 1 100%; padding-left: 1rem;"><h5>' + suggestion._highlightResult.art.value + '</h5><p>' + desc + '</p><p style="text-align:right;color:#ed1c23;font-weight: bold;">&euro; 99,00</p></div></div>';
+                    return '<div class="has-flex"><picture style="width: 6rem;"><img src="https://www.rietveldlicht.nl/fotos/klein/' + suggestion._highlightResult.art.value + '.jpg" alt=""></picture><div style="flex: 1 1 100%; padding-left: 1rem;"><h5>' + suggestion._highlightResult.art.value + '</h5><p>' + desc + '</p><p style="text-align:right;color:#ed1c23;font-weight: bold;">&euro;' + suggestion._highlightResult.price.value +'</p></div></div>';
                 }
               }
             }
