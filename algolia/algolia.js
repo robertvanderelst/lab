@@ -57,12 +57,23 @@ var components = {
                         desc = desc.substring(0, l + 1);
                     }
 
-                    return '<div class="has-flex"><picture style="width: 6rem;"><img src="https://www.rietveldlicht.nl/fotos/klein/' + suggestion._highlightResult.art.value + '.jpg" alt=""></picture><div style="flex: 1 1 100%; padding-left: 1rem;"><h5>' + suggestion._highlightResult.art.value + '</h5><p>' + desc + '</p><p style="text-align:right;color:#ed1c23;font-weight: bold;">&euro; ' + suggestion._highlightResult.price.value +'</p></div></div>';
+                    var oldprice = '';
+                    if (suggestion._highlightResult.old_price.value.length > 0) {
+                        oldprice = '<span style="color: #707070;">&euro; ' + suggestion._highlightResult.old_price.value + '</span>';
+                    }
+
+                    return '<div class="has-flex"><picture style="width: 6rem;"><img src="https://www.rietveldlicht.nl/fotos/klein/' + suggestion._highlightResult.art.value + '.jpg" alt=""></picture><div style="flex: 1 1 100%; padding-left: 1rem;"><h5>' + suggestion._highlightResult.art.value + '</h5><p>' + desc + '</p><p style="text-align:right;color:#ed1c23;font-weight: bold;">' + oldprice + ' &euro; ' + suggestion._highlightResult.price.value + '</p></div></div>';
                 }
               }
             }
         ]).on('autocomplete:selected', function(event, suggestion, dataset, context) {
-            console.log('GEKLIKT');
+            if (suggestion.uri) {
+                window.location = 'https://www.rietveldlicht.nl/' + suggestion.uri;
+            }
+
+            if (suggestion.art) {
+                window.location = 'https://www.rietveldlicht.nl/artikel/-' + suggestion.art;
+            }
         });
 
     //     function getResults (pageID) {
