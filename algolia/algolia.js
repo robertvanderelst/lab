@@ -37,7 +37,7 @@ var components = {
                     header: '<h4>Categorie&euml;n</h4>',
                     footer: null,
                     suggestion: function(suggestion) {
-                        return '<a href="' + suggestion.uri.value + '">' + suggestion._highlightResult.title.value + '</a>';
+                        return '<span>' + suggestion._highlightResult.title.value + '<span>';
                     }
                 }
             },
@@ -67,11 +67,11 @@ var components = {
               }
             }
         ]).on('autocomplete:selected', function(event, suggestion, dataset, context) {
-            if (suggestion.uri) {
+            if (suggestion.uri && dataset === 1) {
                 window.location = 'https://www.rietveldlicht.nl/' + suggestion.uri;
             }
 
-            if (suggestion.art) {
+            if (suggestion.art && dataset === 2) {
                 window.location = 'https://www.rietveldlicht.nl/artikel/-' + suggestion.art;
             }
         });
