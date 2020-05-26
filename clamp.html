@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clamp test</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-size: clamp(16px, calc(16px + 4 * ((100vw - 320px) / 960)), 20px);
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        main {
+            width: 100%;
+            max-width: 50ch;
+            padding: 1rem;
+            margin: 0 auto;
+        }
+
+        main * + * {
+            margin-top: 1rem;
+        }
+
+        h1 {
+            font-weight: 900;
+        }
+
+        h2, h3, h4 {
+            font-weight: 700;
+        }
+
+        h1 {
+             font-size: clamp(32px, calc(32px + 8 * ((100vw - 320px) / 960)), 40px);
+        }
+
+        h2 {
+             font-size: clamp(24px, calc(24px + 8 * ((100vw - 320px) / 960)), 32px);
+        }
+
+        h3 {
+             font-size: clamp(20px, calc(20px + 6 * ((100vw - 320px) / 960)), 26px);
+        }
+
+        h4 {
+             font-size: clamp(16px, calc(16px + 4 * ((100vw - 320px) / 960)), 20px);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Header 1</h1>
+        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+        <h2>Header 2</h2>
+        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+        <h3>Header 3</h3>
+        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+        <h4>Header 4</h4>
+        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+    </main>
+</body>
+</html>
