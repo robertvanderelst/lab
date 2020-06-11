@@ -7,15 +7,18 @@
     <title>Clamp test</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&display=swap" rel="stylesheet">
     <style>
 
         * {
             box-sizing: border-box;
+            position: relative;
             margin: 0;
             padding: 0;
             font-size: calc(16px + 2 * ((100vw - 320px) / 960));
-            font-size: clamp(16px, calc(16px + 2 * ((100vw - 320px) / 960)), 20px);
-            line-height: 1.5;
+            font-size: clamp(16px, calc(16px + 2 * ((100vw - 320px) / 960)), 18px);
+            line-height: 1.33333;
+            color: #484848;
             font-weight: 400;
         }
 
@@ -25,7 +28,7 @@
 
         main {
             width: 100%;
-            max-width: 50ch;
+            max-width: 60ch;
             padding: 1rem;
             margin: 0 auto;
         }
@@ -34,45 +37,190 @@
             margin-top: 1rem;
         }
 
-        h1 {
-            font-weight: 900;
+        main li + li {
+            margin-top: .5em;
         }
 
-        h2, h3, h4 {
+        h1 {
+            font-weight: 900;
+            line-height: 1;
+            color: #262626;
+        }
+
+        h2,
+        .h2-like,
+        h3,
+        .h3-like,
+        h4,
+        .h4-like {
+            font-weight: 700;
+            line-height: 1.2;
+            color: #262626;
+
+        }
+
+        h2,
+        h3,
+        h4 {
+            margin-top: 1.5rem;
+        }
+
+        h2 + *,
+        h3 + *,
+        h4 + * {
+            margin-top: .5rem;
+        }
+
+        h1 {
+            font-size: calc(28px + 18 * ((100vw - 320px) / 960));
+            font-size: clamp(28px, calc(28px + 18 * ((100vw - 320px) / 960)), 46px);
+        }
+
+        h1.u-header-masthead {
+            font-size: calc(32px + 26 * ((100vw - 320px) / 960));
+            font-size: clamp(32px, calc(32px + 26 * ((100vw - 320px) / 960)), 58px);
+            font-family: "Merriweather", serif;
             font-weight: 700;
         }
 
-        h1 {
-            font-size: calc(32px + 8 * ((100vw - 320px) / 960));
-            font-size: clamp(32px, calc(32px + 8 * ((100vw - 320px) / 960)), 40px);
+        h1.u-header-masthead span {
+            margin-top: 0;
+            font-family: 'Merriweather', serif;
+            color: inherit;
+            font-size: inherit;
+            font-weight: inherit;
+            line-height: 1.25;
+            background: linear-gradient(0, #fecb09 0, #fecb09 .25em, rgba(0,0,0,0) .25em, rgba(0,0,0,0) 1.5em);
+            text-shadow: -1px -1px 0 rgba(255,255,255,1), -1px 1px 0 rgba(255,255,255,1), 1px 1px 0 rgba(255,255,255,1), 1px -1px 0 rgba(255,255,255,1);
         }
 
-        h2 {
-            font-size: calc(24px + 8 * ((100vw - 320px) / 960));
-            font-size: clamp(24px, calc(24px + 8 * ((100vw - 320px) / 960)), 32px);
+        h2,
+        .h2-like {
+            font-size: calc(24px + 12 * ((100vw - 320px) / 960));
+            font-size: clamp(24px, calc(24px + 12 * ((100vw - 320px) / 960)), 36px);
         }
 
-        h3 {
-            font-size: calc(20px + 6 * ((100vw - 320px) / 960));
-            font-size: clamp(20px, calc(20px + 6 * ((100vw - 320px) / 960)), 26px);
+        h3,
+        .h3-like {
+            font-size: calc(20px + 8 * ((100vw - 320px) / 960));
+            font-size: clamp(20px, calc(20px + 8 * ((100vw - 320px) / 960)), 28px);
         }
 
-        h4 {
-            font-size: calc(16px + 4 * ((100vw - 320px) / 960));
-            font-size: clamp(16px, calc(16px + 4 * ((100vw - 320px) / 960)), 20px);
+        h4,
+        .h4-like {
+            font-size: calc(16px + 6 * ((100vw - 320px) / 960));
+            font-size: clamp(16px, calc(16px + 6 * ((100vw - 320px) / 960)), 22px);
         }
+
+        .u-text-intro {
+            font-size: calc(18px + 2 * ((100vw - 320px) / 960));
+            font-size: clamp(18px, calc(18px + 2 * ((100vw - 320px) / 960)), 20px);
+            font-weight: 700;
+        }
+
+
+        blockquote {
+            border-top: .25em solid #00adef;
+            border-bottom: .25em solid #00adef;
+            padding: 1em 0;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        blockquote p {
+            font-family: "Merriweather", serif;
+        }
+
+        .u-text-small {
+            font-size: calc(12px + 2 * ((100vw - 320px) / 960));
+            font-size: clamp(12px, calc(12px + 2 * ((100vw - 320px) / 960)), 14px);
+        }
+
+        .u-text-sup {
+            vertical-align: top;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        .u-has-bullet {
+            padding-left: 1.5em;
+        }
+
+        .u-has-bullet li {
+            list-style: disc;
+        }
+
+        .u-has-bullet li::marker {
+            color: #00adef;
+        }
+
+        .u-has-index {
+            counter-reset: index;
+        }
+
+        .u-has-index li {
+            counter-increment: index;
+            padding-left: 1.5em;
+        }
+
+        .u-has-index li:before {
+            content: counter(index);
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(0, #00adef 0, #00adef .125em, rgba(0,0,0,0) .125em, rgba(0,0,0,0) 1.625em);
+        }
+
     </style>
 </head>
 <body>
     <main>
         <h1>Header 1</h1>
+        <p class="u-text-intro">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
         <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
         <h2>Header 2</h2>
+        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+        <ul class="u-has-bullet">
+            <li>A wonderful serenity</li>
+            <li>has taken possession</li>
+            <li>of my entire soul</li>
+        </ul>
+
+        <ol class="u-has-index">
+            <li>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</li>
+            <li>has taken possession</li>
+            <li>of my entire soul</li>
+        </ol>
         <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
         <h3>Header 3</h3>
         <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
         <h4>Header 4</h4>
         <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+        <h1 class="u-header-masthead">Header 1 voor blogtitels etc.</h1>
+
+        <blockquote>
+            <p>Mijn voorkeur voor glas is gekomen, sinds ik jaren geleden in Venetië was en een excursie deed naar de daarbij gelegen eilanden.</p>
+        </blockquote>
+
+        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+
+        <h1 class="u-header-masthead">
+            <span>Hoe wij de keuken verfraaiden met de luxe uitstraling van glas</span>
+        </h1>
+
+        <p class="u-text-small">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+
+        <p>A wonderful serenity has taken possession of my <span class="u-text-small u-text-sup">entire soul</span>, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+
+        <p class="h2-like">A wonderful serenity</p>
+
+        <p class="h3-like">A wonderful serenity</p>
+
+        <p class="h4-like">A wonderful serenity</p>
     </main>
 </body>
 </html>
