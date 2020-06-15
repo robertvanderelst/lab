@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Clamp test</title>
+    <title>Rietveld Design Library</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&display=swap" rel="stylesheet">
@@ -39,6 +39,24 @@
 
         main li + li {
             margin-top: .5em;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        tr:nth-child(even) {
+            background: #f7f7f7;
+        }
+
+        th[scope="row"] {
+            font-weight: 700;
+            text-align: left;
+        }
+
+        th,
+        td {
+            padding: .5em;
         }
 
         h1 {
@@ -118,6 +136,10 @@
             font-weight: 700;
         }
 
+        .u-text-regular {
+            font-weight: 400;
+        }
+
 
         blockquote {
             border-top: .25em solid #00adef;
@@ -132,7 +154,9 @@
             font-family: "Merriweather", serif;
         }
 
-        .u-text-small {
+        .u-text-small,
+        th[scope="row"],
+        td {
             font-size: calc(12px + 2 * ((100vw - 320px) / 960));
             font-size: clamp(12px, calc(12px + 2 * ((100vw - 320px) / 960)), 14px);
         }
@@ -159,12 +183,12 @@
         }
 
         .u-has-index {
-            counter-reset: index;
+            counter-reset: index 8;
         }
 
         .u-has-index li {
             counter-increment: index;
-            padding-left: 1.5em;
+            padding-left: 2em;
         }
 
         .u-has-index li:before {
@@ -172,13 +196,50 @@
             position: absolute;
             top: 0;
             left: 0;
-            background: linear-gradient(0, #00adef 0, #00adef .125em, rgba(0,0,0,0) .125em, rgba(0,0,0,0) 1.625em);
+            font-weight: 700;
+            color: 707070;
+            width: 1.25em;
+            height: 1.25em;
+            padding-right: .25em;
+            text-align: right;
+            /* background: linear-gradient(0, #00adef 0, #00adef .125em, rgba(0,0,0,0) .125em, rgba(0,0,0,0) 1.625em); */
+            border-right: .125em solid #feb900;
+        }
+
+        .u-button-cta {
+            background: #fcc;
+            padding: .5em;
+            border: none;
+        }
+
+        .u-button-cta > span {
+            display: inline-block;
+            height: 2em;
+            line-height: 2;
+            margin: 0;
+            padding: 0 .75em;
+
+            cursor: pointer;
+            -webkit-transition: background .2s, color .2s;
+                    transition: background .2s, color .2s;
+            -webkit-transform: translateY(-2px);
+                    transform: translateY(-2px);
+            text-align: center;
+
+            color: #fff;
+
+            border-radius: .25rem;
+            background: #00adef;
+            box-shadow: 0 2px 0 0 hsl(207, 44%, 29%);
         }
 
     </style>
 </head>
 <body>
     <main>
+        Kleuren
+
+
         <h1>Header 1</h1>
         <p class="u-text-intro">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
         <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
@@ -203,7 +264,7 @@
         <h1 class="u-header-masthead">Header 1 voor blogtitels etc.</h1>
 
         <blockquote>
-            <p>Mijn voorkeur voor glas is gekomen, sinds ik jaren geleden in Venetië was en een excursie deed naar de daarbij gelegen eilanden.</p>
+            <p class="h3-like u-text-regular">Mijn voorkeur voor glas is gekomen, sinds ik jaren geleden in Venetië was en een excursie deed naar de daarbij gelegen eilanden.</p>
         </blockquote>
 
         <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
@@ -221,6 +282,41 @@
         <p class="h3-like">A wonderful serenity</p>
 
         <p class="h4-like">A wonderful serenity</p>
+
+        <table>
+            <tr>
+                <th scope="row">Categorie</th>
+                <td>Hanglampen</td>
+            </tr>
+            <tr>
+                <th scope="row">Subcategorie</th>
+                <td>Videlampen</td>
+            </tr>
+            <tr>
+                <th scope="row">Overige categorie</th>
+                <td>Decoratief, eetkamerlampen</td>
+            </tr>
+            <tr>
+                <th scope="row">Stijl</th>
+                <td>Modern</td>
+            </tr>
+            <tr>
+                <th scope="row">Materiaal</th>
+                <td>Glas, rookglas, staal - rvs, metaal</td>
+            </tr>
+        </table>
+
+        <div>
+            <button class="u-button-cta"><span>Label</span></button>
+        </div>
+
+        <div>
+            <button class="u-button-cta">
+                <span>
+                    <span>icon</span>
+                    Label</span>
+            </button>
+        </div>
     </main>
 </body>
 </html>
