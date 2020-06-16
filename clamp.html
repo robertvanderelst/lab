@@ -33,6 +33,13 @@
             margin: 0 auto;
         }
 
+        .ds-header {
+            text-transform: uppercase;
+            font-size: calc(12px + 2 * ((100vw - 320px) / 960));
+            font-size: clamp(12px, calc(12px + 2 * ((100vw - 320px) / 960)), 14px);
+            border-bottom: 1px solid #e2e2e2;
+        }
+
         main * + * {
             margin-top: 1rem;
         }
@@ -206,117 +213,223 @@
             border-right: .125em solid #feb900;
         }
 
-        .u-button-cta {
-            background: #fcc;
+        .u-button,
+        .u-button-ghost {
+            background: #f7f7f7;
             padding: .5em;
             border: none;
         }
 
-        .u-button-cta > span {
-            display: inline-block;
-            height: 2em;
-            line-height: 2;
-            margin: 0;
-            padding: 0 .75em;
+        .u-button {
+            outline: 0;
+        }
 
+        .u-button > span,
+        .u-button-ghost > span {
+            display: inline-block;
+            line-height: 1.5;
+            margin: 0;
+            padding: .3em .75em .2em;
             cursor: pointer;
-            -webkit-transition: background .2s, color .2s;
-                    transition: background .2s, color .2s;
-            -webkit-transform: translateY(-2px);
-                    transform: translateY(-2px);
+        }
+
+        .u-button > span {
+            -webkit-transition: background .2s, transform .2s, box-shadow .2s;
+                    transition: background .2s, transform .2s, box-shadow .2s;
+            -webkit-transform: translate3D(0, -2px, 0);
+                    transform: translate3D(0, -2px, 0);
             text-align: center;
 
             color: #fff;
 
-            border-radius: .25rem;
+            border-radius: .25em;
             background: #00adef;
             box-shadow: 0 2px 0 0 hsl(207, 44%, 29%);
         }
 
+        [class*="u-button"]:hover > span {
+            background: #24c1ff;
+        }
+
+        [class*="u-button"]:active > span {
+            -webkit-transform: translateY(0);
+                    transform: translateY(0);
+            box-shadow: 0 0 0 0 #fff;
+        }
+
+        [class*="u-button"] .u-icon {
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: -.25em;
+            width: 1.5em;
+            height: 1.5em;
+        }
+
+        [class*="u-button"] .u-icon path {
+            fill: #fff;
+        }
+
+        .u-button-cta > span {
+            background: #fc7b0a;
+            box-shadow: 0 2px 0 0 hsl(28, 98%, 31%);
+        }
+
+        .u-button-cta:hover > span {
+            background: #fd953a;
+        }
+
+        .u-button-ghost > span {
+            border: 1px solid #00adef;
+            color: #00adef;
+            -webkit-transition: fill .2s, border .2s, color .2s;
+                    transition: fill .2s, border .2s, color .2s;
+        }
+
+        .u-button-ghost:hover > span {
+            border-color: #484848;
+            color: #484848;
+            background: none;
+        }
+
+        .u-button-ghost .u-icon path {
+            fill: #00adef;
+        }
+
+        .u-button-ghost:hover .u-icon path {
+            fill: #484848;
+        }
     </style>
 </head>
 <body>
     <main>
-        Kleuren
+        <h1>Rietveld Design System</h1>
 
+        <section id="ds-fonts">
+            <h2 class="ds-header">Lettertypes</h2>
+            <p>Lettertypes</p>
+        </section>
 
-        <h1>Header 1</h1>
-        <p class="u-text-intro">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-        <h2>Header 2</h2>
-        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-        <ul class="u-has-bullet">
-            <li>A wonderful serenity</li>
-            <li>has taken possession</li>
-            <li>of my entire soul</li>
-        </ul>
+        <section id="ds-colors">
+            <h2 class="ds-header">Kleurgebruik</h2>
+            <p>Kleuren</p>
+        </section>
 
-        <ol class="u-has-index">
-            <li>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</li>
-            <li>has taken possession</li>
-            <li>of my entire soul</li>
-        </ol>
-        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-        <h3>Header 3</h3>
-        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-        <h4>Header 4</h4>
-        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-        <h1 class="u-header-masthead">Header 1 voor blogtitels etc.</h1>
+        <section id="ds-typography">
+            <h2 class="ds-header">Typografie</h2>
+            <p>De headers (h1 t/m h4) hebben een variabele grootte, afhankelijk van de resolutie van het scherm. Er is wel een minimum en maximum gedefinieerd.</p>
+            <h1>Header 1</h1>
+            <p>H1 is variabel van 28px tot en met 46px</p>
+            <h2>Header 2</h2>
+            <p>H2 is variabel van 24px tot en met 36px</p>
+            <h3>Header 3</h3>
+            <p>H3 is variabel van 20px tot en met 28px</p>
+            <h4>Header 4</h4>
+            <p>H4 is variabel van 16px tot en met 22px</p>
+            <p>Daarnaast zijn er classnames om elementen te stylen zoals de headers:</p>
+            <p class="h2-like">.h2-like</p>
+            <p class="h3-like">.h3-like</p>
+            <p class="h4-like">.h4-like</p>
 
-        <blockquote>
-            <p class="h3-like u-text-regular">Mijn voorkeur voor glas is gekomen, sinds ik jaren geleden in Venetië was en een excursie deed naar de daarbij gelegen eilanden.</p>
-        </blockquote>
+            <p class="u-text-intro">Voor de eerste paragraaf is het ook mogelijk om de class .u-text-intro te gebruiken om de tekst wat groter te maken, van 18px tot en met 20px</p>
+            <p>En de reguliere paragraaf ziet er dus zo uit en loopt van 16px tot en met 18px</p>
+            <p class="u-text-small">Het is ook mogelijk om nog een stapje kleiner te doen, voor korte begeleidende teksten bijvoorbeeld en dient men de class .u-text-small te gebruiken en die loopt van 12px tot en met 14px</p>
 
-        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+            <h2 class="ds-header">Speciale headers</h2>
 
-        <h1 class="u-header-masthead">
-            <span>Hoe wij de keuken verfraaiden met de luxe uitstraling van glas</span>
-        </h1>
+            <h1 class="u-header-masthead">Header 1 voor blogtitels etc.</h1>
 
-        <p class="u-text-small">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+            <h1 class="u-header-masthead">
+                <span>Hoe wij de keuken verfraaiden met de luxe uitstraling van glas</span>
+            </h1>
+        </section>
 
-        <p>A wonderful serenity has taken possession of my <span class="u-text-small u-text-sup">entire soul</span>, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+        <section id="ds-lists">
+            <h2 class="ds-header">Lijsten</h2>
+            <p>Lijsten</p>
 
-        <p class="h2-like">A wonderful serenity</p>
+            <ul class="u-has-bullet">
+                <li>A wonderful serenity</li>
+                <li>Has taken possession</li>
+                <li>Of my entire soul</li>
+            </ul>
 
-        <p class="h3-like">A wonderful serenity</p>
+            <ol class="u-has-index">
+                <li>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</li>
+                <li>has taken possession</li>
+                <li>of my entire soul</li>
+            </ol>
+        </section>
 
-        <p class="h4-like">A wonderful serenity</p>
+        <section id="ds-tables">
+            <h2 class="ds-header">Tabellen</h2>
+            <p>Tabellen</p>
+            <table>
+                <tr>
+                    <th scope="row">Categorie</th>
+                    <td>Hanglampen</td>
+                </tr>
+                <tr>
+                    <th scope="row">Subcategorie</th>
+                    <td>Videlampen</td>
+                </tr>
+                <tr>
+                    <th scope="row">Overige categorie</th>
+                    <td>Decoratief, eetkamerlampen</td>
+                </tr>
+                <tr>
+                    <th scope="row">Stijl</th>
+                    <td>Modern</td>
+                </tr>
+                <tr>
+                    <th scope="row">Materiaal</th>
+                    <td>Glas, rookglas, staal - rvs, metaal</td>
+                </tr>
+            </table>
 
-        <table>
-            <tr>
-                <th scope="row">Categorie</th>
-                <td>Hanglampen</td>
-            </tr>
-            <tr>
-                <th scope="row">Subcategorie</th>
-                <td>Videlampen</td>
-            </tr>
-            <tr>
-                <th scope="row">Overige categorie</th>
-                <td>Decoratief, eetkamerlampen</td>
-            </tr>
-            <tr>
-                <th scope="row">Stijl</th>
-                <td>Modern</td>
-            </tr>
-            <tr>
-                <th scope="row">Materiaal</th>
-                <td>Glas, rookglas, staal - rvs, metaal</td>
-            </tr>
-        </table>
+        </section>
 
-        <div>
-            <button class="u-button-cta"><span>Label</span></button>
-        </div>
+        <section id="ds-buttons">
+            <h2 class="ds-header">Knoppen</h2>
+            <p>Knoppen</p>
 
-        <div>
-            <button class="u-button-cta">
-                <span>
-                    <span>icon</span>
-                    Label</span>
-            </button>
-        </div>
+            <div>
+                <button class="u-button"><span>Label</span></button>
+            </div>
+
+            <div>
+                <button class="u-button u-button-cta">
+                    <span>
+                        <span class="u-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                <path d="M13.525 26.3c1.162 0 2.106-.946 2.106-2.108 0-.483-.16-.94-.45-1.31h5.74c-.29.37-.45.827-.45 1.31 0 1.162.95 2.107 2.11 2.107 1.17 0 2.11-.95 2.11-2.11 0-.49-.16-.94-.45-1.31h.366c.548 0 .994-.45.994-1s-.45-1-.998-1H12.61l-.35-1.42h13.26c.32 0 .6-.23.663-.546l1.805-9.13c.04-.2-.012-.405-.14-.56-.13-.157-.32-.247-.522-.247H9.668L9.29 7.5c-.06-.288-.185-.58-.36-.844h.002c-.276-.44-.914-.955-1.8-.955h-.04.003-2.1c-.55 0-.995.45-.995 1s.446 1 .995 1H7.09c.125.01.134.02.167.05.006.01.012.01.02.02.028.04.06.12.068.15 0 0 0-.01-.002-.01l.002.01.01.05.002.01 3.505 14.16c.11.45.506.76.965.76h.047c-.294.37-.457.828-.457 1.31 0 1.163.946 2.108 2.108 2.108zm-.153-8.17h-1.45l-.54-2.196h1.743l.247 2.195zm2.832 0h-1.832l-.246-2.196h2.02l.058 2.195zm2.948 0h-1.954l-.06-2.196h2.073l-.05 2.195zm2.927 0h-1.94l.05-2.196h2.07l-.19 2.195zm2.88 0h-1.89l.19-2.196h2.13l-.44 2.195zm-11.95-3.19h-1.88l-.45-1.798h2.12l.2 1.8zm3.1 0h-2.1l-.21-1.798h2.26l.05 1.8zm3.12 0h-2.12l-.05-1.798h2.22l-.05 1.8zm3.12 0h-2.12l.05-1.798h2.23l-.16 1.8zm3.23 0h-2.24l.152-1.798h2.44l-.356 1.8zM12.7 12.15h-2.253l-.445-1.804h2.495l.203 1.804zm3.344 0H13.7l-.203-1.804h2.5l.047 1.804zm3.268 0h-2.274l-.048-1.804h2.37l-.048 1.804zm3.288 0h-2.294l.048-1.804h2.403L22.6 12.15zm3.547 0h-2.55l.157-1.804h2.75l-.357 1.804"></path>
+                            </svg>
+                        </span>
+                        Winkelwagen</span>
+                </button>
+            </div>
+
+            <div>
+                <button class="u-button-ghost">
+                    <span>
+                        <span class="u-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                <path d="M13.525 26.3c1.162 0 2.106-.946 2.106-2.108 0-.483-.16-.94-.45-1.31h5.74c-.29.37-.45.827-.45 1.31 0 1.162.95 2.107 2.11 2.107 1.17 0 2.11-.95 2.11-2.11 0-.49-.16-.94-.45-1.31h.366c.548 0 .994-.45.994-1s-.45-1-.998-1H12.61l-.35-1.42h13.26c.32 0 .6-.23.663-.546l1.805-9.13c.04-.2-.012-.405-.14-.56-.13-.157-.32-.247-.522-.247H9.668L9.29 7.5c-.06-.288-.185-.58-.36-.844h.002c-.276-.44-.914-.955-1.8-.955h-.04.003-2.1c-.55 0-.995.45-.995 1s.446 1 .995 1H7.09c.125.01.134.02.167.05.006.01.012.01.02.02.028.04.06.12.068.15 0 0 0-.01-.002-.01l.002.01.01.05.002.01 3.505 14.16c.11.45.506.76.965.76h.047c-.294.37-.457.828-.457 1.31 0 1.163.946 2.108 2.108 2.108zm-.153-8.17h-1.45l-.54-2.196h1.743l.247 2.195zm2.832 0h-1.832l-.246-2.196h2.02l.058 2.195zm2.948 0h-1.954l-.06-2.196h2.073l-.05 2.195zm2.927 0h-1.94l.05-2.196h2.07l-.19 2.195zm2.88 0h-1.89l.19-2.196h2.13l-.44 2.195zm-11.95-3.19h-1.88l-.45-1.798h2.12l.2 1.8zm3.1 0h-2.1l-.21-1.798h2.26l.05 1.8zm3.12 0h-2.12l-.05-1.798h2.22l-.05 1.8zm3.12 0h-2.12l.05-1.798h2.23l-.16 1.8zm3.23 0h-2.24l.152-1.798h2.44l-.356 1.8zM12.7 12.15h-2.253l-.445-1.804h2.495l.203 1.804zm3.344 0H13.7l-.203-1.804h2.5l.047 1.804zm3.268 0h-2.274l-.048-1.804h2.37l-.048 1.804zm3.288 0h-2.294l.048-1.804h2.403L22.6 12.15zm3.547 0h-2.55l.157-1.804h2.75l-.357 1.804"></path>
+                            </svg>
+                        </span>
+                        Winkelwagen</span>
+                </button>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="ds-header">Quotes</h2>
+
+            <p>Quotes worden over de gehele breedte gebruikt, maar hebben een kleinere maximale breedte dan de tekst in de kolom.</p>
+
+            <blockquote>
+                <p class="h3-like u-text-regular">Mijn voorkeur voor glas is gekomen, sinds ik jaren geleden in Venetië was en een excursie deed naar de daarbij gelegen eilanden.</p>
+            </blockquote>
+        </section>
     </main>
 </body>
 </html>
