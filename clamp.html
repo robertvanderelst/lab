@@ -52,7 +52,7 @@
             border-collapse: collapse;
         }
 
-        tr:nth-child(even) {
+        .u-zebrastriping tr:nth-child(even) {
             background: #f7f7f7;
         }
 
@@ -301,12 +301,76 @@
 
         <section id="ds-fonts">
             <h2 class="ds-header">Lettertypes</h2>
-            <p>Lettertypes</p>
+            <p>Er wordt gebruik gemaakt van twee lettertypes:</p>
+
+            <h3 class="h2-like">Lato</h3>
+            <p>Lato wordt gebruikt voor vrijwel alle uitingen, zoals koppen, paragrafen etc.</p>
+
+            <p class="h2-like" style="font-family: 'Merriweather', Arial">Merriweather</p>
+            <p>Merriweather wordt gebruikt voor de koppen die behoren bij de blog en dit zal eventueel worden uitgebreid naar de andere pagina's voor een menselijkere look en feel.
         </section>
 
         <section id="ds-colors">
             <h2 class="ds-header">Kleurgebruik</h2>
-            <p>Kleuren</p>
+            <p>Onderstaand staan de vier hoofdkleuren die in de uitingen van Rietveld Licht terugkomen. Wit en zwart worden ook gebruikt, maar hoeven niet expliciet genoemd te worden.</p>
+
+            <table>
+                <tr>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th scope="row"><span style="display: block; width: 6em; height: 1.5em; background:#fecb09; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
+                    <td>PMS 116C</td>
+                    <td>#fecb09</td>
+                </tr>
+                <tr>
+                    <th scope="row"><span style="display: block; width: 6em; height: 1.5em; background:#ed1c23; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
+                    <td>PMS 485C</td>
+                    <td>#ed1c23</td>
+                </tr>
+                <tr>
+                    <th scope="row"><span style="display: block; width: 6em; height: 1.5em; background:#00adef; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
+                    <td>PMS 298C</td>
+                    <td>#00adef</td>
+                </tr>
+                <tr>
+                    <th scope="row"><span style="display: block; width: 6em; height: 1.5em; background:#29a00a; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
+                    <td></td>
+                    <td>#29a00a</td>
+                </tr>
+            </table>
+
+            <p>Daarnaast worden ook de volgende grijstinten gebruikt voor o.a. borders en tekstkleur.</p>
+
+            <table>
+                <tr>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th scope="row"><span style="display:block; width: 6em; height: 1.5em;background:#e2e2e2; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
+                    <td>#e2e2e2</td>
+                </tr>
+                <tr>
+                    <th scope="row"><span style="display:block; width: 6em; height: 1.5em;background:#b8b8b8; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
+                    <td>#b8b8b8</td>
+                </tr>
+                <tr>
+                    <th scope="row"><span style="display:block; width: 6em; height: 1.5em;background:#909090; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
+                    <td>#909090</td>
+                </tr>
+                <tr>
+                    <th scope="row"><span style="display:block; width: 6em; height: 1.5em;background:#707070; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
+                    <td>#707070</td>
+                </tr>
+                <tr>
+                    <th scope="row"><span style="display:block; width: 6em; height: 1.5em;background:#484848; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
+                    <td>#484848</td>
+                </tr>
+                <tr>
+                    <th scope="row"><span style="display:block; width: 6em; height: 1.5em;background:#262626; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
+                    <td>#262626</td>
+                </tr>
+            </table>
         </section>
 
         <section id="ds-typography">
@@ -358,7 +422,7 @@
         <section id="ds-tables">
             <h2 class="ds-header">Tabellen</h2>
             <p>Tabellen</p>
-            <table>
+            <table class="u-zebrastriping">
                 <tr>
                     <th scope="row">Categorie</th>
                     <td>Hanglampen</td>
