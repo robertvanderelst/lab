@@ -213,7 +213,7 @@
             border-right: .125em solid #feb900;
         }
 
-        a {
+        p a {
             display: inline-block;
             margin: -.5em;
             padding: .5em;
@@ -221,28 +221,26 @@
             text-decoration: none;
         }
 
-        a span {
+        p a span {
             display: inline-block;
             color: inherit;
-            background: #fcc;
-            border-bottom: 1px solid #00adef;
+            text-decoration: underline;
+            outline: 1px solid transparent;
+            outline-offset: 2px;
+            transition: outline .4s, color .4s;
         }
 
-        a:hover {
-            background: #e2e2e2;
+        p a:hover span {
+            color: #ed1c23;
         }
 
-        a:hover span {
-            border-bottom: 1px solid #00adef;
-
-        }
-
-        a:focus {
+        p a:focus {
             outline: 0;
         }
 
-        a:focus span {
-            outline: 2px solid #00adef;
+        p a:focus span {
+            color: #ed1c23;
+            outline: 1px solid #ed1c23;
             outline-offset: 2px;
         }
 
@@ -251,9 +249,6 @@
             background: #f7f7f7;
             padding: .5em;
             border: none;
-        }
-
-        .u-button {
             outline: 0;
         }
 
@@ -280,14 +275,26 @@
             box-shadow: 0 2px 0 0 hsl(197, 100%, 27%)
         }
 
-        [class*="u-button"]:hover > span {
-            background: hsl(197, 100%, 42%)
+        button::-moz-focus-inner {
+          border: 0;
+        }
+
+        @media (hover:hover) {
+            [class*="u-button"]:hover > span {
+                background: hsl(197, 100%, 42%)
+            }
+
+            /* [class*="u-button"]:focus > span {
+                outline: 2px solid #fff;
+                outline-offset: -4px;
+            } */
         }
 
         [class*="u-button"]:active > span {
             -webkit-transform: translateY(0);
                     transform: translateY(0);
             box-shadow: 0 0 0 0 #fff;
+            outline: 0;
         }
 
         [class*="u-button"] .u-icon {
@@ -312,14 +319,12 @@
         }
 
         .u-button-ghost > span {
-            box-shadow: 0 0 0 1px #00adef;
+            border: 1px solid #00adef;
+            border-radius: .25em;
             color: #00adef;
-            -webkit-transition: box-shadow .2s;
-                    transition: box-shadow .2s;
         }
 
         .u-button-ghost:hover > span {
-            box-shadow: 0 0 0 2px #00adef;
             background: none;
         }
 
