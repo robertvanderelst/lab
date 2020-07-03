@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Rietveld Design Library</title>
+    <title>Rietveld Design Guide</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&display=swap" rel="stylesheet">
@@ -33,15 +33,19 @@
             margin: 0 auto;
         }
 
-        .ds-header {
+        .dg-header {
             text-transform: uppercase;
             font-size: calc(12px + 2 * ((100vw - 320px) / 960));
             font-size: clamp(12px, calc(12px + 2 * ((100vw - 320px) / 960)), 14px);
             border-bottom: 1px solid #e2e2e2;
         }
 
-        main * + * {
-            margin-top: 1rem;
+        .u-lobowl > * + * {
+            margin-top: 1em;
+        }
+
+        .u-has-flex {
+            display: flex;
         }
 
         main li + li {
@@ -153,7 +157,7 @@
             border-bottom: .25em solid #00adef;
             padding: 1em 0;
             width: 100%;
-            margin: 0 auto;
+            margin: 1em auto 0;
             text-align: center;
         }
 
@@ -236,6 +240,7 @@
 
         p a:focus {
             outline: 0;
+            text-decoration: none;
         }
 
         p a:focus span {
@@ -255,7 +260,7 @@
         .u-button > span,
         .u-button-ghost > span {
             display: inline-block;
-            line-height: 1.5;
+            line-height: 1.33333;
             margin: 0;
             padding: .3em .75em .2em;
             cursor: pointer;
@@ -279,16 +284,16 @@
           border: 0;
         }
 
-        [class*="u-button"]:hover > span {
+        .u-button:hover > span {
             background: hsl(197, 100%, 42%)
         }
 
-        [class*="u-button"]:focus > span {
+        .u-button:focus > span {
             outline: 2px solid #fff;
             outline-offset: -4px;
         }
 
-        [class*="u-button"]:active > span {
+        .u-button:active > span {
             -webkit-transform: translateY(0);
                     transform: translateY(0);
             box-shadow: 0 0 0 0 #fff;
@@ -303,7 +308,7 @@
             height: 1.5em;
         }
 
-        [class*="u-button"] .u-icon path {
+        .u-button .u-icon path {
             fill: #fff;
         }
 
@@ -320,23 +325,232 @@
             border: 1px solid #00adef;
             border-radius: .25em;
             color: #00adef;
-        }
-
-        .u-button-ghost:hover > span {
-            background: none;
+            transition: color .4s, background .4s;
         }
 
         .u-button-ghost .u-icon path {
             fill: #00adef;
+            transition: fill .4s;
         }
+
+        .u-button-ghost:hover > span {
+            background: #00adef;
+            color: #fff;
+        }
+
+        .u-button-ghost:hover .u-icon path {
+            fill: #fff;
+        }
+
+        .u-button-ghost-green > span {
+            border: 1px solid #29a00a;
+            color: #29a00a;
+        }
+
+        .u-button-ghost-green .u-icon path {
+            fill: #29a00a;
+        }
+
+        .u-button-ghost-green:hover > span {
+            background: #29a00a;
+        }
+
+        .u-button-ghost-green:hover .u-icon path {
+            fill: #fff;
+        }
+
+        /* FORM */
+
+        legend {
+
+        }
+
+        button,
+        input,
+        select,
+        textarea,
+        option {
+            font: inherit;
+            color: inherit;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="search"] {
+            line-height: 2;
+            width: 100%;
+            height: 2em;
+            text-indent: .5em;
+            color: #484848;
+            border: 1px solid #b8b8b8;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #00adef;
+            box-shadow: 0 0 .25em #00adef;
+            outline: 0;
+        }
+
+        .u-styled-select {
+            font-size: 1em;
+            line-height: 2;
+            width: 100%;
+            height: 2em;
+            padding: 0 1.75em 0 .5em;
+            vertical-align: top;
+            border: 1px solid #b8b8b8;
+            border-radius: 0;
+            background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiAgIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgICB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgICB4bWxuczpzb2RpcG9kaT0iaHR0cDovL3NvZGlwb2RpLnNvdXJjZWZvcmdlLm5ldC9EVEQvc29kaXBvZGktMC5kdGQiICAgeG1sbnM6aW5rc2NhcGU9Imh0dHA6Ly93d3cuaW5rc2NhcGUub3JnL25hbWVzcGFjZXMvaW5rc2NhcGUiICAgd2lkdGg9IjI0IiAgIGhlaWdodD0iMTYiICAgdmlld0JveD0iMCAwIDI0IDE2IiAgIGlkPSJzdmcyIiAgIHZlcnNpb249IjEuMSIgICBpbmtzY2FwZTp2ZXJzaW9uPSIwLjkxIHIxMzcyNSIgICBzb2RpcG9kaTpkb2NuYW1lPSJjYXJldC5zdmciPiAgPGRlZnMgICAgIGlkPSJkZWZzNCIgLz4gIDxzb2RpcG9kaTpuYW1lZHZpZXcgICAgIGlkPSJiYXNlIiAgICAgcGFnZWNvbG9yPSIjZmZmZmZmIiAgICAgYm9yZGVyY29sb3I9IiM2NjY2NjYiICAgICBib3JkZXJvcGFjaXR5PSIxLjAiICAgICBpbmtzY2FwZTpwYWdlb3BhY2l0eT0iMC4wIiAgICAgaW5rc2NhcGU6cGFnZXNoYWRvdz0iMiIgICAgIGlua3NjYXBlOnpvb209IjUuNjU2ODU0MiIgICAgIGlua3NjYXBlOmN4PSI5LjY4MTUzNDEiICAgICBpbmtzY2FwZTpjeT0iMi42ODE1MzQxIiAgICAgaW5rc2NhcGU6ZG9jdW1lbnQtdW5pdHM9InB4IiAgICAgaW5rc2NhcGU6Y3VycmVudC1sYXllcj0ibGF5ZXIxIiAgICAgc2hvd2dyaWQ9ImZhbHNlIiAgICAgdW5pdHM9InB4IiAgICAgaW5rc2NhcGU6d2luZG93LXdpZHRoPSIxOTIwIiAgICAgaW5rc2NhcGU6d2luZG93LWhlaWdodD0iMTAxNyIgICAgIGlua3NjYXBlOndpbmRvdy14PSIxOTEyIiAgICAgaW5rc2NhcGU6d2luZG93LXk9Ii04IiAgICAgaW5rc2NhcGU6d2luZG93LW1heGltaXplZD0iMSI+ICAgIDxpbmtzY2FwZTpncmlkICAgICAgIHR5cGU9Inh5Z3JpZCIgICAgICAgaWQ9ImdyaWQ0MTM2IiAvPiAgPC9zb2RpcG9kaTpuYW1lZHZpZXc+ICA8bWV0YWRhdGEgICAgIGlkPSJtZXRhZGF0YTciPiAgICA8cmRmOlJERj4gICAgICA8Y2M6V29yayAgICAgICAgIHJkZjphYm91dD0iIj4gICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PiAgICAgICAgPGRjOnR5cGUgICAgICAgICAgIHJkZjpyZXNvdXJjZT0iaHR0cDovL3B1cmwub3JnL2RjL2RjbWl0eXBlL1N0aWxsSW1hZ2UiIC8+ICAgICAgICA8ZGM6dGl0bGU+PC9kYzp0aXRsZT4gICAgICA8L2NjOldvcms+ICAgIDwvcmRmOlJERj4gIDwvbWV0YWRhdGE+ICA8ZyAgICAgaW5rc2NhcGU6bGFiZWw9IkxheWVyIDEiICAgICBpbmtzY2FwZTpncm91cG1vZGU9ImxheWVyIiAgICAgaWQ9ImxheWVyMSIgICAgIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsLTEwMzYuMzYyMikiPiAgICA8cGF0aCAgICAgICBzdHlsZT0iZmlsbDojMDAwMDAwO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpldmVub2RkO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDoxcHg7c3Ryb2tlLWxpbmVjYXA6YnV0dDtzdHJva2UtbGluZWpvaW46bWl0ZXI7c3Ryb2tlLW9wYWNpdHk6MSIgICAgICAgZD0ibSAzLDEwNDAuODYyMiA1LDYgNSwtNiAxLDEgLTYsNyAtNiwtNyB6IiAgICAgICBpZD0icGF0aDQxMzgiICAgICAgIGlua3NjYXBlOmNvbm5lY3Rvci1jdXJ2YXR1cmU9IjAiICAgICAgIHNvZGlwb2RpOm5vZGV0eXBlcz0iY2NjY2NjYyIgLz4gIDwvZz48L3N2Zz4=) right center no-repeat;
+            -ms-appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+        }
+
+        label {
+            display: block;
+        }
+
+        .u-styled-radio,
+        .u-styled-checkbox {
+            flex: 0 0 2em;
+            width: 1.5em;
+            height: 1.5em;
+            padding-right: .5em;
+        }
+
+        .u-styled-radio > span,
+        .u-styled-checkbox > span {
+            display: block;
+            width: 1.5em;
+            height: 1.5em;
+            border: 1px solid #707070;
+            box-shadow: none;
+        }
+
+        .u-styled-radio > input,
+        .u-styled-checkbox > input {
+            position: absolute;
+            z-index: 1;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .u-styled-radio input:focus + span,
+        .u-styled-checkbox input:focus + span {
+            border: 1px solid #00adef;
+            box-shadow: 0 0 .25em #00adef;
+        }
+
+        .u-styled-radio input:checked + span,
+        .u-styled-checkbox input:checked + span {
+            border: 1px solid #29a00a;
+            box-shadow: 0 0 .25em #29a00a;
+        }
+
+        /* width: 1em;
+    height: 1em;
+    margin-right: .5em;
+
+    vertical-align: baseline; */
+
+
+        /* .u-styled-radio input,
+        .u-styled-radio + span,
+        .u-styled-checkbox input,
+        .u-styled-checkbox + span {
+            font-size: 1.125eem;
+
+            width: 1em;
+            height: 1em;
+        }
+
+        .u-styled-radio input,
+        .u-styled-checkbox input {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+
+            opacity: 0;
+        }
+
+        .u-styled-radio input + span,
+        .u-styled-checkbox input + span {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 1.125rem;
+            height: 1.125rem;
+
+            -webkit-transition: border .4s;
+                    transition: border .4s;
+
+            border: 1px solid #484848;
+        }
+
+        .u-styled-radio input + span {
+            border-radius: 50%;
+        }
+
+        .u-styled-checkbox input + span {
+            text-align: center;
+        }
+
+        .u-styled-radio input + span:after {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            bottom: 2px;
+            left: 2px;
+
+            content: "";
+            -webkit-transition: background .4s;
+                    transition: background .4s;
+
+            border-radius: 50%;
+        }
+
+        .u-styled-checkbox input + span:after {
+            display: block;
+
+            width: 1rem;
+            height: 1rem;
+
+            content: "";
+            -webkit-transition: .4s;
+                    transition: .4s;
+
+            opacity: 0;
+            background: url(../images/sprite-static.svg?v=[SITE_VERSION]) -3rem -10rem no-repeat;
+            background-size: 15rem 15rem;
+        }
+
+        .u-styled-radio input:checked + span,
+        .u-styled-checkbox input:checked + span {
+            border: 1px solid #29a00a;
+        }
+
+        .u-styled-radio input:checked + span:after {
+            background: #29a00a;
+        }
+
+        .styled-checkbox input:checked + span:after {
+            opacity: 1;
+            color: #29a00a;
+        } */
     </style>
 </head>
 <body>
     <main>
-        <h1>Rietveld Design System</h1>
+        <h1>Rietveld Design Guide</h1>
 
-        <section id="ds-fonts">
-            <h2 class="ds-header">Lettertypes</h2>
+        <section id="ds-fonts" class="u-lobowl">
+            <h2 class="dg-header">Lettertypes</h2>
             <p>Er wordt gebruik gemaakt van twee lettertypes:</p>
 
             <h3 class="h2-like">Lato</h3>
@@ -346,8 +560,8 @@
             <p>Merriweather wordt gebruikt voor de koppen die behoren bij de blog en dit zal eventueel worden uitgebreid naar de andere pagina's voor een menselijkere look en feel.
         </section>
 
-        <section id="ds-colors">
-            <h2 class="ds-header">Kleurgebruik</h2>
+        <section id="ds-colors" class="u-lobowl">
+            <h2 class="dg-header">Kleurgebruik</h2>
             <p>Onderstaand staan de vier hoofdkleuren die in de uitingen van Rietveld Licht terugkomen. Wit en zwart worden ook gebruikt, maar hoeven niet expliciet genoemd te worden.</p>
 
             <table>
@@ -409,8 +623,8 @@
             </table>
         </section>
 
-        <section id="ds-typography">
-            <h2 class="ds-header">Typografie</h2>
+        <section id="ds-typography" class="u-lobowl">
+            <h2 class="dg-header">Typografie</h2>
             <p>De headers (h1 t/m h4) hebben een variabele grootte, afhankelijk van de resolutie van het scherm. Er is wel een minimum en maximum gedefinieerd.</p>
             <h1>Header 1</h1>
             <p>H1 is variabel van 28px tot en met 46px</p>
@@ -429,7 +643,7 @@
             <p>En de reguliere paragraaf ziet er dus zo uit en loopt van 16px tot en met 18px</p>
             <p class="u-text-small">Het is ook mogelijk om nog een stapje kleiner te doen, voor korte begeleidende teksten bijvoorbeeld en dient men de class .u-text-small te gebruiken en die loopt van 12px tot en met 14px</p>
 
-            <h2 class="ds-header">Speciale headers</h2>
+            <h2 class="dg-header">Speciale headers</h2>
 
             <h1 class="u-header-masthead">Header 1 voor blogtitels etc.</h1>
 
@@ -438,8 +652,8 @@
             </h1>
         </section>
 
-        <section id="ds-lists">
-            <h2 class="ds-header">Lijsten</h2>
+        <section id="ds-lists" class="u-lobowl">
+            <h2 class="dg-header">Lijsten</h2>
             <p>Lijsten</p>
 
             <ul class="u-has-bullet">
@@ -455,8 +669,8 @@
             </ol>
         </section>
 
-        <section id="ds-tables">
-            <h2 class="ds-header">Tabellen</h2>
+        <section id="ds-tables" class="u-lobowl">
+            <h2 class="dg-header">Tabellen</h2>
             <p>Tabellen</p>
             <table class="u-zebrastriping">
                 <tr>
@@ -483,8 +697,8 @@
 
         </section>
 
-        <section id="ds-buttons">
-            <h2 class="ds-header">Links en knoppen</h2>
+        <section id="ds-buttons" class="u-lobowl">
+            <h2 class="dg-header">Links en knoppen</h2>
 
             <h3>Links</h3>
             <p>Inline links worden getoond in de <a href="#"><span>lichtblauwe kleur</span></a> van Rietveld Licht. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. </p>
@@ -517,16 +731,82 @@
                         Winkelwagen</span>
                 </button>
             </div>
+
+            <div>
+                <button class="u-button-ghost u-button-ghost-green">
+                    <span>
+                        <span class="u-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                <path d="M13.525 26.3c1.162 0 2.106-.946 2.106-2.108 0-.483-.16-.94-.45-1.31h5.74c-.29.37-.45.827-.45 1.31 0 1.162.95 2.107 2.11 2.107 1.17 0 2.11-.95 2.11-2.11 0-.49-.16-.94-.45-1.31h.366c.548 0 .994-.45.994-1s-.45-1-.998-1H12.61l-.35-1.42h13.26c.32 0 .6-.23.663-.546l1.805-9.13c.04-.2-.012-.405-.14-.56-.13-.157-.32-.247-.522-.247H9.668L9.29 7.5c-.06-.288-.185-.58-.36-.844h.002c-.276-.44-.914-.955-1.8-.955h-.04.003-2.1c-.55 0-.995.45-.995 1s.446 1 .995 1H7.09c.125.01.134.02.167.05.006.01.012.01.02.02.028.04.06.12.068.15 0 0 0-.01-.002-.01l.002.01.01.05.002.01 3.505 14.16c.11.45.506.76.965.76h.047c-.294.37-.457.828-.457 1.31 0 1.163.946 2.108 2.108 2.108zm-.153-8.17h-1.45l-.54-2.196h1.743l.247 2.195zm2.832 0h-1.832l-.246-2.196h2.02l.058 2.195zm2.948 0h-1.954l-.06-2.196h2.073l-.05 2.195zm2.927 0h-1.94l.05-2.196h2.07l-.19 2.195zm2.88 0h-1.89l.19-2.196h2.13l-.44 2.195zm-11.95-3.19h-1.88l-.45-1.798h2.12l.2 1.8zm3.1 0h-2.1l-.21-1.798h2.26l.05 1.8zm3.12 0h-2.12l-.05-1.798h2.22l-.05 1.8zm3.12 0h-2.12l.05-1.798h2.23l-.16 1.8zm3.23 0h-2.24l.152-1.798h2.44l-.356 1.8zM12.7 12.15h-2.253l-.445-1.804h2.495l.203 1.804zm3.344 0H13.7l-.203-1.804h2.5l.047 1.804zm3.268 0h-2.274l-.048-1.804h2.37l-.048 1.804zm3.288 0h-2.294l.048-1.804h2.403L22.6 12.15zm3.547 0h-2.55l.157-1.804h2.75l-.357 1.804"></path>
+                            </svg>
+                        </span>
+                        Winkelwagen</span>
+                </button>
+            </div>
         </section>
 
-        <section>
-            <h2 class="ds-header">Quotes</h2>
+        <section class="u-lobowl">
+            <h2 class="dg-header">Quotes</h2>
 
             <p>Quotes worden over de gehele breedte gebruikt, maar hebben een kleinere maximale breedte dan de tekst in de kolom.</p>
 
             <blockquote>
                 <p class="h3-like u-text-regular">Mijn voorkeur voor glas is gekomen, sinds ik jaren geleden in Venetië was en een excursie deed naar de daarbij gelegen eilanden.</p>
             </blockquote>
+        </section>
+
+        <section class="u-lobowl">
+            <h2 class="dg-header">Formulier elementen</h2>
+            <form class="u-lobowl">
+                <legend>Formuliertitel</legend>
+                <div>
+                    <label for="field1">Label</label>
+                    <input type="text" name="field1">
+                </div>
+                <div>
+                    <label for="field2">Label</label>
+
+                    <select name="field2" class="u-styled-select">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                    </select>
+                </div>
+
+
+                <h3>Checkbox</h3>
+
+                <div>
+                    <label for="aOrder_form[test]" class="u-has-flex">
+                        <span class="u-styled-checkbox">
+                            <input type="checkbox" name="aOrder_form[test]" id="agreement" value="agreement">
+                            <span></span>
+                        </span>
+                        <span>Ik ga akkoord met de <a href="/pdf_terms">voorwaarden</a> en nog meer van dat soort en spielerij</span>
+                    </label>
+                </div>
+
+                <h3>Radiobuttons</h3>
+
+                <div class="u-lobowl">
+                    <label for="aOrder_form[]" class="u-has-flex">
+                        <span class="u-styled-radio">
+                            <input type="radio" name="aOrder_form[]" id="payment-ideal" value="ideal"><span></span>
+                        </span>
+
+                        <span>Label 1</span>
+                    </label>
+
+                    <label for="aOrder_form[]" class="u-has-flex">
+                        <span class="u-styled-radio">
+                            <input type="radio" name="aOrder_form[]" id="payment-test" value="ideal"><span></span>
+                        </span>
+
+                        <span>Label 2</span>
+                    </label>
+                </div>
+
+            </form>
         </section>
     </main>
 </body>
