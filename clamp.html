@@ -33,6 +33,40 @@
             margin: 0 auto;
         }
 
+        .u-has-grid {
+            display: grid;
+            grid-gap: 1em;
+        }
+
+        .u-visuallyhidden {
+            position: absolute !important;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+            clip: rect(1px, 1px, 1px, 1px);
+            white-space: nowrap;
+        }
+
+        .l-article-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media (min-width: 48em) {
+            .l-article-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 64em) {
+            .u-has-grid {
+                grid-gap: 2em;
+            }
+
+            .l-article-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
         .dg-header {
             text-transform: uppercase;
             font-size: calc(12px + 2 * ((100vw - 320px) / 960));
@@ -44,12 +78,12 @@
             margin-top: 1em;
         }
 
-        .u-has-flex {
-            display: flex;
+        .u-lobowl li + li {
+            margin-top: .5em;
         }
 
-        main li + li {
-            margin-top: .5em;
+        .u-has-flex {
+            display: flex;
         }
 
         table {
@@ -157,6 +191,7 @@
             border-bottom: .25em solid #00adef;
             padding: 1em 0;
             width: 100%;
+            max-width: 50ch;
             margin: 1em auto 0;
             text-align: center;
         }
@@ -354,10 +389,6 @@
             background: #29a00a;
         }
 
-        .u-button-ghost-green:hover .u-icon path {
-            fill: #fff;
-        }
-
         /* FORM */
 
         legend {
@@ -459,7 +490,7 @@
         .u-styled-checkbox input + span span {
             opacity: 0;
             font-size: 1.25em;
-            line-height: 1;
+            line-height: 1.125;
             padding-top: .125em;
             font-weight: 700;
             color: #29a00a;
@@ -770,6 +801,60 @@
                 </div>
 
             </form>
+        </section>
+
+        <section>
+            <h2 class="dg-header">Article card</h2>
+
+            <ul class="u-has-grid l-article-grid">
+                <li class="m-articlecard">
+                    <span id="article-13152" class="u-anchor-shift"></span>
+
+                    <picture class="has-ratio-4-3">
+                        <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg">
+                        <noscript><img src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond"></noscript>
+                    </picture>
+                    <div class="has-flex l-articlecard-data">
+                        <div class="a-articlecard-caption">
+                            <p class="u-text-small">13152<span class="u-text-small"> · rookglas 6_lichts · <strong class="u-text-small">voorradig</strong></span></p>
+                            <!-- <span class="icon">
+                                <svg viewBox="0 0 32 32" role="img">
+                                    <use class="icon-seen" xlink:href="/rietveld/rietveldlicht.nl/trunk/v3/images/sprite-dynamic.svg?v=250#icon-seen"></use>
+                                    <title>Recent bekeken</title>
+                                </svg>
+                            </span> -->
+                        </div>
+                        <div class="a-articlecard-price">
+                            <p>249,00</p>
+                        </div>
+                    </div>
+                    <a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="article-card-link"><span class="u-visuallyhidden">Bekijk details</span></a>
+                </li>
+
+                <li class="article-card">
+                    <span id="article-13152" class="anchor-shift"></span>
+
+                    <picture class="has-ratio-4-3 is-lazyloaded">
+                        <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg">
+                        <noscript><img src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond"></noscript>
+                    </picture>
+                    <div class="article-card-data">
+                        <div class="article-card-caption">
+                            <p>13152<span> · rookglas 6_lichts · <strong>voorradig</strong></span></p>
+                            <!-- <span class="icon">
+                                <svg viewBox="0 0 32 32" role="img">
+                                    <use class="icon-seen" xlink:href="/rietveld/rietveldlicht.nl/trunk/v3/images/sprite-dynamic.svg?v=250#icon-seen"></use>
+                                    <title>Recent bekeken</title>
+                                </svg>
+                            </span> -->
+                        </div>
+                        <div class="article-card-price">
+                            <p>249,00</p>
+                        </div>
+                    </div>
+                    <a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="article-card-link"><span class="u-visuallyhidden">Bekijk details</span></a>
+                </li>
+            </ul>
         </section>
     </main>
 </body>
