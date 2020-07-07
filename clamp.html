@@ -82,7 +82,7 @@
             margin-top: .5em;
         }
 
-        .u-has-flex {
+        .u-hasflex {
             display: flex;
         }
 
@@ -529,6 +529,51 @@
         .u-styled-radio input:checked + span span {
             opacity: 1;
         }
+
+        /* ARTICLE CARD */
+
+        .a-articlecard-data {
+            padding: .25em;
+        }
+
+        .a-articlecard-caption {
+            flex: 1 1 100%;
+        }
+
+        .a-articlecard-caption * {
+            margin-top: 0;
+            line-height: 1.5;
+        }
+
+        .a-articlecard-price {
+            flex: 0 1 1%;
+            margin: 0 0 0 .5rem;
+            align-self: flex-end;
+
+        }
+
+        .a-articlecard-price p {
+            color: #ed1c23;        
+        }
+
+        .a-articlecard-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            outline: 2px solid transparent;
+            outline-offset: 4px;
+            transition: outline .4s;
+        }
+
+        .a-articlecard-link:hover,
+        .a-articlecard-link:focus {
+            outline: 2px solid #00adef;
+        }
+
+
     </style>
 </head>
 <body>
@@ -763,7 +808,7 @@
                 <h3>Checkbox</h3>
 
                 <div>
-                    <label for="agreement" class="u-has-flex">
+                    <label for="agreement" class="u-hasflex">
                         <span class="u-styled-checkbox">
                             <input type="checkbox" name="aOrder_form[test]" id="agreement" value="agreement">
                             <span>
@@ -777,7 +822,7 @@
                 <h3>Radiobuttons</h3>
 
                 <div class="u-lobowl">
-                    <label for="payment-ideal" class="u-has-flex">
+                    <label for="payment-ideal" class="u-hasflex">
                         <span class="u-styled-radio">
                             <input type="radio" name="aOrder_form[]" id="payment-ideal" value="ideal">
                             <span>
@@ -788,7 +833,7 @@
                         <span>Label 1</span>
                     </label>
 
-                    <label for="payment-test" class="u-has-flex">
+                    <label for="payment-test" class="u-hasflex">
                         <span class="u-styled-radio">
                             <input type="radio" name="aOrder_form[]" id="payment-test" value="ideal">
                             <span>
@@ -814,9 +859,10 @@
                         <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg">
                         <noscript><img src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond"></noscript>
                     </picture>
-                    <div class="has-flex l-articlecard-data">
-                        <div class="a-articlecard-caption">
-                            <p class="u-text-small">13152<span class="u-text-small"> · rookglas 6_lichts · <strong class="u-text-small">voorradig</strong></span></p>
+                    <div class="u-hasflex l-articlecard-data">
+                        <div class="u-hasflex a-articlecard-caption">
+                            <h3 class="u-text-small">13152</h3>
+                            <p class="u-text-small">rookglas 6_lichts · <strong class="u-text-small">voorradig</strong></p>
                             <!-- <span class="icon">
                                 <svg viewBox="0 0 32 32" role="img">
                                     <use class="icon-seen" xlink:href="/rietveld/rietveldlicht.nl/trunk/v3/images/sprite-dynamic.svg?v=250#icon-seen"></use>
@@ -825,22 +871,26 @@
                             </span> -->
                         </div>
                         <div class="a-articlecard-price">
-                            <p>249,00</p>
+                            <p class="u-text-small">
+                                <span class="u-text-small a-articlecard-price-old">69,90</span>
+                                49,00
+                            </p>
                         </div>
                     </div>
-                    <a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="article-card-link"><span class="u-visuallyhidden">Bekijk details</span></a>
+                    <a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="a-articlecard-link"><span class="u-visuallyhidden">Bekijk details</span></a>
                 </li>
 
-                <li class="article-card">
-                    <span id="article-13152" class="anchor-shift"></span>
+                <li class="m-articlecard">
+                    <span id="article-13152" class="u-anchor-shift"></span>
 
-                    <picture class="has-ratio-4-3 is-lazyloaded">
+                    <picture class="has-ratio-4-3">
                         <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg">
                         <noscript><img src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond"></noscript>
                     </picture>
-                    <div class="article-card-data">
-                        <div class="article-card-caption">
-                            <p>13152<span> · rookglas 6_lichts · <strong>voorradig</strong></span></p>
+                    <div class="u-hasflex l-articlecard-data">
+                        <div class="u-hasflex a-articlecard-caption">
+                            <h3 class="u-text-small">13152</h3>
+                            <p class="u-text-small">rookglas 6_lichts · <strong class="u-text-small">voorradig</strong></p>
                             <!-- <span class="icon">
                                 <svg viewBox="0 0 32 32" role="img">
                                     <use class="icon-seen" xlink:href="/rietveld/rietveldlicht.nl/trunk/v3/images/sprite-dynamic.svg?v=250#icon-seen"></use>
@@ -848,11 +898,13 @@
                                 </svg>
                             </span> -->
                         </div>
-                        <div class="article-card-price">
-                            <p>249,00</p>
+                        <div class="a-articlecard-price">
+                            <p class="u-text-small">
+                                49,00
+                            </p>
                         </div>
                     </div>
-                    <a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="article-card-link"><span class="u-visuallyhidden">Bekijk details</span></a>
+                    <a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="a-articlecard-link"><span class="u-visuallyhidden">Bekijk details</span></a>
                 </li>
             </ul>
         </section>
