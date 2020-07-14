@@ -29,7 +29,7 @@
         main {
             width: 100%;
             max-width: 60ch;
-            padding: 1rem;
+            padding: 1em;
             margin: 0 auto;
         }
 
@@ -545,15 +545,27 @@
             line-height: 1.5;
         }
 
+        .a-articlecard-caption p {
+            padding-left: .5em;
+        }
+
         .a-articlecard-price {
             flex: 0 1 1%;
             margin: 0 0 0 .5rem;
-            align-self: flex-end;
-
+            text-align: right;
         }
 
         .a-articlecard-price p {
-            color: #ed1c23;        
+            color: #ed1c23;
+            font-weight: bold;
+        }
+
+        .a-articlecard-price-old {
+
+        }
+
+        .a-articlecard-price-old:after {
+
         }
 
         .a-articlecard-link {
@@ -872,7 +884,7 @@
                         </div>
                         <div class="a-articlecard-price">
                             <p class="u-text-small">
-                                <span class="u-text-small a-articlecard-price-old">69,90</span>
+                                <span class="u-text-small a-articlecard-price-old">169,90</span>
                                 49,00
                             </p>
                         </div>
