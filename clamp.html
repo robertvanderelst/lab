@@ -63,7 +63,7 @@
             }
 
             .l-article-grid {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -102,6 +102,11 @@
         th,
         td {
             padding: .5em;
+        }
+
+        img {
+            display: block;
+            width: 100%;
         }
 
         h1 {
@@ -367,12 +372,14 @@
             transition: fill .4s;
         }
 
-        .u-button-ghost:hover > span {
+        .u-button-ghost:hover > span,
+        .u-button-ghost:focus > span {
             background: #00adef;
             color: #fff;
         }
 
-        .u-button-ghost:hover .u-icon path {
+        .u-button-ghost:hover .u-icon path,
+        .u-button-ghost:focus .u-icon path {
             fill: #fff;
         }
 
@@ -385,7 +392,8 @@
             fill: #29a00a;
         }
 
-        .u-button-ghost-green:hover > span {
+        .u-button-ghost-green:hover > span,
+        .u-button-ghost-green:focus > span {
             background: #29a00a;
         }
 
@@ -470,18 +478,11 @@
             height: 100%;
         }
 
-        /* .u-styled-radio input:hover + span,
-        .u-styled-checkbox input:hover + span,
-        .u-styled-radio input:focus + span,
-        .u-styled-checkbox input:focus + span {
-            border: 1px solid #00adef;
-            box-shadow: 0 0 .33333em #00adef;
-        } */
-
         .u-styled-radio input:checked + span,
         .u-styled-checkbox input:checked + span {
             border: 1px solid #29a00a;
         }
+
 
         .u-styled-checkbox input + span {
             text-align: center;
@@ -501,9 +502,12 @@
             opacity: 1;
         }
 
-        .u-styled-checkbox input:checked:hover + span,
-        .u-styled-checkbox input:checked:focus + span {
-            box-shadow: 0 0 .33333em #29a00a;
+        .u-styled-checkbox input:not(:checked):hover + span,
+        .u-styled-checkbox input:not(:checked):focus + span,
+        .u-styled-radio input:not(:checked):hover + span,
+        .u-styled-radio input:not(:checked):focus + span {
+            border: 1px solid #00adef;
+            box-shadow: 0 0 .33333em #00adef;
         }
 
         .u-styled-radio > span {
@@ -511,8 +515,11 @@
             padding: 4px;
         }
 
+        .u-styled-checkbox input:checked:hover + span,
+        .u-styled-checkbox input:checked:focus + span,
         .u-styled-radio input:checked:hover + span,
         .u-styled-radio input:checked:focus + span {
+            border: 1px solid #29a00a;
             box-shadow: 0 0 .33333em #29a00a;
         }
 
@@ -532,40 +539,79 @@
 
         /* ARTICLE CARD */
 
-        .a-articlecard-data {
-            padding: .25em;
+        .m-articlecard {
+            border: 1px solid #e2e2e2;
+            padding: .5em;
+            flex-direction: column;
+        }
+
+        picture {
+            display: block;
+            background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZD0iTTE1LjQ3OCAxMy4yNDdBMy40NzggMy40NzggMCAwIDEgMTIgMTYuNzI2YTMuNDc4IDMuNDc4IDAgMCAxLTMuNDc4LTMuNDc5QTMuNDc4IDMuNDc4IDAgMCAxIDEyIDkuNzdhMy40NzggMy40NzggMCAwIDEgMy40NzggMy40Nzh6bTYuNzczLTguMDgxaC02LjM1M0wxNC42MTUgMy4wMWEuNjk2LjY5NiAwIDAgMC0uNTk4LS4zNEg5Ljk4M2EuNjk2LjY5NiAwIDAgMC0uNTk4LjM0TDguMTAyIDUuMTY2SDYuMDE3VjQuNjlhLjY5Ni42OTYgMCAwIDAtLjY5NS0uNjk2SDIuNzQ4YS42OTYuNjk2IDAgMCAwLS42OTYuNjk2di40NzVIMS43NUExLjc1IDEuNzUgMCAwIDAgMCA2LjkxNVYxOS41OGMwIC45NjYuNzgzIDEuNzUgMS43NSAxLjc1aDIwLjVBMS43NSAxLjc1IDAgMCAwIDI0IDE5LjU4VjYuOTE1YTEuNzUgMS43NSAwIDAgMC0xLjc1LTEuNzV6TTEyIDE4LjIyNmE0Ljk3OSA0Ljk3OSAwIDEgMSAwLTkuOTU4IDQuOTc5IDQuOTc5IDAgMCAxIDAgOS45NTh6bTkuMTYtOS40NTRoLTIuMThhLjY5Ni42OTYgMCAwIDEgMC0xLjM5MWgyLjE4YS42OTYuNjk2IDAgMSAxIDAgMS4zOTF6IiBmaWxsPSIjOTA5MDkwIi8+PC9zdmc+) center center no-repeat #e2e2e2;
+            transition: background .4s;
+        }
+
+        [class*="u-has-ratio"] img {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        .u-has-ratio-3-2 {
+            padding-bottom: 66.66667%;
+        }
+
+        .l-articlecard-data {
+            flex: 1 1 100%;
+            padding-top: .5em;
         }
 
         .a-articlecard-caption {
             flex: 1 1 100%;
         }
 
-        .a-articlecard-caption * {
-            margin-top: 0;
-            line-height: 1.5;
+        .a-articlecard-caption .u-text-small {
+            line-height: 1.33333;
+            display: inline;
         }
 
-        .a-articlecard-caption p {
+        /* .a-articlecard-caption p {
             padding-left: .5em;
-        }
+        } */
 
         .a-articlecard-price {
             flex: 0 1 1%;
             margin: 0 0 0 .5rem;
+            align-self: flex-end;
             text-align: right;
         }
 
         .a-articlecard-price p {
             color: #ed1c23;
             font-weight: bold;
+
         }
 
         .a-articlecard-price-old {
-
+            color: #707070;
         }
 
         .a-articlecard-price-old:after {
-
+            position: absolute;
+            top: 50%;
+            left: -5%;
+            width: 110%;
+            height: .1875em;
+            margin-top: -.0626em;
+            content: "";
+            transform: rotate(-15deg);
+            opacity: .5;
+            border-radius: .125em;
+            background: #ed1c23;
         }
 
         .a-articlecard-link {
@@ -578,6 +624,7 @@
             outline: 2px solid transparent;
             outline-offset: 4px;
             transition: outline .4s;
+            display: none;
         }
 
         .a-articlecard-link:hover,
@@ -864,15 +911,15 @@
             <h2 class="dg-header">Article card</h2>
 
             <ul class="u-has-grid l-article-grid">
-                <li class="m-articlecard">
+                <li class="m-articlecard u-hasflex">
                     <span id="article-13152" class="u-anchor-shift"></span>
 
-                    <picture class="has-ratio-4-3">
+                    <picture class="u-has-ratio-3-2">
                         <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg">
                         <noscript><img src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond"></noscript>
                     </picture>
                     <div class="u-hasflex l-articlecard-data">
-                        <div class="u-hasflex a-articlecard-caption">
+                        <div class="a-articlecard-caption">
                             <h3 class="u-text-small">13152</h3>
                             <p class="u-text-small">rookglas 6_lichts · <strong class="u-text-small">voorradig</strong></p>
                             <!-- <span class="icon">
@@ -892,15 +939,70 @@
                     <a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="a-articlecard-link"><span class="u-visuallyhidden">Bekijk details</span></a>
                 </li>
 
-                <li class="m-articlecard">
+                <li class="m-articlecard u-hasflex">
                     <span id="article-13152" class="u-anchor-shift"></span>
 
-                    <picture class="has-ratio-4-3">
+                    <picture class="u-has-ratio-3-2">
                         <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg">
                         <noscript><img src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond"></noscript>
                     </picture>
                     <div class="u-hasflex l-articlecard-data">
-                        <div class="u-hasflex a-articlecard-caption">
+                        <div class="a-articlecard-caption">
+                            <h3 class="u-text-small">13152</h3>
+                            <p class="u-text-small">rookglas 6_lichts · <strong class="u-text-small">voorradig</strong></p>
+                            <!-- <span class="icon">
+                                <svg viewBox="0 0 32 32" role="img">
+                                    <use class="icon-seen" xlink:href="/rietveld/rietveldlicht.nl/trunk/v3/images/sprite-dynamic.svg?v=250#icon-seen"></use>
+                                    <title>Recent bekeken</title>
+                                </svg>
+                            </span> -->
+                        </div>
+                        <div class="a-articlecard-price">
+                            <p class="u-text-small">
+                                49,00
+                            </p>
+                        </div>
+                    </div>
+                    <a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="a-articlecard-link"><span class="u-visuallyhidden">Bekijk details</span></a>
+                </li>
+
+                <li class="m-articlecard u-hasflex">
+                    <span id="article-13152" class="u-anchor-shift"></span>
+
+                    <picture class="u-has-ratio-3-2">
+                        <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg">
+                        <noscript><img src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond"></noscript>
+                    </picture>
+                    <div class="u-hasflex l-articlecard-data">
+                        <div class="a-articlecard-caption">
+                            <h3 class="u-text-small">13152</h3>
+                            <p class="u-text-small">rookglas 6_lichts · <strong class="u-text-small">voorradig</strong></p>
+                            <!-- <span class="icon">
+                                <svg viewBox="0 0 32 32" role="img">
+                                    <use class="icon-seen" xlink:href="/rietveld/rietveldlicht.nl/trunk/v3/images/sprite-dynamic.svg?v=250#icon-seen"></use>
+                                    <title>Recent bekeken</title>
+                                </svg>
+                            </span> -->
+                        </div>
+                        <div class="a-articlecard-price">
+                            <p class="u-text-small">
+                                <span class="u-text-small a-articlecard-price-old">169,90</span>
+                                49,00
+                            </p>
+                        </div>
+                    </div>
+                    <a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="a-articlecard-link"><span class="u-visuallyhidden">Bekijk details</span></a>
+                </li>
+
+                <li class="m-articlecard u-hasflex">
+                    <span id="article-13152" class="u-anchor-shift"></span>
+
+                    <picture class="u-has-ratio-3-2">
+                        <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg">
+                        <noscript><img src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond"></noscript>
+                    </picture>
+                    <div class="u-hasflex l-articlecard-data">
+                        <div class="a-articlecard-caption">
                             <h3 class="u-text-small">13152</h3>
                             <p class="u-text-small">rookglas 6_lichts · <strong class="u-text-small">voorradig</strong></p>
                             <!-- <span class="icon">
