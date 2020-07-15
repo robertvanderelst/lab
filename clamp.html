@@ -26,11 +26,31 @@
             font-family: 'Lato', sans-serif;
         }
 
-        main {
+        nav {
+            position: fixed;
+            width: 13.5em;
+            background: #f0f0f0;
+            padding: .5em;
+        }
+
+        nav li a {
+            color: #484848;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .container {
             width: 100%;
-            max-width: 60ch;
-            padding: 1em;
+            max-width: 60em;
+            padding: 2em;
             margin: 0 auto;
+            display: grid;
+            grid-gap: 2em;
+            grid-template-columns: 1fr 3fr;
+        }
+
+        section {
+            padding: .5em 0 0;
         }
 
         .u-has-grid {
@@ -636,392 +656,409 @@
     </style>
 </head>
 <body>
-    <main>
-        <h1>Rietveld Design Guide</h1>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#ds-fonts" class="u-text-small">Lettertypes</a></li>
+                    <li><a href="#ds-colors" class="u-text-small">Kleurgebruik</a></li>
+                    <li><a href="#ds-typography" class="u-text-small">Typografie</a></li>
+                    <li><a href="#ds-lists" class="u-text-small">Lijsten</a></li>
+                    <li><a href="#ds-tables" class="u-text-small">Tabellen</a></li>
+                    <li><a href="#ds-buttons" class="u-text-small">Links en knoppen</a></li>
+                    <li><a href="#ds-quotes" class="u-text-small">Quotes</a></li>
+                    <li><a href="#ds-formelements" class="u-text-small">Formulier elementen</a></li>
+                    <li><a href="#ds-articlecards" class="u-text-small">Article cards</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>Rietveld Design Guide</h1>
 
-        <section id="ds-fonts" class="u-lobowl">
-            <h2 class="dg-header">Lettertypes</h2>
-            <p>Er wordt gebruik gemaakt van twee lettertypes:</p>
+            <section id="ds-fonts" class="u-lobowl">
+                <h2 class="dg-header">Lettertypes</h2>
+                <p>Er wordt gebruik gemaakt van twee lettertypes:</p>
 
-            <h3 class="h2-like">Lato</h3>
-            <p>Lato wordt gebruikt voor vrijwel alle uitingen, zoals koppen, paragrafen etc.</p>
+                <h3 class="h2-like">Lato</h3>
+                <p>Lato wordt gebruikt voor vrijwel alle uitingen, zoals koppen, paragrafen etc.</p>
 
-            <p class="h2-like" style="font-family: 'Merriweather', Arial">Merriweather</p>
-            <p>Merriweather wordt gebruikt voor de koppen die behoren bij de blog en dit zal eventueel worden uitgebreid naar de andere pagina's voor een menselijkere look en feel.
-        </section>
+                <p class="h2-like" style="font-family: 'Merriweather', Arial">Merriweather</p>
+                <p>Merriweather wordt gebruikt voor de koppen die behoren bij de blog en dit zal eventueel worden uitgebreid naar de andere pagina's voor een menselijkere look en feel.
+            </section>
 
-        <section id="ds-colors" class="u-lobowl">
-            <h2 class="dg-header">Kleurgebruik</h2>
-            <p>Onderstaand staan de vier hoofdkleuren die in de uitingen van Rietveld Licht terugkomen. Wit en zwart worden ook gebruikt, maar hoeven niet expliciet genoemd te worden.</p>
+            <section id="ds-colors" class="u-lobowl">
+                <h2 class="dg-header">Kleurgebruik</h2>
+                <p>Onderstaand staan de vier hoofdkleuren die in de uitingen van Rietveld Licht terugkomen. Wit en zwart worden ook gebruikt, maar hoeven niet expliciet genoemd te worden.</p>
 
-            <table>
-                <tr>
-                    <th></th>
-                </tr>
-                <tr>
-                    <th scope="row"><span style="display: block; width: 6em; height: 1.5em; background:#fecb09; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
-                    <td>PMS 116C</td>
-                    <td>#fecb09</td>
-                </tr>
-                <tr>
-                    <th scope="row"><span style="display: block; width: 6em; height: 1.5em; background:#ed1c23; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
-                    <td>PMS 485C</td>
-                    <td>#ed1c23</td>
-                </tr>
-                <tr>
-                    <th scope="row"><span style="display: block; width: 6em; height: 1.5em; background:#00adef; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
-                    <td>PMS 298C</td>
-                    <td>#00adef</td>
-                </tr>
-                <tr>
-                    <th scope="row"><span style="display: block; width: 6em; height: 1.5em; background:#29a00a; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
-                    <td></td>
-                    <td>#29a00a</td>
-                </tr>
-            </table>
+                <table>
+                    <tr>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span style="display: block; width: 6em; height: 1.5em; background:#fecb09; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
+                        <td>PMS 116C</td>
+                        <td>#fecb09</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span style="display: block; width: 6em; height: 1.5em; background:#ed1c23; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
+                        <td>PMS 485C</td>
+                        <td>#ed1c23</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span style="display: block; width: 6em; height: 1.5em; background:#00adef; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
+                        <td>PMS 298C</td>
+                        <td>#00adef</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span style="display: block; width: 6em; height: 1.5em; background:#29a00a; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
+                        <td></td>
+                        <td>#29a00a</td>
+                    </tr>
+                </table>
 
-            <p>Daarnaast worden ook de volgende grijstinten gebruikt voor o.a. borders en tekstkleur.</p>
+                <p>Daarnaast worden ook de volgende grijstinten gebruikt voor o.a. borders en tekstkleur.</p>
 
-            <table>
-                <tr>
-                    <th></th>
-                </tr>
-                <tr>
-                    <th scope="row"><span style="display:block; width: 6em; height: 1.5em;background:#e2e2e2; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
-                    <td>#e2e2e2</td>
-                </tr>
-                <tr>
-                    <th scope="row"><span style="display:block; width: 6em; height: 1.5em;background:#b8b8b8; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
-                    <td>#b8b8b8</td>
-                </tr>
-                <tr>
-                    <th scope="row"><span style="display:block; width: 6em; height: 1.5em;background:#909090; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
-                    <td>#909090</td>
-                </tr>
-                <tr>
-                    <th scope="row"><span style="display:block; width: 6em; height: 1.5em;background:#707070; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
-                    <td>#707070</td>
-                </tr>
-                <tr>
-                    <th scope="row"><span style="display:block; width: 6em; height: 1.5em;background:#484848; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
-                    <td>#484848</td>
-                </tr>
-                <tr>
-                    <th scope="row"><span style="display:block; width: 6em; height: 1.5em;background:#262626; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
-                    <td>#262626</td>
-                </tr>
-            </table>
-        </section>
+                <table>
+                    <tr>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span style="display:block; width: 6em; height: 1.5em;background:#e2e2e2; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
+                        <td>#e2e2e2</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span style="display:block; width: 6em; height: 1.5em;background:#b8b8b8; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
+                        <td>#b8b8b8</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span style="display:block; width: 6em; height: 1.5em;background:#909090; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
+                        <td>#909090</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span style="display:block; width: 6em; height: 1.5em;background:#707070; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
+                        <td>#707070</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span style="display:block; width: 6em; height: 1.5em;background:#484848; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
+                        <td>#484848</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span style="display:block; width: 6em; height: 1.5em;background:#262626; outline: 1px solid #e2e2e2; outline-offset: 4px;"></span></th>
+                        <td>#262626</td>
+                    </tr>
+                </table>
+            </section>
 
-        <section id="ds-typography" class="u-lobowl">
-            <h2 class="dg-header">Typografie</h2>
-            <p>De headers (h1 t/m h4) hebben een variabele grootte, afhankelijk van de resolutie van het scherm. Er is wel een minimum en maximum gedefinieerd.</p>
-            <h1>Header 1</h1>
-            <p>H1 is variabel van 28px tot en met 46px</p>
-            <h2>Header 2</h2>
-            <p>H2 is variabel van 24px tot en met 36px</p>
-            <h3>Header 3</h3>
-            <p>H3 is variabel van 20px tot en met 28px</p>
-            <h4>Header 4</h4>
-            <p>H4 is variabel van 16px tot en met 22px</p>
-            <p>Daarnaast zijn er classnames om elementen te stylen zoals de headers:</p>
-            <p class="h2-like">.h2-like</p>
-            <p class="h3-like">.h3-like</p>
-            <p class="h4-like">.h4-like</p>
+            <section id="ds-typography" class="u-lobowl">
+                <h2 class="dg-header">Typografie</h2>
+                <p>De headers (h1 t/m h4) hebben een variabele grootte, afhankelijk van de resolutie van het scherm. Er is wel een minimum en maximum gedefinieerd.</p>
+                <h1>Header 1</h1>
+                <p>H1 is variabel van 28px tot en met 46px</p>
+                <h2>Header 2</h2>
+                <p>H2 is variabel van 24px tot en met 36px</p>
+                <h3>Header 3</h3>
+                <p>H3 is variabel van 20px tot en met 28px</p>
+                <h4>Header 4</h4>
+                <p>H4 is variabel van 16px tot en met 22px</p>
+                <p>Daarnaast zijn er classnames om elementen te stylen zoals de headers:</p>
+                <p class="h2-like">.h2-like</p>
+                <p class="h3-like">.h3-like</p>
+                <p class="h4-like">.h4-like</p>
 
-            <p class="u-text-intro">Voor de eerste paragraaf is het ook mogelijk om de class .u-text-intro te gebruiken om de tekst wat groter te maken, van 18px tot en met 20px</p>
-            <p>En de reguliere paragraaf ziet er dus zo uit en loopt van 16px tot en met 18px</p>
-            <p class="u-text-small">Het is ook mogelijk om nog een stapje kleiner te doen, voor korte begeleidende teksten bijvoorbeeld en dient men de class .u-text-small te gebruiken en die loopt van 12px tot en met 14px</p>
+                <p class="u-text-intro">Voor de eerste paragraaf is het ook mogelijk om de class .u-text-intro te gebruiken om de tekst wat groter te maken, van 18px tot en met 20px</p>
+                <p>En de reguliere paragraaf ziet er dus zo uit en loopt van 16px tot en met 18px</p>
+                <p class="u-text-small">Het is ook mogelijk om nog een stapje kleiner te doen, voor korte begeleidende teksten bijvoorbeeld en dient men de class .u-text-small te gebruiken en die loopt van 12px tot en met 14px</p>
 
-            <h2 class="dg-header">Speciale headers</h2>
+                <h2 class="dg-header">Speciale headers</h2>
 
-            <h1 class="u-header-masthead">Header 1 voor blogtitels etc.</h1>
+                <h1 class="u-header-masthead">Header 1 voor blogtitels etc.</h1>
 
-            <h1 class="u-header-masthead">
-                <span>Hoe wij de keuken verfraaiden met de luxe uitstraling van glas</span>
-            </h1>
-        </section>
+                <h1 class="u-header-masthead">
+                    <span>Hoe wij de keuken verfraaiden met de luxe uitstraling van glas</span>
+                </h1>
+            </section>
 
-        <section id="ds-lists" class="u-lobowl">
-            <h2 class="dg-header">Lijsten</h2>
-            <p>Lijsten</p>
+            <section id="ds-lists" class="u-lobowl">
+                <h2 class="dg-header">Lijsten</h2>
+                <p>Lijsten</p>
 
-            <ul class="u-has-bullet">
-                <li>A wonderful serenity</li>
-                <li>Has taken possession</li>
-                <li>Of my entire soul</li>
-            </ul>
+                <ul class="u-has-bullet">
+                    <li>A wonderful serenity</li>
+                    <li>Has taken possession</li>
+                    <li>Of my entire soul</li>
+                </ul>
 
-            <ol class="u-has-index">
-                <li>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</li>
-                <li>has taken possession</li>
-                <li>of my entire soul</li>
-            </ol>
-        </section>
+                <ol class="u-has-index">
+                    <li>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</li>
+                    <li>has taken possession</li>
+                    <li>of my entire soul</li>
+                </ol>
+            </section>
 
-        <section id="ds-tables" class="u-lobowl">
-            <h2 class="dg-header">Tabellen</h2>
-            <p>Tabellen</p>
-            <table class="u-zebrastriping">
-                <tr>
-                    <th scope="row">Categorie</th>
-                    <td>Hanglampen</td>
-                </tr>
-                <tr>
-                    <th scope="row">Subcategorie</th>
-                    <td>Videlampen</td>
-                </tr>
-                <tr>
-                    <th scope="row">Overige categorie</th>
-                    <td>Decoratief, eetkamerlampen</td>
-                </tr>
-                <tr>
-                    <th scope="row">Stijl</th>
-                    <td>Modern</td>
-                </tr>
-                <tr>
-                    <th scope="row">Materiaal</th>
-                    <td>Glas, rookglas, staal - rvs, metaal</td>
-                </tr>
-            </table>
+            <section id="ds-tables" class="u-lobowl">
+                <h2 class="dg-header">Tabellen</h2>
+                <p>Tabellen</p>
+                <table class="u-zebrastriping">
+                    <tr>
+                        <th scope="row">Categorie</th>
+                        <td>Hanglampen</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Subcategorie</th>
+                        <td>Videlampen</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Overige categorie</th>
+                        <td>Decoratief, eetkamerlampen</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Stijl</th>
+                        <td>Modern</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Materiaal</th>
+                        <td>Glas, rookglas, staal - rvs, metaal</td>
+                    </tr>
+                </table>
 
-        </section>
+            </section>
 
-        <section id="ds-buttons" class="u-lobowl">
-            <h2 class="dg-header">Links en knoppen</h2>
+            <section id="ds-buttons" class="u-lobowl">
+                <h2 class="dg-header">Links en knoppen</h2>
 
-            <h3>Links</h3>
-            <p>Inline links worden getoond in de <a href="#"><span>lichtblauwe kleur</span></a> van Rietveld Licht. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. </p>
-            <p>Knoppen</p>
-
-            <div>
-                <button class="u-button"><span>Label</span></button>
-            </div>
-
-            <div>
-                <button class="u-button u-button-cta">
-                    <span>
-                        <span class="u-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                <path d="M13.525 26.3c1.162 0 2.106-.946 2.106-2.108 0-.483-.16-.94-.45-1.31h5.74c-.29.37-.45.827-.45 1.31 0 1.162.95 2.107 2.11 2.107 1.17 0 2.11-.95 2.11-2.11 0-.49-.16-.94-.45-1.31h.366c.548 0 .994-.45.994-1s-.45-1-.998-1H12.61l-.35-1.42h13.26c.32 0 .6-.23.663-.546l1.805-9.13c.04-.2-.012-.405-.14-.56-.13-.157-.32-.247-.522-.247H9.668L9.29 7.5c-.06-.288-.185-.58-.36-.844h.002c-.276-.44-.914-.955-1.8-.955h-.04.003-2.1c-.55 0-.995.45-.995 1s.446 1 .995 1H7.09c.125.01.134.02.167.05.006.01.012.01.02.02.028.04.06.12.068.15 0 0 0-.01-.002-.01l.002.01.01.05.002.01 3.505 14.16c.11.45.506.76.965.76h.047c-.294.37-.457.828-.457 1.31 0 1.163.946 2.108 2.108 2.108zm-.153-8.17h-1.45l-.54-2.196h1.743l.247 2.195zm2.832 0h-1.832l-.246-2.196h2.02l.058 2.195zm2.948 0h-1.954l-.06-2.196h2.073l-.05 2.195zm2.927 0h-1.94l.05-2.196h2.07l-.19 2.195zm2.88 0h-1.89l.19-2.196h2.13l-.44 2.195zm-11.95-3.19h-1.88l-.45-1.798h2.12l.2 1.8zm3.1 0h-2.1l-.21-1.798h2.26l.05 1.8zm3.12 0h-2.12l-.05-1.798h2.22l-.05 1.8zm3.12 0h-2.12l.05-1.798h2.23l-.16 1.8zm3.23 0h-2.24l.152-1.798h2.44l-.356 1.8zM12.7 12.15h-2.253l-.445-1.804h2.495l.203 1.804zm3.344 0H13.7l-.203-1.804h2.5l.047 1.804zm3.268 0h-2.274l-.048-1.804h2.37l-.048 1.804zm3.288 0h-2.294l.048-1.804h2.403L22.6 12.15zm3.547 0h-2.55l.157-1.804h2.75l-.357 1.804"></path>
-                            </svg>
-                        </span>
-                        Winkelwagen</span>
-                </button>
-            </div>
-
-            <div>
-                <button class="u-button-ghost">
-                    <span>
-                        <span class="u-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                <path d="M13.525 26.3c1.162 0 2.106-.946 2.106-2.108 0-.483-.16-.94-.45-1.31h5.74c-.29.37-.45.827-.45 1.31 0 1.162.95 2.107 2.11 2.107 1.17 0 2.11-.95 2.11-2.11 0-.49-.16-.94-.45-1.31h.366c.548 0 .994-.45.994-1s-.45-1-.998-1H12.61l-.35-1.42h13.26c.32 0 .6-.23.663-.546l1.805-9.13c.04-.2-.012-.405-.14-.56-.13-.157-.32-.247-.522-.247H9.668L9.29 7.5c-.06-.288-.185-.58-.36-.844h.002c-.276-.44-.914-.955-1.8-.955h-.04.003-2.1c-.55 0-.995.45-.995 1s.446 1 .995 1H7.09c.125.01.134.02.167.05.006.01.012.01.02.02.028.04.06.12.068.15 0 0 0-.01-.002-.01l.002.01.01.05.002.01 3.505 14.16c.11.45.506.76.965.76h.047c-.294.37-.457.828-.457 1.31 0 1.163.946 2.108 2.108 2.108zm-.153-8.17h-1.45l-.54-2.196h1.743l.247 2.195zm2.832 0h-1.832l-.246-2.196h2.02l.058 2.195zm2.948 0h-1.954l-.06-2.196h2.073l-.05 2.195zm2.927 0h-1.94l.05-2.196h2.07l-.19 2.195zm2.88 0h-1.89l.19-2.196h2.13l-.44 2.195zm-11.95-3.19h-1.88l-.45-1.798h2.12l.2 1.8zm3.1 0h-2.1l-.21-1.798h2.26l.05 1.8zm3.12 0h-2.12l-.05-1.798h2.22l-.05 1.8zm3.12 0h-2.12l.05-1.798h2.23l-.16 1.8zm3.23 0h-2.24l.152-1.798h2.44l-.356 1.8zM12.7 12.15h-2.253l-.445-1.804h2.495l.203 1.804zm3.344 0H13.7l-.203-1.804h2.5l.047 1.804zm3.268 0h-2.274l-.048-1.804h2.37l-.048 1.804zm3.288 0h-2.294l.048-1.804h2.403L22.6 12.15zm3.547 0h-2.55l.157-1.804h2.75l-.357 1.804"></path>
-                            </svg>
-                        </span>
-                        Winkelwagen</span>
-                </button>
-            </div>
-
-            <div>
-                <button class="u-button-ghost u-button-ghost-green">
-                    <span>
-                        <span class="u-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                <path d="M13.525 26.3c1.162 0 2.106-.946 2.106-2.108 0-.483-.16-.94-.45-1.31h5.74c-.29.37-.45.827-.45 1.31 0 1.162.95 2.107 2.11 2.107 1.17 0 2.11-.95 2.11-2.11 0-.49-.16-.94-.45-1.31h.366c.548 0 .994-.45.994-1s-.45-1-.998-1H12.61l-.35-1.42h13.26c.32 0 .6-.23.663-.546l1.805-9.13c.04-.2-.012-.405-.14-.56-.13-.157-.32-.247-.522-.247H9.668L9.29 7.5c-.06-.288-.185-.58-.36-.844h.002c-.276-.44-.914-.955-1.8-.955h-.04.003-2.1c-.55 0-.995.45-.995 1s.446 1 .995 1H7.09c.125.01.134.02.167.05.006.01.012.01.02.02.028.04.06.12.068.15 0 0 0-.01-.002-.01l.002.01.01.05.002.01 3.505 14.16c.11.45.506.76.965.76h.047c-.294.37-.457.828-.457 1.31 0 1.163.946 2.108 2.108 2.108zm-.153-8.17h-1.45l-.54-2.196h1.743l.247 2.195zm2.832 0h-1.832l-.246-2.196h2.02l.058 2.195zm2.948 0h-1.954l-.06-2.196h2.073l-.05 2.195zm2.927 0h-1.94l.05-2.196h2.07l-.19 2.195zm2.88 0h-1.89l.19-2.196h2.13l-.44 2.195zm-11.95-3.19h-1.88l-.45-1.798h2.12l.2 1.8zm3.1 0h-2.1l-.21-1.798h2.26l.05 1.8zm3.12 0h-2.12l-.05-1.798h2.22l-.05 1.8zm3.12 0h-2.12l.05-1.798h2.23l-.16 1.8zm3.23 0h-2.24l.152-1.798h2.44l-.356 1.8zM12.7 12.15h-2.253l-.445-1.804h2.495l.203 1.804zm3.344 0H13.7l-.203-1.804h2.5l.047 1.804zm3.268 0h-2.274l-.048-1.804h2.37l-.048 1.804zm3.288 0h-2.294l.048-1.804h2.403L22.6 12.15zm3.547 0h-2.55l.157-1.804h2.75l-.357 1.804"></path>
-                            </svg>
-                        </span>
-                        Winkelwagen</span>
-                </button>
-            </div>
-        </section>
-
-        <section class="u-lobowl">
-            <h2 class="dg-header">Quotes</h2>
-
-            <p>Quotes worden over de gehele breedte gebruikt, maar hebben een kleinere maximale breedte dan de tekst in de kolom.</p>
-
-            <blockquote>
-                <p class="h3-like u-text-regular">Mijn voorkeur voor glas is gekomen, sinds ik jaren geleden in Venetië was en een excursie deed naar de daarbij gelegen eilanden.</p>
-            </blockquote>
-        </section>
-
-        <section class="u-lobowl">
-            <h2 class="dg-header">Formulier elementen</h2>
-            <form class="u-lobowl">
-                <legend>Formuliertitel</legend>
-                <div>
-                    <label for="field1">Label</label>
-                    <input type="text" name="field1">
-                </div>
-                <div>
-                    <label for="field2">Label</label>
-
-                    <select name="field2" class="u-styled-select">
-                        <option>Option 1</option>
-                        <option>Option 2</option>
-                        <option>Option 3</option>
-                    </select>
-                </div>
-
-
-                <h3>Checkbox</h3>
+                <h3>Links</h3>
+                <p>Inline links worden getoond in de <a href="#"><span>lichtblauwe kleur</span></a> van Rietveld Licht. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. </p>
+                <h3>Knoppen</h3>
 
                 <div>
-                    <label for="agreement" class="u-hasflex">
-                        <span class="u-styled-checkbox">
-                            <input type="checkbox" name="aOrder_form[test]" id="agreement" value="agreement">
-                            <span>
-                                <span>&#10004;</span>
-                            </span>
-                        </span>
-                        <span>Ik ga akkoord met de <a href="/pdf_terms">voorwaarden</a> en nog meer van dat soort en spielerij</span>
-                    </label>
+                    <button class="u-button"><span>Label</span></button>
                 </div>
 
-                <h3>Radiobuttons</h3>
-
-                <div class="u-lobowl">
-                    <label for="payment-ideal" class="u-hasflex">
-                        <span class="u-styled-radio">
-                            <input type="radio" name="aOrder_form[]" id="payment-ideal" value="ideal">
-                            <span>
-                                <span></span>
+                <div>
+                    <button class="u-button u-button-cta">
+                        <span>
+                            <span class="u-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                    <path d="M13.525 26.3c1.162 0 2.106-.946 2.106-2.108 0-.483-.16-.94-.45-1.31h5.74c-.29.37-.45.827-.45 1.31 0 1.162.95 2.107 2.11 2.107 1.17 0 2.11-.95 2.11-2.11 0-.49-.16-.94-.45-1.31h.366c.548 0 .994-.45.994-1s-.45-1-.998-1H12.61l-.35-1.42h13.26c.32 0 .6-.23.663-.546l1.805-9.13c.04-.2-.012-.405-.14-.56-.13-.157-.32-.247-.522-.247H9.668L9.29 7.5c-.06-.288-.185-.58-.36-.844h.002c-.276-.44-.914-.955-1.8-.955h-.04.003-2.1c-.55 0-.995.45-.995 1s.446 1 .995 1H7.09c.125.01.134.02.167.05.006.01.012.01.02.02.028.04.06.12.068.15 0 0 0-.01-.002-.01l.002.01.01.05.002.01 3.505 14.16c.11.45.506.76.965.76h.047c-.294.37-.457.828-.457 1.31 0 1.163.946 2.108 2.108 2.108zm-.153-8.17h-1.45l-.54-2.196h1.743l.247 2.195zm2.832 0h-1.832l-.246-2.196h2.02l.058 2.195zm2.948 0h-1.954l-.06-2.196h2.073l-.05 2.195zm2.927 0h-1.94l.05-2.196h2.07l-.19 2.195zm2.88 0h-1.89l.19-2.196h2.13l-.44 2.195zm-11.95-3.19h-1.88l-.45-1.798h2.12l.2 1.8zm3.1 0h-2.1l-.21-1.798h2.26l.05 1.8zm3.12 0h-2.12l-.05-1.798h2.22l-.05 1.8zm3.12 0h-2.12l.05-1.798h2.23l-.16 1.8zm3.23 0h-2.24l.152-1.798h2.44l-.356 1.8zM12.7 12.15h-2.253l-.445-1.804h2.495l.203 1.804zm3.344 0H13.7l-.203-1.804h2.5l.047 1.804zm3.268 0h-2.274l-.048-1.804h2.37l-.048 1.804zm3.288 0h-2.294l.048-1.804h2.403L22.6 12.15zm3.547 0h-2.55l.157-1.804h2.75l-.357 1.804"></path>
+                                </svg>
                             </span>
-                        </span>
-
-                        <span>Label 1</span>
-                    </label>
-
-                    <label for="payment-test" class="u-hasflex">
-                        <span class="u-styled-radio">
-                            <input type="radio" name="aOrder_form[]" id="payment-test" value="ideal">
-                            <span>
-                                <span></span>
-                            </span>
-                        </span>
-
-                        <span>Label 2</span>
-                    </label>
+                            Winkelwagen</span>
+                    </button>
                 </div>
 
-            </form>
-        </section>
-
-        <section>
-            <h2 class="dg-header">Article card</h2>
-
-            <ul class="u-has-grid l-article-grid">
-                <li class="m-articlecard u-hasflex">
-                    <span id="article-13152" class="u-anchor-shift"></span>
-
-                    <picture class="u-has-ratio-3-2">
-                        <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg">
-                        <noscript><img src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond"></noscript>
-                    </picture>
-                    <div class="u-hasflex l-articlecard-data">
-                        <div class="a-articlecard-caption">
-                            <h3 class="u-text-small">13152</h3>
-                            <p class="u-text-small">rookglas 6_lichts · <strong class="u-text-small">voorradig</strong></p>
-                            <!-- <span class="icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-seen" xlink:href="/rietveld/rietveldlicht.nl/trunk/v3/images/sprite-dynamic.svg?v=250#icon-seen"></use>
-                                    <title>Recent bekeken</title>
+                <div>
+                    <button class="u-button-ghost">
+                        <span>
+                            <span class="u-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                    <path d="M13.525 26.3c1.162 0 2.106-.946 2.106-2.108 0-.483-.16-.94-.45-1.31h5.74c-.29.37-.45.827-.45 1.31 0 1.162.95 2.107 2.11 2.107 1.17 0 2.11-.95 2.11-2.11 0-.49-.16-.94-.45-1.31h.366c.548 0 .994-.45.994-1s-.45-1-.998-1H12.61l-.35-1.42h13.26c.32 0 .6-.23.663-.546l1.805-9.13c.04-.2-.012-.405-.14-.56-.13-.157-.32-.247-.522-.247H9.668L9.29 7.5c-.06-.288-.185-.58-.36-.844h.002c-.276-.44-.914-.955-1.8-.955h-.04.003-2.1c-.55 0-.995.45-.995 1s.446 1 .995 1H7.09c.125.01.134.02.167.05.006.01.012.01.02.02.028.04.06.12.068.15 0 0 0-.01-.002-.01l.002.01.01.05.002.01 3.505 14.16c.11.45.506.76.965.76h.047c-.294.37-.457.828-.457 1.31 0 1.163.946 2.108 2.108 2.108zm-.153-8.17h-1.45l-.54-2.196h1.743l.247 2.195zm2.832 0h-1.832l-.246-2.196h2.02l.058 2.195zm2.948 0h-1.954l-.06-2.196h2.073l-.05 2.195zm2.927 0h-1.94l.05-2.196h2.07l-.19 2.195zm2.88 0h-1.89l.19-2.196h2.13l-.44 2.195zm-11.95-3.19h-1.88l-.45-1.798h2.12l.2 1.8zm3.1 0h-2.1l-.21-1.798h2.26l.05 1.8zm3.12 0h-2.12l-.05-1.798h2.22l-.05 1.8zm3.12 0h-2.12l.05-1.798h2.23l-.16 1.8zm3.23 0h-2.24l.152-1.798h2.44l-.356 1.8zM12.7 12.15h-2.253l-.445-1.804h2.495l.203 1.804zm3.344 0H13.7l-.203-1.804h2.5l.047 1.804zm3.268 0h-2.274l-.048-1.804h2.37l-.048 1.804zm3.288 0h-2.294l.048-1.804h2.403L22.6 12.15zm3.547 0h-2.55l.157-1.804h2.75l-.357 1.804"></path>
                                 </svg>
-                            </span> -->
-                        </div>
-                        <div class="a-articlecard-price">
-                            <p class="u-text-small">
-                                <span class="u-text-small a-articlecard-price-old">169,90</span>
-                                49,00
-                            </p>
-                        </div>
-                    </div>
-                    <a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="a-articlecard-link"><span class="u-visuallyhidden">Bekijk details</span></a>
-                </li>
+                            </span>
+                            Winkelwagen</span>
+                    </button>
+                </div>
 
-                <li class="m-articlecard u-hasflex">
-                    <span id="article-13152" class="u-anchor-shift"></span>
-
-                    <picture class="u-has-ratio-3-2">
-                        <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg">
-                        <noscript><img src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond"></noscript>
-                    </picture>
-                    <div class="u-hasflex l-articlecard-data">
-                        <div class="a-articlecard-caption">
-                            <h3 class="u-text-small">13152</h3>
-                            <p class="u-text-small">rookglas 6_lichts · <strong class="u-text-small">voorradig</strong></p>
-                            <!-- <span class="icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-seen" xlink:href="/rietveld/rietveldlicht.nl/trunk/v3/images/sprite-dynamic.svg?v=250#icon-seen"></use>
-                                    <title>Recent bekeken</title>
+                <div>
+                    <button class="u-button-ghost u-button-ghost-green">
+                        <span>
+                            <span class="u-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                    <path d="M13.525 26.3c1.162 0 2.106-.946 2.106-2.108 0-.483-.16-.94-.45-1.31h5.74c-.29.37-.45.827-.45 1.31 0 1.162.95 2.107 2.11 2.107 1.17 0 2.11-.95 2.11-2.11 0-.49-.16-.94-.45-1.31h.366c.548 0 .994-.45.994-1s-.45-1-.998-1H12.61l-.35-1.42h13.26c.32 0 .6-.23.663-.546l1.805-9.13c.04-.2-.012-.405-.14-.56-.13-.157-.32-.247-.522-.247H9.668L9.29 7.5c-.06-.288-.185-.58-.36-.844h.002c-.276-.44-.914-.955-1.8-.955h-.04.003-2.1c-.55 0-.995.45-.995 1s.446 1 .995 1H7.09c.125.01.134.02.167.05.006.01.012.01.02.02.028.04.06.12.068.15 0 0 0-.01-.002-.01l.002.01.01.05.002.01 3.505 14.16c.11.45.506.76.965.76h.047c-.294.37-.457.828-.457 1.31 0 1.163.946 2.108 2.108 2.108zm-.153-8.17h-1.45l-.54-2.196h1.743l.247 2.195zm2.832 0h-1.832l-.246-2.196h2.02l.058 2.195zm2.948 0h-1.954l-.06-2.196h2.073l-.05 2.195zm2.927 0h-1.94l.05-2.196h2.07l-.19 2.195zm2.88 0h-1.89l.19-2.196h2.13l-.44 2.195zm-11.95-3.19h-1.88l-.45-1.798h2.12l.2 1.8zm3.1 0h-2.1l-.21-1.798h2.26l.05 1.8zm3.12 0h-2.12l-.05-1.798h2.22l-.05 1.8zm3.12 0h-2.12l.05-1.798h2.23l-.16 1.8zm3.23 0h-2.24l.152-1.798h2.44l-.356 1.8zM12.7 12.15h-2.253l-.445-1.804h2.495l.203 1.804zm3.344 0H13.7l-.203-1.804h2.5l.047 1.804zm3.268 0h-2.274l-.048-1.804h2.37l-.048 1.804zm3.288 0h-2.294l.048-1.804h2.403L22.6 12.15zm3.547 0h-2.55l.157-1.804h2.75l-.357 1.804"></path>
                                 </svg>
-                            </span> -->
-                        </div>
-                        <div class="a-articlecard-price">
-                            <p class="u-text-small">
-                                49,00
-                            </p>
-                        </div>
+                            </span>
+                            Winkelwagen</span>
+                    </button>
+                </div>
+            </section>
+
+            <section id="ds-quotes" class="u-lobowl">
+                <h2 class="dg-header">Quotes</h2>
+
+                <p>Quotes worden over de gehele breedte gebruikt, maar hebben een kleinere maximale breedte dan de tekst in de kolom.</p>
+
+                <blockquote>
+                    <p class="h3-like u-text-regular">Mijn voorkeur voor glas is gekomen, sinds ik jaren geleden in Venetië was en een excursie deed naar de daarbij gelegen eilanden.</p>
+                </blockquote>
+            </section>
+
+            <section id="ds-formelements" class="u-lobowl">
+                <h2 class="dg-header">Formulier elementen</h2>
+                <form class="u-lobowl">
+                    <legend>Formuliertitel</legend>
+                    <div>
+                        <label for="field1">Label</label>
+                        <input type="text" name="field1">
                     </div>
-                    <a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="a-articlecard-link"><span class="u-visuallyhidden">Bekijk details</span></a>
-                </li>
+                    <div>
+                        <label for="field2">Label</label>
 
-                <li class="m-articlecard u-hasflex">
-                    <span id="article-13152" class="u-anchor-shift"></span>
-
-                    <picture class="u-has-ratio-3-2">
-                        <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg">
-                        <noscript><img src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond"></noscript>
-                    </picture>
-                    <div class="u-hasflex l-articlecard-data">
-                        <div class="a-articlecard-caption">
-                            <h3 class="u-text-small">13152</h3>
-                            <p class="u-text-small">rookglas 6_lichts · <strong class="u-text-small">voorradig</strong></p>
-                            <!-- <span class="icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-seen" xlink:href="/rietveld/rietveldlicht.nl/trunk/v3/images/sprite-dynamic.svg?v=250#icon-seen"></use>
-                                    <title>Recent bekeken</title>
-                                </svg>
-                            </span> -->
-                        </div>
-                        <div class="a-articlecard-price">
-                            <p class="u-text-small">
-                                <span class="u-text-small a-articlecard-price-old">169,90</span>
-                                49,00
-                            </p>
-                        </div>
+                        <select name="field2" class="u-styled-select">
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                            <option>Option 3</option>
+                        </select>
                     </div>
-                    <a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="a-articlecard-link"><span class="u-visuallyhidden">Bekijk details</span></a>
-                </li>
 
-                <li class="m-articlecard u-hasflex">
-                    <span id="article-13152" class="u-anchor-shift"></span>
 
-                    <picture class="u-has-ratio-3-2">
-                        <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg">
-                        <noscript><img src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond"></noscript>
-                    </picture>
-                    <div class="u-hasflex l-articlecard-data">
-                        <div class="a-articlecard-caption">
-                            <h3 class="u-text-small">13152</h3>
-                            <p class="u-text-small">rookglas 6_lichts · <strong class="u-text-small">voorradig</strong></p>
-                            <!-- <span class="icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-seen" xlink:href="/rietveld/rietveldlicht.nl/trunk/v3/images/sprite-dynamic.svg?v=250#icon-seen"></use>
-                                    <title>Recent bekeken</title>
-                                </svg>
-                            </span> -->
-                        </div>
-                        <div class="a-articlecard-price">
-                            <p class="u-text-small">
-                                49,00
-                            </p>
-                        </div>
+                    <h3>Checkbox</h3>
+
+                    <div>
+                        <label for="agreement" class="u-hasflex">
+                            <span class="u-styled-checkbox">
+                                <input type="checkbox" name="aOrder_form[test]" id="agreement" value="agreement">
+                                <span>
+                                    <span>&#10004;</span>
+                                </span>
+                            </span>
+                            <span>Ik ga akkoord met de <a href="/pdf_terms">voorwaarden</a> en nog meer van dat soort en spielerij</span>
+                        </label>
                     </div>
-                    <a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="a-articlecard-link"><span class="u-visuallyhidden">Bekijk details</span></a>
-                </li>
-            </ul>
-        </section>
-    </main>
+
+                    <h3>Radiobuttons</h3>
+
+                    <div class="u-lobowl">
+                        <label for="payment-ideal" class="u-hasflex">
+                            <span class="u-styled-radio">
+                                <input type="radio" name="aOrder_form[]" id="payment-ideal" value="ideal">
+                                <span>
+                                    <span></span>
+                                </span>
+                            </span>
+
+                            <span>Label 1</span>
+                        </label>
+
+                        <label for="payment-test" class="u-hasflex">
+                            <span class="u-styled-radio">
+                                <input type="radio" name="aOrder_form[]" id="payment-test" value="ideal">
+                                <span>
+                                    <span></span>
+                                </span>
+                            </span>
+
+                            <span>Label 2</span>
+                        </label>
+                    </div>
+
+                </form>
+            </section>
+
+            <section id="ds-articlecards">
+                <h2 class="dg-header">Article card</h2>
+
+                <ul class="u-has-grid l-article-grid">
+                    <li class="m-articlecard u-hasflex">
+                        <span id="article-13152" class="u-anchor-shift"></span>
+
+                        <picture class="u-has-ratio-3-2">
+                            <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg">
+                            <noscript><img src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond"></noscript>
+                        </picture>
+                        <div class="u-hasflex l-articlecard-data">
+                            <div class="a-articlecard-caption">
+                                <h3 class="u-text-small">13152</h3>
+                                <p class="u-text-small">rookglas 6_lichts · <strong class="u-text-small">voorradig</strong></p>
+                                <!-- <span class="icon">
+                                    <svg viewBox="0 0 32 32" role="img">
+                                        <use class="icon-seen" xlink:href="/rietveld/rietveldlicht.nl/trunk/v3/images/sprite-dynamic.svg?v=250#icon-seen"></use>
+                                        <title>Recent bekeken</title>
+                                    </svg>
+                                </span> -->
+                            </div>
+                            <div class="a-articlecard-price">
+                                <p class="u-text-small">
+                                    <span class="u-text-small a-articlecard-price-old">169,90</span>
+                                    49,00
+                                </p>
+                            </div>
+                        </div>
+                        <a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="a-articlecard-link"><span class="u-visuallyhidden">Bekijk details</span></a>
+                    </li>
+
+                    <li class="m-articlecard u-hasflex">
+                        <span id="article-13152" class="u-anchor-shift"></span>
+
+                        <picture class="u-has-ratio-3-2">
+                            <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg">
+                            <noscript><img src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond"></noscript>
+                        </picture>
+                        <div class="u-hasflex l-articlecard-data">
+                            <div class="a-articlecard-caption">
+                                <h3 class="u-text-small">13152</h3>
+                                <p class="u-text-small">rookglas 6_lichts · <strong class="u-text-small">voorradig</strong></p>
+                                <!-- <span class="icon">
+                                    <svg viewBox="0 0 32 32" role="img">
+                                        <use class="icon-seen" xlink:href="/rietveld/rietveldlicht.nl/trunk/v3/images/sprite-dynamic.svg?v=250#icon-seen"></use>
+                                        <title>Recent bekeken</title>
+                                    </svg>
+                                </span> -->
+                            </div>
+                            <div class="a-articlecard-price">
+                                <p class="u-text-small">
+                                    49,00
+                                </p>
+                            </div>
+                        </div>
+                        <a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="a-articlecard-link"><span class="u-visuallyhidden">Bekijk details</span></a>
+                    </li>
+
+                    <li class="m-articlecard u-hasflex">
+                        <span id="article-13152" class="u-anchor-shift"></span>
+
+                        <picture class="u-has-ratio-3-2">
+                            <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg">
+                            <noscript><img src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond"></noscript>
+                        </picture>
+                        <div class="u-hasflex l-articlecard-data">
+                            <div class="a-articlecard-caption">
+                                <h3 class="u-text-small">13152</h3>
+                                <p class="u-text-small">rookglas 6_lichts · <strong class="u-text-small">voorradig</strong></p>
+                                <!-- <span class="icon">
+                                    <svg viewBox="0 0 32 32" role="img">
+                                        <use class="icon-seen" xlink:href="/rietveld/rietveldlicht.nl/trunk/v3/images/sprite-dynamic.svg?v=250#icon-seen"></use>
+                                        <title>Recent bekeken</title>
+                                    </svg>
+                                </span> -->
+                            </div>
+                            <div class="a-articlecard-price">
+                                <p class="u-text-small">
+                                    <span class="u-text-small a-articlecard-price-old">169,90</span>
+                                    49,00
+                                </p>
+                            </div>
+                        </div>
+                        <a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="a-articlecard-link"><span class="u-visuallyhidden">Bekijk details</span></a>
+                    </li>
+
+                    <li class="m-articlecard u-hasflex">
+                        <span id="article-13152" class="u-anchor-shift"></span>
+
+                        <picture class="u-has-ratio-3-2">
+                            <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg">
+                            <noscript><img src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond"></noscript>
+                        </picture>
+                        <div class="u-hasflex l-articlecard-data">
+                            <div class="a-articlecard-caption">
+                                <h3 class="u-text-small">13152</h3>
+                                <p class="u-text-small">rookglas 6_lichts · <strong class="u-text-small">voorradig</strong></p>
+                                <!-- <span class="icon">
+                                    <svg viewBox="0 0 32 32" role="img">
+                                        <use class="icon-seen" xlink:href="/rietveld/rietveldlicht.nl/trunk/v3/images/sprite-dynamic.svg?v=250#icon-seen"></use>
+                                        <title>Recent bekeken</title>
+                                    </svg>
+                                </span> -->
+                            </div>
+                            <div class="a-articlecard-price">
+                                <p class="u-text-small">
+                                    49,00
+                                </p>
+                            </div>
+                        </div>
+                        <a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="a-articlecard-link"><span class="u-visuallyhidden">Bekijk details</span></a>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
