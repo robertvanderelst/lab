@@ -351,6 +351,20 @@
             cursor: pointer;
         }
 
+        .u-button > span:after,
+        .u-button-ghost > span:after {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            border: 1px solid transparent;
+            border-radius: 3px;
+
+            transition: border-color .3s;
+        }
+
         .u-button > span {
             -webkit-transition: background .2s, transform .2s, box-shadow .2s;
                     transition: background .2s, transform .2s, box-shadow .2s;
@@ -369,13 +383,9 @@
           border: 0;
         }
 
-        .u-button:hover > span {
-            background: hsl(197, 100%, 42%)
-        }
-
-        .u-button:focus > span {
-            outline: 2px solid #fff;
-            outline-offset: -4px;
+        .u-button:hover > span:after,
+        .u-button:focus > span:after {
+            border-color: #fff;
         }
 
         .u-button:active > span {
@@ -402,28 +412,11 @@
             box-shadow: 0 2px 0 0 hsl(28, 98%, 31%);
         }
 
-        .u-button-cta:hover > span {
-            background: hsl(28, 98%, 46%);
-        }
-
         .u-button-ghost > span {
             border: 1px solid #00adef;
             border-radius: 4px;
             color: #00adef;
             transition: color .3s, background .3s;
-        }
-
-        .u-button-ghost > span:after {
-            content: "";
-            position: absolute;
-            top: 2px;
-            left: 2px;
-            right: 2px;
-            bottom: 2px;
-            border: 1px solid transparent;
-            border-radius: 2px;
-
-            transition: border-color .3s;
         }
 
         .u-button-ghost .u-icon path {
