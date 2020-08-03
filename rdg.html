@@ -408,9 +408,22 @@
 
         .u-button-ghost > span {
             border: 1px solid #00adef;
-            border-radius: .25em;
+            border-radius: 4px;
             color: #00adef;
             transition: color .3s, background .3s;
+        }
+
+        .u-button-ghost > span:after {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            border: 1px solid transparent;
+            border-radius: 2px;
+
+            transition: border-color .3s;
         }
 
         .u-button-ghost .u-icon path {
@@ -418,14 +431,17 @@
             transition: fill .3s;
         }
 
-        .u-button-ghost:hover > span,
-        .u-button-ghost:focus > span {
+        .u-button-ghost:hover > span:after,
+        .u-button-ghost:focus > span:after {
+            border-color: #00adef;
+        }
+
+        .u-button-ghost:active > span {
             background: #00adef;
             color: #fff;
         }
 
-        .u-button-ghost:hover .u-icon path,
-        .u-button-ghost:focus .u-icon path {
+        .u-button-ghost:active .u-icon path {
             fill: #fff;
         }
 
@@ -438,9 +454,14 @@
             fill: #29a00a;
         }
 
-        .u-button-ghost-green:hover > span,
-        .u-button-ghost-green:focus > span {
+        .u-button-ghost-green:hover > span:after,
+        .u-button-ghost-green:focus > span:after {
+            border-color: #29a00a;
+        }
+
+        .u-button-ghost-green:active > span {
             background: #29a00a;
+            color: #fff;
         }
 
         /* FORM */
