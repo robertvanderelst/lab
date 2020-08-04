@@ -347,11 +347,23 @@
             display: inline-block;
             line-height: 1.33333;
             margin: 0;
-            padding: .3em .75em .2em;
+            padding: .25em .75em;
             cursor: pointer;
         }
 
-        .u-button > span:after,
+        .u-button > span:after {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+
+            transition: border-color .3s;
+        }
+
         .u-button-ghost > span:after {
             content: "";
             position: absolute;
@@ -360,17 +372,9 @@
             right: -3px;
             bottom: -3px;
             border: 1px solid transparent;
-            border-radius: 5px;
+            border-radius: 4px;
 
             transition: border-color .3s;
-        }
-
-        .u-button > span:after {
-            top: 2px;
-            left: 2px;
-            right: 2px;
-            bottom: 2px;
-            border-radius: 2px;
         }
 
         .u-button > span {
@@ -382,7 +386,7 @@
 
             color: #fff;
 
-            border-radius: .25em;
+            border-radius: 4px;
             background: hsl(197, 100%, 47%);
             box-shadow: 0 2px 0 0 hsl(197, 100%, 27%)
         }
@@ -393,7 +397,7 @@
 
         .u-button:hover > span:after,
         .u-button:focus > span:after {
-            border-color: rgba(255, 255, 255, .75);
+            border-color: #00adef;
         }
 
         .u-button:active > span {
