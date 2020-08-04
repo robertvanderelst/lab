@@ -357,11 +357,13 @@
             top: -2px;
             left: -2px;
             right: -2px;
-            bottom: -2px;
+            bottom: -4px;
             border: 1px solid transparent;
             border-radius: 4px;
 
-            transition: border-color .3s;
+            transition: bottom .3s, border-color .3s;
+
+            transform: translate3d(0);
         }
 
         .u-button-ghost > span:after {
@@ -375,6 +377,8 @@
             border-radius: 4px;
 
             transition: border-color .3s;
+
+            transform: translate3d(0);
         }
 
         .u-button > span {
@@ -392,7 +396,7 @@
         }
 
         button::-moz-focus-inner {
-          border: 0;
+            border: 0;
         }
 
         .u-button:hover > span:after,
@@ -422,6 +426,11 @@
         .u-button-cta > span {
             background: #fc7b0a;
             box-shadow: 0 2px 0 0 hsl(28, 98%, 31%);
+        }
+
+        .u-button-cta:hover > span:after,
+        .u-button-cta:focus > span:after {
+            border-color: #fc7b0a;
         }
 
         .u-button-ghost > span {
