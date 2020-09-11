@@ -684,6 +684,24 @@
             opacity: 1;
         }
 
+        /* FORM VALIDATION */
+
+        input[type="text"]:invalid {
+            border: 1px solid #ed1c23;
+        }
+
+        input[type="text"]:invalid:focus {
+            box-shadow: 0 0 .33333em #ed1c23;
+        }
+
+        input[type="text"]:valid {
+            border: 1px solid #29a00a;
+        }
+
+        input[type="text"]:valid:focus {
+            box-shadow: 0 0 .33333em #29a00a;
+        }
+
         /* ARTICLE CARD */
 
         .m-articlecard {
@@ -702,6 +720,14 @@
             overflow: hidden;
         }
 
+        .u-has-ratio-1-1 {
+            padding-bottom: 100%;
+        }
+
+        .u-has-ratio-3-2 {
+            padding-bottom: 66.66667%;
+        }
+
         [class*="u-has-ratio"] img {
             position: absolute;
             top: 0;
@@ -710,10 +736,6 @@
             width: auto;
             height: 100%;
             margin: 0 auto;
-        }
-
-        .u-has-ratio-3-2 {
-            padding-bottom: 66.66667%;
         }
 
         .l-articlecard-data {
@@ -757,6 +779,57 @@
         .a-articlecard-link:hover,
         .a-articlecard-link:focus {
             outline: 2px solid #00adef;
+        }
+
+        /* Photo card */
+        .a-image-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            background: linear-gradient(to top, rgba(0,0,0,.5) 0, rgba(0,0,0,0) 50%);
+            box-shadow: 0 1px 1px rgba(0,0,0,0.24), 0 3px 3px rgba(0,0,0,0.20), 0 6px 6px rgba(0,0,0,0.16), 0 12px 12px rgba(0,0,0,0.12);
+            outline: 2px solid transparent;
+            outline-offset: calc(-.5em - 1px);
+            transition: outline .4s;
+        }
+
+        .a-image-link:hover,
+        .a-image-link:focus {
+            outline: 2px solid #fff;
+        }
+
+        [class*="u-underline"]:after {
+            content: "";
+            position: absolute;
+            bottom: -.125em;
+            left: -.125em;
+            right: -.25em;
+            height: .25em;
+            transform: rotate(-2deg);
+            z-index: -1;
+        }
+
+        .u-underline-green:after {
+            background: #29a00a;
+        }
+
+        .u-underline-blue:after {
+            background: #00adef;
+        }
+
+        .u-underline-yellow:after {
+            background: #fecb09;
+        }
+
+        .u-underline-red:after {
+            background: #ed1c23;
+        }
+
+        .u-underline-orange:after {
+            background: #fc7b0a;
         }
 
         /* Overrides */
@@ -823,7 +896,7 @@
                     <li><a href="#ds-buttons" class="u-text-small">Links en knoppen</a></li>
                     <li><a href="#ds-quotes" class="u-text-small">Quotes</a></li>
                     <li><a href="#ds-formelements" class="u-text-small">Formulier elementen</a></li>
-                    <li><a href="#ds-articlecards" class="u-text-small">Article cards</a></li>
+                    <li><a href="#ds-cards" class="u-text-small">Cards</a></li>
                 </ul>
             </nav>
         </header>
@@ -1062,7 +1135,7 @@
                     <legend>Formuliertitel</legend>
                     <div>
                         <label for="field1">Label</label>
-                        <input type="text" name="field1">
+                        <input type="text" name="field1" required="required">
                     </div>
                     <div>
                         <label for="field2">Label</label>
@@ -1118,8 +1191,10 @@
                 </form>
             </section>
 
-            <section id="ds-articlecards">
-                <h2 class="dg-header">Article card</h2>
+            <section id="ds-cards">
+                <h2 class="dg-header">Cards</h2>
+
+                <h3>Article card</h3>
 
                 <ul class="l-grid l-article-grid">
                     <li class="m-articlecard l-flex">
@@ -1228,8 +1303,49 @@
                         <a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="a-articlecard-link"><span class="u-visuallyhidden">Bekijk details</span></a>
                     </li>
                 </ul>
-            </section>
 
+                <h3>Photo card (andere naam?)</h3>
+
+                <ul class="l-grid l-article-grid">
+                    <li>
+                        <picture class="u-has-ratio-1-1">
+                            <img alt="" src="https://placekitten.com/300/300">
+                        </picture>
+                        <a href="#" class="a-image-link"><span class="h4-like u-underline-green" style="position: absolute; bottom: 1em; left: 1em; color: #fff ; font-weight: 700; line-height: 1; z-index: 2">Hanglampen</span></a>
+                    </li>
+                    <li>
+                        <picture class="u-has-ratio-1-1">
+                            <img alt="" src="https://placekitten.com/300/300">
+                        </picture>
+                        <a href="#" class="a-image-link"><span class="h4-like u-underline-blue" style="position: absolute; bottom: 1em; left: 1em; color: #fff ; font-weight: 700; line-height: 1; z-index: 2">Hanglampen</span></a>
+                    </li>
+                    <li>
+                        <picture class="u-has-ratio-1-1">
+                            <img alt="" src="https://placekitten.com/300/300">
+
+                        </picture>
+                        <a href="#" class="a-image-link"><span class="h4-like u-underline-yellow" style="position: absolute; bottom: 1em; left: 1em; color: #fff ; font-weight: 700; line-height: 1; z-index: 2">Hanglampen</span></a>
+                    </li>
+                    <li>
+                        <picture class="u-has-ratio-1-1">
+                            <img alt=""src="https://placekitten.com/300/300">
+                        </picture>
+                        <a href="#" class="a-image-link"><span class="h4-like u-underline-red" style="position: absolute; bottom: 1em; left: 1em; color: #fff ; font-weight: 700; line-height: 1; z-index: 2">Hanglampen</span></a>
+                    </li>
+                    <li>
+                        <picture class="u-has-ratio-3-2">
+                            <img alt=""src="https://placekitten.com/300/200">
+                        </picture>
+                        <a href="#" class="a-image-link"><span class="h4-like u-underline-orange" style="position: absolute; bottom: 1em; left: 1em; color: #fff ; font-weight: 700; line-height: 1; z-index: 2">Hanglampen</span></a>
+                    </li>
+                    <li>
+                        <picture class="u-has-ratio-3-2">
+                            <img alt="" src="https://placekitten.com/300/200">
+                        </picture>
+                        <a href="#" class="a-image-link"><span class="h4-like u-underline-green" style="position: absolute; bottom: 1em; left: 1em; color: #fff ; font-weight: 700; line-height: 1; z-index: 2">Hanglampen</span></a>
+                    </li>
+                </ul>
+            </section>
         </main>
     </div>
 </body>
