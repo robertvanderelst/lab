@@ -172,13 +172,13 @@
         }
 
         h1 {
-            font-size: calc(28px + 18 * ((100vw - 320px) / 960));
-            font-size: clamp(28px, calc(28px + 18 * ((100vw - 320px) / 960)), 46px);
+            font-size: calc(28px + 12 * ((100vw - 320px) / 960));
+            font-size: clamp(28px, calc(28px + 12 * ((100vw - 320px) / 960)), 40px);
         }
 
         h1.u-header-masthead {
-            font-size: calc(32px + 26 * ((100vw - 320px) / 960));
-            font-size: clamp(32px, calc(32px + 26 * ((100vw - 320px) / 960)), 58px);
+            font-size: calc(28px + 20 * ((100vw - 320px) / 960));
+            font-size: clamp(28px, calc(32px + 20 * ((100vw - 320px) / 960)), 48px);
             font-family: "Merriweather", serif;
             font-weight: 700;
         }
@@ -196,20 +196,20 @@
 
         h2,
         .h2-like {
-            font-size: calc(24px + 12 * ((100vw - 320px) / 960));
-            font-size: clamp(24px, calc(24px + 12 * ((100vw - 320px) / 960)), 36px);
+            font-size: calc(22px + 6 * ((100vw - 320px) / 960));
+            font-size: clamp(22px, calc(22px + 6 * ((100vw - 320px) / 960)), 28px);
         }
 
         h3,
         .h3-like {
-            font-size: calc(20px + 8 * ((100vw - 320px) / 960));
-            font-size: clamp(20px, calc(20px + 8 * ((100vw - 320px) / 960)), 28px);
+            font-size: calc(18px + 4 * ((100vw - 320px) / 960));
+            font-size: clamp(18px, calc(18px + 4 * ((100vw - 320px) / 960)), 22px);
         }
 
         h4,
         .h4-like {
-            font-size: calc(16px + 6 * ((100vw - 320px) / 960));
-            font-size: clamp(16px, calc(16px + 6 * ((100vw - 320px) / 960)), 22px);
+            font-size: calc(16px + 2 * ((100vw - 320px) / 960));
+            font-size: clamp(16px, calc(16px + 6 * ((100vw - 320px) / 960)), 18px);
         }
 
         .u-text-intro {
@@ -997,13 +997,13 @@
                 <h2 class="dg-header">Typografie</h2>
                 <p>De headers (h1 t/m h4) hebben een variabele grootte, afhankelijk van de resolutie van het scherm. Er is wel een minimum en maximum gedefinieerd.</p>
                 <h1>Header 1</h1>
-                <p>H1 is variabel van 28px tot en met 46px</p>
+                <p>H1 is variabel van 28px tot en met 40px</p>
                 <h2>Header 2</h2>
-                <p>H2 is variabel van 24px tot en met 36px</p>
+                <p>H2 is variabel van 22px tot en met 28px</p>
                 <h3>Header 3</h3>
-                <p>H3 is variabel van 20px tot en met 28px</p>
+                <p>H3 is variabel van 18px tot en met 22px</p>
                 <h4>Header 4</h4>
-                <p>H4 is variabel van 16px tot en met 22px</p>
+                <p>H4 is variabel van 16px tot en met 18px</p>
                 <p>Daarnaast zijn er classnames om elementen te stylen zoals de headers:</p>
                 <p class="h2-like">.h2-like</p>
                 <p class="h3-like">.h3-like</p>
@@ -1150,9 +1150,13 @@
                     </div>
                     <div>
                         <label for="field2">Label</label>
+                        <input type="text" name="field2" required="required" value=" ">
+                    </div>
+                    <div>
+                        <label for="field3">Label</label>
 
-                        <select name="field2" class="u-styled-select">
-                            <option>Option 1</option>
+                        <select name="field3" class="u-styled-select">
+                            <option>Option 1</option>s
                             <option>Option 2</option>
                             <option>Option 3</option>
                         </select>
