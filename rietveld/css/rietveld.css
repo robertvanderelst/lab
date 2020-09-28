@@ -151,9 +151,32 @@ hr {
     width: 50%;
     margin: 1em auto 0;
     border: 0;
-    height: .125em;
+    height: 2px;
     background: #ed1c23;
 }
+
+table {
+    border-collapse: collapse;
+}
+
+.u-zebrastriping tr:nth-child(even) {
+    background: #f7f7f7;
+}
+
+.u-bg-alternate .u-zebrastriping tr:nth-child(even) {
+    background: #e2e2e2;
+}
+
+th[scope="row"] {
+    font-weight: 700;
+    text-align: left;
+}
+
+th,
+td {
+    padding: .5em;
+}
+
 .no-scroll{
    max-height:100%;
    overflow:hidden
