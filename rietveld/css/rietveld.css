@@ -282,6 +282,7 @@ svg{
     width: 100%;
     height: 100%;
 }
+
 picture{
    display:block;
    background:url(data:image/svg+xml;
@@ -415,11 +416,12 @@ picture{
     font-weight: 700;
 }
 
-/* .m-author-data .is-icon-button {
+.m-author-data .is-icon-button {
     width: 2.5em;
     height: 2.5em;
     padding: .25em;
-} */
+    text-decoration: none;
+}
 
 /* NEW ICON BUTTONS (maybe) */
 
@@ -430,24 +432,27 @@ picture{
     display: block;
     width: 3rem;
     height: 3rem;
-    padding: .25rem;
+    padding: .5rem;
 }
 
-
-/* .is-icon-button > span{
+/* OVERLINE/UNDERLINE */
+.u-overunderline {
+    padding: .25em;
+}
+.u-overunderline > span {
     display: block;
     width: 100%;
     height: 100%;
     padding: .25em;
-    border: 2px solid transparent;
+    border: 2px solid rgba(0,0,0,.1);
     border-width: 2px 0;
-    transition: border-color .3s;
+    /* transition: border-color .3s; */
 }
 
-.is-icon-button:hover > span,
-.is-icon-button:focus > span {
+.u-overunderline:hover > span,
+.u-overunderline:hover > span {
     border-color: #00adef;
-} */
+}
 
 /* CONTACT BAR */
 .l-contactbar,
@@ -461,15 +466,12 @@ picture{
 
 .m-contactbar-link {
     display: inline-block;
-    height: 3rem;
-    padding: .5rem;
-    vertical-align: middle;
+    line-height: 1.5;
     text-decoration: none;
 }
 
-.m-contactbar-link:hover,
-.m-contactbar-link:focus {
-    border-color: #fecb09;
+.m-contactbar-link path {
+    fill: #484848;
 }
 
 @media (min-width: 30em) {
