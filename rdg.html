@@ -142,9 +142,29 @@
         }
 
         h1 {
+            font-size: calc(24px + 28 * ((100vw - 320px) / 960));
+            font-size: clamp(24px, calc(24px + 28 * ((100vw - 320px) / 960)), 52px);
             font-weight: 900;
             line-height: 1;
             color: #262626;
+        }
+
+        h1.u-header-masthead {
+            font-size: calc(28px + 20 * ((100vw - 320px) / 960));
+            font-size: clamp(28px, calc(32px + 20 * ((100vw - 320px) / 960)), 48px);
+            font-family: "Merriweather", serif;
+            font-weight: 700;
+        }
+
+        h1.u-header-masthead span {
+            margin-top: 0;
+            font-family: 'Merriweather', serif;
+            color: inherit;
+            font-size: inherit;
+            font-weight: inherit;
+            line-height: 1.25;
+            background: linear-gradient(0, #fecb09 0, #fecb09 .25em, rgba(0,0,0,0) .25em, rgba(0,0,0,0) 1.5em);
+            text-shadow: -1px -1px 0 rgba(255,255,255,1), -1px 1px 0 rgba(255,255,255,1), 1px 1px 0 rgba(255,255,255,1), 1px -1px 0 rgba(255,255,255,1);
         }
 
         h2,
@@ -171,33 +191,10 @@
             margin-top: .5rem;
         }
 
-        h1 {
-            font-size: calc(28px + 12 * ((100vw - 320px) / 960));
-            font-size: clamp(28px, calc(28px + 12 * ((100vw - 320px) / 960)), 40px);
-        }
-
-        h1.u-header-masthead {
-            font-size: calc(28px + 20 * ((100vw - 320px) / 960));
-            font-size: clamp(28px, calc(32px + 20 * ((100vw - 320px) / 960)), 48px);
-            font-family: "Merriweather", serif;
-            font-weight: 700;
-        }
-
-        h1.u-header-masthead span {
-            margin-top: 0;
-            font-family: 'Merriweather', serif;
-            color: inherit;
-            font-size: inherit;
-            font-weight: inherit;
-            line-height: 1.25;
-            background: linear-gradient(0, #fecb09 0, #fecb09 .25em, rgba(0,0,0,0) .25em, rgba(0,0,0,0) 1.5em);
-            text-shadow: -1px -1px 0 rgba(255,255,255,1), -1px 1px 0 rgba(255,255,255,1), 1px 1px 0 rgba(255,255,255,1), 1px -1px 0 rgba(255,255,255,1);
-        }
-
         h2,
         .h2-like {
-            font-size: calc(22px + 6 * ((100vw - 320px) / 960));
-            font-size: clamp(22px, calc(22px + 6 * ((100vw - 320px) / 960)), 28px);
+            font-size: calc(20px + 8 * ((100vw - 320px) / 960));
+            font-size: clamp(20px, calc(20px + 8 * ((100vw - 320px) / 960)), 28px);
         }
 
         h3,
@@ -266,12 +263,12 @@
         }
 
         .u-has-index {
-            counter-reset: index 8;
+            counter-reset: index 0;
         }
 
         .u-has-index li {
             counter-increment: index;
-            padding-left: 2em;
+            padding-left: 1.75em;
         }
 
         .u-has-index li:before {
@@ -279,13 +276,16 @@
             position: absolute;
             top: 0;
             left: 0;
+            font-size: calc(12px + 2 * ((100vw - 320px) / 960));
+            font-size: clamp(12px, calc(12px + 2 * ((100vw - 320px) / 960)), 14px);
             font-weight: 700;
-            color: 707070;
-            width: 1.25em;
-            height: 1.25em;
-            padding-right: .25em;
-            text-align: right;
-            border-right: .125em solid #feb900;
+            width: 1.75em;
+            height: 1.75em;
+            line-height: 1.75;
+            text-align: center;
+            border-radius: 50%;
+            background: #00adef;
+            color: #fff;
         }
 
         p a {
@@ -997,9 +997,9 @@
                 <h2 class="dg-header">Typografie</h2>
                 <p>De headers (h1 t/m h4) hebben een variabele grootte, afhankelijk van de resolutie van het scherm. Er is wel een minimum en maximum gedefinieerd.</p>
                 <h1>Header 1</h1>
-                <p>H1 is variabel van 28px tot en met 40px</p>
+                <p>H1 is variabel van 24px tot en met 52px</p>
                 <h2>Header 2</h2>
-                <p>H2 is variabel van 22px tot en met 28px</p>
+                <p>H2 is variabel van 20px tot en met 28px</p>
                 <h3>Header 3</h3>
                 <p>H3 is variabel van 18px tot en met 22px</p>
                 <h4>Header 4</h4>
