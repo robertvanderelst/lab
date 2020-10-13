@@ -20,6 +20,12 @@
         section + section {
             margin-top: 1em;
         }
+
+        .iejun > * {
+            grid-column-start: 2;
+            grid-column-end: 3;
+        }
+        </style>
     </style>
 </head>
 <body>
@@ -45,6 +51,23 @@
 
                 <p>Dit is een test</p>
             </div>
+        </section>
+
+        <section style="display: flex; justify-content: center;">
+            <div style="background: #fcc; flex: 0 1 1280px; padding: 1em; display: grid; grid-template-columns: 1fr 1fr; grid-gap: 1em" title="component">
+                <p>Dit is een test</p>
+
+                <p>Dit is een test</p>
+            </div>
+        </section>
+
+        <h2>Testing</h2>
+        <section class="iejun" style="display: grid; grid-template-columns: 1fr minmax(200px, 1280px) 1fr; padding: 1em;">
+            <p style="background: #fcc; padding: 1em">Dit is een test</p>
+
+            <p style="background: #fcc; padding: 1em">Dit is een test</p>
+
+            <p style="background: #fcc; padding: 1em">Dit is een test</p>
         </section>
     </main>
 
