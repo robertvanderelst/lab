@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Centering with flexbox</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding: 1em;
+        }
+
+        * + * {
+            margin-top: 1em;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Centering</h1>
+
+        <h2>Current</h2>
+        <section>
+            <div style="background: #fcc; width: 100%; max-width: 1280px; margin: 0 auto; padding: 1em;" title="component">
+                <p>Dit is een test</p>
+            </div>
+        </section>
+
+        <h2>New?</h2>
+
+        <section style="display: flex; justify-content: center;">
+            <div style="background: #fcc; flex: 0 1 1280px; padding: 1em;" title="component">
+                <p>Dit is een test</p>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
