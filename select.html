@@ -38,6 +38,7 @@
 
         button,
         input,
+        input[type=number]::-webkit-inner-spin-button
         html input[type="button"],
         input[type="submit"] {
                -moz-appearance: none;
@@ -59,6 +60,12 @@
             padding: 0;
 
             border: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+            appearance: textfield;
+            margin: 0;
         }
 
         input {
