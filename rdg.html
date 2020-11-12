@@ -20,6 +20,7 @@
             line-height: 1.33333;
             color: #484848;
             font-weight: 400;
+            outline: 0;
         }
 
         body {
@@ -828,6 +829,12 @@
             display: none;
         }
 
+        @media (min-width: 48rem) {
+            .a-articlecard-caption p {
+                display: block;
+            }
+        }
+
         .a-articlecard-caption * {
             line-height: 1.33333;
         }
@@ -965,7 +972,7 @@
 
                     [].forEach.call(el.parentNode.querySelectorAll('a'), function (anchor) {
                         anchor.addEventListener('click', function (e) {
-                            anchor.closest('header').classList.toggle('u-nav-visible');
+                            anchor.closest('header').classList.remove('u-nav-visible');
                         });
                     });
                 }
