@@ -20,37 +20,103 @@
             line-height: 1.33333;
             color: #484848;
             font-weight: 400;
+            outline: 0;
         }
 
         body {
             font-family: 'Lato', sans-serif;
+            padding-top: 3rem;
+        }
+
+        @media (min-width: 64rem) {
+            body {
+                padding-top: 0;
+            }
         }
 
         body * {
             position: relative;
         }
 
-        nav {
+        header {
             position: fixed;
-            width: 13.5em;
-            background: #f0f0f0;
-            padding: .5em;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            clip-path: polygon(0 0, 100% 0, 100% 3rem, 0 3rem);
+            background: rgba(255,255,255,.85);
+            z-index: 10;
         }
 
-        nav li a {
-            color: #484848;
+        @media (min-width: 64rem) {
+            header {
+                position: relative;
+                clip-path: none;
+                background: transparent;
+            }
+        }
+
+        .dg-toggle-nav {
+            border: none;
+            background: transparent;
+            font-size: 1.5rem;
+            line-height: 1.5;
+            width: 3rem;
+            height: 3rem;
+            padding: .5rem;
+        }
+
+        @media (min-width: 64rem) {
+            .dg-toggle-nav {
+                display: none;
+            }
+        }
+
+        .u-nav-visible {
+            clip-path: none;
+            background: rgba(0,0,0,.85);
+        }
+
+        .u-nav-visible button,
+        .u-nav-visible a {
+            color: #fff;
+        }
+
+        nav {
+            padding: 1rem;
+        }
+
+        nav a {
+            display: block;
+            padding: .5rem;
             font-weight: 700;
             text-decoration: none;
         }
 
+        @media (min-width: 64rem) {
+            nav {
+                position: fixed;
+                width: 13.5em;
+                background: #f0f0f0;
+                padding: .5em;
+            }
+        }
+
         .container {
             width: 100%;
-            max-width: 60em;
-            padding: 2em;
+            max-width: 60rem;
+            padding: 1rem;
             margin: 0 auto;
             display: grid;
-            grid-gap: 2em;
-            grid-template-columns: 1fr 3fr;
+            grid-gap: 2rem;
+        }
+
+        @media (min-width: 64rem) {
+            .container {
+                padding: 2rem;
+                grid-template-columns: 1fr 3fr;
+            }
         }
 
         section {
@@ -872,6 +938,16 @@
                             }
                         });
                     });
+                },
+
+                navigation: function(el) {
+                    el.addEventListener('click', function (e) {
+                        e.preventDefault();
+
+                        console.log(el.parentNode);
+
+                        el.parentNode.classList.toggle('u-nav-visible');
+                    });
                 }
             }
 
@@ -894,17 +970,18 @@
 <body>
     <div class="container">
         <header>
+            <button class="dg-toggle-nav" data-component="navigation">&#9776;</button>
             <nav>
                 <ul>
-                    <li><a href="#ds-fonts" class="u-text-small">Lettertypes</a></li>
-                    <li><a href="#ds-colors" class="u-text-small">Kleurgebruik</a></li>
-                    <li><a href="#ds-typography" class="u-text-small">Typografie</a></li>
-                    <li><a href="#ds-lists" class="u-text-small">Lijsten</a></li>
-                    <li><a href="#ds-tables" class="u-text-small">Tabellen</a></li>
-                    <li><a href="#ds-buttons" class="u-text-small">Links en knoppen</a></li>
-                    <li><a href="#ds-quotes" class="u-text-small">Quotes</a></li>
-                    <li><a href="#ds-formelements" class="u-text-small">Formulier elementen</a></li>
-                    <li><a href="#ds-cards" class="u-text-small">Cards</a></li>
+                    <li><a href="#ds-fonts">Lettertypes</a></li>
+                    <li><a href="#ds-colors">Kleurgebruik</a></li>
+                    <li><a href="#ds-typography" >Typografie</a></li>
+                    <li><a href="#ds-lists">Lijsten</a></li>
+                    <li><a href="#ds-tables">Tabellen</a></li>
+                    <li><a href="#ds-buttons">Links en knoppen</a></li>
+                    <li><a href="#ds-quotes">Quotes</a></li>
+                    <li><a href="#ds-formelements">Formulier elementen</a></li>
+                    <li><a href="#ds-cards">Cards</a></li>
                 </ul>
             </nav>
         </header>
