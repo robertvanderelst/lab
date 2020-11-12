@@ -20,7 +20,6 @@
             line-height: 1.33333;
             color: #484848;
             font-weight: 400;
-            outline: 0;
         }
 
         body {
@@ -42,22 +41,25 @@
             position: fixed;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            clip-path: polygon(0 0, 100% 0, 100% 3rem, 0 3rem);
+            width: 100%;
+            bottom: auto;
             background: rgba(255,255,255,.85);
             z-index: 10;
+        }
+
+        nav {
+            display: none;
         }
 
         @media (min-width: 64rem) {
             header {
                 position: relative;
-                clip-path: none;
                 background: transparent;
             }
         }
 
         .dg-toggle-nav {
+            display: block;
             border: none;
             background: transparent;
             font-size: 1.5rem;
@@ -74,8 +76,12 @@
         }
 
         .u-nav-visible {
-            clip-path: none;
+            bottom: 0;
             background: rgba(0,0,0,.85);
+        }
+
+        .u-nav-visible nav {
+            display: block;
         }
 
         .u-nav-visible button,
@@ -948,6 +954,12 @@
 
                         el.parentNode.classList.toggle('u-nav-visible');
                     });
+
+                    [].forEach.call(el.parentNode.querySelectorAll('a'), function (anchor) {
+                        anchor.addEventListener('click', function (e) {
+                            anchor.closest('header').classList.toggle('u-nav-visible');
+                        });
+                    });
                 }
             }
 
@@ -1138,7 +1150,7 @@
                     </tr>
                     <tr>
                         <th scope="row">Materiaal</th>
-                        <td>Glas, rookglas, staal - rvs, metaal</td>
+                        <td>Glas, rookglas, staal - rvs</td>
                     </tr>
                 </table>
 
