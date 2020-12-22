@@ -759,22 +759,52 @@
         }
 
         /* FORM VALIDATION */
+        input[type="text"] ~ p,
+        input[type="email"] ~ p,
+        input[type="tel"] ~ p {
+            display: none;
+            margin-top: .25rem;
+            color: #ed1c23;
+        }
 
-        input[type="text"]:invalid {
+        .u-validation-icon {
+            position: absolute;
+            top: .5rem;
+            right: .5rem;
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .u-validation-icon .icon-notification-error,
+        .u-validation-icon .icon-checkmark {
+            display: none;
+        }
+
+        .u-has-validation input:invalid {
             border: 1px solid #ed1c23;
         }
 
-        input[type="text"]:invalid:focus {
+        .u-has-validation input:invalid:focus {
             box-shadow: 0 0 .33333em #ed1c23;
         }
 
-        input[type="text"]:valid {
+        .u-has-validation input:invalid ~ .u-validation-icon .icon-notification-error,
+        .u-has-validation input:invalid ~ p {
+            display: block;
+        }
+
+        .u-has-validation input:valid {
             border: 1px solid #29a00a;
         }
 
-        input[type="text"]:valid:focus {
+        .u-has-validation input:valid:focus {
             box-shadow: 0 0 .33333em #29a00a;
         }
+
+        .u-has-validation input:valid ~ .u-validation-icon .icon-checkmark {
+            display: block;
+        }
+
 
         /* ARTICLE CARD */
 
@@ -873,8 +903,6 @@
         .m-articlecard-concept .a-articlecard-link {
             outline-offset: .5em;
         }
-
-
 
         /* Photo card */
         .a-image-link {
@@ -975,7 +1003,6 @@
             var components = {
                 myrietveld: function (el) {
                     [].forEach.call(el.querySelectorAll('.u-button-myrietveld'), function (anchor) {
-                        console.log(anchor);
                         anchor.addEventListener('click', function (e) {
                             if (!this.classList.contains('u-button-myrietveld-added')) {
                                 this.classList.add('u-button-myrietveld-added');
@@ -989,15 +1016,30 @@
                 navigation: function(el) {
                     el.addEventListener('click', function (e) {
                         e.preventDefault();
-
-                        console.log(el.parentNode);
-
                         el.parentNode.classList.toggle('u-nav-visible');
                     });
 
                     [].forEach.call(el.parentNode.querySelectorAll('a'), function (anchor) {
                         anchor.addEventListener('click', function (e) {
                             anchor.closest('header').classList.remove('u-nav-visible');
+                        });
+                    });
+                },
+
+                formvalidation: function(el){
+                    // Prefilled fields
+                    [].forEach.call(el.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"]'), function (anchor, i) {
+                        if (anchor.getAttribute('required') === 'required' && anchor.value.length > 0) {
+                            anchor.parentNode.classList.add('u-has-validation');
+                        }
+                    });
+
+                    // After input
+                    [].forEach.call(el.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"]'), function (anchor, i) {
+                        anchor.addEventListener('blur', function () {
+                            if (this.getAttribute('required') === 'required') {
+                                this.parentNode.classList.add('u-has-validation');
+                            }
                         });
                     });
                 }
@@ -1028,6 +1070,10 @@
 
         <symbol id="icon-notification-error" viewBox="0 0 32 32">
             <path fill="#ed1c23" d="M0 15.985q0-3.244 1.266-6.216Q2.53 6.797 4.686 4.68q2.152-2.12 5.092-3.416 2.94-1.3 6.246-1.264 3.248 0 6.188 1.264 2.94 1.264 5.127 3.416 2.188 2.152 3.42 5.088Q32 12.705 32 15.985q.03 3.244-1.236 6.213-1.264 2.966-3.42 5.12-2.152 2.15-5.125 3.412Q19.25 32 16 32q-3.246 0-6.22-1.26-2.974-1.26-5.094-3.416-2.12-2.152-3.42-5.12-1.3-2.973-1.264-6.22zM13.23 9.29l.924 8.332q.068.72.58 1.2.514.48 1.232.58.82.1 1.47-.404.65-.512.72-1.366l.92-8.332v-.58q-.136-1.2-1.06-1.98-.92-.788-2.152-.652-1.232.14-1.984 1.06T13.23 9.3zm.412 14.035q0 1.024.76 1.776.754.76 1.74.72.996-.028 1.78-.71.788-.684.754-1.776-.034-1.092-.752-1.776-.684-.68-1.78-.68-1.092 0-1.74.68-.752.75-.752 1.774z"/>
+        </symbol>
+
+        <symbol id="icon-checkmark" viewBow="0 0 32 32">
+            <path d="M31.176 2.194C21.442 8.16 14.376 15.69 11.204 19.47l-7.772-6.088L0 16.148l13.43 13.66c2.31-5.92 9.63-17.494 18.57-25.716l-.824-1.9z" fill="#29a00a"/>
         </symbol>
     </svg>
     <div class="container">
@@ -1279,21 +1325,56 @@
 
             <section id="ds-formelements" class="u-lobowl">
                 <h2 class="dg-header">Formulier elementen</h2>
-                <form class="u-lobowl">
+                <form class="u-lobowl" data-component="formvalidation">
                     <legend>Formuliertitel</legend>
                     <div>
+                        <label for="field0">Label</label>
+                        <div>
+                            <input type="text" name="field0" required="required" pattern=".{3,}">
+                            <span class="u-validation-icon">
+                                <svg viewBox="0 0 32 32" role="img">
+                                    <use class="icon-notification-error" xlink:href="#icon-notification-error"></use>
+                                    <use class="icon-checkmark" xlink:href="#icon-checkmark"></use>
+                                </svg>
+                            </span>
+
+                            <p>Foutmelding</p>
+                        </div>
+                    </div>
+                    <div>
                         <label for="field1">Label</label>
-                        <input type="text" name="field1" required="required">
+                        <div>
+                            <input type="email" name="field1" required="required">
+                            <span class="u-validation-icon">
+                                <svg viewBox="0 0 32 32" role="img">
+                                    <use class="icon-notification-error" xlink:href="#icon-notification-error"></use>
+                                    <use class="icon-checkmark" xlink:href="#icon-checkmark"></use>
+                                </svg>
+                            </span>
+
+                            <p>Foutmelding</p>
+                        </div>
                     </div>
                     <div>
                         <label for="field2">Label</label>
-                        <input type="text" name="field2" required="required" value=" ">
+                        <div>
+                            <input type="tel" name="field2" required="required" value="0648382300">
+                            <span class="u-validation-icon">
+                                <svg viewBox="0 0 32 32" role="img">
+                                    <use class="icon-notification-error" xlink:href="#icon-notification-error"></use>
+                                    <use class="icon-checkmark" xlink:href="#icon-checkmark"></use>
+                                </svg>
+                            </span>
+
+                            <p>Foutmelding</p>
+                        </div>
+
                     </div>
                     <div>
                         <label for="field3">Label</label>
 
                         <select name="field3" class="u-styled-select">
-                            <option>Option 1</option>s
+                            <option selected="selected">Option 1</option>s
                             <option>Option 2</option>
                             <option>Option 3</option>
                         </select>
@@ -1319,7 +1400,7 @@
                     <div class="u-lobowl">
                         <label for="payment-ideal" class="l-flex">
                             <span class="u-styled-radio">
-                                <input type="radio" name="aOrder_form[]" id="payment-ideal" value="ideal">
+                                <input type="radio" name="aOrder_form[]" id="payment-ideal" value="ideal" checked="checked">
                                 <span>
                                     <span></span>
                                 </span>
