@@ -940,6 +940,16 @@
             padding: .5rem;
         }
 
+        .m-notification svg {
+            flex: 0 0 1.5rem;
+        }
+
+        .m-notification p {
+            font-weight: 700;
+            line-height: 1.5;
+            padding-left: .5rem;
+        }
+
         .a-notification-info {
             border-color: #00adef;
         }
@@ -1010,6 +1020,16 @@
     </script>
 </head>
 <body>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" style="display: none;">
+        <symbol id="icon-notification-info" viewBox="0 0 32 32">
+            <path fill="#00adef" d="M32 16a16 16 0 0 1-16 16A16 16 0 0 1 0 16 16 16 0 0 1 16 0a16 16 0 0 1 16 16z"/>
+            <path fill="#fff" d="M18.01 12.2V26h-4.126V12.2zm.478-3.778q0 .492-.2.931-.199.426-.545.759-.346.32-.812.519-.452.186-.97.186-.507 0-.946-.186-.439-.2-.785-.52-.332-.332-.532-.758-.186-.439-.186-.931 0-.506.186-.945.2-.44.532-.772.346-.332.785-.519.44-.186.945-.186.519 0 .971.186.466.187.812.52.346.332.546.771.2.44.2.945z"/>
+        </symbol>
+
+        <symbol id="icon-notification-error" viewBox="0 0 32 32">
+            <path fill="#ed1c23" d="M0 15.985q0-3.244 1.266-6.216Q2.53 6.797 4.686 4.68q2.152-2.12 5.092-3.416 2.94-1.3 6.246-1.264 3.248 0 6.188 1.264 2.94 1.264 5.127 3.416 2.188 2.152 3.42 5.088Q32 12.705 32 15.985q.03 3.244-1.236 6.213-1.264 2.966-3.42 5.12-2.152 2.15-5.125 3.412Q19.25 32 16 32q-3.246 0-6.22-1.26-2.974-1.26-5.094-3.416-2.12-2.152-3.42-5.12-1.3-2.973-1.264-6.22zM13.23 9.29l.924 8.332q.068.72.58 1.2.514.48 1.232.58.82.1 1.47-.404.65-.512.72-1.366l.92-8.332v-.58q-.136-1.2-1.06-1.98-.92-.788-2.152-.652-1.232.14-1.984 1.06T13.23 9.3zm.412 14.035q0 1.024.76 1.776.754.76 1.74.72.996-.028 1.78-.71.788-.684.754-1.776-.034-1.092-.752-1.776-.684-.68-1.78-.68-1.092 0-1.74.68-.752.75-.752 1.774z"/>
+        </symbol>
+    </svg>
     <div class="container">
         <header>
             <button class="dg-toggle-nav" data-component="navigation">&#9776;</button>
@@ -1540,15 +1560,23 @@
             <section id="ds-notifications" class="u-lobowl">
                 <h2 class="dg-header">Notificaties</h2>
 
-                <div class="m-notification a-notification-info">
+                <div class="l-flex m-notification a-notification-info">
+                    <svg viewBox="0 0 32 32" role="img" style="width: 1.5rem; height: 1.5rem;">
+                        <use class="icon-notification-info" xlink:href="#icon-notification-info"></use>
+                    </svg>
+
                     <p>
-                        <span>i</span> Dit is een informatie notificatie voor bijv. gewijzigde openingstijden
+                        Dit is een informatie notificatie voor bijv. gewijzigde openingstijden
                     </p>
                 </div>
 
-                <div class="m-notification a-notification-error">
+                <div class="l-flex m-notification a-notification-error">
+                    <svg viewBox="0 0 32 32" role="img" style="width: 1.5rem; height: 1.5rem;">
+                        <use class="icon-notification-error" xlink:href="#icon-notification-error"></use>
+                    </svg>
+
                     <p>
-                        <span>i</span> Dit is een informatie notificatie voor bijv. gewijzigde openingstijden
+                        Dit is een informatie notificatie voor bijv. gewijzigde openingstijden. Daarnaast even kijken wat er gebeurt als het bericht over meerdere regels valt.
                     </p>
                 </div>
 
