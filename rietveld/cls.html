@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CLS test</title>
+
+    <style>
+        * {
+            position: relative;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 1rem 0;
+        }
+
+        .has-grid {
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-columns: 1fr;
+        }
+
+        .l-center {
+            width: 100%;
+            max-width: 1280px;
+            padding: 0 1rem;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        picture {
+            display: block;
+            background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZD0iTTE1LjQ3OCAxMy4yNDdBMy40NzggMy40NzggMCAwIDEgMTIgMTYuNzI2YTMuNDc4IDMuNDc4IDAgMCAxLTMuNDc4LTMuNDc5QTMuNDc4IDMuNDc4IDAgMCAxIDEyIDkuNzdhMy40NzggMy40NzggMCAwIDEgMy40NzggMy40Nzh6bTYuNzczLTguMDgxaC02LjM1M0wxNC42MTUgMy4wMWEuNjk2LjY5NiAwIDAgMC0uNTk4LS4zNEg5Ljk4M2EuNjk2LjY5NiAwIDAgMC0uNTk4LjM0TDguMTAyIDUuMTY2SDYuMDE3VjQuNjlhLjY5Ni42OTYgMCAwIDAtLjY5NS0uNjk2SDIuNzQ4YS42OTYuNjk2IDAgMCAwLS42OTYuNjk2di40NzVIMS43NUExLjc1IDEuNzUgMCAwIDAgMCA2LjkxNVYxOS41OGMwIC45NjYuNzgzIDEuNzUgMS43NSAxLjc1aDIwLjVBMS43NSAxLjc1IDAgMCAwIDI0IDE5LjU4VjYuOTE1YTEuNzUgMS43NSAwIDAgMC0xLjc1LTEuNzV6TTEyIDE4LjIyNmE0Ljk3OSA0Ljk3OSAwIDEgMSAwLTkuOTU4IDQuOTc5IDQuOTc5IDAgMCAxIDAgOS45NTh6bTkuMTYtOS40NTRoLTIuMThhLjY5Ni42OTYgMCAwIDEgMC0xLjM5MWgyLjE4YS42OTYuNjk2IDAgMSAxIDAgMS4zOTF6IiBmaWxsPSIjOTA5MDkwIi8+PC9zdmc+) center center no-repeat #e2e2e2;
+        }
+
+        picture a {
+            display: block;
+        }
+
+        .has-ratio-4-3 {
+            padding-bottom: 66.66667%;
+        }
+
+        .homepage-item-link {
+            font-weight: 700;
+            position: absolute;
+            z-index: 2;
+            right: .5rem;
+            bottom: .5rem;
+            padding: .25rem .5rem;
+            text-align: right;
+            color: #fff;
+            background: rgba(255, 138, 35, .75);
+        }
+
+        .has-ratio-4-3 img {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+            width: auto;
+            height: 100%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="l-center">
+            <section>
+                <ul class="has-grid">
+                    <li>
+                    <picture>
+                        <a href="https://www.rietveldlicht.nl/trunk/binnenverlichting/hanglampen" class="has-ratio-4-3">
+                            <img src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" loading="lazy" alt="">
+                            <span class="homepage-item-link has-icon">
+                                Hanglampen
+                            </span>
+                        </a>
+                    </picture>
+                    </li>
+                    <li>
+                    <picture>
+                        <a href="https://www.rietveldlicht.nl/trunk/binnenverlichting/plafondlampen" class="has-ratio-4-3">
+                            <img src="https://www.rietveldlicht.nl/fotos/middel/73295.jpg" loading="lazy" alt="">
+                            <span class="homepage-item-link has-icon">
+                                Plafondlampen
+                            </span>
+                        </a>
+                    </picture>
+                    </li>
+                    <li>
+                    <picture>
+                        <a href="https://www.rietveldlicht.nl/trunk/binnenverlichting/wandlampen" class="has-ratio-4-3">
+                            <img src="https://www.rietveldlicht.nl/fotos/middel/73240.jpg" loading="lazy" alt="">
+                            <span class="homepage-item-link has-icon">
+                                Wandlampen
+                            </span>
+                        </a>
+                    </picture>
+                    </li>
+                    <li>
+                    <picture>
+                        <a href="https://www.rietveldlicht.nl/trunk/binnenverlichting/badkamer" class="has-ratio-4-3">
+                            <img src="https://www.rietveldlicht.nl/fotos/middel/70671.jpg" loading="lazy" alt="">
+                            <span class="homepage-item-link has-icon">
+                                Badkamer
+                            </span>
+                        </a>
+                    </picture>
+                    </li>
+                    <li>
+                    <picture>
+                        <a href="https://www.rietveldlicht.nl/trunk/binnenverlichting/inbouwspots" class="has-ratio-4-3">
+                            <img src="https://www.rietveldlicht.nl/fotos/middel/72581.jpg" loading="lazy" alt="">
+                            <span class="homepage-item-link has-icon">
+                                Inbouwspots
+                            </span>
+                        </a>
+                    </picture>
+                    </li>
+                    <li>
+                    <picture>
+                        <a href="https://www.rietveldlicht.nl/trunk/binnenverlichting/spots" class="has-ratio-4-3">
+                            <img src="https://www.rietveldlicht.nl/fotos/middel/73579.jpg" loading="lazy" alt="">
+                            <span class="homepage-item-link has-icon">
+                                Spots
+                            </span>
+                        </a>
+                    </picture>
+                    </li>
+                    <li>
+                    <picture>
+                        <a href="https://www.rietveldlicht.nl/trunk/binnenverlichting/vloerlampen" class="has-ratio-4-3">
+                            <img src="https://www.rietveldlicht.nl/fotos/middel/73796.jpg" loading="lazy" alt="">
+                            <span class="homepage-item-link has-icon">
+                                Vloerlampen
+                            </span>
+                        </a>
+                    </picture>
+                    </li>
+                    <li>
+                    <picture>
+                        <a href="https://www.rietveldlicht.nl/trunk/binnenverlichting/tafellampen" class="has-ratio-4-3">
+                            <img src="https://www.rietveldlicht.nl/fotos/middel/72982.jpg" loading="lazy" alt="">
+                            <span class="homepage-item-link has-icon">
+                                Tafellampen
+                            </span>
+                        </a>
+                    </picture>
+                    </li>
+                    <li>
+                    <picture>
+                        <a href="https://www.rietveldlicht.nl/trunk/binnenverlichting/vloerlampen/booglampen" class="has-ratio-4-3">
+                            <img src="https://www.rietveldlicht.nl/fotos/middel/10685.jpg" loading="lazy" alt="">
+
+                        </a>
+                    </picture>
+                    </li>
+                    <li>
+                    <picture>
+                        <a href="https://www.rietveldlicht.nl/trunk/diversen/kapstokken" class="has-ratio-4-3">
+                            <img src="https://www.rietveldlicht.nl/fotos/middel/65131.jpg" loading="lazy" alt="">
+                            <span class="homepage-item-link has-icon">
+                                Kapstokken
+                            </span>
+                        </a>
+                    </picture>
+                    </li>
+                    <li>
+                    <picture>
+                        <a href="https://www.rietveldlicht.nl/trunk/buitenverlichting" class="has-ratio-4-3">
+                            <img src="https://www.rietveldlicht.nl/fotos/middel/30903.jpg" loading="lazy" alt="">
+                            <span class="homepage-item-link has-icon">
+                                Buitenverlichting
+                            </span>
+                        </a>
+                    </picture>
+                    </li>
+                    <li>
+                    <picture>
+                        <a href="https://www.rietveldlicht.nl/trunk/diversen/lichtbronnen" class="has-ratio-4-3">
+                            <img src="https://www.rietveldlicht.nl/fotos/middel/308.jpg" loading="lazy" alt="">
+                            <span class="homepage-item-link has-icon">
+                                Lichtbronnen
+                            </span>
+                        </a>
+                    </picture>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="homepage-highlights">
+                <ul class="has-grid">
+
+                    <li>
+                    <picture>
+                        <a href="https://www.rietveldlicht.nl/trunk/artikel/hanglamp-73842-modern-eigentijds_klassiek-art_deco-metaal-zwart-mat-goud-messing-rond" class="has-ratio-4-3">
+                            <img src="https://www.rietveldlicht.nl/fotos/middel/73842.jpg" loading="lazy" alt="">
+                            <span class="homepage-item-link">
+                                Populair
+                            </span>
+                        </a>
+                    </picture>
+                    </li>
+                    <li>
+                    <picture>
+                        <a href="https://www.rietveldlicht.nl/trunk/artikel/wandlamp-73224-industrie-look-modern-stoer-raw-metaal-oldmetal_(gunmetal)-zwart-mat-langwerpig" class="has-ratio-4-3">
+                            <img src="https://www.rietveldlicht.nl/fotos/middel/73224.jpg" loading="lazy" alt="">
+                            <span class="homepage-item-link">
+                                Populair
+                            </span>
+                        </a>
+                    </picture>
+                    </li>
+                    <li>
+                    <picture>
+                        <a href="https://www.rietveldlicht.nl/trunk/artikel/plafondlamp-72496-landelijk-rustiek-modern-eigentijds_klassiek-metaal-zwart-mat-goud-rond" class="has-ratio-4-3">
+                            <img src="https://www.rietveldlicht.nl/fotos/middel/72496.jpg" loading="lazy" alt="">
+                            <span class="homepage-item-link">
+                                Populair
+                            </span>
+                        </a>
+                    </picture>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
