@@ -1,3 +1,5 @@
+console.log('SW');
+
 var cacheName = 'hello-pwa';
 var filesToCache = [
   '/pwa',
@@ -5,9 +7,6 @@ var filesToCache = [
   '/pwa/css/style.css',
   '/pwa/js/main.js'
 ];
-
-
-console.log('SW');
 
 /* Start the service worker and cache all of the app's content */
 self.addEventListener('install', function(e) {
