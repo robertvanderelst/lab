@@ -29,7 +29,7 @@
     }],
   "lang": "en-US",
   "scope": "/pwa",
-  "start_url": "https://lab.robertvanderelst.nl/pwa/index.html",
+  "start_url": "/pwa/index.html",
   "display": "standalone",
   "background_color": "white",
   "theme_color": "white"
