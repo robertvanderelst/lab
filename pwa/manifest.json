@@ -28,7 +28,8 @@
       "type": "image/png"
     }],
   "lang": "en-US",
-  "start_url": "https://lab.robertvanderelst.nl/pwa/",
+  "scope": "/pwa",
+  "start_url": "https://lab.robertvanderelst.nl/pwa/index.html",
   "display": "standalone",
   "background_color": "white",
   "theme_color": "white"
