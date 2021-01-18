@@ -8,20 +8,39 @@
 </head>
 <body>
     <div id="counter">
-        Counter: {{ counter }}
+      Counter: {{ counter }}
+    </div>
+
+    <div id="hello-vue" class="demo">
+      {{ message }}
     </div>
 
     <script src="https://unpkg.com/vue@next"></script>
     <script>
-        const Counter = {
-          data() {
-            return {
-              counter: 0
-            }
-          }
+    const Counter = {
+      data() {
+        return {
+          counter: 0
         }
+        },
+        mounted() {
+        setInterval(() => {
+          this.counter++
+        }, 1000)
+      }
+    }
 
-        Vue.createApp(Counter).mount('#counter')
+    Vue.createApp(Counter).mount('#counter')
+
+    const HelloVueApp = {
+      data() {
+        return {
+          message: 'Hello Vue!!'
+        }
+      }
+    }
+
+    Vue.createApp(HelloVueApp).mount('#hello-vue')
     </script>
 </body>
 </html>
