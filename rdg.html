@@ -1619,6 +1619,10 @@
                 </ul>
 
                 <style>
+                    .l-article-grid-lightsources {
+                        grid-template-columns: 1fr;
+                    }
+
                     .m-articlecard-lightsource {
                         position: static;
                         grid-template-columns: 1fr 2fr;
@@ -1654,10 +1658,6 @@
                     }
 
                     @media (min-width: 30em) {
-                        .l-article-grid-lightsources {
-                            grid-template-columns: 1fr 1fr;
-                        }
-
                         .m-articlecard-lightsource {
                             grid-template-columns: 1fr;
                             grid-template-areas: "articlecard-picture"
@@ -1668,7 +1668,7 @@
                 </style>
 
                 <h3>Lichtbron concept</h3>
-                <ul class="l-grid l-article-grid-lightsources">
+                <ul class="l-grid l-article-grid l-article-grid-lightsources">
                     <li>
                         <span id="article-308" class="u-anchor-shift"></span>
 
