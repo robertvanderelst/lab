@@ -1652,10 +1652,23 @@
                         top: .25em;
                         left: .25em;
                     }
+
+                    @media (min-width: 30em) {
+                        .l-article-grid-lightsources {
+                            grid-template-columns: 1fr 1fr;
+                        }
+
+                        .m-articlecard-lightsource {
+                            grid-template-columns: 1fr;
+                            grid-template-areas: "articlecard-picture"
+                                                 "articlecard-data"
+                                                 "articlecard-icons";
+                        }
+                    }
                 </style>
 
                 <h3>Lichtbron concept</h3>
-                <ul class="l-grid">
+                <ul class="l-grid l-article-grid-lightsources">
                     <li>
                         <span id="article-308" class="u-anchor-shift"></span>
 
