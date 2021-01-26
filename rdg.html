@@ -1591,8 +1591,8 @@
 
                     .l-icon-seen {
                         position: absolute;
-                        top: .25em;
-                        left: .5em;
+                        top: 0;
+                        left: .25em;
                     }
 
                     @media (min-width: 30em) {
@@ -1605,6 +1605,11 @@
                             grid-template-areas: "articlecard-picture"
                                                  "articlecard-data"
                                                  "articlecard-icons";
+                        }
+
+                        .l-icon-seen {
+                            top: .25em;
+                            left: .5em;
                         }
                     }
 
