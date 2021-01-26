@@ -1620,10 +1620,15 @@
 
                 <style>
                     .m-articlecard-lightsource {
+                        position: static;
                         grid-template-columns: 1fr 2fr;
                         grid-template-areas: "articlecard-picture articlecard-data"
                                              "articlecard-picture articlecard-icons";
                         grid-gap: .5em;
+                    }
+
+                    .m-articlecard-lightsource ul {
+                        position: static;
                     }
 
                     .m-articlecard-lightsource a {
