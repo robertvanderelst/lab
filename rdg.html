@@ -1641,6 +1641,12 @@
                     .a-articlecard-icons {
                         grid-area: articlecard-icons;
                     }
+
+                    .l-icon-seen {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
                 </style>
 
                 <h3>Lichtbron concept</h3>
@@ -1667,6 +1673,13 @@
                             </div>
 
                             <ul class="l-flex a-articlecard-icons">
+                                <li class="l-icon-seen">
+                                    <span class="u-icon">
+                                        <svg viewBox="0 0 32 32" role="img">
+                                            <use class="icon-seen" xlink:href="https://lab.robertvanderelst.nl/sprite-dynamic.svg#icon-seen"></use>
+                                        </svg>
+                                    </span>
+                                </li>
                                 <li>
                                     <span class="u-icon">
                                         <svg viewBox="0 0 32 32" role="img">
@@ -1695,13 +1708,7 @@
                                         </svg>
                                     </span>
                                 </li>
-                                <li>
-                                    <span class="u-icon">
-                                        <svg viewBox="0 0 32 32" role="img">
-                                            <use class="icon-seen" xlink:href="https://lab.robertvanderelst.nl/sprite-dynamic.svg#icon-seen"></use>
-                                        </svg>
-                                    </span>
-                                </li>
+
                             </ul>
 
                             <a href="#" class="a-articlecard-link"><span class="u-visuallyhidden">Bekijk details</span></a>
