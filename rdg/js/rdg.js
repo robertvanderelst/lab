@@ -34,30 +34,6 @@
                 });
             });
         },
-
-        formvalidation: function(el){
-
-            [].forEach.call(el.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"]'), function (anchor, i) {
-                // Prefilled
-                if (anchor.getAttribute('required') === 'required' && anchor.value.length > 0) {
-                    anchor.parentNode.classList.add('u-has-validation');
-                }
-
-                // After input
-                anchor.addEventListener('blur', function () {
-                    if (this.getAttribute('required') === 'required') {
-                        this.parentNode.classList.add('u-has-validation');
-                    }
-                });
-            });
-
-            // On submit
-            // [].forEach.call(el.querySelectorAll('input[type="checkbox"]'), function (anchor, i) {
-            //     if (anchor.getAttribute('required') === 'required' && anchor.getAttribute('checked') === false) {
-            //         anchor.parentNode.classList.add('u-has-validation');
-            //     }
-            // });
-        }
     }
 
     document.addEventListener('DOMContentLoaded', function () {

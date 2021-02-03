@@ -280,12 +280,12 @@
 
             <section id="ds-formelements" class="u-lobowl">
                 <h2 class="dg-header">Formulier elementen</h2>
-                <form class="u-lobowl" data-component="formvalidation">
+                <form class="u-lobowl">
                     <legend>Formuliertitel</legend>
                     <div>
                         <label for="field0">Label</label>
                         <div>
-                            <input type="text" name="field0" required="required" pattern=".{3,}">
+                            <input type="text" name="field0" required="required" pattern=".{3,}" placeholder=" ">
                             <span class="u-validation-icon">
                                 <svg viewBox="0 0 32 32" role="img">
                                     <use class="icon-notification-error" xlink:href="#icon-notification-error"></use>
@@ -293,13 +293,13 @@
                                 </svg>
                             </span>
 
-                            <p>Foutmelding</p>
+                            <p class="u-text-small">Vul uw volledige naam in.</p>
                         </div>
                     </div>
                     <div>
                         <label for="field1">Label</label>
                         <div>
-                            <input type="email" name="field1" required="required">
+                            <input type="email" name="field1" required="required" placeholder=" ">
                             <span class="u-validation-icon">
                                 <svg viewBox="0 0 32 32" role="img">
                                     <use class="icon-notification-error" xlink:href="#icon-notification-error"></use>
@@ -307,13 +307,13 @@
                                 </svg>
                             </span>
 
-                            <p>Foutmelding</p>
+                            <p class="u-text-small">Vul een geldig e-mailadres in.</p>
                         </div>
                     </div>
                     <div>
                         <label for="field2">Label</label>
                         <div>
-                            <input type="tel" name="field2" required="required" value="0648382300">
+                            <input type="tel" name="field2" required="required" placeholder=" ">
                             <span class="u-validation-icon">
                                 <svg viewBox="0 0 32 32" role="img">
                                     <use class="icon-notification-error" xlink:href="#icon-notification-error"></use>
@@ -321,7 +321,7 @@
                                 </svg>
                             </span>
 
-                            <p>Foutmelding</p>
+                            <p class="u-text-small">Vul een geldig telefoonnummer in.</p>
                         </div>
 
                     </div>

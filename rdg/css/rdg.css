@@ -745,28 +745,28 @@ input[type="tel"] ~ p {
     display: none;
 }
 
-.u-has-validation input:invalid {
+input:not(:focus):not(:placeholder-shown):invalid {
     border: 1px solid var(--rv-red);
 }
 
-.u-has-validation input:invalid:focus {
+input:not(:focus):not(:placeholder-shown):invalid:focus {
     box-shadow: 0 0 .33333em var(--rv-red);
 }
 
-.u-has-validation input:invalid ~ .u-validation-icon .icon-notification-error,
-.u-has-validation input:invalid ~ p {
+input:not(:focus):not(:placeholder-shown):invalid ~ .u-validation-icon .icon-notification-error,
+input:not(:focus):not(:placeholder-shown):invalid ~ p {
     display: block;
 }
 
-.u-has-validation input:valid {
+input:not(:focus):not(:placeholder-shown):valid {
     border: 1px solid var(--rv-green);
 }
 
-.u-has-validation input:valid:focus {
+input:not(:focus):not(:placeholder-shown):valid:focus {
     box-shadow: 0 0 .33333em var(--rv-green);
 }
 
-.u-has-validation input:valid ~ .u-validation-icon .icon-checkmark {
+input:not(:focus):not(:placeholder-shown):valid ~ .u-validation-icon .icon-checkmark {
     display: block;
 }
 
