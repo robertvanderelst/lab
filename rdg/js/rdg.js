@@ -11,12 +11,12 @@
 
     var components = {
         myrietveld: function (el) {
-            [].forEach.call(el.querySelectorAll('.u-button-myrietveld'), function (anchor) {
+            [].forEach.call(el.querySelectorAll('button'), function (anchor) {
                 anchor.addEventListener('click', function (e) {
-                    if (!this.classList.contains('u-button-myrietveld-added')) {
-                        this.classList.add('u-button-myrietveld-added');
+                    if (!this.classList.contains('u-button-added')) {
+                        this.classList.add('u-button-added');
                     } else {
-                        this.classList.remove('u-button-myrietveld-added');
+                        this.classList.remove('u-button-added');
                     }
                 });
             });

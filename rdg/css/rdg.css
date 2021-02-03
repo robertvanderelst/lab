@@ -1,3 +1,8 @@
+/* TODO:
+    * Better focus states for Radiobuttons
+    * CSS only validation?
+*/
+
 :root {
     --rv-yellow: #fecb09;
     --rv-red: #ed1c23;
@@ -557,20 +562,6 @@ button::-moz-focus-inner {
     color: #fff;
 }
 
-/* .u-button-myrietveld:active > span {
-    background: transparent;
-    color: var(--rv-grey-verydark);
-    border-color: var(--rv-grey-verydark);
-}
-
-.u-button-myrietveld:active > span:after {
-    border-color: var(--rv-grey-verydark);
-}
-
-.u-button-myrietveld:active .u-icon path {
-    fill: var(--rv-grey-verydark);
-} */
-
 .u-button-added > span {
     border: 1px solid var(--rv-green);
     color: var(--rv-green);
@@ -581,8 +572,12 @@ button::-moz-focus-inner {
     border-color: var(--rv-green);
 }
 
+.u-button-added:active > span {
+    background: var(--rv-green);
+}
+
 .u-button-added:active .u-icon path {
-    fill: var(--rv-green);
+    fill: #fff;
 }
 
 .u-button-added .u-icon path {
