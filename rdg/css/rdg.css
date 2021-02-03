@@ -618,6 +618,10 @@ select:focus {
     outline: 0;
 }
 
+.u-form-field-half {
+    width: 50%;
+}
+
 .u-styled-select {
     font-size: 1em;
     line-height: 2;
