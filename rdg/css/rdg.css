@@ -535,7 +535,6 @@ button::-moz-focus-inner {
 
 .u-button-ghost:active > span {
     background: var(--rv-blue);
-    border-color: transparent;
     color: #fff;
 }
 
