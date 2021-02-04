@@ -618,6 +618,10 @@ select:focus {
     outline: 0;
 }
 
+.u-form-field-quarter {
+    width: 25%;
+}
+
 .u-form-field-half {
     width: 50%;
 }
