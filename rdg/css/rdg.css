@@ -862,6 +862,7 @@ picture {
     outline: 2px solid transparent;
     outline-offset: -1px;
     transition: outline .3s;
+    display: none;
 }
 
 .a-articlecard-link:hover,
@@ -964,4 +965,182 @@ picture {
 
 .a-notification-error {
     border-color: var(--rv-red);
+}
+
+/* #RIBBON */
+.a-ribbon span {
+    display: block;
+    padding: .25rem 0 .375rem;
+    font-size: .83333rem;
+    font-weight: bold;
+    line-height: 1.25;
+    color: #fff;
+    text-align: center;
+    margin-top: .5rem;
+}
+
+@media (min-width: 48em) {
+    .a-ribbon {
+        position: absolute;
+        z-index: 2;
+        top: 2.5rem;
+        left: 2.5rem;
+        width: 100%;
+    }
+
+    .a-ribbon span {
+        width: 120%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+}
+
+.a-ribbon-ourchoice {
+    background: rgba(122, 186, 86, 1);
+}
+
+.a-ribbon-inphoto {
+    background: rgb(0, 173, 239, 1);
+}
+
+@media (min-width: 48em) {
+    .a-ribbon-ourchoice {
+        background: rgba(122, 186, 86, .5);
+    }
+
+    .a-ribbon-inphoto {
+        background: rgb(0, 173, 239, .5);
+    }
+}
+
+.a-ribbon-black {
+    background-color: #262626;
+}
+
+/* #RANGE */
+.o-ranges > * + * {
+    margin-top: .5rem;
+}
+
+.o-ranges h4 {
+    font-size: .8rem;
+    margin-top: .5rem;
+}
+
+.o-ranges h4 a {
+    position:absolute;
+    z-index: 4;
+    top: 0;
+    right: 0;
+    padding: .75rem;
+    margin: -.75rem;
+    text-decoration: none;
+}
+
+.o-ranges h4 a > span {
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+    border: 1px solid #e2e2e2;
+    border-radius: 50%;
+    text-align: center;
+    color: #484848;
+    font-weight: bold;
+}
+
+.o-ranges h4 a:hover span,
+.o-ranges h4 a:focus span {
+    border-color: #00adef;
+    color: #00adef;
+}
+
+[class*="m-range"] {
+    font-size: .8rem;
+    margin-top: 1.5rem;
+}
+
+.m-range-tight {
+    margin-top: .5rem;
+}
+
+.m-range * + * {
+    margin-top: 0;
+}
+
+[class*="a-range-label"] {
+    flex: 0 0 4em;
+    font-weight: bold;
+}
+
+.a-range-label-last {
+    text-align: right;
+}
+
+[class*="m-range-track"] {
+    flex: 1 1 100%;
+    height: 1.5rem;
+}
+
+.m-range-track-tight {
+    height: .5rem;
+    margin-top: 0;
+}
+
+.a-range-track-kelvin {
+    height: 100%;
+    background: linear-gradient(90deg, rgba(230,127,16,1) 0, rgba(248,255,0,1) 33%, rgba(255,255,255,1) 75%, rgba(192,224,255,1) 100%);
+}
+
+.a-range-track-lumen {
+    height: 100%;
+    /*background: linear-gradient(90deg, rgba(230,127,16,1) 0%, rgba(248,255,0,1) 100%);*/
+    background: linear-gradient(90deg, #484848 0%, #b8b8b8 25% ,#fff 100%);
+    clip-path: polygon(100% 0, 100% 0%, 100% 100%, 0 50%);
+}
+
+.a-range-marker {
+    position: absolute;
+    z-index: 2;
+    display: inline-block;
+    padding: .25em .5em;
+    bottom: 1rem;
+    transform: translateX(-50%);
+    background: #707070;
+    color: #fff;
+    font-weight: bold;
+    border-radius: .25em;
+}
+
+.a-range-marker:after {
+    content: "";
+    position: absolute;
+    margin: 0;
+    bottom: -1em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border: .75em solid transparent;
+    border-top: .75em solid #707070;
+    border-bottom: .75em solid transparent;
+}
+
+.a-range-marker-simple {
+    position: absolute;
+    top: -.25em;
+    height: 1em;
+    width: 4px;
+    margin: 0;
+    transform: translateX(-2px);
+    background: #000;
+    border-radius: 2px;
+}
+
+[class*="m-range"] + h4 {
+    margin-top: 1em;
+}
+
+.m-range + p {
+    font-size: .8rem;
+    margin-top: .5rem;
+    text-align: right;
 }
