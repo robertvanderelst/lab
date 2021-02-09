@@ -534,8 +534,7 @@
                     .m-articlecard-lightsource {
                         position: static;
                         grid-template-columns: 1fr 2fr;
-                        grid-template-areas: "articlecard-picture articlecard-data"
-                                             "articlecard-picture articlecard-icons";
+                        grid-template-areas: "articlecard-picture articlecard-data";
                         grid-gap: .5em;
                     }
 
@@ -557,6 +556,7 @@
 
                     .a-articlecard-icons {
                         grid-area: articlecard-icons;
+                        justify-content: flex-end;
                     }
 
                     /* .l-icon-seen {
@@ -573,8 +573,7 @@
                         .m-articlecard-lightsource {
                             grid-template-columns: 1fr;
                             grid-template-areas: "articlecard-picture"
-                                                 "articlecard-data"
-                                                 "articlecard-icons";
+                                                 "articlecard-data";
                         }
 
                         /* .l-icon-seen {
