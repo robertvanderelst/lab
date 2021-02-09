@@ -821,6 +821,10 @@ picture {
     padding-top: .5em;
 }
 
+.m-articlecard-picture {
+    overflow: hidden;
+}
+
 .a-articlecard-caption {
     flex: 1 1 100%;
 }
@@ -983,14 +987,15 @@ picture {
     .a-ribbon {
         position: absolute;
         z-index: 2;
-        top: 2.5rem;
-        left: 2.5rem;
+        top: 2.75rem;
+        left: 2.75rem;
         width: 100%;
     }
 
     .a-ribbon span {
         width: 120%;
         transform: translate(-50%, -50%) rotate(-45deg);
+        margin-top: 0;
     }
 }
 
