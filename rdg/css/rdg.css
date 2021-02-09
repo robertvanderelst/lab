@@ -866,7 +866,6 @@ picture {
     outline: 2px solid transparent;
     outline-offset: -1px;
     transition: outline .3s;
-    display: none;
 }
 
 .a-articlecard-link:hover,
