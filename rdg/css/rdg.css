@@ -903,6 +903,11 @@ picture {
     outline: 2px solid #fff;
 }
 
+.a-articlecard-icons .u-icon {
+    width: 1em;
+    height: 1em;
+}
+
 .a-articlecard-icons li + li {
     margin-left: .5em;
 }
