@@ -37,10 +37,7 @@
     <script>
         (function () {
             document.querySelector('input[type="range"]').addEventListener('input', function (e) {
-                console.log(this.value);
-
                 document.querySelector('p').style.fontWeight = this.value;
-
             });
         })()
     </script>
