@@ -497,6 +497,10 @@ button::-moz-focus-inner {
     height: 1.5em;
 }
 
+.u-icon-energylabel {
+    width: 1.875em;
+}
+
 [class*="u-button"] .u-icon {
     vertical-align: middle;
     margin-top: -.25em;
