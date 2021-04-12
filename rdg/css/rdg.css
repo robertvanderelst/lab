@@ -139,6 +139,10 @@ section {
     .l-article-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .l-grid-icons {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media (min-width: 64em) {
