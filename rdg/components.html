@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rietveld components</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rv-yellow: #fecb09;
+            --rv-red: #ed1c23;
+            --rv-orange: #fc7b0a;
+            --rv-green: #29a00a;
+            --rv-blue: #00adef;
+            --rv-grey-ultralight: #f0f0f0;
+            --rv-grey-verylight: #e2e2e2;
+            --rv-grey-light: #b8b8b8;
+            --rv-grey: #909090;
+            --rv-grey-dark: #707070;
+            --rv-grey-verydark: #484848;
+            --rv-grey-ultradark: #262626;
+        }
+
+        * {
+            box-sizing: border-box;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            font-size: calc(16px + 2 * ((100vw - 320px) / 960));
+            font-size: clamp(16px, calc(16px + 2 * ((100vw - 320px) / 960)), 18px);
+            line-height: 1.33333;
+            color: var(--rv-grey-verydark);
+            font-weight: 400;
+            outline: 0;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            padding-top: 3rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 60rem;
+            padding: 3rem 1rem 1rem;
+            margin: 0 auto;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        picture {
+            display: block;
+            background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZD0iTTE1LjQ3OCAxMy4yNDdBMy40NzggMy40NzggMCAwIDEgMTIgMTYuNzI2YTMuNDc4IDMuNDc4IDAgMCAxLTMuNDc4LTMuNDc5QTMuNDc4IDMuNDc4IDAgMCAxIDEyIDkuNzdhMy40NzggMy40NzggMCAwIDEgMy40NzggMy40Nzh6bTYuNzczLTguMDgxaC02LjM1M0wxNC42MTUgMy4wMWEuNjk2LjY5NiAwIDAgMC0uNTk4LS4zNEg5Ljk4M2EuNjk2LjY5NiAwIDAgMC0uNTk4LjM0TDguMTAyIDUuMTY2SDYuMDE3VjQuNjlhLjY5Ni42OTYgMCAwIDAtLjY5NS0uNjk2SDIuNzQ4YS42OTYuNjk2IDAgMCAwLS42OTYuNjk2di40NzVIMS43NUExLjc1IDEuNzUgMCAwIDAgMCA2LjkxNVYxOS41OGMwIC45NjYuNzgzIDEuNzUgMS43NSAxLjc1aDIwLjVBMS43NSAxLjc1IDAgMCAwIDI0IDE5LjU4VjYuOTE1YTEuNzUgMS43NSAwIDAgMC0xLjc1LTEuNzV6TTEyIDE4LjIyNmE0Ljk3OSA0Ljk3OSAwIDEgMSAwLTkuOTU4IDQuOTc5IDQuOTc5IDAgMCAxIDAgOS45NTh6bTkuMTYtOS40NTRoLTIuMThhLjY5Ni42OTYgMCAwIDEgMC0xLjM5MWgyLjE4YS42OTYuNjk2IDAgMSAxIDAgMS4zOTF6IiBmaWxsPSIjOTA5MDkwIi8+PC9zdmc+) center center no-repeat var(--rv-grey-verylight);
+        }
+
+        .u-has-ratio-3-2 {
+            aspect-ratio: 3 / 2;
+        }
+
+        .l-grid {
+            display: grid;
+            gap: 1em;
+            grid-template-columns: 1fr;
+        }
+
+        .l-flex {
+            display: flex;
+        }
+
+        .m-card {
+
+        }
+
+        .m-card picture {
+            flex: 0 0 6em;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1>Components</h1>
+
+        <p>Article card met nieuwe layout</p>
+        <ul class="l-grid l-article-grid">
+            <li class="m-card">
+                <!--<a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="a-articlecard-link"><span class="u-visuallyhidden">Bekijk details</span></a>-->
+                <span id="article-13152" class="u-anchor-shift"></span>
+
+                <div class="l-flex">
+                    <picture class="u-has-ratio-3-2">
+                        <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" loading="lazy" width="300" height="200">
+                    </picture>
+
+                    <div class="l-flex l-articlecard-data">
+                        <div class="a-articlecard-caption l-flex">
+                            <h3 class="u-text-small u-nomargin">13152</h3>
+                            <p class="u-text-small u-nomargin">rookglas 6_lichts · <strong class="u-text-small">voorradig</strong></p>
+                        </div>
+                        <div class="a-articlecard-price">
+                            <p class="u-price u-text-small">
+                                <span class="u-price-old u-text-small">169,90</span>
+                                49,00
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="m-articlecard l-flex">
+                <span id="article-13152" class="u-anchor-shift"></span>
+
+                <picture class="u-has-ratio-3-2">
+                    <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" loading="lazy">
+                </picture>
+                <div class="l-flex l-articlecard-data">
+                    <div class="a-articlecard-caption l-flex">
+                        <h3 class="u-text-small u-nomargin">13152</h3>
+                        <p class="u-text-small u-nomargin">rookglas 6_lichts · <strong class="u-text-small">voorradig</strong></p>
+                    </div>
+                    <div class="a-articlecard-price">
+                        <p class="u-price u-text-small">
+                            <span class="u-price-old u-text-small">169,90</span>
+                            49,00
+                        </p>
+                    </div>
+                </div>
+                <a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="a-articlecard-link"><span class="u-visuallyhidden">Bekijk details</span></a>
+            </li>
+
+            <li class="m-articlecard l-flex">
+                <span id="article-13152" class="u-anchor-shift"></span>
+
+                <picture class="u-has-ratio-3-2">
+                    <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" loading="lazy">
+                </picture>
+                <div class="l-flex l-articlecard-data">
+                    <div class="a-articlecard-caption l-flex">
+                        <h3 class="u-text-small u-nomargin">13152</h3>
+                        <p class="u-text-small u-nomargin">rookglas 6_lichts · <strong class="u-text-small">voorradig</strong></p>
+                    </div>
+                    <div class="a-articlecard-price">
+                        <p class="u-price u-text-small">
+                            <span class="u-price-old u-text-small">169,90</span>
+                            49,00
+                        </p>
+                    </div>
+                </div>
+                <a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="a-articlecard-link"><span class="u-visuallyhidden">Bekijk details</span></a>
+            </li>
+
+            <li class="m-articlecard l-flex">
+                <span id="article-13152" class="u-anchor-shift"></span>
+
+                <picture class="u-has-ratio-3-2">
+                    <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" loading="lazy">
+                </picture>
+                <div class="l-flex l-articlecard-data">
+                    <div class="a-articlecard-caption l-flex">
+                        <h3 class="u-text-small u-nomargin">13152</h3>
+                        <p class="u-text-small u-nomargin">rookglas 6_lichts · <strong class="u-text-small">voorradig</strong></p>
+                    </div>
+                    <div class="a-articlecard-price">
+                        <p class="u-price u-text-small">
+                            <span class="u-price-old u-text-small">169,90</span>
+                            49,00
+                        </p>
+                    </div>
+                </div>
+                <a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="a-articlecard-link"><span class="u-visuallyhidden">Bekijk details</span></a>
+            </li>
+        </ul>
+    </main>
+</body>
+</html>
