@@ -395,7 +395,6 @@ p a:focus span {
 }
 
 .u-price-old {
-    margin-right: .5em;
     color: var(--rv-grey-dark);
 }
 
@@ -825,8 +824,8 @@ picture {
 }
 
 .l-articlecard-data {
-    flex: 1 1 100%;
-    padding-top: .5em;
+    /* flex: 1 1 100%; */
+    padding-top: .25em;
 }
 
 .m-articlecard-picture {
@@ -837,9 +836,9 @@ picture {
     flex: 1 1 100%;
 }
 
-.a-articlecard-caption h3 {
+/* .a-articlecard-caption h3 {
     margin-right: .5em;
-}
+} */
 
 .a-articlecard-caption p {
     display: none;
@@ -857,6 +856,7 @@ picture {
 
 .a-articlecard-price {
     text-align: right;
+    align-self: flex-end;
     line-height: 1.33333;
 }
 
@@ -872,7 +872,7 @@ picture {
     bottom: 0;
     z-index: 2;
     outline: 2px solid transparent;
-    outline-offset: -1px;
+    outline-offset: .5em;
     transition: outline .3s;
     display: none;
 }
@@ -1041,7 +1041,7 @@ picture {
 
 .o-ranges h4 {
     font-size: .8rem;
-    margin-top: .5rem;
+    margin-top: 0;
 }
 
 .o-ranges h4 a {

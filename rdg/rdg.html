@@ -471,49 +471,151 @@
                     </li>
                 </ul>
 
-                <h3>Article card (concept)</h3>
+                <h3>Card (concept)</h3>
+
+                <style>
+                    .u-instock {
+                        color: var(--rv-green);
+                    }
+
+                    .u-notinstock {
+                        color: var(--rv-red);
+                    }
+
+                    .m-card {
+                        flex-direction: column;
+                    }
+
+                    .m-card-data {
+                        padding-top: .25em;
+                    }
+
+                    .a-card-caption {
+                        flex: 1 1 100%;
+                    }
+
+                    .a-card-caption h3 {
+                        font-size: 1em;
+                        color: var(--rv-grey-verydark);
+                    }
+
+                    .a-card-price {
+                        text-align: right;
+                        align-self: flex-end;
+                    }
+
+                    .a-card-price .u-price {
+                        font-size: 1em;
+                        line-height: 1.2;
+                    }
+
+                    .a-card-description {
+                        margin-top: .25em;
+                        border-top: 1px solid #e2e2e2;
+                        padding-top: .25em;
+                    }
+
+                    .a-card-link {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        z-index: 2;
+                        outline: 2px solid transparent;
+                        outline-offset: .5em;
+                        transition: outline .3s;
+                    }
+
+                    .a-card-link:hover,
+                    .a-card-link:focus {
+                        outline: 2px solid var(--rv-blue);
+                    }
+                </style>
 
                 <ul class="l-grid l-article-grid">
-                    <li class="m-articlecard m-articlecard-concept l-flex" style="padding: 0; border: none;">
+                    <li class="m-card l-flex">
                         <span id="article-13152" class="u-anchor-shift"></span>
 
                         <picture class="u-has-ratio-3-2">
                             <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" loading="lazy">
                         </picture>
-                        <div class="l-flex l-articlecard-data">
-                            <div class="a-articlecard-caption l-flex">
-                                <h3 class="u-text-small u-nomargin">13152</h3>
-                                <p class="u-text-small u-nomargin">rookglas 6_lichts · <strong class="u-text-small">voorradig</strong></p>
+                        <div class="l-flex m-card-data">
+                            <div class="a-card-caption">
+                                <h3 class="u-nomargin">13152</h3>
+                                <p class="u-text-small u-nomargin u-instock">Op voorraad</p>
                             </div>
-                            <div class="a-articlecard-price">
-                                <p class="u-price u-text-small">
-                                    <span class="u-price-old u-text-small">169,90</span>
-                                    49,00
-                                </p>
+                            <div class="a-card-price">
+                                <p class="u-price-old u-text-small"><span class="u-visuallyhidden">Oude prijs: </span>169,90</p>
+                                <p class="u-price">49,00</p>
                             </div>
                         </div>
-                        <a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="a-articlecard-link"><span class="u-visuallyhidden">Bekijk details</span></a>
+                        <div class="a-card-description">
+                            <p class="u-text-small">Sfeervolle hanglamp voorzien van zes lampen gemaakt van rookglas.</p>
+                        </div>
+                        <a class="a-card-link" href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond"><span class="u-visuallyhidden">Bekijk details</span></a>
                     </li>
 
-                    <li class="m-articlecard m-articlecard-concept l-flex" style="padding: 0; border: none;">
-                        <span id="article-13152" class="u-anchor-shift"></span>
+                    <!--<li class="m-articlecard m-articlecard-concept l-flex" style="padding: 0; border: none;">
+                        <span id="article-73124" class="u-anchor-shift"></span>
 
                         <picture class="u-has-ratio-3-2">
-                            <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" loading="lazy">
+                            <img alt="hanglamp 73124 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/73124.jpg" loading="lazy">
                         </picture>
                         <div class="l-flex l-articlecard-data">
-                            <div class="a-articlecard-caption l-flex">
-                                <h3 class="u-text-small u-nomargin">13152</h3>
-                                <p class="u-text-small u-nomargin">rookglas 6_lichts · <strong class="u-text-small">voorradig</strong></p>
+                            <div class="a-articlecard-caption">
+                                <h3 class="u-nomargin" style="font-size: 1em; color: #484848">73124</h3>
+                                <p class="u-text-small u-nomargin u-outofstock" style="color: var(--rv-red);">Niet op voorraad</p>
                             </div>
                             <div class="a-articlecard-price">
-                                <p class="u-price u-text-small">
-                                    <span class="u-price-old u-text-small">169,90</span>
-                                    49,00
-                                </p>
+                                <p class="u-price">169,00 </p>
                             </div>
                         </div>
+                        <div style="margin-top: .25em; border-top: 1px solid #e2e2e2; padding-top: .25em">
+                            <p class="u-text-small u-nomargin">De nieuwste trots in onze collectie! Een moderne, trendy hanglamp voorzien van drie retro bollen in licht spiegelend rookglas.</p>
+                        </div>
                         <a href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond" class="a-articlecard-link"><span class="u-visuallyhidden">Bekijk details</span></a>
+                    </li>-->
+
+                    <li class="m-card l-flex">
+                        <span id="article-308" class="u-anchor-shift"></span>
+
+                        <picture class="u-has-ratio-3-2">
+                            <img alt="Lichtbron 308" src="https://www.rietveldlicht.nl/fotos/middel/308.jpg" loading="lazy">
+                        </picture>
+                        <div class="l-flex m-card-data">
+                            <div class="a-card-caption">
+                                <h3 class="u-nomargin">308</h3>
+                                <p class="u-text-small u-nomargin u-notinstock">Niet op voorraad</p>
+                            </div>
+                            <div class="a-card-price">
+                                <p class="u-price">9,00 </p>
+                            </div>
+                        </div>
+                        <div class="a-card-description">
+                            <p class="u-text-small">Dit bolletje heeft een vermogen van <strong style="font-weight: 700; font-size: inherit;">4 Watt</strong>, is <strong style="font-weight: 700; font-size: inherit;">dimbaar</strong> en heeft een diameter van <strong style="font-weight: 700; font-size: inherit;">4,5cm</strong></p>
+                        </div>
+
+                        <div class="o-ranges" style="margin-top: .25em; border-top: 1px solid #e2e2e2; padding-top: .25em">
+                            <h4>Lichtkleur: 2200 K</h4>
+
+                            <div class="m-range-tight">
+                                <div class="m-range-track-tight">
+                                    <div class="a-range-track-kelvin"></div>
+                                    <span class="a-range-marker-simple" style="left:22%"></span>
+                                </div>
+                            </div>
+
+                            <h4>Lichtopbrengst: 250 Lm</h4>
+
+                            <div class="m-range-tight">
+                                <div class="m-range-track-tight">
+                                    <div class="a-range-track-lumen"></div>
+                                    <span class="a-range-marker-simple" style="left:9%"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="a-card-link" href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond"><span class="u-visuallyhidden">Bekijk details</span></a>
                     </li>
                 </ul>
 
