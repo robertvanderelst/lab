@@ -4,7 +4,7 @@
 */
 
 :root {
-    /* --rv-yellow: #fecb09;
+    --rv-yellow: #fecb09;
     --rv-red: #ed1c23;
     --rv-orange: #fc7b0a;
     --rv-green: #29a00a;
@@ -15,21 +15,7 @@
     --rv-grey: #909090;
     --rv-grey-dark: #707070;
     --rv-grey-verydark: #484848;
-    --rv-grey-ultradark: #262626; */
-    --opacity: 1;
-
-    --rv-yellow: 48, 99%, 52%;
-    --rv-red: 358, 85%, 52%;
-    --rv-orange: 28, 98%, 51%;
-    --rv-green: 108, 88%, 33%;
-    --rv-blue: 197, 100%, 47%;
-    --rv-grey-ultralight: #f0f0f0;
-    --rv-grey-verylight: #e2e2e2;
-    --rv-grey-light: #b8b8b8;
-    --rv-grey: #909090;
-    --rv-grey-dark: #707070;
-    --rv-grey-verydark: #484848;
-    --rv-grey-ultradark: 0, 0%, 15%;
+    --rv-grey-ultradark: #262626;
 }
 
 * {
