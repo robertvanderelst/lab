@@ -587,27 +587,27 @@
                         margin-top: .5em;
                     }
 
+                    [class*="a-ribbon-"] {
+                        --opacity: 1;
+                    }
+
                     .a-ribbon-ourchoice {
-                        background-color: var(--rv-green);
+                        background: hsla(var(--rv-green), var(--opacity));
                     }
 
                     .a-ribbon-inphoto {
-                        background-color: var(--rv-blue);
+                        background-color: hsla(var(--rv-blue), var(--opacity));
                     }
 
                     .a-ribbon-sale {
-                        background-color: var(--rv-red);
+                        background-color: hsla(var(--rv-red), var(--opacity));
                     }
 
                     .a-ribbon-black {
-                        background-color: var(--rv-grey-ultradark);
+                        background-color: hsla(var(--rv-grey-ultradark), var(--opacity));
                     }
 
                     @media (min-width: 30em) {
-                        :root {
-                            --opacity: .5;
-                        }
-
                         .a-ribbon {
                             position: absolute;
                             z-index: 2;
@@ -620,6 +620,10 @@
                             width: 120%;
                             transform: translate(-50%, -50%) rotate(-45deg);
                             margin-top: 0;
+                        }
+
+                        [class*="a-ribbon-"] {
+                            --opacity: .5;
                         }
                     }
                 </style>
