@@ -119,7 +119,7 @@ section {
 
 .l-grid {
     display: grid;
-    grid-gap: 1em;
+    grid-gap: 1.5em;
 }
 
 .u-visuallyhidden {
@@ -146,10 +146,6 @@ section {
 }
 
 @media (min-width: 64em) {
-    .l-grid {
-        grid-gap: 2em;
-    }
-
     .l-article-grid {
         grid-template-columns: repeat(4, 1fr);
     }
