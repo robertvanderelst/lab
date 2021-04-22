@@ -482,12 +482,36 @@
                         color: var(--rv-red);
                     }
 
-                    .m-card {
-                        flex-direction: column;
+                    .l-card-grid {
+                        grid-template-columns: 1fr;
+                    }
+
+                    @media (min-width: 30em) {
+                        .l-card-grid {
+                            grid-template-columns: 1fr 1fr;
+                        }
+                    }
+
+                    @media (min-width: 48em) {
+                        .l-card-grid {
+                            grid-template-columns: 1fr 1fr 1fr;
+                        }
+                    }
+
+                    @media (min-width: 64em) {
+                        .l-card-grid {
+                            grid-template-columns: 1fr 1fr 1fr 1fr;
+                        }
+                    }
+
+                    .m-card-photo {
+                        flex: 1 1 33.33333%;
+                        overflow: hidden;
                     }
 
                     .m-card-data {
-                        padding-top: .25em;
+                        flex: 1 1 66.66667%;
+                        padding-left: .5em;
                     }
 
                     .a-card-caption {
@@ -525,33 +549,90 @@
                         outline: 2px solid transparent;
                         outline-offset: .5em;
                         transition: outline .3s;
+                        display: none;
                     }
 
                     .a-card-link:hover,
                     .a-card-link:focus {
                         outline: 2px solid var(--rv-blue);
                     }
+
+                    @media (min-width: 30em) {
+                        .m-card {
+                            flex-direction: column;
+                        }
+
+                        .m-card-photo,
+                        .m-card-data {
+                            flex: none;
+                        }
+
+                        .m-card-data {
+                            padding: .25em 0 0;
+                        }
+                    }
+
+                    /* RIBBONS */
+                    .a-ribbon span {
+                        display: block;
+                        padding: .25em;
+                        font-size: .8em;
+                        font-weight: bold;
+                        color: #fff;
+                        text-align: center;
+                        margin-top: .5em;
+                    }
+
+                    .a-ribbon-ourchoice {
+                        background: var(--rv-green);
+                    }
+
+                    .a-ribbon-inphoto {
+                        background: var(--rv-blue);
+                    }
+
+                    @media (min-width: 30em) {
+                        .a-ribbon {
+                            position: absolute;
+                            z-index: 2;
+                            top: 2.75em;
+                            left: 2.75em;
+                            width: 100%;
+                        }
+
+                        .a-ribbon span {
+                            width: 120%;
+                            transform: translate(-50%, -50%) rotate(-45deg);
+                            margin-top: 0;
+                        }
+                    }
                 </style>
 
-                <ul class="l-grid l-article-grid">
+                <ul class="l-grid l-card-grid" style="margin-top: 1em">
                     <li class="m-card l-flex">
                         <span id="article-13152" class="u-anchor-shift"></span>
 
-                        <picture class="u-has-ratio-3-2">
-                            <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" loading="lazy">
-                        </picture>
-                        <div class="l-flex m-card-data">
-                            <div class="a-card-caption">
-                                <h3 class="u-nomargin">13152</h3>
-                                <p class="u-text-small u-nomargin u-instock">Op voorraad</p>
-                            </div>
-                            <div class="a-card-price">
-                                <p class="u-price-old u-text-small"><span class="u-visuallyhidden">Oude prijs: </span>169,90</p>
-                                <p class="u-price">49,00</p>
-                            </div>
+                        <div class="m-card-photo">
+                            <picture class="u-has-ratio-3-2">
+                                <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" loading="lazy" width="300" height="200">
+                            </picture>
+                            <span class="a-ribbon"><span class="a-ribbon-ourchoice">Onze keuze</span></span>
                         </div>
-                        <div class="a-card-description">
-                            <p class="u-text-small">Sfeervolle hanglamp voorzien van zes lampen gemaakt van rookglas.</p>
+
+                        <div class="m-card-data">
+                            <div class="l-flex">
+                                <div class="a-card-caption">
+                                    <h3 class="u-nomargin">13152</h3>
+                                    <p class="u-text-small u-nomargin u-instock">Op voorraad</p>
+                                </div>
+                                <div class="a-card-price">
+                                    <p class="u-price-old u-text-small"><span class="u-visuallyhidden">Oude prijs: </span>169,90</p>
+                                    <p class="u-price">49,00</p>
+                                </div>
+                            </div>
+                            <div class="a-card-description">
+                                <p class="u-text-small">Sfeervolle hanglamp voorzien van zes lampen gemaakt van rookglas.</p>
+                            </div>
                         </div>
                         <a class="a-card-link" href="/rietveld/rietveldlicht.nl/trunk/artikel/hanglamp-13152-modern-glas-staal_rvs-metaal-grijs-bruin-rond"><span class="u-visuallyhidden">Bekijk details</span></a>
                     </li>
@@ -580,38 +661,44 @@
                     <li class="m-card l-flex">
                         <span id="article-308" class="u-anchor-shift"></span>
 
-                        <picture class="u-has-ratio-3-2">
-                            <img alt="Lichtbron 308" src="https://www.rietveldlicht.nl/fotos/middel/308.jpg" loading="lazy">
-                        </picture>
-                        <div class="l-flex m-card-data">
-                            <div class="a-card-caption">
-                                <h3 class="u-nomargin">308</h3>
-                                <p class="u-text-small u-nomargin u-notinstock">Niet op voorraad</p>
-                            </div>
-                            <div class="a-card-price">
-                                <p class="u-price">9,00 </p>
-                            </div>
-                        </div>
-                        <div class="a-card-description">
-                            <p class="u-text-small">Dit bolletje heeft een vermogen van <strong style="font-weight: 700; font-size: inherit;">4 Watt</strong>, is <strong style="font-weight: 700; font-size: inherit;">dimbaar</strong> en heeft een diameter van <strong style="font-weight: 700; font-size: inherit;">4,5cm</strong></p>
+                        <div class="m-card-photo">
+                            <picture class="u-has-ratio-3-2">
+                                <img alt="Lichtbron 308" src="https://www.rietveldlicht.nl/fotos/middel/308.jpg" loading="lazy" width="300" height="200">
+                            </picture>
+                            <span class="a-ribbon"><span class="a-ribbon-inphoto">Gebruikt op foto</span></span>
                         </div>
 
-                        <div class="o-ranges" style="margin-top: .25em; border-top: 1px solid #e2e2e2; padding-top: .25em">
-                            <h4>Lichtkleur: 2200 K</h4>
-
-                            <div class="m-range-tight">
-                                <div class="m-range-track-tight">
-                                    <div class="a-range-track-kelvin"></div>
-                                    <span class="a-range-marker-simple" style="left:22%"></span>
+                        <div class="m-card-data">
+                            <div class="l-flex">
+                                <div class="a-card-caption">
+                                    <h3 class="u-nomargin">308</h3>
+                                    <p class="u-text-small u-nomargin u-notinstock">Niet op voorraad</p>
+                                </div>
+                                <div class="a-card-price">
+                                    <p class="u-price">9,00 </p>
                                 </div>
                             </div>
+                            <div class="a-card-description">
+                                <p class="u-text-small">Dit bolletje heeft een vermogen van <strong style="font-weight: 700; font-size: inherit;">4 Watt</strong>, is <strong style="font-weight: 700; font-size: inherit;">dimbaar</strong> en heeft een diameter van <strong style="font-weight: 700; font-size: inherit;">4,5cm</strong></p>
+                            </div>
 
-                            <h4>Lichtopbrengst: 250 Lm</h4>
+                            <div class="o-ranges" style="margin-top: .25em; border-top: 1px solid #e2e2e2; padding-top: .25em">
+                                <h4>Lichtkleur: 2200 K</h4>
 
-                            <div class="m-range-tight">
-                                <div class="m-range-track-tight">
-                                    <div class="a-range-track-lumen"></div>
-                                    <span class="a-range-marker-simple" style="left:9%"></span>
+                                <div class="m-range-tight">
+                                    <div class="m-range-track-tight">
+                                        <div class="a-range-track-kelvin"></div>
+                                        <span class="a-range-marker-simple" style="left:22%"></span>
+                                    </div>
+                                </div>
+
+                                <h4>Lichtopbrengst: 250 Lm</h4>
+
+                                <div class="m-range-tight">
+                                    <div class="m-range-track-tight">
+                                        <div class="a-range-track-lumen"></div>
+                                        <span class="a-range-marker-simple" style="left:9%"></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -696,7 +783,7 @@
                     }
                 </style>
 
-                <h3>Lichtbron concept</h3>
+                <!--<h3>Lichtbron concept</h3>
                 <ul class="l-grid l-article-grid l-article-grid-lightsources">
                     <li>
                         <span id="article-308" class="u-anchor-shift"></span>
@@ -1013,7 +1100,7 @@
                             <a href="#" class="a-articlecard-link"><span class="u-visuallyhidden">Bekijk details</span></a>
                         </div>
                     </li>
-                </ul>
+                </ul> -->
 
                 <h3>Photo card (andere naam?)</h3>
 
