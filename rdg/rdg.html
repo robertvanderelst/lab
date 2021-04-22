@@ -508,6 +508,13 @@
                         }
                     }
 
+                    .l-card-icon-seen {
+                        position: absolute;
+                        top: .25em;
+                        right: .25em;
+                        background: #fcc;
+                    }
+
                     .m-card-photo {
                         flex: 1 1 33.33333%;
                         overflow: hidden;
@@ -553,6 +560,7 @@
                         outline: 2px solid transparent;
                         outline-offset: .5em;
                         transition: outline .3s;
+                        display: none;
                     }
 
                     .a-card-link:hover,
@@ -664,6 +672,11 @@
                                 <img alt="hanglamp 13152 modern glas staal rvs metaal grijs bruin rond" src="https://www.rietveldlicht.nl/fotos/middel/13152.jpg" loading="lazy" width="300" height="200">
                             </picture>
                             <span class="a-ribbon"><span class="a-ribbon-black">Black Friday</span></span>
+                            <span class="u-icon l-card-icon-seen">
+                                <svg viewBox="0 0 32 32" role="img">
+                                    <use class="icon-seen" xlink:href="images/sprite-dynamic.svg#icon-seen"></use>
+                                </svg>
+                            </span>
                         </div>
 
                         <div class="m-card-data">
