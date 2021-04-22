@@ -543,7 +543,8 @@
                         line-height: 1.2;
                     }
 
-                    .a-card-description {
+                    .a-card-description,
+                    .a-card-energylabel {
                         margin-top: .25em;
                         border-top: 1px solid #e2e2e2;
                         padding-top: .25em;
@@ -559,6 +560,7 @@
                         outline: 2px solid transparent;
                         outline-offset: .5em;
                         transition: outline .3s;
+                        display: none;
                     }
 
                     .a-card-link:hover,
@@ -771,9 +773,9 @@
                                 </div>
                             </div>
 
-                            <p class="u-text-small">
+                            <p class="u-text-small a-card-energylabel">
                                 Dit artikel heeft energielabel:
-                                <span class="u-icon">
+                                <span class="u-icon" style="vertical-align: middle;">
                                     <svg viewBox="0 0 32 32" role="img">
                                         <use class="icon-energylabel-a" xlink:href="images/sprite-dynamic.svg#icon-energylabel-a"></use>
                                     </svg>
