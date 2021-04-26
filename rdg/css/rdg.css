@@ -3,6 +3,9 @@
     * CSS only validation?
 */
 
+/* Design system specific (ds/dg prefix) */
+
+/* INLINE */
 :root {
     --rv-yellow: #fecb09;
     --rv-red: #ed1c23;
@@ -270,16 +273,13 @@ h4,
     font-size: clamp(16px, calc(16px + 6 * ((100vw - 320px) / 960)), 18px);
 }
 
-
 .u-text-intro {
     font-weight: 700;
 }
 
-
 .u-text-regular {
     font-weight: 400;
 }
-
 
 blockquote {
     border-top: .25em solid var(--rv-blue);
@@ -981,7 +981,7 @@ picture {
 }
 
 /* #RIBBON */
-.a-ribbon span {
+/*.a-ribbon span {
     display: block;
     padding: .25rem 0 .375rem;
     font-size: .83333rem;
@@ -1027,7 +1027,7 @@ picture {
 
 .a-ribbon-black {
     background-color: #262626;
-}
+}*/
 
 /* #RANGE */
 .o-ranges > * + * {
