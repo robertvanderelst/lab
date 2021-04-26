@@ -410,8 +410,9 @@ p a:focus span {
 
 .u-button,
 .u-button-ghost {
+    display: inline-block;
     background: #f7f7f7;
-    padding: .5em;
+    padding: .5em 0 ;
     border: none;
     outline: 0;
     -webkit-tap-highlight-color: transparent;
