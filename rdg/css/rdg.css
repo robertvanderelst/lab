@@ -412,7 +412,8 @@ p a:focus span {
 .u-button-ghost {
     display: inline-block;
     background: #f7f7f7;
-    padding: .5em 0 ;
+    padding: .5em 0;
+    margin: -.5em 0;
     border: none;
     outline: 0;
     -webkit-tap-highlight-color: transparent;
@@ -757,7 +758,7 @@ input[type="tel"] ~ p {
 .u-validation-icon .icon-checkmark {
     display: none;
 }
-/* 
+/*
 input:not(:focus):not(:placeholder-shown):invalid {
     border: 1px solid var(--rv-red);
 }
