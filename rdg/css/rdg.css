@@ -757,7 +757,7 @@ input[type="tel"] ~ p {
 .u-validation-icon .icon-checkmark {
     display: none;
 }
-
+/* 
 input:not(:focus):not(:placeholder-shown):invalid {
     border: 1px solid var(--rv-red);
 }
@@ -781,7 +781,7 @@ input:not(:focus):not(:placeholder-shown):valid:focus {
 
 input:not(:focus):not(:placeholder-shown):valid ~ .u-validation-icon .icon-checkmark {
     display: block;
-}
+} */
 
 
 /* ARTICLE CARD */
