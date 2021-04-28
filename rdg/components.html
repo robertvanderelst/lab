@@ -540,19 +540,50 @@
 
                 /* inline */
 
+                .m-filters-panel {
+                    gap: .5em;
+                }
+
                 .m-filters-group h3 {
                     font-size: 1em;
-
+                    margin-top: 0;
                 }
 
                 .m-filters-group h3 a {
                     display: block;
                     color: var(--rv-grey-verydark);
-                    padding: .25rem .5rem;
-                    border: 1px solid #e2e2e2;
+                    padding: .5rem .5rem;
+                    border: 1px solid var(--rv-grey-verylight);
+                    text-decoration: none;
+                }
+
+                .m-filters-group h3 .u-icon {
+                    position: absolute;
+                    top: .5em;
+                    right: .5em;
+                    width: 1em;
+                    height: 1em;
+                    background: #fcc;
+                }
+
+                /* .m-filter-panel {
+                    display: none;
+                } */
+
+                @media (min-width: 30em) {
+                    .a-filters-toggle{
+                        display: none;
+                    }
                 }
 
                 /* rest */
+
+                .m-filter-panel {
+                    border: 1px solid var(--rv-grey-verylight);
+                    border-top: 1px solid #fff;
+                    margin-top: -1px;
+                    padding: 0 .5em .5em;
+                }
             </style>
             <h2>Filters</h2>
 
@@ -568,7 +599,7 @@
                     </span>
                 </a>
 
-            <div id="m-filters-panel" class="m-filters-panel">
+            <div id="m-filters-panel" class="l-grid m-filters-panel">
                 <div class="m-filters-group">
                     <h3>
                         <a href="#filter-group-[PARENT_ID]" class="a-filters-group-toggle has-icon">
@@ -581,7 +612,7 @@
                         </a>
                     </h3>
 
-                    <div class="filter-list" data-rangeid="price_range" data-url="/binnenverlichting/hanglampen">
+                    <div id="#filter-group-[PARENT_ID]" class="m-filter-panel" data-rangeid="price_range" data-url="/binnenverlichting/hanglampen">
                         <div class="filter-range l-flex">
                             <label for="price_range-min"><input type="number" maxlength="4" id="price_range-min" class="price_range-input" placeholder="13" value="13"></label>
                             <p>t/m</p>
@@ -611,7 +642,7 @@
                             </span>
                         </a>
                     </h3>
-                    <div id="c-filterbar-group-735">
+                    <div id="c-filterbar-group-735" class="m-filter-panel">
                         <ul class="c-filterbar-list-closed">
                             <li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/slaapkamer" class="c-filterbar-list-link" data-label="Slaapkamer"><span>Slaapkamer (237)</span></a></li>
                             <li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/eetkamer" class="c-filterbar-list-link" data-label="Eetkamer"><span>Eetkamer (512)</span></a></li>
