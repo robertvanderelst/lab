@@ -547,7 +547,7 @@
                 .m-filters-group h3 {
                     font-size: 1em;
                     margin-top: 0;
-                    background: var(--rv-grey-verylight);
+                    /* background: var(--rv-grey-verylight); */
                 }
 
                 .m-filters-group h3 a {
@@ -645,7 +645,43 @@
                     border-color: var(--rv-green);
                 }
 
-                /* Ranges */
+                /* SLider */
+                .m-slider-input p {
+                    flex: 0 0 auto;
+                    padding: 0 .5em;
+                    font-size: .8em;
+                    line-height: 2.5;
+                }
+
+                .m-slider-input label,
+                .m-slider-input input {
+                    flex: 1 1 100%;
+                }
+
+                .m-slider {
+                    font-size: .8em;
+                    height: 1em;
+                    background: var(--rv-grey-verylight);
+                    margin: 2em 1.5em;
+                }
+
+                .a-slider-handle {
+                    font-weight: 700;
+                    line-height: 3em;
+                    position: absolute;
+                    top: -1em;
+                    width: 3em;
+                    height: 3em;
+                    margin: 0;
+                    cursor: ew-resize;
+                    transition: left .3s;
+                    transform: translateX(-50%);
+                    text-align: center;
+                    color: #fff;
+                    border-radius: .25em;
+                    background: var(--rv-blue);
+                }
+
             </style>
             <h2>Filters</h2>
 
@@ -675,22 +711,18 @@
                     </h3>
 
                     <div id="#m-filter-group-[PARENT_ID]" class="m-filter-panel" data-rangeid="price_range" data-url="/binnenverlichting/hanglampen">
-                        <div class="filter-range l-flex">
+                        <div class="m-slider-input l-flex">
                             <label for="price_range-min"><input type="number" maxlength="4" id="price_range-min" class="price_range-input" placeholder="13" value="13"></label>
                             <p>t/m</p>
                             <label for="price_range-max"><input type="number" maxlength="4" id="price_range-max" class="price_range-input" placeholder="600" value="600"></label>
                         </div>
 
-                        <div class="rangeslider">
-                            <div class="slider slider-track">
-                                <div class="slider-handle slider-handle-min" style="left: 0%;">min</div>
-                                <div class="slider-handle slider-handle-max" style="left: 100%;">max</div>
-                            </div>
+                        <div class="m-slider">
+                            <div class="a-slider-handle slider-handle-min" style="left: 0%;">min</div>
+                            <div class="a-slider-handle slider-handle-max" style="left: 100%;">max</div>
                         </div>
 
-                        <div class="c-filterbar-rangecta">
-                            <button class="u-button"><span>Toepassen</span></button>
-                        </div>
+                        <button class="u-button"><span>Toepassen</span></button>
                     </div>
                 </div>
                 <div class="m-filters-group">
