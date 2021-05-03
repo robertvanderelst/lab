@@ -538,114 +538,22 @@
             <style>
                 /* FILTERS */
 
-                /* inline */
-
-                .m-filters-panel {
-                    gap: .5em;
-                }
-
                 .m-filters-group h3 {
                     font-size: 1em;
-                    margin-top: 0;
-                    /* background: var(--rv-grey-verylight); */
                 }
 
-                .m-filters-group h3 a {
+                .a-filters-group-toggle {
                     display: block;
                     color: var(--rv-grey-verydark);
-                    padding: .5rem .5rem;
-                    border: 1px solid var(--rv-grey-verylight);
                     text-decoration: none;
                 }
 
-                .m-filters-group h3 a:hover {
-                    /* background: linear-gradient(180deg, #f0f0f0 0%, #fff 100%); */
+                /* Slider input */
+
+                .m-slider-input label {
+                    flex: 1 1 100%;
                 }
 
-                /* .m-filters-group h3 a:focus {
-                    outline: 1px solid var(--rv-blue);
-                    outline-offset: 2px;
-                } */
-
-                .m-filters-group h3 .u-icon {
-                    position: absolute;
-                    top: .5em;
-                    right: .5em;
-                    width: 1em;
-                    height: 1em;
-                }
-
-                /* .m-filter-panel {
-                    display: none;
-                } */
-
-                @media (min-width: 30em) {
-                    .a-filters-toggle{
-                        display: none;
-                    }
-                }
-
-                /* rest */
-
-                .m-filter-panel {
-                    border: 1px solid var(--rv-grey-verylight);
-                    border-top: none;
-                    background: #fff;
-                    margin-top: -1px;
-                    padding: .5em;
-                    z-index: 2;
-                }
-
-                .m-filter-panel li:nth-child(n+6) {
-                    display: none;
-                }
-
-                .u-filter-showallitems li:nth-child(n) {
-                    display: block;
-                }
-
-                /* List items */
-
-                .a-filter-link {
-                    display: block;
-                    font-size: .8em;
-                    line-height: 1.5;
-                    color: var(--rv-grey-verydark);
-                    text-decoration: none;
-                    padding: .5em .5em .5em 2em;
-                    background: transparent;
-                    transition: background .3s;
-                }
-
-                .a-filter-link:hover {
-                    /* outline: 1px solid #000;
-                    outline-offset: 4px; */
-                    background: var(--rv-grey-verylight);
-                }
-
-                .a-filter-link:before {
-                    position: absolute;
-                    content: "";
-                    top: .75em;
-                    left: .5em;
-                    width: 1em;
-                    height: 1em;
-                    -webkit-transition: .4s;
-                    transition: .4s;
-                    border: 1px solid var(--rv-grey-light);
-                    background: #fff;
-                }
-
-                .a-filter-link-active:before {
-                    content: "✔";
-                    line-height: 1;
-                    font-weight:bold;
-                    text-align: center;
-                    color: var(--rv-green);
-                    border-color: var(--rv-green);
-                }
-
-                /* SLider */
                 .m-slider-input p {
                     flex: 0 0 auto;
                     padding: 0 .5em;
@@ -653,650 +561,899 @@
                     line-height: 2.5;
                 }
 
-                .m-slider-input label,
-                .m-slider-input input {
-                    flex: 1 1 100%;
-                }
+                /* Slider */
 
-                .m-slider {
+                .m-slider-nav {
                     font-size: .8em;
+                    line-height: 1;
                     height: 1em;
-                    background: var(--rv-grey-verylight);
                     margin: 2em 1.5em;
+                    background: var(--rv-grey-verylight);
                 }
 
                 .a-slider-handle {
-                    font-weight: 700;
-                    line-height: 3em;
                     position: absolute;
                     top: -1em;
+                    font-weight: 700;
+                    line-height: 3em;
                     width: 3em;
                     height: 3em;
-                    margin: 0;
+                    border: none;
                     cursor: ew-resize;
-                    transition: left .3s;
                     transform: translateX(-50%);
                     text-align: center;
                     color: #fff;
                     border-radius: .25em;
-                    background: var(--rv-blue);
+                    background: #00adef;
                 }
 
+                .a-slider-handle-min {
+                    left: 0;
+                }
+
+                .a-slider-handle-max {
+                    left: 100%;
+                }
+
+
             </style>
+
             <h2>Filters</h2>
 
-            <div data-component="filters">
-                <a href="#m-filters-groups" class="a-filters-toggle u-button">
+            <div class="o-filters">
+                <a href="#l-filters-panel" class="a-filters-toggle u-button">
                     <span>
                         <span class="u-icon">
                             <svg viewBox="0 0 32 32" role="img">
-                                <use class="icon-filter" xlink:href="images/sprite-dynamic.svg#icon-filter"></use>
+                                <use class="icon-filters" xlink:href="images/sprite-dynamic.svg#icon-filters"></use>
                             </svg>
                         </span>
                         Filters
                     </span>
                 </a>
 
-            <div id="m-filters-panel" class="l-grid m-filters-panel">
-                <div class="m-filters-group">
-                    <h3>
-                        <a href="#m-filter-group-[PARENT_ID]" class="a-filters-group-toggle has-icon">
-                            Prijs
-                            <span class="u-icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    </h3>
+                <div id="l-filters-panel" class="m-filters-panel">
+                    <div class="m-filters-group">
+                        <h3>
+                            <a href="#filter-group-[PARENT_ID]" class="a-filters-group-toggle">
+                                Prijs
+                                <span class="u-icon">
+                                    <svg viewBox="0 0 32 32" role="img">
+                                        <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                                    </svg>
+                                </span>
+                            </a>
+                        </h3>
 
-                    <div id="#m-filter-group-[PARENT_ID]" class="m-filter-panel" data-rangeid="price_range" data-url="/binnenverlichting/hanglampen">
-                        <div class="m-slider-input l-flex">
-                            <label for="price_range-min"><input type="number" maxlength="4" id="price_range-min" class="price_range-input" placeholder="13" value="13"></label>
-                            <p>t/m</p>
-                            <label for="price_range-max"><input type="number" maxlength="4" id="price_range-max" class="price_range-input" placeholder="600" value="600"></label>
-                        </div>
-
-                        <div class="m-slider">
-                            <div class="a-slider-handle slider-handle-min" style="left: 0%;">min</div>
-                            <div class="a-slider-handle slider-handle-max" style="left: 100%;">max</div>
-                        </div>
-
-                        <button class="u-button"><span>Toepassen</span></button>
-                    </div>
-                </div>
-                <div class="m-filters-group">
-                    <h3>
-                        <a href="#m-filter-group-735" class="c-filterbar-group-toggle has-icon">
-                            Ruimte
-                            <span class="u-icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    </h3>
-                    <div id="m-filter-group-735" class="m-filter-panel">
-                        <ul>
-                            <li><a href="/binnenverlichting/hanglampen/slaapkamer" class="a-filter-link" data-label="Slaapkamer"><span>Slaapkamer (237)</span></a></li>
-                            <li><a href="/binnenverlichting/hanglampen/eetkamer" class="a-filter-link" data-label="Eetkamer"><span>Eetkamer (512)</span></a></li>
-                            <li><a href="/binnenverlichting/hanglampen/woonkamer" class="a-filter-link" data-label="Woonkamer"><span>Woonkamer (470)</span></a></li>
-                            <li><a href="/binnenverlichting/hanglampen/keuken" class="a-filter-link" data-label="Keuken"><span>Keuken (371)</span></a></li>
-                            <li><a href="/binnenverlichting/hanglampen?q=741" class="a-filter-link" data-label="Kantoor"><span>Kantoor (107)</span></a></li>
-                            <li><a href="/binnenverlichting/hanglampen?q=739" class="a-filter-link" data-label="Kinderkamer"><span>Kinderkamer (44)</span></a></li>
-                            <li><a href="/binnenverlichting/hanglampen?q=743" class="a-filter-link" data-label="Babykamer"><span>Babykamer (12)</span></a></li>
-                            <li><a href="/binnenverlichting/hanglampen?q=744" class="a-filter-link" data-label="Toilet"><span>Toilet (19)</span></a></li>
-                            <li><a href="/binnenverlichting/hanglampen/gang" class="a-filter-link" data-label="Gang / hal"><span>Gang / hal (275)</span></a></li>
-                        </ul>
-
-                        <button class="c-filterbar-list-toggle u-button"><span>Toon meer filters</span></button>
-                    </div>
-                </div>
-                <!--<div class="c-filterbar-group ">
-                    <h3>
-                        <a href="#c-filterbar-group-12" class="c-filterbar-group-toggle has-icon">
-                            Stijl
-                            <span class="u-icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    </h3>
-                    <div id="c-filterbar-group-12">
-                        <ul class="c-filterbar-list-closed">
-
-                <li><a href="/binnenverlichting/hanglampen/industrieel" class="a-filter-link" data-label="Industrie-look"><span>Industrie-look (128)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/design" class="a-filter-link" data-label="Design"><span>Design (83)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/landelijk" class="a-filter-link" data-label="Landelijk / rustiek"><span>Landelijk / rustiek (254)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/modern" class="a-filter-link" data-label="Modern"><span>Modern (547)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/marokkaans" class="a-filter-link" data-label="Marokkaans"><span>Marokkaans (23)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/stoer" class="a-filter-link" data-label="Stoer / raw"><span>Stoer / raw (51)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/retro" class="a-filter-link" data-label="Retro"><span>Retro (130)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/klassiek" class="a-filter-link" data-label="Klassiek"><span>Klassiek (12)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=333" class="a-filter-link" data-label="Eigentijds klassiek"><span>Eigentijds klassiek (228)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/art-deco" class="a-filter-link" data-label="Art deco"><span>Art deco (64)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/antiek" class="a-filter-link" data-label="Antiek"><span>Antiek (3)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=17" class="a-filter-link" data-label="Voor kinderen"><span>Voor kinderen (2)</span></a></li>
-                        </ul>
-
-                    <button class="c-filterbar-list-toggle button">Toon meer filters</button></div>
-                </div>
-                <div class="c-filterbar-group ">
-                    <h3>
-                        <a href="#c-filterbar-group-18" class="c-filterbar-group-toggle has-icon">
-                            Materiaal
-                            <span class="u-icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    </h3>
-                    <div id="c-filterbar-group-18">
-                        <ul class="c-filterbar-list-closed">
-
-                <li><a href="/binnenverlichting/hanglampen/hout" class="a-filter-link" data-label="Hout"><span>Hout (9)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/glas" class="a-filter-link" data-label="Glas"><span>Glas (131)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/rvs" class="a-filter-link" data-label="Staal - rvs"><span>Staal - rvs (58)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/kristal" class="a-filter-link" data-label="Kristal"><span>Kristal (2)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=400" class="a-filter-link" data-label="Messing"><span>Messing (40)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/stof" class="a-filter-link" data-label="Stof"><span>Stof (121)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/aluminium" class="a-filter-link" data-label="Aluminium"><span>Aluminium (30)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=727" class="a-filter-link" data-label="Ijzer"><span>Ijzer (3)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=552" class="a-filter-link" data-label="Brons-roestbrons"><span>Brons-roestbrons (3)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=208" class="a-filter-link" data-label="Brons"><span>Brons (9)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=21" class="a-filter-link" data-label="Geschuurd aluminium"><span>Geschuurd aluminium (6)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=211" class="a-filter-link" data-label="Kunststof"><span>Kunststof (35)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=723" class="a-filter-link" data-label="Leer / leder"><span>Leer / leder (2)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=587" class="a-filter-link" data-label="Marmer"><span>Marmer (9)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/metaal" class="a-filter-link" data-label="Metaal"><span>Metaal (401)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=583" class="a-filter-link" data-label="Nikkel"><span>Nikkel (1)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=691" class="a-filter-link" data-label="Oldmetal (gunmetal)"><span>Oldmetal (gunmetal) (2)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=586" class="a-filter-link" data-label="Riet"><span>Riet (12)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=696" class="a-filter-link" data-label="Touw"><span>Touw (10)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=619" class="a-filter-link" data-label="Zink"><span>Zink (1)</span></a></li>
-                        </ul>
-
-                    <button class="c-filterbar-list-toggle button">Toon meer filters</button></div>
-                </div>
-                <div class="c-filterbar-group ">
-                    <h3>
-                        <a href="#c-filterbar-group-23" class="c-filterbar-group-toggle has-icon">
-                            Kleur
-                            <span class="u-icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    </h3>
-                    <div id="c-filterbar-group-23">
-                        <ul class="c-filterbar-list-closed">
-
-                <li><a href="/binnenverlichting/hanglampen/zwart" class="a-filter-link" data-label="Zwart"><span>Zwart (326)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/wit" class="a-filter-link" data-label="Wit"><span>Wit (47)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/grijs" class="a-filter-link" data-label="Grijs"><span>Grijs (105)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/groen" class="a-filter-link" data-label="Groen"><span>Groen (9)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/goud" class="a-filter-link" data-label="Goud"><span>Goud (41)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/roze" class="a-filter-link" data-label="Roze"><span>Roze (8)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/rood" class="a-filter-link" data-label="Rood"><span>Rood (5)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/blauw" class="a-filter-link" data-label="Blauw"><span>Blauw (3)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/zilver" class="a-filter-link" data-label="Zilvergrijs"><span>Zilvergrijs (15)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=672" class="a-filter-link" data-label="Zilver -oud zilver"><span>Zilver -oud zilver (13)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/brons" class="a-filter-link" data-label="Brons"><span>Brons (20)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=332" class="a-filter-link" data-label="Roest-bruin-brons"><span>Roest-bruin-brons (10)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/bruin" class="a-filter-link" data-label="Bruin"><span>Bruin (57)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/geel" class="a-filter-link" data-label="Geel"><span>Geel (8)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/antraciet" class="a-filter-link" data-label="Antraciet donkergrijs"><span>Antraciet donkergrijs (11)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/oranje" class="a-filter-link" data-label="Oranje"><span>Oranje (1)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=595" class="a-filter-link" data-label="Petrol"><span>Petrol (2)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=660" class="a-filter-link" data-label="Aluminium"><span>Aluminium (11)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=593" class="a-filter-link" data-label="Beige"><span>Beige (1)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=620" class="a-filter-link" data-label="Betongrijs"><span>Betongrijs (20)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/chroom" class="a-filter-link" data-label="Chroom"><span>Chroom (3)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=354" class="a-filter-link" data-label="Creme"><span>Creme (5)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=688" class="a-filter-link" data-label="Gunmetal (oldmetal)"><span>Gunmetal (oldmetal) (2)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=659" class="a-filter-link" data-label="Hout"><span>Hout (8)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/koper" class="a-filter-link" data-label="Koper"><span>Koper (24)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/messing" class="a-filter-link" data-label="Messing"><span>Messing (57)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=405" class="a-filter-link" data-label="Meerkleurig"><span>Meerkleurig (4)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=594" class="a-filter-link" data-label="Mint"><span>Mint (1)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=699" class="a-filter-link" data-label="Naturel"><span>Naturel (10)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=689" class="a-filter-link" data-label="Oldmetal (gunmetal)"><span>Oldmetal (gunmetal) (6)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=582" class="a-filter-link" data-label="Roodkoper"><span>Roodkoper (12)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=330" class="a-filter-link" data-label="Staalgrijs"><span>Staalgrijs (50)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/taupe" class="a-filter-link" data-label="Taupe"><span>Taupe (29)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=662" class="a-filter-link" data-label="Transparant - kleurloos"><span>Transparant - kleurloos (6)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=621" class="a-filter-link" data-label="Zink"><span>Zink (3)</span></a></li>
-                        </ul>
-
-                    <button class="c-filterbar-list-toggle button">Toon meer filters</button></div>
-                </div>
-                <div class="c-filterbar-group ">
-                    <h3>
-                        <a href="#c-filterbar-group-507" class="c-filterbar-group-toggle has-icon">
-                            Lampfitting
-                            <span class="u-icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    </h3>
-                    <div id="c-filterbar-group-507">
-                        <ul>
-
-                <li><a href="/binnenverlichting/hanglampen?q=512" class="a-filter-link" data-label="GU10 240V Refl"><span>GU10 240V Refl (7)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=542" class="a-filter-link" data-label="Grote fitting E27"><span>Grote fitting E27 (484)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=541" class="a-filter-link" data-label="Kleine fitting E14"><span>Kleine fitting E14 (19)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=511" class="a-filter-link" data-label="G9 240 V"><span>G9 240 V (12)</span></a></li>
-                        </ul>
-
-                    </div>
-                </div>
-                <div class="c-filterbar-group ">
-                    <h3>
-                        <a href="#c-filterbar-group-390" class="c-filterbar-group-toggle has-icon">
-                            Vorm
-                            <span class="u-icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    </h3>
-                    <div id="c-filterbar-group-390">
-                        <ul>
-
-                <li><a href="/binnenverlichting/hanglampen?q=719" class="a-filter-link" data-label="Bolvormig"><span>Bolvormig (64)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=391" class="a-filter-link" data-label="Rond"><span>Rond (347)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=403" class="a-filter-link" data-label="Vierkant"><span>Vierkant (1)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=394" class="a-filter-link" data-label="Langwerpig"><span>Langwerpig (152)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=393" class="a-filter-link" data-label="Ovaal"><span>Ovaal (2)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=392" class="a-filter-link" data-label="Rechthoekig"><span>Rechthoekig (33)</span></a></li>
-                        </ul>
-
-                    </div>
-                </div>
-                <div class="c-filterbar-group ">
-                    <h3>
-                        <a href="#c-filterbar-group-1" class="c-filterbar-group-toggle has-icon">
-                            Lichtbron
-                            <span class="u-icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    </h3>
-                    <div id="c-filterbar-group-1">
-                        <ul>
-
-                <li><a href="/binnenverlichting/hanglampen?q=2" class="a-filter-link" data-label="Gloeilamp"><span>Gloeilamp (457)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=8" class="a-filter-link" data-label="Halogeen"><span>Halogeen (9)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=10" class="a-filter-link" data-label="Spaarlamp"><span>Spaarlamp (130)</span></a></li>
-                <li><a href="/binnenverlichting/led/hanglampen" class="a-filter-link" data-label="Led"><span>Led (556)</span></a></li>
-                        </ul>
-
-                    </div>
-                </div>
-                <div class="c-filterbar-group ">
-                    <h3>
-                        <a href="#c-filterbar-group-532" class="c-filterbar-group-toggle has-icon">
-                            Verstelbaarheid
-                            <span class="u-icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    </h3>
-                    <div id="c-filterbar-group-532">
-                        <ul>
-
-                <li><a href="/binnenverlichting/hanglampen?q=533" class="a-filter-link" data-label="Draaibaar"><span>Draaibaar (60)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=537" class="a-filter-link" data-label="Flexibele arm"><span>Flexibele arm (28)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=536" class="a-filter-link" data-label="Hoogte verstelling"><span>Hoogte verstelling (277)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=534" class="a-filter-link" data-label="Kantelbaar"><span>Kantelbaar (53)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=674" class="a-filter-link" data-label="Lichtkleur wit-warmwit"><span>Lichtkleur wit-warmwit (4)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen/hoogte-verstelbaar" class="a-filter-link" data-label="Richtbaar (draai en kantel)"><span>Richtbaar (draai en kantel) (64)</span></a></li>
-                        </ul>
-
-                    </div>
-                </div>
-                <div class="c-filterbar-group ">
-                    <h3>
-                        <a href="#c-filterbar-group-408" class="c-filterbar-group-toggle has-icon">
-                            Afdichtingsklasse
-                            <span class="u-icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    </h3>
-                    <div id="c-filterbar-group-408">
-                        <ul>
-
-                <li><a href="/binnenverlichting/hanglampen?q=756" class="a-filter-link" data-label="IP 20 stofdicht"><span>IP 20 stofdicht (86)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=336" class="a-filter-link" data-label="IP 21 drupwaterdicht"><span>IP 21 drupwaterdicht (7)</span></a></li>
-                        </ul>
-
-                    </div>
-                </div>
-                <div class="c-filterbar-group ">
-                    <h3>
-                        <a href="#c-filterbar-group-429" class="c-filterbar-group-toggle has-icon">
-                            Lichtkleur
-                            <span class="u-icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    </h3>
-                    <div id="c-filterbar-group-429">
-                        <ul>
-
-                <li><a href="/binnenverlichting/hanglampen?q=693" class="a-filter-link" data-label="Lichtbron afhankelijk"><span>Lichtbron afhankelijk (492)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=427" class="a-filter-link" data-label="Wit"><span>Wit (4)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=428" class="a-filter-link" data-label="Warmwit"><span>Warmwit (56)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=675" class="a-filter-link" data-label="Instelbaar / warm tot koud"><span>Instelbaar / warm tot koud (10)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=652" class="a-filter-link" data-label="Daglicht"><span>Daglicht (2)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=754" class="a-filter-link" data-label="Dim to warm / GLOWdim"><span>Dim to warm / GLOWdim (7)</span></a></li>
-                        </ul>
-
-                    </div>
-                </div>
-                <div class="c-filterbar-group ">
-                    <h3>
-                        <a href="#c-filterbar-group-409" class="c-filterbar-group-toggle has-icon">
-                            Schakelaar / sensor
-                            <span class="u-icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    </h3>
-                    <div id="c-filterbar-group-409">
-                        <ul>
-
-                <li><a href="/binnenverlichting/hanglampen?q=420" class="a-filter-link" data-label="Ingebouwd"><span>Ingebouwd (16)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=414" class="a-filter-link" data-label="Snoerschakelaar"><span>Snoerschakelaar (5)</span></a></li>
-                        </ul>
-
-                    </div>
-                </div>
-                <div class="c-filterbar-group ">
-                    <h3>
-                        <a href="#c-filterbar-group-410" class="c-filterbar-group-toggle has-icon">
-                            Dimmen
-                            <span class="u-icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    </h3>
-                    <div id="c-filterbar-group-410">
-                        <ul>
-
-                <li><a href="/binnenverlichting/hanglampen/dimbaar" class="a-filter-link" data-label="Is dimbaar"><span>Is dimbaar (418)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=499" class="a-filter-link" data-label="Niet dimbaar"><span>Niet dimbaar (5)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=695" class="a-filter-link" data-label="Lichtbron afhankelijk"><span>Lichtbron afhankelijk (491)</span></a></li>
-                        </ul>
-
-                    </div>
-                </div>
-                <div class="c-filterbar-group ">
-                    <h3>
-                        <a href="#c-filterbar-group-412" class="c-filterbar-group-toggle has-icon">
-                            Geleverd
-                            <span class="u-icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    </h3>
-                    <div id="c-filterbar-group-412">
-                        <ul class="c-filterbar-list-closed">
-
-                <li><a href="/binnenverlichting/hanglampen?q=413" class="a-filter-link" data-label="Met lichtbron"><span>Met lichtbron (57)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=416" class="a-filter-link" data-label="Met snoer en stekker"><span>Met snoer en stekker (5)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=431" class="a-filter-link" data-label="Met lichtdimmer"><span>Met lichtdimmer (18)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=500" class="a-filter-link" data-label="Zonder lichtbron"><span>Zonder lichtbron (503)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=501" class="a-filter-link" data-label="Zonder snoer en stekker"><span>Zonder snoer en stekker (23)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=502" class="a-filter-link" data-label="Zonder kapjes"><span>Zonder kapjes (2)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=570" class="a-filter-link" data-label="Zonder kap"><span>Zonder kap (5)</span></a></li>
-                        </ul>
-
-                    <button class="c-filterbar-list-toggle button">Toon meer filters</button></div>
-                </div>
-                <div class="c-filterbar-group ">
-                    <h3>
-                        <a href="#c-filterbar-group-185" class="c-filterbar-group-toggle has-icon">
-                            Aantal kapjes/glazen
-                            <span class="u-icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    </h3>
-                    <div id="c-filterbar-group-185">
-                        <ul class="c-filterbar-list-closed">
-
-                <li><a href="/binnenverlichting/hanglampen?q=186" class="a-filter-link" data-label="1"><span>1 (325)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=187" class="a-filter-link" data-label="2"><span>2 (91)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=188" class="a-filter-link" data-label="3"><span>3 (65)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=189" class="a-filter-link" data-label="4"><span>4 (13)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=190" class="a-filter-link" data-label="5"><span>5 (19)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=346" class="a-filter-link" data-label="6"><span>6 (8)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=197" class="a-filter-link" data-label="Meer dan 6"><span>Meer dan 6 (13)</span></a></li>
-                        </ul>
-
-                    <button class="c-filterbar-list-toggle button">Toon meer filters</button></div>
-                </div>
-                <div class="c-filterbar-group ">
-                    <h3>
-                        <a href="#c-filterbar-group-604" class="c-filterbar-group-toggle has-icon">
-                            Aantal lichtbronnen / fittingen
-                            <span class="u-icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    </h3>
-                    <div id="c-filterbar-group-604">
-                        <ul class="c-filterbar-list-closed">
-
-                <li><a href="/binnenverlichting/hanglampen?q=605" class="a-filter-link" data-label="1"><span>1 (314)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=606" class="a-filter-link" data-label="2"><span>2 (96)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=607" class="a-filter-link" data-label="3"><span>3 (73)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=608" class="a-filter-link" data-label="4"><span>4 (20)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=609" class="a-filter-link" data-label="5"><span>5 (23)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=610" class="a-filter-link" data-label="6"><span>6 (10)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=624" class="a-filter-link" data-label="7"><span>7 (7)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=625" class="a-filter-link" data-label="8"><span>8 (6)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=626" class="a-filter-link" data-label="9"><span>9 (3)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=627" class="a-filter-link" data-label="10"><span>10 (3)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=629" class="a-filter-link" data-label="12"><span>12 (1)</span></a></li>
-                        </ul>
-
-                    <button class="c-filterbar-list-toggle button">Toon meer filters</button></div>
-                </div>
-                <div class="c-filterbar-group ">
-                    <h3>
-                        <a href="#c-filterbar-group-678" class="c-filterbar-group-toggle has-icon">
-                            Energieverbruik
-                            <span class="u-icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    </h3>
-                    <div id="c-filterbar-group-678">
-                        <ul>
-
-                <li><a href="/binnenverlichting/hanglampen?q=694" class="a-filter-link" data-label="A+ t/m E"><span>A+ t/m E (494)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=679" class="a-filter-link" data-label="A++"><span>A++ (9)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=680" class="a-filter-link" data-label="A+"><span>A+ (59)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=681" class="a-filter-link" data-label="A"><span>A (9)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=682" class="a-filter-link" data-label="B"><span>B (1)</span></a></li>
-                        </ul>
-
-                    </div>
-                </div>
-                <div class="c-filterbar-group ">
-                    <h3>
-                        <a href="#c-filterbar-group-701" class="c-filterbar-group-toggle has-icon">
-                            Met afstandsbediening
-                            <span class="u-icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    </h3>
-                    <div id="c-filterbar-group-701">
-                        <ul>
-
-                <li><a href="/binnenverlichting/hanglampen?q=702" class="a-filter-link" data-label="Dimmen"><span>Dimmen (2)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=704" class="a-filter-link" data-label="Instelbare lichtkleur warmte"><span>Instelbare lichtkleur warmte (2)</span></a></li>
-                        </ul>
-
-                    </div>
-                </div>
-                <div class="c-filterbar-group ">
-                    <h3>
-                        <a href="#c-filterbar-group-706" class="c-filterbar-group-toggle has-icon">
-                            Tablet / Mobile / App
-                            <span class="u-icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    </h3>
-                    <div id="c-filterbar-group-706">
-                        <ul>
-
-                <li><a href="/binnenverlichting/hanglampen?q=700" class="a-filter-link" data-label="Met app bediening"><span>Met app bediening (1)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=751" class="a-filter-link" data-label="Werkt met ZigBee (Philips Hue, Osram Lightify)"><span>Werkt met ZigBee (Philips Hue, Osram Lightify) (1)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=752" class="a-filter-link" data-label="Geschikt voor Philips Hue White lichtbron"><span>Geschikt voor Philips Hue White lichtbron (453)</span></a></li>
-                <li><a href="/binnenverlichting/hanglampen?q=755" class="a-filter-link" data-label="Geschikt voor Philips Hue Color lichtbron"><span>Geschikt voor Philips Hue Color lichtbron (452)</span></a></li>
-                        </ul>
-
-                    </div>
-                </div>
-                <div class="c-filterbar-group ">
-                    <h3>
-                        <a href="#filter-group-[PARENT_ID]" class="c-filterbar-group-toggle has-icon">
-                            Lumen (lichtopbrengst)
-                            <span class="u-icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    </h3>
-                    <div class="filter-list" data-rangeid="lumen_range" data-url="/binnenverlichting/hanglampen">
-                        <div class="filter-range l-flex">
-                            <label for="lumen_range-min"><input type="number" maxlength="4" id="lumen_range-min" class="lumen_range-input" placeholder="1" value="1"></label>
-                            <p>t/m</p>
-                            <label for="lumen_range-max"><input type="number" maxlength="4" id="lumen_range-max" class="lumen_range-input" placeholder="8000" value="8000"></label>
-                        </div>
-
-                        <div class="rangeslider">
-                            <div class="slider slider-track">
-                                <div class="slider-handle slider-handle-min" style="left: 0%;">min</div>
-                                <div class="slider-handle slider-handle-max" style="left: 100%;">max</div>
+                        <div data-component="ranges" data-rangeid="price_range" data-url="/binnenverlichting/hanglampen" class="u-lobowl">
+                            <div class="m-slider-input l-flex">
+                                <label for="price_range-min"><input type="number" maxlength="4" id="price_range-min" class="price_range-input" placeholder="13" value="13"></label>
+                                <p>t/m</p>
+                                <label for="price_range-max"><input type="number" maxlength="4" id="price_range-max" class="price_range-input" placeholder="600" value="600"></label>
                             </div>
-                        </div>
 
-                        <div class="c-filterbar-rangecta l-flex">
-                            <button class="button">Toepassen</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="c-filterbar-group ">
-                    <h3>
-                        <a href="#filter-group-[PARENT_ID]" class="c-filterbar-group-toggle has-icon">
-                            Kelvin (lichtkleur)
-                            <span class="u-icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    </h3>
-                    <div class="filter-list" data-rangeid="kelvin_range" data-url="/binnenverlichting/hanglampen">
-                        <div class="filter-range l-flex">
-                            <label for="kelvin_range-min"><input type="number" maxlength="4" id="kelvin_range-min" class="kelvin_range-input" placeholder="1800" value="1800"></label>
-                            <p>t/m</p>
-                            <label for="kelvin_range-max"><input type="number" maxlength="4" id="kelvin_range-max" class="kelvin_range-input" placeholder="6500" value="6500"></label>
-                        </div>
-
-                        <div class="rangeslider">
-                            <div class="slider slider-track">
-                                <div class="slider-handle slider-handle-min" style="left: 0%;">min</div>
-                                <div class="slider-handle slider-handle-max" style="left: 100%;">max</div>
+                            <div class="m-slider-nav">
+                                <button class="a-slider-handle a-slider-handle-min">min</button>
+                                <button class="a-slider-handle a-slider-handle-max">max</button>
                             </div>
-                        </div>
 
-                        <div class="c-filterbar-rangecta l-flex">
-                            <button class="button">Toepassen</button>
+                            <button class="u-button"><span>Toepassen</span></button>
+                        </div>
+                    </div>
+
+                    <div class="m-filters-group">
+                        <h3>
+                            <a href="#c-filterbar-group-735" class="a-filters-group-toggle">
+                                Ruimte
+                                <span class="u-icon">
+                                    <svg viewBox="0 0 32 32" role="img">
+                                        <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
+                                    </svg>
+                                </span>
+                            </a>
+                        </h3>
+
+                        <div id="c-filterbar-group-735">
+                            <ul class="c-filterbar-list-closed">
+                                <li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/slaapkamer" class="c-filterbar-list-link" data-label="Slaapkamer"><span>Slaapkamer (236)</span></a></li>
+                                <li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/eetkamer" class="c-filterbar-list-link" data-label="Eetkamer"><span>Eetkamer (511)</span></a></li>
+                                <li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/woonkamer" class="c-filterbar-list-link" data-label="Woonkamer"><span>Woonkamer (469)</span></a></li>
+                                <li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/keuken" class="c-filterbar-list-link" data-label="Keuken"><span>Keuken (370)</span></a></li>
+                                <li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=741" class="c-filterbar-list-link" data-label="Kantoor"><span>Kantoor (105)</span></a></li>
+                                <li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=739" class="c-filterbar-list-link" data-label="Kinderkamer"><span>Kinderkamer (44)</span></a></li>
+                                <li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=743" class="c-filterbar-list-link" data-label="Babykamer"><span>Babykamer (12)</span></a></li>
+                                <li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=744" class="c-filterbar-list-link" data-label="Toilet"><span>Toilet (19)</span></a></li>
+                                <li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/gang" class="c-filterbar-list-link" data-label="Gang / hal"><span>Gang / hal (275)</span></a></li>
+                            </ul>
+
+                            <button class="c-filterbar-list-toggle u-button"><span>Toon meer filters</span></button>
                         </div>
                     </div>
                 </div>
-                <div class="c-filterbar-group ">
-                    <h3>
-                        <a href="#filter-group-[PARENT_ID]" class="c-filterbar-group-toggle has-icon">
-                            Hoogte (mm)
-                            <span class="u-icon">
-                                <svg viewBox="0 0 32 32" role="img">
-                                    <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    </h3>
-                    <div class="filter-list" data-rangeid="height_range" data-url="/binnenverlichting/hanglampen">
-                        <div class="filter-range l-flex">
-                            <label for="height_range-min"><input type="number" maxlength="4" id="height_range-min" class="height_range-input" placeholder="1" value="1"></label>
-                            <p>t/m</p>
-                            <label for="height_range-max"><input type="number" maxlength="4" id="height_range-max" class="height_range-input" placeholder="5000" value="5000"></label>
-                        </div>
+<!--<div class="c-filterbar-group ">
+    <h3>
+        <a href="#c-filterbar-group-12" class="c-filterbar-group-toggle has-icon">
+            Stijl
+            <span class="icon">
+                <svg viewBox="0 0 32 32" role="img">
+                    <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                </svg>
+            </span>
+        </a>
+    </h3>
+    <div id="c-filterbar-group-12">
+        <ul class="c-filterbar-list-closed">
 
-                        <div class="rangeslider">
-                            <div class="slider slider-track">
-                                <div class="slider-handle slider-handle-min" style="left: 0%;">min</div>
-                                <div class="slider-handle slider-handle-max" style="left: 100%;">max</div>
-                            </div>
-                        </div>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/industrieel" class="c-filterbar-list-link" data-label="Industrie-look"><span>Industrie-look (129)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/design" class="c-filterbar-list-link" data-label="Design"><span>Design (82)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/landelijk" class="c-filterbar-list-link" data-label="Landelijk / rustiek"><span>Landelijk / rustiek (255)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/modern" class="c-filterbar-list-link" data-label="Modern"><span>Modern (546)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/marokkaans" class="c-filterbar-list-link" data-label="Marokkaans"><span>Marokkaans (23)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/stoer" class="c-filterbar-list-link" data-label="Stoer / raw"><span>Stoer / raw (51)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/retro" class="c-filterbar-list-link" data-label="Retro"><span>Retro (129)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/klassiek" class="c-filterbar-list-link" data-label="Klassiek"><span>Klassiek (12)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=333" class="c-filterbar-list-link" data-label="Eigentijds klassiek"><span>Eigentijds klassiek (228)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/art-deco" class="c-filterbar-list-link" data-label="Art deco"><span>Art deco (64)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/antiek" class="c-filterbar-list-link" data-label="Antiek"><span>Antiek (3)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=17" class="c-filterbar-list-link" data-label="Voor kinderen"><span>Voor kinderen (2)</span></a></li>
+        </ul>
 
-                        <div class="c-filterbar-rangecta l-flex">
-                            <button class="button">Toepassen</button>
-                        </div>
-                    </div>
-                </div>
+    <button class="c-filterbar-list-toggle button">Toon meer filters</button></div>
+</div>
+<div class="c-filterbar-group ">
+    <h3>
+        <a href="#c-filterbar-group-18" class="c-filterbar-group-toggle has-icon">
+            Materiaal
+            <span class="icon">
+                <svg viewBox="0 0 32 32" role="img">
+                    <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                </svg>
+            </span>
+        </a>
+    </h3>
+    <div id="c-filterbar-group-18">
+        <ul class="c-filterbar-list-closed">
 
-                <a href="#c-filterbar-groups" class="button c-filterbar-btn-advanced">Toon meer filters</a></div>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/hout" class="c-filterbar-list-link" data-label="Hout"><span>Hout (9)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/glas" class="c-filterbar-list-link" data-label="Glas"><span>Glas (130)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/rvs" class="c-filterbar-list-link" data-label="Staal - rvs"><span>Staal - rvs (58)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/kristal" class="c-filterbar-list-link" data-label="Kristal"><span>Kristal (2)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=400" class="c-filterbar-list-link" data-label="Messing"><span>Messing (40)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/stof" class="c-filterbar-list-link" data-label="Stof"><span>Stof (121)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/aluminium" class="c-filterbar-list-link" data-label="Aluminium"><span>Aluminium (30)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=727" class="c-filterbar-list-link" data-label="Ijzer"><span>Ijzer (3)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=552" class="c-filterbar-list-link" data-label="Brons-roestbrons"><span>Brons-roestbrons (3)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=208" class="c-filterbar-list-link" data-label="Brons"><span>Brons (9)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=21" class="c-filterbar-list-link" data-label="Geschuurd aluminium"><span>Geschuurd aluminium (6)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=211" class="c-filterbar-list-link" data-label="Kunststof"><span>Kunststof (34)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=723" class="c-filterbar-list-link" data-label="Leer / leder"><span>Leer / leder (2)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=587" class="c-filterbar-list-link" data-label="Marmer"><span>Marmer (9)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/metaal" class="c-filterbar-list-link" data-label="Metaal"><span>Metaal (400)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=583" class="c-filterbar-list-link" data-label="Nikkel"><span>Nikkel (1)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=691" class="c-filterbar-list-link" data-label="Oldmetal (gunmetal)"><span>Oldmetal (gunmetal) (2)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=586" class="c-filterbar-list-link" data-label="Riet"><span>Riet (12)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=696" class="c-filterbar-list-link" data-label="Touw"><span>Touw (10)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=619" class="c-filterbar-list-link" data-label="Zink"><span>Zink (1)</span></a></li>
+        </ul>
 
-                <div class="c-filterbar-selected l-flex has-wrap">
-                    <ul class="l-flex has-wrap">
-                        <li><a href="/binnenverlichting" class="c-filterbar-selected-link"><span>Hanglampen</span></a></li>
-                    </ul>
+    <button class="c-filterbar-list-toggle button">Toon meer filters</button></div>
+</div>
+<div class="c-filterbar-group ">
+    <h3>
+        <a href="#c-filterbar-group-23" class="c-filterbar-group-toggle has-icon">
+            Kleur
+            <span class="icon">
+                <svg viewBox="0 0 32 32" role="img">
+                    <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                </svg>
+            </span>
+        </a>
+    </h3>
+    <div id="c-filterbar-group-23">
+        <ul class="c-filterbar-list-closed">
 
-                    <p><strong>578</strong> Producten gevonden</p>
-                </div> -->
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/zwart" class="c-filterbar-list-link" data-label="Zwart"><span>Zwart (325)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/wit" class="c-filterbar-list-link" data-label="Wit"><span>Wit (46)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/grijs" class="c-filterbar-list-link" data-label="Grijs"><span>Grijs (104)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/groen" class="c-filterbar-list-link" data-label="Groen"><span>Groen (9)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/goud" class="c-filterbar-list-link" data-label="Goud"><span>Goud (41)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/roze" class="c-filterbar-list-link" data-label="Roze"><span>Roze (8)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/rood" class="c-filterbar-list-link" data-label="Rood"><span>Rood (5)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/blauw" class="c-filterbar-list-link" data-label="Blauw"><span>Blauw (3)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/zilver" class="c-filterbar-list-link" data-label="Zilvergrijs"><span>Zilvergrijs (15)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=672" class="c-filterbar-list-link" data-label="Zilver -oud zilver"><span>Zilver -oud zilver (13)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/brons" class="c-filterbar-list-link" data-label="Brons"><span>Brons (20)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=332" class="c-filterbar-list-link" data-label="Roest-bruin-brons"><span>Roest-bruin-brons (10)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/bruin" class="c-filterbar-list-link" data-label="Bruin"><span>Bruin (58)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/geel" class="c-filterbar-list-link" data-label="Geel"><span>Geel (8)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/antraciet" class="c-filterbar-list-link" data-label="Antraciet donkergrijs"><span>Antraciet donkergrijs (11)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/oranje" class="c-filterbar-list-link" data-label="Oranje"><span>Oranje (1)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=595" class="c-filterbar-list-link" data-label="Petrol"><span>Petrol (2)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=660" class="c-filterbar-list-link" data-label="Aluminium"><span>Aluminium (11)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=593" class="c-filterbar-list-link" data-label="Beige"><span>Beige (1)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=620" class="c-filterbar-list-link" data-label="Betongrijs"><span>Betongrijs (20)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/chroom" class="c-filterbar-list-link" data-label="Chroom"><span>Chroom (3)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=354" class="c-filterbar-list-link" data-label="Creme"><span>Creme (5)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=688" class="c-filterbar-list-link" data-label="Gunmetal (oldmetal)"><span>Gunmetal (oldmetal) (2)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=659" class="c-filterbar-list-link" data-label="Hout"><span>Hout (8)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/koper" class="c-filterbar-list-link" data-label="Koper"><span>Koper (24)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/messing" class="c-filterbar-list-link" data-label="Messing"><span>Messing (57)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=405" class="c-filterbar-list-link" data-label="Meerkleurig"><span>Meerkleurig (4)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=594" class="c-filterbar-list-link" data-label="Mint"><span>Mint (1)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=699" class="c-filterbar-list-link" data-label="Naturel"><span>Naturel (10)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=689" class="c-filterbar-list-link" data-label="Oldmetal (gunmetal)"><span>Oldmetal (gunmetal) (7)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=582" class="c-filterbar-list-link" data-label="Roodkoper"><span>Roodkoper (12)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=330" class="c-filterbar-list-link" data-label="Staalgrijs"><span>Staalgrijs (50)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/taupe" class="c-filterbar-list-link" data-label="Taupe"><span>Taupe (29)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=662" class="c-filterbar-list-link" data-label="Transparant - kleurloos"><span>Transparant - kleurloos (6)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=621" class="c-filterbar-list-link" data-label="Zink"><span>Zink (3)</span></a></li>
+        </ul>
+
+    <button class="c-filterbar-list-toggle button">Toon meer filters</button></div>
+</div>
+<div class="c-filterbar-group ">
+    <h3>
+        <a href="#c-filterbar-group-507" class="c-filterbar-group-toggle has-icon">
+            Lampfitting
+            <span class="icon">
+                <svg viewBox="0 0 32 32" role="img">
+                    <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                </svg>
+            </span>
+        </a>
+    </h3>
+    <div id="c-filterbar-group-507">
+        <ul>
+
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=512" class="c-filterbar-list-link" data-label="GU10 240V Refl"><span>GU10 240V Refl (7)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=542" class="c-filterbar-list-link" data-label="Grote fitting E27"><span>Grote fitting E27 (484)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=541" class="c-filterbar-list-link" data-label="Kleine fitting E14"><span>Kleine fitting E14 (19)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=511" class="c-filterbar-list-link" data-label="G9 240 V"><span>G9 240 V (12)</span></a></li>
+        </ul>
+
+    </div>
+</div>
+<div class="c-filterbar-group ">
+    <h3>
+        <a href="#c-filterbar-group-390" class="c-filterbar-group-toggle has-icon">
+            Vorm
+            <span class="icon">
+                <svg viewBox="0 0 32 32" role="img">
+                    <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                </svg>
+            </span>
+        </a>
+    </h3>
+    <div id="c-filterbar-group-390">
+        <ul>
+
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=719" class="c-filterbar-list-link" data-label="Bolvormig"><span>Bolvormig (64)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=391" class="c-filterbar-list-link" data-label="Rond"><span>Rond (347)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=403" class="c-filterbar-list-link" data-label="Vierkant"><span>Vierkant (1)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=394" class="c-filterbar-list-link" data-label="Langwerpig"><span>Langwerpig (151)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=393" class="c-filterbar-list-link" data-label="Ovaal"><span>Ovaal (2)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=392" class="c-filterbar-list-link" data-label="Rechthoekig"><span>Rechthoekig (33)</span></a></li>
+        </ul>
+
+    </div>
+</div>
+<div class="c-filterbar-group ">
+    <h3>
+        <a href="#c-filterbar-group-1" class="c-filterbar-group-toggle has-icon">
+            Lichtbron
+            <span class="icon">
+                <svg viewBox="0 0 32 32" role="img">
+                    <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                </svg>
+            </span>
+        </a>
+    </h3>
+    <div id="c-filterbar-group-1">
+        <ul>
+
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=2" class="c-filterbar-list-link" data-label="Gloeilamp"><span>Gloeilamp (457)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=8" class="c-filterbar-list-link" data-label="Halogeen"><span>Halogeen (9)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=10" class="c-filterbar-list-link" data-label="Spaarlamp"><span>Spaarlamp (130)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/led/hanglampen" class="c-filterbar-list-link" data-label="Led"><span>Led (555)</span></a></li>
+        </ul>
+
+    </div>
+</div>
+<div class="c-filterbar-group ">
+    <h3>
+        <a href="#c-filterbar-group-532" class="c-filterbar-group-toggle has-icon">
+            Verstelbaarheid
+            <span class="icon">
+                <svg viewBox="0 0 32 32" role="img">
+                    <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                </svg>
+            </span>
+        </a>
+    </h3>
+    <div id="c-filterbar-group-532">
+        <ul>
+
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=533" class="c-filterbar-list-link" data-label="Draaibaar"><span>Draaibaar (60)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=537" class="c-filterbar-list-link" data-label="Flexibele arm"><span>Flexibele arm (28)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=536" class="c-filterbar-list-link" data-label="Hoogte verstelling"><span>Hoogte verstelling (277)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=534" class="c-filterbar-list-link" data-label="Kantelbaar"><span>Kantelbaar (53)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=674" class="c-filterbar-list-link" data-label="Lichtkleur wit-warmwit"><span>Lichtkleur wit-warmwit (4)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/hoogte-verstelbaar" class="c-filterbar-list-link" data-label="Richtbaar (draai en kantel)"><span>Richtbaar (draai en kantel) (64)</span></a></li>
+        </ul>
+
+    </div>
+</div>
+<div class="c-filterbar-group ">
+    <h3>
+        <a href="#c-filterbar-group-408" class="c-filterbar-group-toggle has-icon">
+            Afdichtingsklasse
+            <span class="icon">
+                <svg viewBox="0 0 32 32" role="img">
+                    <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                </svg>
+            </span>
+        </a>
+    </h3>
+    <div id="c-filterbar-group-408">
+        <ul>
+
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=756" class="c-filterbar-list-link" data-label="IP 20 stofdicht"><span>IP 20 stofdicht (85)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=336" class="c-filterbar-list-link" data-label="IP 21 drupwaterdicht"><span>IP 21 drupwaterdicht (7)</span></a></li>
+        </ul>
+
+    </div>
+</div>
+<div class="c-filterbar-group ">
+    <h3>
+        <a href="#c-filterbar-group-429" class="c-filterbar-group-toggle has-icon">
+            Lichtkleur
+            <span class="icon">
+                <svg viewBox="0 0 32 32" role="img">
+                    <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                </svg>
+            </span>
+        </a>
+    </h3>
+    <div id="c-filterbar-group-429">
+        <ul>
+
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=693" class="c-filterbar-list-link" data-label="Lichtbron afhankelijk"><span>Lichtbron afhankelijk (492)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=427" class="c-filterbar-list-link" data-label="Wit"><span>Wit (3)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=428" class="c-filterbar-list-link" data-label="Warmwit"><span>Warmwit (56)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=675" class="c-filterbar-list-link" data-label="Instelbaar / warm tot koud"><span>Instelbaar / warm tot koud (10)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=652" class="c-filterbar-list-link" data-label="Daglicht"><span>Daglicht (2)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=754" class="c-filterbar-list-link" data-label="Dim to warm / GLOWdim"><span>Dim to warm / GLOWdim (7)</span></a></li>
+        </ul>
+
+    </div>
+</div>
+<div class="c-filterbar-group ">
+    <h3>
+        <a href="#c-filterbar-group-409" class="c-filterbar-group-toggle has-icon">
+            Schakelaar / sensor
+            <span class="icon">
+                <svg viewBox="0 0 32 32" role="img">
+                    <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                </svg>
+            </span>
+        </a>
+    </h3>
+    <div id="c-filterbar-group-409">
+        <ul>
+
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=420" class="c-filterbar-list-link" data-label="Ingebouwd"><span>Ingebouwd (16)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=414" class="c-filterbar-list-link" data-label="Snoerschakelaar"><span>Snoerschakelaar (5)</span></a></li>
+        </ul>
+
+    </div>
+</div>
+<div class="c-filterbar-group ">
+    <h3>
+        <a href="#c-filterbar-group-410" class="c-filterbar-group-toggle has-icon">
+            Dimmen
+            <span class="icon">
+                <svg viewBox="0 0 32 32" role="img">
+                    <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                </svg>
+            </span>
+        </a>
+    </h3>
+    <div id="c-filterbar-group-410">
+        <ul>
+
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/dimbaar" class="c-filterbar-list-link" data-label="Is dimbaar"><span>Is dimbaar (418)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=499" class="c-filterbar-list-link" data-label="Niet dimbaar"><span>Niet dimbaar (5)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=695" class="c-filterbar-list-link" data-label="Lichtbron afhankelijk"><span>Lichtbron afhankelijk (491)</span></a></li>
+        </ul>
+
+    </div>
+</div>
+<div class="c-filterbar-group ">
+    <h3>
+        <a href="#c-filterbar-group-412" class="c-filterbar-group-toggle has-icon">
+            Geleverd
+            <span class="icon">
+                <svg viewBox="0 0 32 32" role="img">
+                    <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                </svg>
+            </span>
+        </a>
+    </h3>
+    <div id="c-filterbar-group-412">
+        <ul class="c-filterbar-list-closed">
+
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=413" class="c-filterbar-list-link" data-label="Met lichtbron"><span>Met lichtbron (56)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=416" class="c-filterbar-list-link" data-label="Met snoer en stekker"><span>Met snoer en stekker (5)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=431" class="c-filterbar-list-link" data-label="Met lichtdimmer"><span>Met lichtdimmer (18)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=500" class="c-filterbar-list-link" data-label="Zonder lichtbron"><span>Zonder lichtbron (503)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=501" class="c-filterbar-list-link" data-label="Zonder snoer en stekker"><span>Zonder snoer en stekker (23)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=502" class="c-filterbar-list-link" data-label="Zonder kapjes"><span>Zonder kapjes (2)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=570" class="c-filterbar-list-link" data-label="Zonder kap"><span>Zonder kap (5)</span></a></li>
+        </ul>
+
+    <button class="c-filterbar-list-toggle button">Toon meer filters</button></div>
+</div>
+<div class="c-filterbar-group ">
+    <h3>
+        <a href="#c-filterbar-group-185" class="c-filterbar-group-toggle has-icon">
+            Aantal kapjes/glazen
+            <span class="icon">
+                <svg viewBox="0 0 32 32" role="img">
+                    <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                </svg>
+            </span>
+        </a>
+    </h3>
+    <div id="c-filterbar-group-185">
+        <ul class="c-filterbar-list-closed">
+
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=186" class="c-filterbar-list-link" data-label="1"><span>1 (324)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=187" class="c-filterbar-list-link" data-label="2"><span>2 (91)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=188" class="c-filterbar-list-link" data-label="3"><span>3 (66)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=189" class="c-filterbar-list-link" data-label="4"><span>4 (13)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=190" class="c-filterbar-list-link" data-label="5"><span>5 (18)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=346" class="c-filterbar-list-link" data-label="6"><span>6 (8)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=197" class="c-filterbar-list-link" data-label="Meer dan 6"><span>Meer dan 6 (13)</span></a></li>
+        </ul>
+
+    <button class="c-filterbar-list-toggle button">Toon meer filters</button></div>
+</div>
+<div class="c-filterbar-group ">
+    <h3>
+        <a href="#c-filterbar-group-604" class="c-filterbar-group-toggle has-icon">
+            Aantal lichtbronnen / fittingen
+            <span class="icon">
+                <svg viewBox="0 0 32 32" role="img">
+                    <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                </svg>
+            </span>
+        </a>
+    </h3>
+    <div id="c-filterbar-group-604">
+        <ul class="c-filterbar-list-closed">
+
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=605" class="c-filterbar-list-link" data-label="1"><span>1 (313)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=606" class="c-filterbar-list-link" data-label="2"><span>2 (96)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=607" class="c-filterbar-list-link" data-label="3"><span>3 (74)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=608" class="c-filterbar-list-link" data-label="4"><span>4 (20)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=609" class="c-filterbar-list-link" data-label="5"><span>5 (22)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=610" class="c-filterbar-list-link" data-label="6"><span>6 (10)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=624" class="c-filterbar-list-link" data-label="7"><span>7 (7)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=625" class="c-filterbar-list-link" data-label="8"><span>8 (6)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=626" class="c-filterbar-list-link" data-label="9"><span>9 (3)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=627" class="c-filterbar-list-link" data-label="10"><span>10 (3)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=629" class="c-filterbar-list-link" data-label="12"><span>12 (1)</span></a></li>
+        </ul>
+
+    <button class="c-filterbar-list-toggle button">Toon meer filters</button></div>
+</div>
+<div class="c-filterbar-group ">
+    <h3>
+        <a href="#c-filterbar-group-678" class="c-filterbar-group-toggle has-icon">
+            Energieverbruik
+            <span class="icon">
+                <svg viewBox="0 0 32 32" role="img">
+                    <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                </svg>
+            </span>
+        </a>
+    </h3>
+    <div id="c-filterbar-group-678">
+        <ul>
+
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=694" class="c-filterbar-list-link" data-label="A+ t/m E"><span>A+ t/m E (494)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=679" class="c-filterbar-list-link" data-label="A++"><span>A++ (9)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=680" class="c-filterbar-list-link" data-label="A+"><span>A+ (58)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=681" class="c-filterbar-list-link" data-label="A"><span>A (9)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=682" class="c-filterbar-list-link" data-label="B"><span>B (1)</span></a></li>
+        </ul>
+
+    </div>
+</div>
+<div class="c-filterbar-group ">
+    <h3>
+        <a href="#c-filterbar-group-701" class="c-filterbar-group-toggle has-icon">
+            Met afstandsbediening
+            <span class="icon">
+                <svg viewBox="0 0 32 32" role="img">
+                    <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                </svg>
+            </span>
+        </a>
+    </h3>
+    <div id="c-filterbar-group-701">
+        <ul>
+
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=702" class="c-filterbar-list-link" data-label="Dimmen"><span>Dimmen (2)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=704" class="c-filterbar-list-link" data-label="Instelbare lichtkleur warmte"><span>Instelbare lichtkleur warmte (2)</span></a></li>
+        </ul>
+
+    </div>
+</div>
+<div class="c-filterbar-group ">
+    <h3>
+        <a href="#c-filterbar-group-706" class="c-filterbar-group-toggle has-icon">
+            Tablet / Mobile / App
+            <span class="icon">
+                <svg viewBox="0 0 32 32" role="img">
+                    <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                </svg>
+            </span>
+        </a>
+    </h3>
+    <div id="c-filterbar-group-706">
+        <ul>
+
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=700" class="c-filterbar-list-link" data-label="Met app bediening"><span>Met app bediening (1)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=751" class="c-filterbar-list-link" data-label="Werkt met ZigBee (Philips Hue, Osram Lightify)"><span>Werkt met ZigBee (Philips Hue, Osram Lightify) (1)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=752" class="c-filterbar-list-link" data-label="Geschikt voor Philips Hue White lichtbron"><span>Geschikt voor Philips Hue White lichtbron (453)</span></a></li>
+<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=755" class="c-filterbar-list-link" data-label="Geschikt voor Philips Hue Color lichtbron"><span>Geschikt voor Philips Hue Color lichtbron (452)</span></a></li>
+        </ul>
+
+    </div>
+</div>
+<div class="c-filterbar-group ">
+    <h3>
+        <a href="#filter-group-[PARENT_ID]" class="c-filterbar-group-toggle has-icon">
+            Lumen (lichtopbrengst)
+            <span class="icon">
+                <svg viewBox="0 0 32 32" role="img">
+                    <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                </svg>
+            </span>
+        </a>
+    </h3>
+    <div class="filter-list" data-rangeid="lumen_range" data-url="/binnenverlichting/hanglampen">
+        <div class="filter-range has-flex">
+            <label for="lumen_range-min"><input type="number" maxlength="4" id="lumen_range-min" class="lumen_range-input" placeholder="1" value="1"></label>
+            <p>t/m</p>
+            <label for="lumen_range-max"><input type="number" maxlength="4" id="lumen_range-max" class="lumen_range-input" placeholder="8000" value="8000"></label>
+        </div>
+
+        <div class="rangeslider">
+            <div class="slider slider-track">
+                <div class="slider-handle slider-handle-min" style="left: 0%;">min</div>
+                <div class="slider-handle slider-handle-max" style="left: 100%;">max</div>
             </div>
+        </div>
+
+        <div class="c-filterbar-rangecta has-flex">
+            <button class="button">Toepassen</button>
+        </div>
+    </div>
+</div>
+<div class="c-filterbar-group ">
+    <h3>
+        <a href="#filter-group-[PARENT_ID]" class="c-filterbar-group-toggle has-icon">
+            Kelvin (lichtkleur)
+            <span class="icon">
+                <svg viewBox="0 0 32 32" role="img">
+                    <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                </svg>
+            </span>
+        </a>
+    </h3>
+    <div class="filter-list" data-rangeid="kelvin_range" data-url="/binnenverlichting/hanglampen">
+        <div class="filter-range has-flex">
+            <label for="kelvin_range-min"><input type="number" maxlength="4" id="kelvin_range-min" class="kelvin_range-input" placeholder="1800" value="1800"></label>
+            <p>t/m</p>
+            <label for="kelvin_range-max"><input type="number" maxlength="4" id="kelvin_range-max" class="kelvin_range-input" placeholder="6500" value="6500"></label>
+        </div>
+
+        <div class="rangeslider">
+            <div class="slider slider-track">
+                <div class="slider-handle slider-handle-min" style="left: 0%;">min</div>
+                <div class="slider-handle slider-handle-max" style="left: 100%;">max</div>
+            </div>
+        </div>
+
+        <div class="c-filterbar-rangecta has-flex">
+            <button class="button">Toepassen</button>
+        </div>
+    </div>
+</div>
+<div class="c-filterbar-group ">
+    <h3>
+        <a href="#filter-group-[PARENT_ID]" class="c-filterbar-group-toggle has-icon">
+            Hoogte (mm)
+            <span class="icon">
+                <svg viewBox="0 0 32 32" role="img">
+                    <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                </svg>
+            </span>
+        </a>
+    </h3>
+    <div class="filter-list" data-rangeid="height_range" data-url="/binnenverlichting/hanglampen">
+        <div class="filter-range has-flex">
+            <label for="height_range-min"><input type="number" maxlength="4" id="height_range-min" class="height_range-input" placeholder="1" value="1"></label>
+            <p>t/m</p>
+            <label for="height_range-max"><input type="number" maxlength="4" id="height_range-max" class="height_range-input" placeholder="5000" value="5000"></label>
+        </div>
+
+        <div class="rangeslider">
+            <div class="slider slider-track">
+                <div class="slider-handle slider-handle-min" style="left: 0%;">min</div>
+                <div class="slider-handle slider-handle-max" style="left: 100%;">max</div>
+            </div>
+        </div>
+
+        <div class="c-filterbar-rangecta has-flex">
+            <button class="button">Toepassen</button>
+        </div>
+    </div>
+</div>-->
+        <a href="#c-filterbar-groups" class="button c-filterbar-btn-advanced">Toon meer filters</a></div>
+
+
+        <div class="c-filterbar-selected has-flex has-wrap">
+            <ul class="has-flex has-wrap">
+                <li><a href="/binnenverlichting" class="c-filterbar-selected-link"><span>Hanglampen</span></a></li>
+            </ul>
+
+            <p><strong>577</strong> Producten gevonden</p>
+        </div>
+
+
+
         </section>
 
     </main>
+
+    <script>
+    (function () {
+        "use strict";
+
+        function QS(el) {
+            return document.querySelector(el);
+        }
+
+        function QSA(el) {
+            return document.querySelectorAll(el);
+        }
+
+        var components = {
+            ranges: function () {
+                var posX = 0,           // mouse starting X position
+                    offsetX = 0,        // current element X offset
+                    dragElement,        // needs to be passed from OnMouseDown to OnMouseMove
+                    dragParent,
+                    hasTouch = false,
+                    aRangeFields;
+
+                function sliceElement(el) {
+                    return el.style.left.slice(0, -1);
+                }
+
+                function setInputValue(dragElement, which) {
+                    var inputMin = dragElement.closest('.filter-list').querySelector('.filter-range input[id$="-min"]'),
+                        inputMax = dragElement.closest('.filter-list').querySelector('.filter-range input[id$="-max"]'),
+                        minValue = parseInt(inputMin.getAttribute('placeholder'), 10),
+                        maxValue = parseInt(inputMax.getAttribute('placeholder'), 10),
+                        el;
+
+                    if (which === 'min') {
+                        el = inputMin;
+                    } else {
+                        el = inputMax;
+                    }
+
+                    el.value = Math.floor((maxValue - minValue) * (sliceElement(dragElement) / 100) + minValue);
+
+                    if (dragElement.style.left < 0) {
+                        el.value = minValue;
+                    }
+
+                    if (dragElement.style.left > 100) {
+                        el.value = maxValue;
+                    }
+                }
+
+                function setHandlePosition(el) {
+                    var minValue,
+                        maxValue,
+                        perc,
+                        which;
+
+                    if (/-min/.test(el.id) === true) {
+                        which = 'min';
+                        minValue = parseInt(el.getAttribute('placeholder'), 10);
+                        maxValue = parseInt(el.closest('.filter-range').querySelector('[id$="-max"]').getAttribute('placeholder'), 10);
+                    } else {
+                        which = 'max';
+                        minValue = parseInt(el.closest('.filter-range').querySelector('[id$="-min"]').getAttribute('placeholder'), 10);
+                        maxValue = parseInt(el.getAttribute('placeholder'), 10);
+                    }
+
+                    if (el.value < minValue) {
+                        perc = 0;
+                    } else if (el.value > maxValue) {
+                        perc = 100;
+                        el.value = maxValue;
+                    } else {
+                        perc = ((el.value - minValue) / (maxValue - minValue)) * 100;
+                    }
+
+                    el.closest('.filter-list').querySelector('.slider-handle-' + which).style.left = perc + '%';
+                }
+
+                function OnMouseMove(e) {
+                    var clientX,
+                        travel,
+                        handleMin,
+                        handleMax;
+
+                    if (dragElement) {
+                        if (hasTouch) {
+                            clientX = e.targetTouches[0].pageX;
+                        } else {
+                            clientX = e.clientX;
+                        }
+
+                        travel = ((offsetX + clientX - posX) / window.getComputedStyle(dragParent, null).getPropertyValue('width').slice(0, -2)) * 100;
+
+                        if (travel < 0) {
+                            dragElement.style.left = '0%';
+                        } else if (travel > 100) {
+                            dragElement.style.left = '100%';
+                        } else {
+                            dragElement.style.left = travel + '%';
+                        }
+
+                        if (dragElement.classList.contains('slider-handle-min')) {
+                            handleMax = dragElement.nextElementSibling;
+                            if (parseInt(sliceElement(dragElement), 10) >= parseInt(sliceElement(handleMax), 10)) {
+                                dragElement.style.left = handleMax.style.left;
+                            }
+
+                            setInputValue(dragElement, 'min');
+                        }
+
+                        if (dragElement.classList.contains('slider-handle-max')) {
+                            handleMin = dragElement.previousElementSibling;
+                            if (parseInt(sliceElement(dragElement), 10) <= parseInt(sliceElement(handleMin), 10)) {
+                                dragElement.style.left = handleMin.style.left;
+                            }
+                            setInputValue(dragElement, 'max');
+                        }
+                    }
+                }
+
+                function releaseDrag(e) {
+                    if (dragElement) {
+                        if (dragElement.classList.contains('slider-handle-min')) {
+                            setInputValue(dragElement, 'min');
+                        }
+
+                        if (dragElement.classList.contains('slider-handle-max')) {
+                            setInputValue(dragElement, 'max');
+                        }
+
+                        dragElement.classList.remove('dragging');
+
+                        document.removeEventListener('mousemove', OnMouseMove);
+                        document.removeEventListener('touchmove', OnMouseMove);
+                        document.onselectstart = null;
+                        dragElement = null;
+                    }
+                }
+
+                function startDrag(e) {
+                    if (window.hasOwnProperty('ontouchstart') === true) {
+                        hasTouch = true;
+                    }
+
+                    if (e.target.classList.contains('slider-handle')) {
+                        dragElement = e.target;
+                        dragParent = dragElement.parentNode;
+
+                        if (hasTouch) {
+                            posX = e.targetTouches[0].pageX;
+                        } else {
+                            posX = e.clientX;
+                        }
+
+                        dragElement.classList.add('dragging');
+
+                        offsetX = Math.floor((sliceElement(dragElement) / 100) * window.getComputedStyle(dragParent, null).getPropertyValue('width').slice(0, -2));
+
+                        document.addEventListener('mousemove', OnMouseMove);
+                        document.addEventListener('touchmove', OnMouseMove);
+                        document.body.focus();
+                        document.onselectstart = function () { return false; };
+                        return false;
+                    }
+                }
+
+                function InitDragDrop() {
+                    var aSliderMin,
+                        aSliderMax;
+
+                    document.addEventListener('mousedown', startDrag);
+                    document.addEventListener('mouseup', releaseDrag);
+
+                    document.addEventListener('touchstart', startDrag);
+                    document.addEventListener('touchend', releaseDrag);
+
+                    aSliderMin = QSA('.slider-handle-min');
+                    [].forEach.call(aSliderMin, function (anchor, i) {
+                        anchor.style.left = '0%';
+                    });
+
+                    aSliderMax = QSA('.slider-handle-max');
+                    [].forEach.call(aSliderMax, function (anchor, i) {
+                        anchor.style.left = '100%';
+                    });
+                }
+
+                InitDragDrop();
+
+                [].forEach.call(QSA('.c-filterbar-rangecta .button'), function (anchor, i) {
+                    anchor.addEventListener('click', function () {
+                        var rangedata = anchor.closest('.filter-list').dataset,
+                            range_min = QS('#' + rangedata.rangeid + '-min').getAttribute('placeholder'),
+                            range_max = QS('#' + rangedata.rangeid + '-max').getAttribute('placeholder'),
+                            range_start = QS('#' + rangedata.rangeid + '-min').value,
+                            range_end = QS('#' + rangedata.rangeid + '-max').value,
+                            new_range = rangedata.rangeid + '=' + range_min + '-' + range_max + '-' + range_start + '-' + range_end,
+                            url = rangedata.url,
+                            cnt = url.split('?'),
+                            glue = '?';
+
+                        if (range_start > 0 && range_end > 0) {
+                            if (cnt.length > 1) { glue = '&'; }
+                            window.location.href = url + glue + new_range;
+                        }
+                    });
+                });
+
+                aRangeFields = QSA('.filter-range input');
+
+                [].forEach.call(aRangeFields, function (anchor, i) {
+                    if (anchor.value) {
+                        setHandlePosition(anchor);
+                    }
+
+                    anchor.addEventListener('keyup', function () {
+                        setHandlePosition(anchor);
+                    });
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check for components
+            var componentList = QSA('[data-component]');
+
+                // Run functions/methods
+            [].forEach.call(componentList, function (component) {
+                if(component.dataset.component) {
+                    components[component.dataset.component](component);
+                } else {
+                    console.log(components.dataset.component + ' does not exist');
+                }
+            });
+        });
+    }());
+    </script>
 </body>
 </html>
