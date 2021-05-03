@@ -625,11 +625,11 @@
                             </a>
                         </h3>
 
-                        <div data-component="ranges" data-rangeid="price_range" data-url="/binnenverlichting/hanglampen" class="u-lobowl">
+                        <div data-component="ranges" data-rangeid="price_range" data-rangemin="13" data-rangemax="600" data-url="/binnenverlichting/hanglampen" class="u-lobowl">
                             <div class="m-slider-input l-flex">
-                                <label for="price_range-min"><input type="number" maxlength="4" id="price_range-min" class="price_range-input" placeholder="13" value="13"></label>
+                                <label for="price_range-min"><input type="number" maxlength="4" id="price_range-min" class="a-slider-input-min" placeholder="13"></label>
                                 <p>t/m</p>
-                                <label for="price_range-max"><input type="number" maxlength="4" id="price_range-max" class="price_range-input" placeholder="600" value="600"></label>
+                                <label for="price_range-max"><input type="number" maxlength="4" id="price_range-max" class="a-slider-input-max" placeholder="600"></label>
                             </div>
 
                             <div class="m-slider-nav">
@@ -1232,11 +1232,13 @@
         }
 
         var components = {
-            ranges: function () {
+            ranges: function (el) {
                 var posX = 0,           // mouse starting X position
                     offsetX = 0,        // current element X offset
                     dragElement,        // needs to be passed from OnMouseDown to OnMouseMove
                     dragParent,
+                    minValue = parseInt(el.dataset.rangemin),
+                    maxValue = parseInt(el.dataset.rangemax),
                     hasTouch = false,
                     aRangeFields;
 
@@ -1244,56 +1246,46 @@
                     return el.style.left.slice(0, -1);
                 }
 
-                function setInputValue(dragElement, which) {
-                    var inputMin = dragElement.closest('.filter-list').querySelector('.filter-range input[id$="-min"]'),
-                        inputMax = dragElement.closest('.filter-list').querySelector('.filter-range input[id$="-max"]'),
-                        minValue = parseInt(inputMin.getAttribute('placeholder'), 10),
-                        maxValue = parseInt(inputMax.getAttribute('placeholder'), 10),
-                        el;
+                function setInputValue(dragElement) {
+                    var inputValue = 0,
+                        slideValue = (parseFloat(dragElement.style.left) / 100),
 
-                    if (which === 'min') {
-                        el = inputMin;
+                    inputValue = Math.floor(((maxValue - minValue) * slideValue) + minValue);
+
+                    if (dragElement.classList.contains('a-slider-handle-min')) {
+                        if (inputValue < 0) {
+                            inputValue = minValue;
+                        }
+                        el.querySelector('.a-slider-input-min').value = inputValue;
                     } else {
-                        el = inputMax;
-                    }
-
-                    el.value = Math.floor((maxValue - minValue) * (sliceElement(dragElement) / 100) + minValue);
-
-                    if (dragElement.style.left < 0) {
-                        el.value = minValue;
-                    }
-
-                    if (dragElement.style.left > 100) {
-                        el.value = maxValue;
+                        if (inputValue > maxValue) {
+                            inputValue = maxValue;
+                        }
+                        el.querySelector('.a-slider-input-max').value = inputValue;
                     }
                 }
 
-                function setHandlePosition(el) {
-                    var minValue,
-                        maxValue,
-                        perc,
-                        which;
+                function setHandlePosition(inputElement) {
+                    var perc,
+                        inputValue = inputElement.value;
 
-                    if (/-min/.test(el.id) === true) {
-                        which = 'min';
-                        minValue = parseInt(el.getAttribute('placeholder'), 10);
-                        maxValue = parseInt(el.closest('.filter-range').querySelector('[id$="-max"]').getAttribute('placeholder'), 10);
-                    } else {
-                        which = 'max';
-                        minValue = parseInt(el.closest('.filter-range').querySelector('[id$="-min"]').getAttribute('placeholder'), 10);
-                        maxValue = parseInt(el.getAttribute('placeholder'), 10);
-                    }
-
-                    if (el.value < minValue) {
+                    if (inputValue < minValue) {
                         perc = 0;
-                    } else if (el.value > maxValue) {
+                        inputValue = 0;
+                    } else if (inputValue > maxValue) {
                         perc = 100;
-                        el.value = maxValue;
+                        inputValue = maxValue;
                     } else {
-                        perc = ((el.value - minValue) / (maxValue - minValue)) * 100;
+                        perc = ((inputValue - minValue) / (maxValue - minValue)) * 100;
                     }
 
-                    el.closest('.filter-list').querySelector('.slider-handle-' + which).style.left = perc + '%';
+                    if (inputElement.classList.contains('a-slider-input-min')) {
+                        // min
+                        el.querySelector('.a-slider-handle-min').style.left = perc + '%';
+                    } else {
+                        // max
+                        el.querySelector('.a-slider-handle-max').style.left = perc + '%';
+                    }
                 }
 
                 function OnMouseMove(e) {
@@ -1319,32 +1311,32 @@
                             dragElement.style.left = travel + '%';
                         }
 
-                        if (dragElement.classList.contains('slider-handle-min')) {
+                        if (dragElement.classList.contains('a-slider-handle-min')) {
                             handleMax = dragElement.nextElementSibling;
                             if (parseInt(sliceElement(dragElement), 10) >= parseInt(sliceElement(handleMax), 10)) {
                                 dragElement.style.left = handleMax.style.left;
                             }
 
-                            setInputValue(dragElement, 'min');
+                            setInputValue(dragElement);
                         }
 
-                        if (dragElement.classList.contains('slider-handle-max')) {
+                        if (dragElement.classList.contains('a-slider-handle-max')) {
                             handleMin = dragElement.previousElementSibling;
                             if (parseInt(sliceElement(dragElement), 10) <= parseInt(sliceElement(handleMin), 10)) {
                                 dragElement.style.left = handleMin.style.left;
                             }
-                            setInputValue(dragElement, 'max');
+                            setInputValue(dragElement);
                         }
                     }
                 }
 
                 function releaseDrag(e) {
                     if (dragElement) {
-                        if (dragElement.classList.contains('slider-handle-min')) {
+                        if (dragElement.classList.contains('a-slider-handle-min')) {
                             setInputValue(dragElement, 'min');
                         }
 
-                        if (dragElement.classList.contains('slider-handle-max')) {
+                        if (dragElement.classList.contains('a-slider-handle-max')) {
                             setInputValue(dragElement, 'max');
                         }
 
@@ -1362,7 +1354,7 @@
                         hasTouch = true;
                     }
 
-                    if (e.target.classList.contains('slider-handle')) {
+                    if (e.target.classList.contains('a-slider-handle')) {
                         dragElement = e.target;
                         dragParent = dragElement.parentNode;
 
@@ -1388,24 +1380,24 @@
                     var aSliderMin,
                         aSliderMax;
 
+                    aSliderMin = el.querySelector('.a-slider-handle-min');
+                    aSliderMin.style.left = '0%';
+
+                    aSliderMax = el.querySelector('.a-slider-handle-max');
+                    aSliderMax.style.left = '100%';
+
                     document.addEventListener('mousedown', startDrag);
                     document.addEventListener('mouseup', releaseDrag);
 
                     document.addEventListener('touchstart', startDrag);
                     document.addEventListener('touchend', releaseDrag);
-
-                    aSliderMin = QSA('.slider-handle-min');
-                    [].forEach.call(aSliderMin, function (anchor, i) {
-                        anchor.style.left = '0%';
-                    });
-
-                    aSliderMax = QSA('.slider-handle-max');
-                    [].forEach.call(aSliderMax, function (anchor, i) {
-                        anchor.style.left = '100%';
-                    });
                 }
 
                 InitDragDrop();
+
+                el.querySelector('.u-button').addEventListener('click', function (e) {
+                    
+                });
 
                 [].forEach.call(QSA('.c-filterbar-rangecta .button'), function (anchor, i) {
                     anchor.addEventListener('click', function () {
@@ -1426,7 +1418,26 @@
                     });
                 });
 
-                aRangeFields = QSA('.filter-range input');
+                // [].forEach.call(QSA('.c-filterbar-rangecta .button'), function (anchor, i) {
+                //     anchor.addEventListener('click', function () {
+                //         var rangedata = anchor.closest('.filter-list').dataset,
+                //             range_min = QS('#' + rangedata.rangeid + '-min').getAttribute('placeholder'),
+                //             range_max = QS('#' + rangedata.rangeid + '-max').getAttribute('placeholder'),
+                //             range_start = QS('#' + rangedata.rangeid + '-min').value,
+                //             range_end = QS('#' + rangedata.rangeid + '-max').value,
+                //             new_range = rangedata.rangeid + '=' + range_min + '-' + range_max + '-' + range_start + '-' + range_end,
+                //             url = rangedata.url,
+                //             cnt = url.split('?'),
+                //             glue = '?';
+                //
+                //         if (range_start > 0 && range_end > 0) {
+                //             if (cnt.length > 1) { glue = '&'; }
+                //             window.location.href = url + glue + new_range;
+                //         }
+                //     });
+                // });
+
+                aRangeFields = el.querySelectorAll('[class*="a-slider-input"');
 
                 [].forEach.call(aRangeFields, function (anchor, i) {
                     if (anchor.value) {
