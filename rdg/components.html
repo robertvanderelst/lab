@@ -1396,46 +1396,21 @@
                 InitDragDrop();
 
                 el.querySelector('.u-button').addEventListener('click', function (e) {
-                    
+                    var rangedata = el.dataset,
+                        range_min = el.querySelector('.a-slider-input-min').getAttribute('placeholder'),
+                        range_max = el.querySelector('.a-slider-input-max').getAttribute('placeholder'),
+                        range_start = el.querySelector('.a-slider-input-min').value,
+                        range_end = el.querySelector('.a-slider-input-max').value,
+                        new_range = rangedata.rangeid + '=' + range_min + '-' + range_max + '-' + range_start + '-' + range_end,
+                        url = rangedata.url,
+                        cnt = url.split('?'),
+                        glue = '?';
+
+                    if (range_start > 0 && range_end > 0) {
+                        if (cnt.length > 1) { glue = '&'; }
+                        window.location.href = url + glue + new_range;
+                    }
                 });
-
-                [].forEach.call(QSA('.c-filterbar-rangecta .button'), function (anchor, i) {
-                    anchor.addEventListener('click', function () {
-                        var rangedata = anchor.closest('.filter-list').dataset,
-                            range_min = QS('#' + rangedata.rangeid + '-min').getAttribute('placeholder'),
-                            range_max = QS('#' + rangedata.rangeid + '-max').getAttribute('placeholder'),
-                            range_start = QS('#' + rangedata.rangeid + '-min').value,
-                            range_end = QS('#' + rangedata.rangeid + '-max').value,
-                            new_range = rangedata.rangeid + '=' + range_min + '-' + range_max + '-' + range_start + '-' + range_end,
-                            url = rangedata.url,
-                            cnt = url.split('?'),
-                            glue = '?';
-
-                        if (range_start > 0 && range_end > 0) {
-                            if (cnt.length > 1) { glue = '&'; }
-                            window.location.href = url + glue + new_range;
-                        }
-                    });
-                });
-
-                // [].forEach.call(QSA('.c-filterbar-rangecta .button'), function (anchor, i) {
-                //     anchor.addEventListener('click', function () {
-                //         var rangedata = anchor.closest('.filter-list').dataset,
-                //             range_min = QS('#' + rangedata.rangeid + '-min').getAttribute('placeholder'),
-                //             range_max = QS('#' + rangedata.rangeid + '-max').getAttribute('placeholder'),
-                //             range_start = QS('#' + rangedata.rangeid + '-min').value,
-                //             range_end = QS('#' + rangedata.rangeid + '-max').value,
-                //             new_range = rangedata.rangeid + '=' + range_min + '-' + range_max + '-' + range_start + '-' + range_end,
-                //             url = rangedata.url,
-                //             cnt = url.split('?'),
-                //             glue = '?';
-                //
-                //         if (range_start > 0 && range_end > 0) {
-                //             if (cnt.length > 1) { glue = '&'; }
-                //             window.location.href = url + glue + new_range;
-                //         }
-                //     });
-                // });
 
                 aRangeFields = el.querySelectorAll('[class*="a-slider-input"');
 
