@@ -1357,10 +1357,11 @@
 
                         dragElement.classList.remove('dragging');
 
-                        el.removeEventListener('mousemove', OnMouseMove);
-                        el.removeEventListener('touchmove', OnMouseMove);
-                        document.documentElement.removeEventListener('mousemove', OnMouseMove);
-                        document.documentElement.removeEventListener('touchmove', OnMouseMove);
+                        el.addEventListener('pointerleave', function() {
+                            el.removeEventListener('mousemove', OnMouseMove);
+                            el.removeEventListener('touchmove', OnMouseMove);
+                        });
+
                         el.onselectstart = null;
                         dragElement = null;
                     }
