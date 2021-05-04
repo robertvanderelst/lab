@@ -537,6 +537,27 @@
         <section>
             <style>
                 /* FILTERS */
+                .l-grid-filters {
+                    grid-template-columns: 1fr;
+                }
+
+                @media (min-width: 30em) {
+                    .l-grid-filters {
+                        grid-template-columns: 1fr 1fr;
+                    }
+                }
+
+                @media (min-width: 48em) {
+                    .l-grid-filters {
+                        grid-template-columns: 1fr 1fr 1fr;
+                    }
+                }
+
+                @media (min-width: 64em) {
+                    .l-grid-filters {
+                        grid-template-columns: 1fr 1fr 1fr 1fr;
+                    }
+                }
 
                 .m-filters-group h3 {
                     font-size: 1em;
@@ -612,7 +633,7 @@
                     </span>
                 </a>
 
-                <div id="l-filters-panel" class="m-filters-panel">
+                <div id="l-filters-panel" class="l-grid l-grid-filters">
                     <div class="m-filters-group">
                         <h3>
                             <a href="#filter-group-[PARENT_ID]" class="a-filters-group-toggle">
@@ -669,7 +690,7 @@
                             <button class="c-filterbar-list-toggle u-button"><span>Toon meer filters</span></button>
                         </div>
                     </div>
-                </div>
+
 <!--<div class="c-filterbar-group ">
     <h3>
         <a href="#c-filterbar-group-12" class="c-filterbar-group-toggle has-icon">
@@ -1111,38 +1132,36 @@
         </ul>
 
     </div>
-</div>
-<div class="c-filterbar-group ">
-    <h3>
-        <a href="#filter-group-[PARENT_ID]" class="c-filterbar-group-toggle has-icon">
-            Lumen (lichtopbrengst)
-            <span class="icon">
-                <svg viewBox="0 0 32 32" role="img">
-                    <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
-                </svg>
-            </span>
-        </a>
-    </h3>
-    <div class="filter-list" data-rangeid="lumen_range" data-url="/binnenverlichting/hanglampen">
-        <div class="filter-range has-flex">
-            <label for="lumen_range-min"><input type="number" maxlength="4" id="lumen_range-min" class="lumen_range-input" placeholder="1" value="1"></label>
-            <p>t/m</p>
-            <label for="lumen_range-max"><input type="number" maxlength="4" id="lumen_range-max" class="lumen_range-input" placeholder="8000" value="8000"></label>
-        </div>
+</div>-->
+                    <div class="m-filters-group">
+                        <h3>
+                            <a href="#filter-group-[PARENT_ID]" class="a-filters-group-toggle">
+                                Lumen
+                                <span class="u-icon">
+                                    <svg viewBox="0 0 32 32" role="img">
+                                        <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                                    </svg>
+                                </span>
+                            </a>
+                        </h3>
 
-        <div class="rangeslider">
-            <div class="slider slider-track">
-                <div class="slider-handle slider-handle-min" style="left: 0%;">min</div>
-                <div class="slider-handle slider-handle-max" style="left: 100%;">max</div>
-            </div>
-        </div>
+                        <div data-component="ranges" data-rangeid="lumen_range" data-rangemin="1" data-rangemax="8000" data-url="/binnenverlichting/hanglampen" class="u-lobowl">
+                            <div class="m-slider-input l-flex">
+                                <label for="lumen_range-min"><input type="number" maxlength="4" id="lumen_range-min" class="a-slider-input-min" placeholder="1" value="1"></label>
+                                <p>t/m</p>
+                                <label for="lumen_range-max"><input type="number" maxlength="4" id="lumen_range-max" class="a-slider-input-max" placeholder="8000" value="8000"></label>
+                            </div>
 
-        <div class="c-filterbar-rangecta has-flex">
-            <button class="button">Toepassen</button>
-        </div>
-    </div>
-</div>
-<div class="c-filterbar-group ">
+                            <div class="m-slider-nav">
+                                <button class="a-slider-handle a-slider-handle-min">min</button>
+                                <button class="a-slider-handle a-slider-handle-max">max</button>
+                            </div>
+
+                            <button class="u-button"><span>Toepassen</span></button>
+                        </div>
+                    </div>
+
+<!--<div class="c-filterbar-group ">
     <h3>
         <a href="#filter-group-[PARENT_ID]" class="c-filterbar-group-toggle has-icon">
             Kelvin (lichtkleur)
@@ -1202,19 +1221,16 @@
         </div>
     </div>
 </div>-->
-        <a href="#c-filterbar-groups" class="button c-filterbar-btn-advanced">Toon meer filters</a></div>
+                </div>
+            <a href="#c-filterbar-groups" class="button c-filterbar-btn-advanced">Toon meer filters</a></div>
 
+            <div class="c-filterbar-selected has-flex has-wrap">
+                <ul class="has-flex has-wrap">
+                    <li><a href="/binnenverlichting" class="c-filterbar-selected-link"><span>Hanglampen</span></a></li>
+                </ul>
 
-        <div class="c-filterbar-selected has-flex has-wrap">
-            <ul class="has-flex has-wrap">
-                <li><a href="/binnenverlichting" class="c-filterbar-selected-link"><span>Hanglampen</span></a></li>
-            </ul>
-
-            <p><strong>577</strong> Producten gevonden</p>
-        </div>
-
-
-
+                <p><strong>577</strong> Producten gevonden</p>
+            </div>
         </section>
 
     </main>
@@ -1249,8 +1265,7 @@
                 function setInputValue(dragElement) {
                     var inputValue = 0,
                         slideValue = (parseFloat(dragElement.style.left) / 100),
-
-                    inputValue = Math.floor(((maxValue - minValue) * slideValue) + minValue);
+                        inputValue = Math.floor(((maxValue - minValue) * slideValue) + minValue);
 
                     if (dragElement.classList.contains('a-slider-handle-min')) {
                         if (inputValue < 0) {
@@ -1342,9 +1357,11 @@
 
                         dragElement.classList.remove('dragging');
 
-                        document.removeEventListener('mousemove', OnMouseMove);
-                        document.removeEventListener('touchmove', OnMouseMove);
-                        document.onselectstart = null;
+                        el.removeEventListener('mousemove', OnMouseMove);
+                        el.removeEventListener('touchmove', OnMouseMove);
+                        document.documentElement.removeEventListener('mousemove', OnMouseMove);
+                        document.documentElement.removeEventListener('touchmove', OnMouseMove);
+                        el.onselectstart = null;
                         dragElement = null;
                     }
                 }
@@ -1368,32 +1385,28 @@
 
                         offsetX = Math.floor((sliceElement(dragElement) / 100) * window.getComputedStyle(dragParent, null).getPropertyValue('width').slice(0, -2));
 
-                        document.addEventListener('mousemove', OnMouseMove);
-                        document.addEventListener('touchmove', OnMouseMove);
+                        el.addEventListener('mousemove', OnMouseMove);
+                        el.addEventListener('touchmove', OnMouseMove);
                         document.body.focus();
                         document.onselectstart = function () { return false; };
                         return false;
                     }
                 }
 
-                function InitDragDrop() {
-                    var aSliderMin,
-                        aSliderMax;
+                var aSliderMin,
+                    aSliderMax;
 
-                    aSliderMin = el.querySelector('.a-slider-handle-min');
-                    aSliderMin.style.left = '0%';
+                aSliderMin = el.querySelector('.a-slider-handle-min');
+                aSliderMin.style.left = '0%';
 
-                    aSliderMax = el.querySelector('.a-slider-handle-max');
-                    aSliderMax.style.left = '100%';
+                aSliderMax = el.querySelector('.a-slider-handle-max');
+                aSliderMax.style.left = '100%';
 
-                    document.addEventListener('mousedown', startDrag);
-                    document.addEventListener('mouseup', releaseDrag);
+                el.addEventListener('mousedown', startDrag);
+                el.addEventListener('mouseup', releaseDrag);
 
-                    document.addEventListener('touchstart', startDrag);
-                    document.addEventListener('touchend', releaseDrag);
-                }
-
-                InitDragDrop();
+                el.addEventListener('touchstart', startDrag);
+                el.addEventListener('touchend', releaseDrag);
 
                 el.querySelector('.u-button').addEventListener('click', function (e) {
                     var rangedata = el.dataset,
