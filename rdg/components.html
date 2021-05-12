@@ -539,6 +539,7 @@
                 /* FILTERS */
                 .l-grid-filters {
                     grid-template-columns: 1fr;
+                    margin-top: 1em;
                 }
 
                 @media (min-width: 30em) {
@@ -560,13 +561,49 @@
                 }
 
                 .m-filters-group h3 {
-                    font-size: 1em;
+                    margin: 0;
+                    border: 1px solid var(--rv-grey-verylight);
+                }
+
+                .m-filters-group h3 + div {
+                    margin-top: -1px;
                 }
 
                 .a-filters-group-toggle {
                     display: block;
                     color: var(--rv-grey-verydark);
                     text-decoration: none;
+                    padding: .25em .5em;
+                }
+
+                .a-filters-group-toggle .u-icon {
+                    position: absolute;
+                    top: .33333em;
+                    right: .5em;
+                    width: 1em;
+                    height: 1em;
+                    background: #fcc;
+                }
+
+                .m-filters-group-panel {
+                    border: 1px solid var(--rv-grey-verylight);
+                    border-top: 1px solid #fff;
+                    background: #fff;
+                    padding: .5em;
+                    position: absolute;
+                    top: calc(2em - 2px);
+                    left: 0;
+                    right: 0;
+                    z-index: 2;
+                    display: none;
+                }
+
+                .m-filters-group.u-is-visible .u-icon {
+                    transform: rotate(-180deg);
+                }
+
+                .m-filters-group.u-is-visible .m-filters-group-panel {
+                    display: block;
                 }
 
                 /* Slider input */
@@ -633,10 +670,10 @@
                     </span>
                 </a>
 
-                <div id="l-filters-panel" class="l-grid l-grid-filters">
+                <div id="l-filters-panel" class="l-grid l-grid-filters" data-component="filters">
                     <div class="m-filters-group">
-                        <h3>
-                            <a href="#filter-group-[PARENT_ID]" class="a-filters-group-toggle">
+                        <h3 class="u-text-regular">
+                            <a href="#filter-group-price" class="a-filters-group-toggle">
                                 Prijs
                                 <span class="u-icon">
                                     <svg viewBox="0 0 32 32" role="img">
@@ -646,7 +683,7 @@
                             </a>
                         </h3>
 
-                        <div data-component="ranges" data-rangeid="price_range" data-rangemin="13" data-rangemax="600" data-url="/binnenverlichting/hanglampen" class="u-lobowl">
+                        <div id="filter-group-price" data-component="ranges" data-rangeid="price_range" data-rangemin="13" data-rangemax="600" data-url="/binnenverlichting/hanglampen" class="m-filters-group-panel u-lobowl">
                             <div class="m-slider-input l-flex">
                                 <label for="price_range-min"><input type="number" maxlength="4" id="price_range-min" class="a-slider-input-min" placeholder="13"></label>
                                 <p>t/m</p>
@@ -663,7 +700,7 @@
                     </div>
 
                     <div class="m-filters-group">
-                        <h3>
+                        <h3 class="u-text-regular">
                             <a href="#c-filterbar-group-735" class="a-filters-group-toggle">
                                 Ruimte
                                 <span class="u-icon">
@@ -674,8 +711,8 @@
                             </a>
                         </h3>
 
-                        <div id="c-filterbar-group-735">
-                            <ul class="c-filterbar-list-closed">
+                        <div id="c-filterbar-group-735" class="m-filters-group-panel u-lobowl">
+                            <ul>
                                 <li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/slaapkamer" class="c-filterbar-list-link" data-label="Slaapkamer"><span>Slaapkamer (236)</span></a></li>
                                 <li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/eetkamer" class="c-filterbar-list-link" data-label="Eetkamer"><span>Eetkamer (511)</span></a></li>
                                 <li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/woonkamer" class="c-filterbar-list-link" data-label="Woonkamer"><span>Woonkamer (469)</span></a></li>
@@ -1135,7 +1172,7 @@
 </div>-->
                     <div class="m-filters-group">
                         <h3>
-                            <a href="#filter-group-[PARENT_ID]" class="a-filters-group-toggle">
+                            <a href="#filter-group-lumen" class="a-filters-group-toggle">
                                 Lumen
                                 <span class="u-icon">
                                     <svg viewBox="0 0 32 32" role="img">
@@ -1145,7 +1182,7 @@
                             </a>
                         </h3>
 
-                        <div data-component="ranges" data-rangeid="lumen_range" data-rangemin="1" data-rangemax="8000" data-url="/binnenverlichting/hanglampen" class="u-lobowl">
+                        <div id="filter-group-lumen" data-component="ranges" data-rangeid="lumen_range" data-rangemin="1" data-rangemax="8000" data-url="/binnenverlichting/hanglampen" class="m-filters-group-panel u-lobowl">
                             <div class="m-slider-input l-flex">
                                 <label for="lumen_range-min"><input type="number" maxlength="4" id="lumen_range-min" class="a-slider-input-min" placeholder="1" value="1"></label>
                                 <p>t/m</p>
@@ -1248,6 +1285,21 @@
         }
 
         var components = {
+            filters: function (el) {
+                [].forEach.call(QSA('.a-filters-group-toggle'), function (anchor) {
+                    var hash = anchor.href.substring(anchor.href.indexOf("#"));
+
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+
+                        [].forEach.call(QSA('.m-filters-group'), function (anchor) {
+                            anchor.classList.remove('u-is-visible');
+                        });
+
+                        QS(hash).parentNode.classList.add('u-is-visible');
+                    });
+                });
+            },
             ranges: function (el) {
                 var posX = 0,           // mouse starting X position
                     offsetX = 0,        // current element X offset
