@@ -562,6 +562,7 @@
 
                 .m-filters-group h3 {
                     margin: 0;
+                    font-weight: 700;
                     border: 1px solid var(--rv-grey-verylight);
                 }
 
@@ -677,7 +678,7 @@
                                 Prijs
                                 <span class="u-icon">
                                     <svg viewBox="0 0 32 32" role="img">
-                                        <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                                        <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
                                     </svg>
                                 </span>
                             </a>
@@ -1171,12 +1172,12 @@
     </div>
 </div>-->
                     <div class="m-filters-group">
-                        <h3>
+                        <h3 class="u-text-regular">
                             <a href="#filter-group-lumen" class="a-filters-group-toggle">
                                 Lumen
                                 <span class="u-icon">
                                     <svg viewBox="0 0 32 32" role="img">
-                                        <use class="icon-arrow" xlink:href="/v3/images/sprite-dynamic.svg?v=272#icon-arrow"></use>
+                                        <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
                                     </svg>
                                 </span>
                             </a>
@@ -1296,7 +1297,7 @@
                             anchor.classList.remove('u-is-visible');
                         });
 
-                        QS(hash).parentNode.classList.add('u-is-visible');
+                        QS(hash).parentNode.classList.toggle('u-is-visible');
                     });
                 });
             },
