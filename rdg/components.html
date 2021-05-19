@@ -1187,7 +1187,7 @@
 
     </div>
 </div>-->
-                    <div class="m-filters-group">
+                    <!--<div class="m-filters-group">
                         <h3 class="u-text-regular">
                             <a href="#filter-group-lumen" class="a-filters-group-toggle">
                                 Lumen
@@ -1213,7 +1213,7 @@
 
                             <button class="u-button"><span>Toepassen</span></button>
                         </div>
-                    </div>
+                    </div>-->
 
 <!--<div class="c-filterbar-group ">
     <h3>
@@ -1327,9 +1327,9 @@
                     hasTouch = false,
                     aRangeFields;
 
-                function sliceElement(el) {
-                    return el.style.left.slice(0, -1);
-                }
+                // function sliceElement(el) {
+                //     return el.style.left.slice(0, -1);
+                // }
 
                 function setInputValue(dragElement) {
                     var inputValue = 0,
@@ -1373,6 +1373,7 @@
                 }
 
                 function OnMouseMove(e) {
+                    console.log('Move');
                     var clientX,
                         travel,
                         handleMin,
@@ -1397,7 +1398,7 @@
 
                         if (dragElement.classList.contains('a-slider-handle-min')) {
                             handleMax = dragElement.nextElementSibling;
-                            if (parseInt(sliceElement(dragElement), 10) >= parseInt(sliceElement(handleMax), 10)) {
+                            if (parseInt(dragElement.style.left.slice(0, -1), 10) >= parseInt(handleMax.style.left.slice(0, -1), 10)) {
                                 dragElement.style.left = handleMax.style.left;
                             }
 
@@ -1406,7 +1407,7 @@
 
                         if (dragElement.classList.contains('a-slider-handle-max')) {
                             handleMin = dragElement.previousElementSibling;
-                            if (parseInt(sliceElement(dragElement), 10) <= parseInt(sliceElement(handleMin), 10)) {
+                            if (parseInt(dragElement.style.left.slice(0, -1), 10) <= parseInt(handleMin.style.left.slice(0, -1), 10)) {
                                 dragElement.style.left = handleMin.style.left;
                             }
                             setInputValue(dragElement);
@@ -1415,6 +1416,7 @@
                 }
 
                 function releaseDrag(e) {
+                    console.log('Release');
                     if (dragElement) {
                         if (dragElement.classList.contains('a-slider-handle-min')) {
                             setInputValue(dragElement, 'min');
@@ -1426,10 +1428,10 @@
 
                         dragElement.classList.remove('dragging');
 
-                        el.addEventListener('pointerleave', function() {
-                            el.removeEventListener('mousemove', OnMouseMove);
-                            el.removeEventListener('touchmove', OnMouseMove);
-                        });
+                        // el.addEventListener('pointerleave', function() {
+                        //     el.removeEventListener('mousemove', OnMouseMove);
+                        //     el.removeEventListener('touchmove', OnMouseMove);
+                        // });
 
                         el.onselectstart = null;
                         dragElement = null;
@@ -1437,6 +1439,7 @@
                 }
 
                 function startDrag(e) {
+                    console.log('Start');
                     if (window.hasOwnProperty('ontouchstart') === true) {
                         hasTouch = true;
                     }
@@ -1453,7 +1456,7 @@
 
                         dragElement.classList.add('dragging');
 
-                        offsetX = Math.floor((sliceElement(dragElement) / 100) * window.getComputedStyle(dragParent, null).getPropertyValue('width').slice(0, -2));
+                        offsetX = Math.floor((dragElement.style.left.slice(0, -1) / 100) * window.getComputedStyle(dragParent, null).getPropertyValue('width').slice(0, -2));
 
                         el.addEventListener('mousemove', OnMouseMove);
                         el.addEventListener('touchmove', OnMouseMove);
