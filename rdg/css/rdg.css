@@ -177,7 +177,8 @@ section {
     margin-top: 1em;
 }
 
-.u-lobowl li + li {
+.u-lobowl li + li,
+.u-lobowl > .u-button {
     margin-top: .5em;
 }
 
@@ -274,8 +275,8 @@ h4,
 .h4-like,
 .u-text-intro,
 .u-text-regular {
-    font-size: calc(16px + 6 * ((100vw - 320px) / 960));
-    font-size: clamp(16px, calc(16px + 6 * ((100vw - 320px) / 960)), 18px);
+    font-size: calc(16px + 2 * ((100vw - 320px) / 960));
+    font-size: clamp(16px, calc(16px + 2 * ((100vw - 320px) / 960)), 18px);
 }
 
 .u-text-intro {
