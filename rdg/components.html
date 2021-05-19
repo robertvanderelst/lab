@@ -1387,8 +1387,6 @@
 
                         travel = ((offsetX + clientX - posX) / window.getComputedStyle(dragParent, null).getPropertyValue('width').slice(0, -2)) * 100;
 
-                        console.log(travel);
-
                         if (travel < 0) {
                             dragElement.style.left = '0%';
                             releaseDrag();
@@ -1399,21 +1397,23 @@
                             dragElement.style.left = travel + '%';
                         }
 
-                        if (dragElement.classList.contains('a-slider-handle-min')) {
-                            handleMax = dragElement.nextElementSibling;
-                            if (parseInt(dragElement.style.left.slice(0, -1), 10) >= parseInt(handleMax.style.left.slice(0, -1), 10)) {
-                                dragElement.style.left = handleMax.style.left;
+                        if (dragElement !== null) {
+                            if (dragElement.classList.contains('a-slider-handle-min')) {
+                                handleMax = dragElement.nextElementSibling;
+                                if (parseInt(dragElement.style.left.slice(0, -1), 10) >= parseInt(handleMax.style.left.slice(0, -1), 10)) {
+                                    dragElement.style.left = handleMax.style.left;
+                                }
+
+                                setInputValue(dragElement);
                             }
 
-                            setInputValue(dragElement);
-                        }
-
-                        if (dragElement.classList.contains('a-slider-handle-max')) {
-                            handleMin = dragElement.previousElementSibling;
-                            if (parseInt(dragElement.style.left.slice(0, -1), 10) <= parseInt(handleMin.style.left.slice(0, -1), 10)) {
-                                dragElement.style.left = handleMin.style.left;
+                            if (dragElement.classList.contains('a-slider-handle-max')) {
+                                handleMin = dragElement.previousElementSibling;
+                                if (parseInt(dragElement.style.left.slice(0, -1), 10) <= parseInt(handleMin.style.left.slice(0, -1), 10)) {
+                                    dragElement.style.left = handleMin.style.left;
+                                }
+                                setInputValue(dragElement);
                             }
-                            setInputValue(dragElement);
                         }
                     }
                 }
