@@ -8,7 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="css/rdg.css" rel="stylesheet">
 </head>
-<body>
+<body class="no-js">
+    <script>
+        document.body.classList.remove("no-js");
+        document.body.classList.add("has-js");
+
+        if (/Mobi/.test(navigator.userAgent) || /Android/.test(navigator.userAgent)) {
+            document.getElementsByTagName('html')[0].classList.add('is-mobile');
+        }
+    </script>
     <main class="container">
         <h1>Components</h1>
 
@@ -595,7 +603,12 @@
                     left: 0;
                     right: 0;
                     z-index: 2;
-                    display: none;
+                    /* display: none; */
+                }
+
+                .is-mobile .m-filters-group-panel {
+                    position: relative;
+                    top: auto;
                 }
 
                 .m-filters-group.u-is-visible h3 {
@@ -717,15 +730,15 @@
 
                         <div id="c-filterbar-group-735" class="m-filters-group-panel u-lobowl">
                             <ul>
-                                <li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/slaapkamer" class="c-filterbar-list-link" data-label="Slaapkamer"><span>Slaapkamer (236)</span></a></li>
-                                <li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/eetkamer" class="c-filterbar-list-link" data-label="Eetkamer"><span>Eetkamer (511)</span></a></li>
-                                <li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/woonkamer" class="c-filterbar-list-link" data-label="Woonkamer"><span>Woonkamer (469)</span></a></li>
-                                <li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/keuken" class="c-filterbar-list-link" data-label="Keuken"><span>Keuken (370)</span></a></li>
-                                <li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=741" class="c-filterbar-list-link" data-label="Kantoor"><span>Kantoor (105)</span></a></li>
-                                <li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=739" class="c-filterbar-list-link" data-label="Kinderkamer"><span>Kinderkamer (44)</span></a></li>
-                                <li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=743" class="c-filterbar-list-link" data-label="Babykamer"><span>Babykamer (12)</span></a></li>
-                                <li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=744" class="c-filterbar-list-link" data-label="Toilet"><span>Toilet (19)</span></a></li>
-                                <li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/gang" class="c-filterbar-list-link" data-label="Gang / hal"><span>Gang / hal (275)</span></a></li>
+                                <li><a href="/binnenverlichting/hanglampen/slaapkamer" data-label="Slaapkamer"><span>Slaapkamer (236)</span></a></li>
+                                <li><a href="/binnenverlichting/hanglampen/eetkamer" data-label="Eetkamer"><span>Eetkamer (511)</span></a></li>
+                                <li><a href="/binnenverlichting/hanglampen/woonkamer" data-label="Woonkamer"><span>Woonkamer (469)</span></a></li>
+                                <li><a href="/binnenverlichting/hanglampen/keuken" data-label="Keuken"><span>Keuken (370)</span></a></li>
+                                <li><a href="/binnenverlichting/hanglampen?q=741" data-label="Kantoor"><span>Kantoor (105)</span></a></li>
+                                <li><a href="/binnenverlichting/hanglampen?q=739" data-label="Kinderkamer"><span>Kinderkamer (44)</span></a></li>
+                                <li><a href="/binnenverlichting/hanglampen?q=743" data-label="Babykamer"><span>Babykamer (12)</span></a></li>
+                                <li><a href="/binnenverlichting/hanglampen?q=744" data-label="Toilet"><span>Toilet (19)</span></a></li>
+                                <li><a href="/binnenverlichting/hanglampen/gang" data-label="Gang / hal"><span>Gang / hal (275)</span></a></li>
                             </ul>
 
                             <button class="c-filterbar-list-toggle u-button"><span>Toon meer filters</span></button>
@@ -746,18 +759,18 @@
     <div id="c-filterbar-group-12">
         <ul class="c-filterbar-list-closed">
 
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/industrieel" class="c-filterbar-list-link" data-label="Industrie-look"><span>Industrie-look (129)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/design" class="c-filterbar-list-link" data-label="Design"><span>Design (82)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/landelijk" class="c-filterbar-list-link" data-label="Landelijk / rustiek"><span>Landelijk / rustiek (255)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/modern" class="c-filterbar-list-link" data-label="Modern"><span>Modern (546)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/marokkaans" class="c-filterbar-list-link" data-label="Marokkaans"><span>Marokkaans (23)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/stoer" class="c-filterbar-list-link" data-label="Stoer / raw"><span>Stoer / raw (51)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/retro" class="c-filterbar-list-link" data-label="Retro"><span>Retro (129)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/klassiek" class="c-filterbar-list-link" data-label="Klassiek"><span>Klassiek (12)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=333" class="c-filterbar-list-link" data-label="Eigentijds klassiek"><span>Eigentijds klassiek (228)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/art-deco" class="c-filterbar-list-link" data-label="Art deco"><span>Art deco (64)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/antiek" class="c-filterbar-list-link" data-label="Antiek"><span>Antiek (3)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=17" class="c-filterbar-list-link" data-label="Voor kinderen"><span>Voor kinderen (2)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/industrieel" data-label="Industrie-look"><span>Industrie-look (129)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/design" data-label="Design"><span>Design (82)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/landelijk" data-label="Landelijk / rustiek"><span>Landelijk / rustiek (255)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/modern" data-label="Modern"><span>Modern (546)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/marokkaans" data-label="Marokkaans"><span>Marokkaans (23)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/stoer" data-label="Stoer / raw"><span>Stoer / raw (51)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/retro" data-label="Retro"><span>Retro (129)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/klassiek" data-label="Klassiek"><span>Klassiek (12)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=333" data-label="Eigentijds klassiek"><span>Eigentijds klassiek (228)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/art-deco" data-label="Art deco"><span>Art deco (64)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/antiek" data-label="Antiek"><span>Antiek (3)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=17" data-label="Voor kinderen"><span>Voor kinderen (2)</span></a></li>
         </ul>
 
     <button class="c-filterbar-list-toggle button">Toon meer filters</button></div>
@@ -776,26 +789,26 @@
     <div id="c-filterbar-group-18">
         <ul class="c-filterbar-list-closed">
 
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/hout" class="c-filterbar-list-link" data-label="Hout"><span>Hout (9)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/glas" class="c-filterbar-list-link" data-label="Glas"><span>Glas (130)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/rvs" class="c-filterbar-list-link" data-label="Staal - rvs"><span>Staal - rvs (58)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/kristal" class="c-filterbar-list-link" data-label="Kristal"><span>Kristal (2)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=400" class="c-filterbar-list-link" data-label="Messing"><span>Messing (40)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/stof" class="c-filterbar-list-link" data-label="Stof"><span>Stof (121)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/aluminium" class="c-filterbar-list-link" data-label="Aluminium"><span>Aluminium (30)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=727" class="c-filterbar-list-link" data-label="Ijzer"><span>Ijzer (3)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=552" class="c-filterbar-list-link" data-label="Brons-roestbrons"><span>Brons-roestbrons (3)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=208" class="c-filterbar-list-link" data-label="Brons"><span>Brons (9)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=21" class="c-filterbar-list-link" data-label="Geschuurd aluminium"><span>Geschuurd aluminium (6)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=211" class="c-filterbar-list-link" data-label="Kunststof"><span>Kunststof (34)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=723" class="c-filterbar-list-link" data-label="Leer / leder"><span>Leer / leder (2)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=587" class="c-filterbar-list-link" data-label="Marmer"><span>Marmer (9)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/metaal" class="c-filterbar-list-link" data-label="Metaal"><span>Metaal (400)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=583" class="c-filterbar-list-link" data-label="Nikkel"><span>Nikkel (1)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=691" class="c-filterbar-list-link" data-label="Oldmetal (gunmetal)"><span>Oldmetal (gunmetal) (2)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=586" class="c-filterbar-list-link" data-label="Riet"><span>Riet (12)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=696" class="c-filterbar-list-link" data-label="Touw"><span>Touw (10)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=619" class="c-filterbar-list-link" data-label="Zink"><span>Zink (1)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/hout" data-label="Hout"><span>Hout (9)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/glas" data-label="Glas"><span>Glas (130)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/rvs" data-label="Staal - rvs"><span>Staal - rvs (58)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/kristal" data-label="Kristal"><span>Kristal (2)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=400" data-label="Messing"><span>Messing (40)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/stof" data-label="Stof"><span>Stof (121)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/aluminium" data-label="Aluminium"><span>Aluminium (30)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=727" data-label="Ijzer"><span>Ijzer (3)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=552" data-label="Brons-roestbrons"><span>Brons-roestbrons (3)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=208" data-label="Brons"><span>Brons (9)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=21" data-label="Geschuurd aluminium"><span>Geschuurd aluminium (6)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=211" data-label="Kunststof"><span>Kunststof (34)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=723" data-label="Leer / leder"><span>Leer / leder (2)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=587" data-label="Marmer"><span>Marmer (9)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/metaal" data-label="Metaal"><span>Metaal (400)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=583" data-label="Nikkel"><span>Nikkel (1)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=691" data-label="Oldmetal (gunmetal)"><span>Oldmetal (gunmetal) (2)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=586" data-label="Riet"><span>Riet (12)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=696" data-label="Touw"><span>Touw (10)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=619" data-label="Zink"><span>Zink (1)</span></a></li>
         </ul>
 
     <button class="c-filterbar-list-toggle button">Toon meer filters</button></div>
@@ -814,41 +827,41 @@
     <div id="c-filterbar-group-23">
         <ul class="c-filterbar-list-closed">
 
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/zwart" class="c-filterbar-list-link" data-label="Zwart"><span>Zwart (325)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/wit" class="c-filterbar-list-link" data-label="Wit"><span>Wit (46)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/grijs" class="c-filterbar-list-link" data-label="Grijs"><span>Grijs (104)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/groen" class="c-filterbar-list-link" data-label="Groen"><span>Groen (9)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/goud" class="c-filterbar-list-link" data-label="Goud"><span>Goud (41)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/roze" class="c-filterbar-list-link" data-label="Roze"><span>Roze (8)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/rood" class="c-filterbar-list-link" data-label="Rood"><span>Rood (5)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/blauw" class="c-filterbar-list-link" data-label="Blauw"><span>Blauw (3)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/zilver" class="c-filterbar-list-link" data-label="Zilvergrijs"><span>Zilvergrijs (15)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=672" class="c-filterbar-list-link" data-label="Zilver -oud zilver"><span>Zilver -oud zilver (13)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/brons" class="c-filterbar-list-link" data-label="Brons"><span>Brons (20)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=332" class="c-filterbar-list-link" data-label="Roest-bruin-brons"><span>Roest-bruin-brons (10)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/bruin" class="c-filterbar-list-link" data-label="Bruin"><span>Bruin (58)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/geel" class="c-filterbar-list-link" data-label="Geel"><span>Geel (8)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/antraciet" class="c-filterbar-list-link" data-label="Antraciet donkergrijs"><span>Antraciet donkergrijs (11)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/oranje" class="c-filterbar-list-link" data-label="Oranje"><span>Oranje (1)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=595" class="c-filterbar-list-link" data-label="Petrol"><span>Petrol (2)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=660" class="c-filterbar-list-link" data-label="Aluminium"><span>Aluminium (11)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=593" class="c-filterbar-list-link" data-label="Beige"><span>Beige (1)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=620" class="c-filterbar-list-link" data-label="Betongrijs"><span>Betongrijs (20)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/chroom" class="c-filterbar-list-link" data-label="Chroom"><span>Chroom (3)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=354" class="c-filterbar-list-link" data-label="Creme"><span>Creme (5)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=688" class="c-filterbar-list-link" data-label="Gunmetal (oldmetal)"><span>Gunmetal (oldmetal) (2)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=659" class="c-filterbar-list-link" data-label="Hout"><span>Hout (8)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/koper" class="c-filterbar-list-link" data-label="Koper"><span>Koper (24)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/messing" class="c-filterbar-list-link" data-label="Messing"><span>Messing (57)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=405" class="c-filterbar-list-link" data-label="Meerkleurig"><span>Meerkleurig (4)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=594" class="c-filterbar-list-link" data-label="Mint"><span>Mint (1)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=699" class="c-filterbar-list-link" data-label="Naturel"><span>Naturel (10)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=689" class="c-filterbar-list-link" data-label="Oldmetal (gunmetal)"><span>Oldmetal (gunmetal) (7)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=582" class="c-filterbar-list-link" data-label="Roodkoper"><span>Roodkoper (12)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=330" class="c-filterbar-list-link" data-label="Staalgrijs"><span>Staalgrijs (50)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/taupe" class="c-filterbar-list-link" data-label="Taupe"><span>Taupe (29)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=662" class="c-filterbar-list-link" data-label="Transparant - kleurloos"><span>Transparant - kleurloos (6)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=621" class="c-filterbar-list-link" data-label="Zink"><span>Zink (3)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/zwart" data-label="Zwart"><span>Zwart (325)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/wit" data-label="Wit"><span>Wit (46)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/grijs" data-label="Grijs"><span>Grijs (104)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/groen" data-label="Groen"><span>Groen (9)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/goud" data-label="Goud"><span>Goud (41)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/roze" data-label="Roze"><span>Roze (8)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/rood" data-label="Rood"><span>Rood (5)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/blauw" data-label="Blauw"><span>Blauw (3)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/zilver" data-label="Zilvergrijs"><span>Zilvergrijs (15)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=672" data-label="Zilver -oud zilver"><span>Zilver -oud zilver (13)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/brons" data-label="Brons"><span>Brons (20)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=332" data-label="Roest-bruin-brons"><span>Roest-bruin-brons (10)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/bruin" data-label="Bruin"><span>Bruin (58)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/geel" data-label="Geel"><span>Geel (8)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/antraciet" data-label="Antraciet donkergrijs"><span>Antraciet donkergrijs (11)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/oranje" data-label="Oranje"><span>Oranje (1)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=595" data-label="Petrol"><span>Petrol (2)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=660" data-label="Aluminium"><span>Aluminium (11)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=593" data-label="Beige"><span>Beige (1)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=620" data-label="Betongrijs"><span>Betongrijs (20)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/chroom" data-label="Chroom"><span>Chroom (3)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=354" data-label="Creme"><span>Creme (5)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=688" data-label="Gunmetal (oldmetal)"><span>Gunmetal (oldmetal) (2)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=659" data-label="Hout"><span>Hout (8)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/koper" data-label="Koper"><span>Koper (24)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/messing" data-label="Messing"><span>Messing (57)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=405" data-label="Meerkleurig"><span>Meerkleurig (4)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=594" data-label="Mint"><span>Mint (1)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=699" data-label="Naturel"><span>Naturel (10)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=689" data-label="Oldmetal (gunmetal)"><span>Oldmetal (gunmetal) (7)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=582" data-label="Roodkoper"><span>Roodkoper (12)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=330" data-label="Staalgrijs"><span>Staalgrijs (50)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/taupe" data-label="Taupe"><span>Taupe (29)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=662" data-label="Transparant - kleurloos"><span>Transparant - kleurloos (6)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=621" data-label="Zink"><span>Zink (3)</span></a></li>
         </ul>
 
     <button class="c-filterbar-list-toggle button">Toon meer filters</button></div>
@@ -867,10 +880,10 @@
     <div id="c-filterbar-group-507">
         <ul>
 
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=512" class="c-filterbar-list-link" data-label="GU10 240V Refl"><span>GU10 240V Refl (7)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=542" class="c-filterbar-list-link" data-label="Grote fitting E27"><span>Grote fitting E27 (484)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=541" class="c-filterbar-list-link" data-label="Kleine fitting E14"><span>Kleine fitting E14 (19)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=511" class="c-filterbar-list-link" data-label="G9 240 V"><span>G9 240 V (12)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=512" data-label="GU10 240V Refl"><span>GU10 240V Refl (7)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=542" data-label="Grote fitting E27"><span>Grote fitting E27 (484)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=541" data-label="Kleine fitting E14"><span>Kleine fitting E14 (19)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=511" data-label="G9 240 V"><span>G9 240 V (12)</span></a></li>
         </ul>
 
     </div>
@@ -889,12 +902,12 @@
     <div id="c-filterbar-group-390">
         <ul>
 
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=719" class="c-filterbar-list-link" data-label="Bolvormig"><span>Bolvormig (64)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=391" class="c-filterbar-list-link" data-label="Rond"><span>Rond (347)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=403" class="c-filterbar-list-link" data-label="Vierkant"><span>Vierkant (1)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=394" class="c-filterbar-list-link" data-label="Langwerpig"><span>Langwerpig (151)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=393" class="c-filterbar-list-link" data-label="Ovaal"><span>Ovaal (2)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=392" class="c-filterbar-list-link" data-label="Rechthoekig"><span>Rechthoekig (33)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=719" data-label="Bolvormig"><span>Bolvormig (64)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=391" data-label="Rond"><span>Rond (347)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=403" data-label="Vierkant"><span>Vierkant (1)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=394" data-label="Langwerpig"><span>Langwerpig (151)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=393" data-label="Ovaal"><span>Ovaal (2)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=392" data-label="Rechthoekig"><span>Rechthoekig (33)</span></a></li>
         </ul>
 
     </div>
@@ -913,10 +926,10 @@
     <div id="c-filterbar-group-1">
         <ul>
 
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=2" class="c-filterbar-list-link" data-label="Gloeilamp"><span>Gloeilamp (457)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=8" class="c-filterbar-list-link" data-label="Halogeen"><span>Halogeen (9)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=10" class="c-filterbar-list-link" data-label="Spaarlamp"><span>Spaarlamp (130)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/led/hanglampen" class="c-filterbar-list-link" data-label="Led"><span>Led (555)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=2" data-label="Gloeilamp"><span>Gloeilamp (457)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=8" data-label="Halogeen"><span>Halogeen (9)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=10" data-label="Spaarlamp"><span>Spaarlamp (130)</span></a></li>
+<li><a href="/binnenverlichting/led/hanglampen" data-label="Led"><span>Led (555)</span></a></li>
         </ul>
 
     </div>
@@ -935,12 +948,12 @@
     <div id="c-filterbar-group-532">
         <ul>
 
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=533" class="c-filterbar-list-link" data-label="Draaibaar"><span>Draaibaar (60)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=537" class="c-filterbar-list-link" data-label="Flexibele arm"><span>Flexibele arm (28)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=536" class="c-filterbar-list-link" data-label="Hoogte verstelling"><span>Hoogte verstelling (277)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=534" class="c-filterbar-list-link" data-label="Kantelbaar"><span>Kantelbaar (53)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=674" class="c-filterbar-list-link" data-label="Lichtkleur wit-warmwit"><span>Lichtkleur wit-warmwit (4)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/hoogte-verstelbaar" class="c-filterbar-list-link" data-label="Richtbaar (draai en kantel)"><span>Richtbaar (draai en kantel) (64)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=533" data-label="Draaibaar"><span>Draaibaar (60)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=537" data-label="Flexibele arm"><span>Flexibele arm (28)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=536" data-label="Hoogte verstelling"><span>Hoogte verstelling (277)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=534" data-label="Kantelbaar"><span>Kantelbaar (53)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=674" data-label="Lichtkleur wit-warmwit"><span>Lichtkleur wit-warmwit (4)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/hoogte-verstelbaar" data-label="Richtbaar (draai en kantel)"><span>Richtbaar (draai en kantel) (64)</span></a></li>
         </ul>
 
     </div>
@@ -959,8 +972,8 @@
     <div id="c-filterbar-group-408">
         <ul>
 
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=756" class="c-filterbar-list-link" data-label="IP 20 stofdicht"><span>IP 20 stofdicht (85)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=336" class="c-filterbar-list-link" data-label="IP 21 drupwaterdicht"><span>IP 21 drupwaterdicht (7)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=756" data-label="IP 20 stofdicht"><span>IP 20 stofdicht (85)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=336" data-label="IP 21 drupwaterdicht"><span>IP 21 drupwaterdicht (7)</span></a></li>
         </ul>
 
     </div>
@@ -979,12 +992,12 @@
     <div id="c-filterbar-group-429">
         <ul>
 
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=693" class="c-filterbar-list-link" data-label="Lichtbron afhankelijk"><span>Lichtbron afhankelijk (492)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=427" class="c-filterbar-list-link" data-label="Wit"><span>Wit (3)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=428" class="c-filterbar-list-link" data-label="Warmwit"><span>Warmwit (56)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=675" class="c-filterbar-list-link" data-label="Instelbaar / warm tot koud"><span>Instelbaar / warm tot koud (10)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=652" class="c-filterbar-list-link" data-label="Daglicht"><span>Daglicht (2)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=754" class="c-filterbar-list-link" data-label="Dim to warm / GLOWdim"><span>Dim to warm / GLOWdim (7)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=693" data-label="Lichtbron afhankelijk"><span>Lichtbron afhankelijk (492)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=427" data-label="Wit"><span>Wit (3)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=428" data-label="Warmwit"><span>Warmwit (56)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=675" data-label="Instelbaar / warm tot koud"><span>Instelbaar / warm tot koud (10)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=652" data-label="Daglicht"><span>Daglicht (2)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=754" data-label="Dim to warm / GLOWdim"><span>Dim to warm / GLOWdim (7)</span></a></li>
         </ul>
 
     </div>
@@ -1003,8 +1016,8 @@
     <div id="c-filterbar-group-409">
         <ul>
 
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=420" class="c-filterbar-list-link" data-label="Ingebouwd"><span>Ingebouwd (16)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=414" class="c-filterbar-list-link" data-label="Snoerschakelaar"><span>Snoerschakelaar (5)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=420" data-label="Ingebouwd"><span>Ingebouwd (16)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=414" data-label="Snoerschakelaar"><span>Snoerschakelaar (5)</span></a></li>
         </ul>
 
     </div>
@@ -1023,9 +1036,9 @@
     <div id="c-filterbar-group-410">
         <ul>
 
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen/dimbaar" class="c-filterbar-list-link" data-label="Is dimbaar"><span>Is dimbaar (418)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=499" class="c-filterbar-list-link" data-label="Niet dimbaar"><span>Niet dimbaar (5)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=695" class="c-filterbar-list-link" data-label="Lichtbron afhankelijk"><span>Lichtbron afhankelijk (491)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen/dimbaar" data-label="Is dimbaar"><span>Is dimbaar (418)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=499" data-label="Niet dimbaar"><span>Niet dimbaar (5)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=695" data-label="Lichtbron afhankelijk"><span>Lichtbron afhankelijk (491)</span></a></li>
         </ul>
 
     </div>
@@ -1044,13 +1057,13 @@
     <div id="c-filterbar-group-412">
         <ul class="c-filterbar-list-closed">
 
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=413" class="c-filterbar-list-link" data-label="Met lichtbron"><span>Met lichtbron (56)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=416" class="c-filterbar-list-link" data-label="Met snoer en stekker"><span>Met snoer en stekker (5)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=431" class="c-filterbar-list-link" data-label="Met lichtdimmer"><span>Met lichtdimmer (18)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=500" class="c-filterbar-list-link" data-label="Zonder lichtbron"><span>Zonder lichtbron (503)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=501" class="c-filterbar-list-link" data-label="Zonder snoer en stekker"><span>Zonder snoer en stekker (23)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=502" class="c-filterbar-list-link" data-label="Zonder kapjes"><span>Zonder kapjes (2)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=570" class="c-filterbar-list-link" data-label="Zonder kap"><span>Zonder kap (5)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=413" data-label="Met lichtbron"><span>Met lichtbron (56)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=416" data-label="Met snoer en stekker"><span>Met snoer en stekker (5)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=431" data-label="Met lichtdimmer"><span>Met lichtdimmer (18)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=500" data-label="Zonder lichtbron"><span>Zonder lichtbron (503)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=501" data-label="Zonder snoer en stekker"><span>Zonder snoer en stekker (23)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=502" data-label="Zonder kapjes"><span>Zonder kapjes (2)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=570" data-label="Zonder kap"><span>Zonder kap (5)</span></a></li>
         </ul>
 
     <button class="c-filterbar-list-toggle button">Toon meer filters</button></div>
@@ -1069,13 +1082,13 @@
     <div id="c-filterbar-group-185">
         <ul class="c-filterbar-list-closed">
 
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=186" class="c-filterbar-list-link" data-label="1"><span>1 (324)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=187" class="c-filterbar-list-link" data-label="2"><span>2 (91)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=188" class="c-filterbar-list-link" data-label="3"><span>3 (66)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=189" class="c-filterbar-list-link" data-label="4"><span>4 (13)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=190" class="c-filterbar-list-link" data-label="5"><span>5 (18)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=346" class="c-filterbar-list-link" data-label="6"><span>6 (8)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=197" class="c-filterbar-list-link" data-label="Meer dan 6"><span>Meer dan 6 (13)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=186" data-label="1"><span>1 (324)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=187" data-label="2"><span>2 (91)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=188" data-label="3"><span>3 (66)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=189" data-label="4"><span>4 (13)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=190" data-label="5"><span>5 (18)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=346" data-label="6"><span>6 (8)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=197" data-label="Meer dan 6"><span>Meer dan 6 (13)</span></a></li>
         </ul>
 
     <button class="c-filterbar-list-toggle button">Toon meer filters</button></div>
@@ -1094,17 +1107,17 @@
     <div id="c-filterbar-group-604">
         <ul class="c-filterbar-list-closed">
 
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=605" class="c-filterbar-list-link" data-label="1"><span>1 (313)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=606" class="c-filterbar-list-link" data-label="2"><span>2 (96)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=607" class="c-filterbar-list-link" data-label="3"><span>3 (74)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=608" class="c-filterbar-list-link" data-label="4"><span>4 (20)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=609" class="c-filterbar-list-link" data-label="5"><span>5 (22)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=610" class="c-filterbar-list-link" data-label="6"><span>6 (10)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=624" class="c-filterbar-list-link" data-label="7"><span>7 (7)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=625" class="c-filterbar-list-link" data-label="8"><span>8 (6)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=626" class="c-filterbar-list-link" data-label="9"><span>9 (3)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=627" class="c-filterbar-list-link" data-label="10"><span>10 (3)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=629" class="c-filterbar-list-link" data-label="12"><span>12 (1)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=605" data-label="1"><span>1 (313)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=606" data-label="2"><span>2 (96)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=607" data-label="3"><span>3 (74)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=608" data-label="4"><span>4 (20)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=609" data-label="5"><span>5 (22)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=610" data-label="6"><span>6 (10)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=624" data-label="7"><span>7 (7)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=625" data-label="8"><span>8 (6)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=626" data-label="9"><span>9 (3)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=627" data-label="10"><span>10 (3)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=629" data-label="12"><span>12 (1)</span></a></li>
         </ul>
 
     <button class="c-filterbar-list-toggle button">Toon meer filters</button></div>
@@ -1123,11 +1136,11 @@
     <div id="c-filterbar-group-678">
         <ul>
 
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=694" class="c-filterbar-list-link" data-label="A+ t/m E"><span>A+ t/m E (494)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=679" class="c-filterbar-list-link" data-label="A++"><span>A++ (9)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=680" class="c-filterbar-list-link" data-label="A+"><span>A+ (58)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=681" class="c-filterbar-list-link" data-label="A"><span>A (9)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=682" class="c-filterbar-list-link" data-label="B"><span>B (1)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=694" data-label="A+ t/m E"><span>A+ t/m E (494)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=679" data-label="A++"><span>A++ (9)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=680" data-label="A+"><span>A+ (58)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=681" data-label="A"><span>A (9)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=682" data-label="B"><span>B (1)</span></a></li>
         </ul>
 
     </div>
@@ -1146,8 +1159,8 @@
     <div id="c-filterbar-group-701">
         <ul>
 
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=702" class="c-filterbar-list-link" data-label="Dimmen"><span>Dimmen (2)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=704" class="c-filterbar-list-link" data-label="Instelbare lichtkleur warmte"><span>Instelbare lichtkleur warmte (2)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=702" data-label="Dimmen"><span>Dimmen (2)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=704" data-label="Instelbare lichtkleur warmte"><span>Instelbare lichtkleur warmte (2)</span></a></li>
         </ul>
 
     </div>
@@ -1166,10 +1179,10 @@
     <div id="c-filterbar-group-706">
         <ul>
 
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=700" class="c-filterbar-list-link" data-label="Met app bediening"><span>Met app bediening (1)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=751" class="c-filterbar-list-link" data-label="Werkt met ZigBee (Philips Hue, Osram Lightify)"><span>Werkt met ZigBee (Philips Hue, Osram Lightify) (1)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=752" class="c-filterbar-list-link" data-label="Geschikt voor Philips Hue White lichtbron"><span>Geschikt voor Philips Hue White lichtbron (453)</span></a></li>
-<li class="c-filterbar-list-item"><a href="/binnenverlichting/hanglampen?q=755" class="c-filterbar-list-link" data-label="Geschikt voor Philips Hue Color lichtbron"><span>Geschikt voor Philips Hue Color lichtbron (452)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=700" data-label="Met app bediening"><span>Met app bediening (1)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=751" data-label="Werkt met ZigBee (Philips Hue, Osram Lightify)"><span>Werkt met ZigBee (Philips Hue, Osram Lightify) (1)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=752" data-label="Geschikt voor Philips Hue White lichtbron"><span>Geschikt voor Philips Hue White lichtbron (453)</span></a></li>
+<li><a href="/binnenverlichting/hanglampen?q=755" data-label="Geschikt voor Philips Hue Color lichtbron"><span>Geschikt voor Philips Hue Color lichtbron (452)</span></a></li>
         </ul>
 
     </div>
