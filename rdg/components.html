@@ -548,6 +548,7 @@
                 .l-grid-filters {
                     grid-template-columns: 1fr;
                     margin-top: 1em;
+                    gap: .5em;
                 }
 
                 @media (min-width: 30em) {
@@ -571,7 +572,6 @@
                 .m-filters-group h3 {
                     margin: 0;
                     font-weight: 700;
-                    border: 1px solid var(--rv-grey-verylight);
                 }
 
                 .m-filters-group h3 + div {
@@ -582,7 +582,13 @@
                     display: block;
                     color: var(--rv-grey-verydark);
                     text-decoration: none;
+                    padding: .25em 0;
+                }
+
+                .a-filters-group-toggle > span {
+                    display: block;
                     padding: .25em .5em;
+                    border: 1px solid var(--rv-grey-verylight);
                 }
 
                 .a-filters-group-toggle .u-icon {
@@ -603,7 +609,7 @@
                     left: 0;
                     right: 0;
                     z-index: 2;
-                    /* display: none; */
+                    display: none;
                 }
 
                 .is-mobile .m-filters-group-panel {
@@ -670,6 +676,11 @@
                     left: 100%;
                 }
 
+                .a-filters-advanced,
+                .a-filters-advanced > span {
+                    width: 100%;
+                }
+
 
             </style>
 
@@ -691,16 +702,18 @@
                     <div class="m-filters-group">
                         <h3 class="u-text-regular">
                             <a href="#filter-group-price" class="a-filters-group-toggle">
-                                Prijs
-                                <span class="u-icon">
-                                    <svg viewBox="0 0 32 32" role="img">
-                                        <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                    </svg>
+                                <span>
+                                    Prijs
+                                    <span class="u-icon">
+                                        <svg viewBox="0 0 32 32" role="img">
+                                            <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
+                                        </svg>
+                                    </span>
                                 </span>
                             </a>
                         </h3>
 
-                        <div id="filter-group-price" data-component="ranges" data-rangeid="price_range" data-rangemin="13" data-rangemax="600" data-url="/binnenverlichting/hanglampen" class="m-filters-group-panel u-lobowl">
+                        <div id="filter-group-price" data-component="ranges" data-rangeid="price_range" data-rangemin="13" data-rangemax="600" data-rangestep="10" data-url="/binnenverlichting/hanglampen" class="m-filters-group-panel u-lobowl">
                             <div class="m-slider-input l-flex">
                                 <label for="price_range-min"><input type="number" maxlength="4" id="price_range-min" class="a-slider-input-min" placeholder="13"></label>
                                 <p>t/m</p>
@@ -719,11 +732,13 @@
                     <div class="m-filters-group">
                         <h3 class="u-text-regular">
                             <a href="#c-filterbar-group-735" class="a-filters-group-toggle">
-                                Ruimte
-                                <span class="u-icon">
-                                    <svg viewBox="0 0 32 32" role="img">
-                                        <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                    </svg>
+                                <span>
+                                    Ruimte
+                                    <span class="u-icon">
+                                        <svg viewBox="0 0 32 32" role="img">
+                                            <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
+                                        </svg>
+                                    </span>
                                 </span>
                             </a>
                         </h3>
@@ -1190,11 +1205,13 @@
                     <div class="m-filters-group">
                         <h3 class="u-text-regular">
                             <a href="#filter-group-lumen" class="a-filters-group-toggle">
-                                Lumen
-                                <span class="u-icon">
-                                    <svg viewBox="0 0 32 32" role="img">
-                                        <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
-                                    </svg>
+                                <span>
+                                    Lumen
+                                    <span class="u-icon">
+                                        <svg viewBox="0 0 32 32" role="img">
+                                            <use class="icon-arrow" xlink:href="images/sprite-dynamic.svg#icon-arrow"></use>
+                                        </svg>
+                                    </span>
                                 </span>
                             </a>
                         </h3>
@@ -1211,7 +1228,7 @@
                                 <button class="a-slider-handle a-slider-handle-max">max</button>
                             </div>
 
-                            <button class="u-button"><span>Toepassen</span></button>
+                            <button class="a-filters-expand u-button"><span>Toepassen</span></button>
                         </div>
                     </div>
 
@@ -1275,8 +1292,12 @@
         </div>
     </div>
 </div>-->
+                    <div>
+                        <button class="a-filters-advanced u-button"><span>Toon meer filters</span></button>
+                    </div>
                 </div>
-            <a href="#c-filterbar-groups" class="button c-filterbar-btn-advanced">Toon meer filters</a></div>
+            </div>
+
 
             <div class="c-filterbar-selected has-flex has-wrap">
                 <ul class="has-flex has-wrap">
