@@ -548,7 +548,15 @@
                 .l-grid-filters {
                     grid-template-columns: 1fr;
                     margin-top: 1em;
-                    gap: .5em;
+                    gap: 0 .5em;
+                }
+
+                .l-grid-filters .m-filters-group:nth-child(n) {
+                    display: block;
+                }
+
+                .l-grid-filters .m-filters-group:nth-child(n+6) {
+                    display: none;
                 }
 
                 @media (min-width: 30em) {
@@ -566,6 +574,14 @@
                 @media (min-width: 64em) {
                     .l-grid-filters {
                         grid-template-columns: 1fr 1fr 1fr 1fr;
+                    }
+
+                    .l-grid-filters .m-filters-group:nth-child(n) {
+                        display: block;
+                    }
+
+                    .l-grid-filters .m-filters-group:nth-child(n+8) {
+                        display: none;
                     }
                 }
 
@@ -587,7 +603,7 @@
 
                 .a-filters-group-toggle > span {
                     display: block;
-                    padding: .25em .5em;
+                    padding: .33333em .5em;
                     border: 1px solid var(--rv-grey-verylight);
                 }
 
@@ -614,6 +630,13 @@
                 .is-mobile .m-filters-group-panel {
                     position: relative;
                     top: auto;
+                }
+
+                @media (min-width: 30em) {
+                    .is-mobile .m-filters-group-panel {
+                        position: absolute;
+                        top: calc(2.5em - 2px);    
+                    }
                 }
 
                 .m-filters-group.u-is-visible h3 a span {
@@ -1334,7 +1357,7 @@
                         </div>
                     </div>
 
-                    <div>
+                    <div style="align-self: flex-end; padding: .25em 0;">
                         <button class="a-filters-advanced u-button"><span>Toon meer filters</span></button>
                     </div>
                 </div>
