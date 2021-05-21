@@ -635,7 +635,7 @@
                 @media (min-width: 30em) {
                     .is-mobile .m-filters-group-panel {
                         position: absolute;
-                        top: calc(2.5em - 2px);    
+                        top: calc(2.5em - 2px);
                     }
                 }
 
@@ -1390,16 +1390,21 @@
         var components = {
             filters: function (el) {
                 [].forEach.call(QSA('.a-filters-group-toggle'), function (anchor) {
-                    var hash = anchor.href.substring(anchor.href.indexOf("#"));
+                    var hash = anchor.href.substring(anchor.href.indexOf("#")),
+                        panel = '';
 
                     anchor.addEventListener('click', function (e) {
                         e.preventDefault();
 
                         [].forEach.call(QSA('.m-filters-group'), function (anchor) {
-                            anchor.classList.remove('u-is-visible');
-                        });
+                            panel = anchor.querySelector('.m-filters-group-panel');
 
-                        QS(hash).parentNode.classList.add('u-is-visible');
+                            if ('#' + panel.id !== hash) {
+                                anchor.classList.remove('u-is-visible');
+                            } else {
+                                anchor.classList.toggle('u-is-visible');
+                            }
+                        });
                     });
                 });
             },
