@@ -551,13 +551,15 @@
                     gap: 0 .5em;
                 }
 
-                .l-grid-filters .m-filters-group:nth-child(n) {
+                .l-grid-filters .m-filters-group:nth-child(n),
+                .l-grid-filters.show-all .m-filters-group:nth-child(n) {
                     display: block;
                 }
 
                 .l-grid-filters .m-filters-group:nth-child(n+6) {
                     display: none;
                 }
+
 
                 @media (min-width: 30em) {
                     .l-grid-filters {
@@ -1408,8 +1410,20 @@
                     });
                 });
 
+                // Max 6 items, add button for more``
+                [].forEach.call(QSA('.m-filters-group ul'), function (anchor, i) {
+                    if (anchor.querySelectorAll('li').length > 0) {
+                        var list = anchor.children[0];
+                        if (list.children.length > 6) {
+                            list.classList.add('');
+                            anchor.insertAdjacentHTML('beforeend', '<button class="c-filterbar-list-toggle button">' + langEntries.filterShowExtended  + '</button>');
+                        }
+                    }
+                });
+
+                // Toggle all filtergroups
                 el.querySelector('.a-filters-advanced').addEventListener('click', function () {
-                    console.log('CLICK');
+                    this.closest('.l-grid-filters').classList.toggle('show-all');
                 });
             },
             ranges: function (el) {
