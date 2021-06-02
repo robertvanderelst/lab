@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A responsive two column example</title>
+    <style>
+        /* A simple css reset */
+        body,table,thead,tbody,tr,td,img {
+            padding: 0;
+            margin: 0;
+            border: none;
+            border-spacing: 0px;
+            border-collapse: collapse;
+            vertical-align: top;
+        }
+
+        h2,h3,h4 {
+            margin-top: 0;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        @media only screen and (max-width: 480px) {
+            .wrapper .section {
+                width: 100%;
+            }
+
+            .wrapper .column {
+                width: 100%;
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body style="font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif; font-size:smaller">
+    <table>
+        <tbody>
+            <tr>
+                <td class="wrapper">
+                    <div style="padding:1em">
+                        <table class="section" cellpadding="0" cellspacing="0" style="width: 100%;">
+                            <tr>
+                                <td class="column" width="33%" valign="top" style="vertical-align:middle">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td align="left">
+                                                    <img width="100%" src="https://www.rietveldlicht.nl/v3/images/signature/logo-signature-lumidora.png">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+
+                                <td class="column" width="67%" valign="top" style="padding-left: 1em">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td align="left">
+                                                    <h2 style="margin:0">Unser Service Team</h2>
+                                                    <p style="margin:0">Christina &amp; Sandra</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+
+                    <div style="background: #f0f0f0; padding: 1em;">
+
+                        <table class="section" cellpadding="0" cellspacing="0" style="width: 100%;">
+                            <tr>
+                                <td class="column" width="50%" valign="top">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td align="left">
+                                                    <h3>Openingstijden helpdesk</h3>
+
+                                                    <p>
+                                                        Montag bis Freitag<br>
+                                                        09:00 - 17:00
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td class="column" width="50%" valign="top">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td align="left" style="padding-left: 1em">
+                                                    <table>
+                                                        <tr>
+                                                            <th style="padding: 0 8px 0 0; text-align: left; white-space:nowrap; width: 24px">T</th>
+                                                            <td><a href="tel:+4939292678215" style="color:#00adef">039292 - 678215</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="padding: 0 8px 0 0; text-align: left; white-space:nowrap; width: 24px; ">E</th>
+                                                            <td><a href="mailto:de@lumidora.com" style="color:#00adef">de@lumidora.com</a></td>
+                                                        </tr>
+                                                    </table>
+
+                                                    <br>
+
+                                                    <table>
+                                                        <tr>
+                                                            <td style="padding: 0 16px 0 0; text-align: left;"><a href="https://www.lumidora.com/de"><img src="https://www.rietveldlicht.nl/v3/images/signature/icon-world-signature.png"></a></td>
+                                                            <td style="padding: 0 16px 0 0; text-align: left;"><a href="https://www.facebook.com/Lumidoralampen/"><img src="https://www.rietveldlicht.nl/v3/images/signature/icon-facebook-signature.png"></a></td>
+                                                            <td style="padding: 0 16px 0 0; text-align: left;"><a href="https://www.instagram.com/lumidoralampen"><img src="https://www.rietveldlicht.nl/v3/images/signature/icon-instagram-signature.png"></a></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
