@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reparatieformulier</title>
+
+    <style>
+        :root {
+            --rv-yellow: #fecb09;
+            --rv-red: #ed1c23;
+            --rv-orange: #fc7b0a;
+            --rv-green: #29a00a;
+            --rv-blue: #00adef;
+            --rv-grey-ultralight: #f0f0f0;
+            --rv-grey-verylight: #e2e2e2;
+            --rv-grey-light: #b8b8b8;
+            --rv-grey: #909090;
+            --rv-grey-dark: #707070;
+            --rv-grey-verydark: #484848;
+            --rv-grey-ultradark: #262626;
+        }
+
+        * {
+            box-sizing: border-box;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            outline: 0;
+        }
+
+        body {
+            font-size: calc(16px + 2 * ((100vw - 320px) / 960));
+            font-size: clamp(16px, calc(16px + 2 * ((100vw - 320px) / 960)), 18px);
+            line-height: 1.33333;
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            color: var(--rv-grey-verydark);
+        }
+
+        header section,
+        main {
+            width: 100%;
+            max-width: 48em;
+            padding: 1em;
+            margin: 0 auto;
+        }
+
+        section + section {
+            margin-top: 1em;
+            border-top: 1px solid var(--rv-grey-verylight);
+            padding-top: 1em;
+        }
+
+        .u-lobowl > * + * {
+            margin-top: 1em;
+        }
+
+        .u-lobowl li + li,
+        .u-lobowl > .u-button {
+            margin-top: .5em;
+        }
+
+        .l-flex {
+            display: flex;
+        }
+
+        .l-grid {
+            display: grid;
+            grid-gap: 1.5em;
+        }
+
+        /* FORM */
+
+        fieldset {
+            border: none;
+        }
+
+        legend {
+            font-weight: 700;
+        }
+
+        button,
+        input,
+        select,
+        textarea,
+        option {
+            font: inherit;
+            color: inherit;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="search"],
+        input[type="date"] {
+            line-height: 2;
+            width: 100%;
+            height: 2em;
+            padding-left: .5em;
+            color: var(--rv-grey-verydark);
+            border: 1px solid var(--rv-grey-light);
+        }
+
+        textarea {
+            width: 100%;
+            height: 10em;
+            padding: .5em;
+            color: var(--rv-grey-verydark);
+            border: 1px solid var(--rv-grey-light);
+            resize: none;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--rv-blue);
+            box-shadow: 0 0 .25em var(--rv-blue);
+            outline: 0;
+        }
+
+        .u-form-field-quarter {
+            width: 25%;
+        }
+
+        .u-form-field-half {
+            width: 50%;
+        }
+
+        .u-styled-select {
+            font-size: 1em;
+            line-height: 2;
+            width: 100%;
+            height: 2em;
+            padding: 0 1.75em 0 .5em;
+            vertical-align: top;
+            border: 1px solid var(--rv-grey-light);
+            border-radius: 0;
+            background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiAgIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgICB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgICB4bWxuczpzb2RpcG9kaT0iaHR0cDovL3NvZGlwb2RpLnNvdXJjZWZvcmdlLm5ldC9EVEQvc29kaXBvZGktMC5kdGQiICAgeG1sbnM6aW5rc2NhcGU9Imh0dHA6Ly93d3cuaW5rc2NhcGUub3JnL25hbWVzcGFjZXMvaW5rc2NhcGUiICAgd2lkdGg9IjI0IiAgIGhlaWdodD0iMTYiICAgdmlld0JveD0iMCAwIDI0IDE2IiAgIGlkPSJzdmcyIiAgIHZlcnNpb249IjEuMSIgICBpbmtzY2FwZTp2ZXJzaW9uPSIwLjkxIHIxMzcyNSIgICBzb2RpcG9kaTpkb2NuYW1lPSJjYXJldC5zdmciPiAgPGRlZnMgICAgIGlkPSJkZWZzNCIgLz4gIDxzb2RpcG9kaTpuYW1lZHZpZXcgICAgIGlkPSJiYXNlIiAgICAgcGFnZWNvbG9yPSIjZmZmZmZmIiAgICAgYm9yZGVyY29sb3I9IiM2NjY2NjYiICAgICBib3JkZXJvcGFjaXR5PSIxLjAiICAgICBpbmtzY2FwZTpwYWdlb3BhY2l0eT0iMC4wIiAgICAgaW5rc2NhcGU6cGFnZXNoYWRvdz0iMiIgICAgIGlua3NjYXBlOnpvb209IjUuNjU2ODU0MiIgICAgIGlua3NjYXBlOmN4PSI5LjY4MTUzNDEiICAgICBpbmtzY2FwZTpjeT0iMi42ODE1MzQxIiAgICAgaW5rc2NhcGU6ZG9jdW1lbnQtdW5pdHM9InB4IiAgICAgaW5rc2NhcGU6Y3VycmVudC1sYXllcj0ibGF5ZXIxIiAgICAgc2hvd2dyaWQ9ImZhbHNlIiAgICAgdW5pdHM9InB4IiAgICAgaW5rc2NhcGU6d2luZG93LXdpZHRoPSIxOTIwIiAgICAgaW5rc2NhcGU6d2luZG93LWhlaWdodD0iMTAxNyIgICAgIGlua3NjYXBlOndpbmRvdy14PSIxOTEyIiAgICAgaW5rc2NhcGU6d2luZG93LXk9Ii04IiAgICAgaW5rc2NhcGU6d2luZG93LW1heGltaXplZD0iMSI+ICAgIDxpbmtzY2FwZTpncmlkICAgICAgIHR5cGU9Inh5Z3JpZCIgICAgICAgaWQ9ImdyaWQ0MTM2IiAvPiAgPC9zb2RpcG9kaTpuYW1lZHZpZXc+ICA8bWV0YWRhdGEgICAgIGlkPSJtZXRhZGF0YTciPiAgICA8cmRmOlJERj4gICAgICA8Y2M6V29yayAgICAgICAgIHJkZjphYm91dD0iIj4gICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PiAgICAgICAgPGRjOnR5cGUgICAgICAgICAgIHJkZjpyZXNvdXJjZT0iaHR0cDovL3B1cmwub3JnL2RjL2RjbWl0eXBlL1N0aWxsSW1hZ2UiIC8+ICAgICAgICA8ZGM6dGl0bGU+PC9kYzp0aXRsZT4gICAgICA8L2NjOldvcms+ICAgIDwvcmRmOlJERj4gIDwvbWV0YWRhdGE+ICA8ZyAgICAgaW5rc2NhcGU6bGFiZWw9IkxheWVyIDEiICAgICBpbmtzY2FwZTpncm91cG1vZGU9ImxheWVyIiAgICAgaWQ9ImxheWVyMSIgICAgIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsLTEwMzYuMzYyMikiPiAgICA8cGF0aCAgICAgICBzdHlsZT0iZmlsbDojMDAwMDAwO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpldmVub2RkO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDoxcHg7c3Ryb2tlLWxpbmVjYXA6YnV0dDtzdHJva2UtbGluZWpvaW46bWl0ZXI7c3Ryb2tlLW9wYWNpdHk6MSIgICAgICAgZD0ibSAzLDEwNDAuODYyMiA1LDYgNSwtNiAxLDEgLTYsNyAtNiwtNyB6IiAgICAgICBpZD0icGF0aDQxMzgiICAgICAgIGlua3NjYXBlOmNvbm5lY3Rvci1jdXJ2YXR1cmU9IjAiICAgICAgIHNvZGlwb2RpOm5vZGV0eXBlcz0iY2NjY2NjYyIgLz4gIDwvZz48L3N2Zz4=) right center no-repeat;
+            -ms-appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+        }
+
+        label {
+            display: block;
+        }
+
+        .u-styled-radio,
+        .u-styled-checkbox {
+            flex: 0 0 2em;
+            width: 1.5em;
+            height: 1.5em;
+            padding-right: .5em;
+        }
+
+        .u-styled-radio > span,
+        .u-styled-checkbox > span {
+            display: block;
+            width: 1.5em;
+            height: 1.5em;
+            border: 1px solid var(--rv-grey-light);
+            box-shadow: 0 0 .33333em rgba(255, 255, 255, 0);
+            transition: border .3s, box-shadow .3s;
+        }
+
+        .u-styled-radio > input,
+        .u-styled-checkbox > input {
+            position: absolute;
+            z-index: 1;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .u-styled-radio input:checked + span,
+        .u-styled-checkbox input:checked + span {
+            border: 1px solid var(--rv-green);
+        }
+
+
+        .u-styled-checkbox input + span {
+            text-align: center;
+        }
+
+        .u-styled-checkbox input + span span {
+            opacity: 0;
+            font-size: 1.25em;
+            line-height: 1.125;
+            padding-top: .125em;
+            font-weight: 700;
+            color: var(--rv-green);
+            transition: opacity .3s;
+        }
+
+        .u-styled-checkbox input:checked + span span {
+            opacity: 1;
+        }
+
+        .u-styled-checkbox input:not(:checked):hover + span,
+        .u-styled-checkbox input:not(:checked):focus + span,
+        .u-styled-radio input:not(:checked):hover + span,
+        .u-styled-radio input:not(:checked):focus + span {
+            border: 1px solid var(--rv-blue);
+            box-shadow: 0 0 .33333em var(--rv-blue);
+        }
+
+        .u-styled-radio > span {
+            border-radius: 50%;
+            padding: 4px;
+        }
+
+        .u-styled-checkbox input:checked:hover + span,
+        .u-styled-checkbox input:checked:focus + span,
+        .u-styled-radio input:checked:hover + span,
+        .u-styled-radio input:checked:focus + span {
+            border: 1px solid var(--rv-green);
+            box-shadow: 0 0 .33333em var(--rv-green);
+        }
+
+        .u-styled-radio input + span span {
+            opacity: 0;
+            display: block;
+            background: var(--rv-green);
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+            transition: opacity .3s;
+        }
+
+        .u-styled-radio input:checked + span span {
+            opacity: 1;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        .u-has-bullet {
+            padding-left: 1.5em;
+        }
+
+        .u-has-bullet li {
+            list-style: disc;
+        }
+
+        .u-has-bullet li::marker {
+            color: var(--rv-blue);
+        }
+
+        .l-flex label {
+            flex: 0 0 5em;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header style="background: var(--rv-grey-ultradark)">
+        <section class="l-flex">
+            <picture>
+                <img src="../images/logo-rietveld-small.svg">
+            </picture>
+
+            <h1 style="color: #fff; padding-left: 1em; align-self: center">Reparatieopdracht</h1>
+        </section>
+    </header>
+    <main>
+        <form>
+            <section>
+                <p><strong>Bij ophalen van uw reparatieopdracht deze bon meenemen</strong></p>
+            </section>
+            <section class="l-grid" style="grid-template-columns: 2fr 1fr">
+                <fieldset class="u-lobowl">
+                    <legend>Klantgegevens</legend>
+                    <div>
+                        <label>Naam</label>
+
+                        <input type="text">
+                    </div>
+
+                    <div>
+                        <label>Telefoon</label>
+
+                        <input type="tel">
+                    </div>
+
+                    <div>
+                        <label>E-mailadres</label>
+
+                        <input type="email">
+                    </div>
+                </fieldset>
+
+                <fieldset class="u-lobowl">
+                    <legend>Ordergegevens</legend>
+                    <div>
+                        <label>Datum</label>
+
+                        <input type="date">
+                    </div>
+
+                    <div>
+                        <label>Aankoopdatum</label>
+
+                        <input type="date">
+                    </div>
+
+                    <div>
+                        <label style="margin-bottom: .25em">Bij ons gekocht</label>
+
+                        <div class="l-flex">
+                            <label for="payment-ideal" class="l-flex">
+                                <span class="u-styled-radio">
+                                    <input type="radio" name="aOrder_form[]" id="payment-ideal" value="ideal">
+                                    <span>
+                                        <span></span>
+                                    </span>
+                                </span>
+
+                                <span>Ja</span>
+                            </label>
+
+                            <label for="payment-ideal" class="l-flex">
+                                <span class="u-styled-radio">
+                                    <input type="radio" name="aOrder_form[]" id="payment-ideal" value="ideal">
+                                    <span>
+                                        <span></span>
+                                    </span>
+                                </span>
+
+                                <span>Nee</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label style="margin-bottom: .25em">Kassa-/orderbon gezien:</label>
+
+                        <div class="l-flex">
+                            <label for="payment-ideal" class="l-flex">
+                                <span class="u-styled-radio">
+                                    <input type="radio" name="aOrder_form[]" id="payment-ideal" value="ideal">
+                                    <span>
+                                        <span></span>
+                                    </span>
+                                </span>
+
+                                <span>Ja</span>
+                            </label>
+
+                            <label for="payment-ideal" class="l-flex">
+                                <span class="u-styled-radio">
+                                    <input type="radio" name="aOrder_form[]" id="payment-ideal" value="ideal">
+                                    <span>
+                                        <span></span>
+                                    </span>
+                                </span>
+
+                                <span>Nee</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label>Bonnummer</label>
+
+                        <div class="u-form-field-half">
+                            <input type="text">
+                        </div>
+                    </div>
+
+            </section>
+
+            <section class="l-grid" style="grid-template-columns: 2fr 1fr">
+                <fieldset class="u-lobowl">
+                    <legend>Productgegevens</legend>
+                    <div>
+                        <label>Artikelnummer</label>
+
+                        <div class="u-form-field-quarter">
+                            <input type="text">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label>Bestelnummer</label>
+
+                        <div class="u-form-field-quarter">
+                            <input type="text">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label>Wat voor merk en type dimmer wordt er gebruikt (bij 12 Volt en LED)</label>
+
+                        <div class="u-form-field-quarter">
+                            <input type="text">
+                        </div>
+                    </div>
+
+                    <label>Glas</label>
+
+                    <div class="l-flex">
+                        <label for="payment-ideal" class="l-flex">
+                            <span class="u-styled-radio">
+                                <input type="radio" name="aOrder_form[]" id="payment-ideal" value="ideal">
+                                <span>
+                                    <span></span>
+                                </span>
+                            </span>
+
+                            <span>Ja</span>
+                        </label>
+
+                        <label for="payment-ideal" class="l-flex">
+                            <span class="u-styled-radio">
+                                <input type="radio" name="aOrder_form[]" id="payment-ideal" value="ideal">
+                                <span>
+                                    <span></span>
+                                </span>
+                            </span>
+
+                            <span>Nee</span>
+                        </label>
+                    </div>
+
+                    <p style="font-size: smaller;">Bij 'ja' is het eigen risico voor de klant</p>
+
+
+                    <div>
+                        <label>Omschrijving</label>
+
+                        <div class="l-flex">
+                            <label for="payment-ideal" class="l-flex">
+                                <span class="u-styled-radio">
+                                    <input type="radio" name="aOrder_form[]" id="payment-ideal" value="ideal">
+                                    <span>
+                                        <span></span>
+                                    </span>
+                                </span>
+
+                                <span>PL</span>
+                            </label>
+
+                            <label for="payment-ideal" class="l-flex">
+                                <span class="u-styled-radio">
+                                    <input type="radio" name="aOrder_form[]" id="payment-ideal" value="ideal">
+                                    <span>
+                                        <span></span>
+                                    </span>
+                                </span>
+
+                                <span>SPOT</span>
+                            </label>
+
+                            <label for="payment-ideal" class="l-flex">
+                                <span class="u-styled-radio">
+                                    <input type="radio" name="aOrder_form[]" id="payment-ideal" value="ideal">
+                                    <span>
+                                        <span></span>
+                                    </span>
+                                </span>
+
+                                <span>HL</span>
+                            </label>
+
+                            <label for="payment-ideal" class="l-flex">
+                                <span class="u-styled-radio">
+                                    <input type="radio" name="aOrder_form[]" id="payment-ideal" value="ideal">
+                                    <span>
+                                        <span></span>
+                                    </span>
+                                </span>
+
+                                <span>WL</span>
+                            </label>
+
+                            <label for="payment-ideal" class="l-flex">
+                                <span class="u-styled-radio">
+                                    <input type="radio" name="aOrder_form[]" id="payment-ideal" value="ideal">
+                                    <span>
+                                        <span></span>
+                                    </span>
+                                </span>
+
+                                <span>TL</span>
+                            </label>
+
+                            <label for="payment-ideal" class="l-flex">
+                                <span class="u-styled-radio">
+                                    <input type="radio" name="aOrder_form[]" id="payment-ideal" value="ideal">
+                                    <span>
+                                        <span></span>
+                                    </span>
+                                </span>
+
+                                <span>VL</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label>Met toebehoren</label>
+                        <input type="text">
+                    </div>
+                </fieldset>
+            </section>
+
+            <section class="l-grid" style="grid-template-columns: 2fr 1fr">
+                <fieldset class="u-lobowl">
+                    <legend>Klacht</legend>
+                    <div>
+                        <label>Klachtomschrijving</label>
+
+                        <textarea></textarea>
+                    </div>
+                </fieldset>
+
+                <div class="u-lobowl" style="padding-top: 1.25em">
+                    <p>Onze onderzoekskosten zijn <strong>&euro;10</strong> bij een verlopen garantieperiode. Betreft het een artikel die niet van Rietveld Licht is, dan rekenen wij <strong>&euro;20</strong>.</p>
+
+                    <p>De reparatie kan ongeveer twee weken duren.</p>
+                </div>
+
+            </section>
+
+            <section class="l-grid" style="grid-template-columns: 2fr 1fr">
+                <fieldset class="u-lobowl">
+                    <div>
+                        <label>Behandeld door</label>
+                        <input type="text">
+                    </div>
+
+                    <div>
+                        <label>Bepalende voor de garantietermijn</label>
+                        <input type="text">
+                    </div>
+                </fieldset>
+
+                <div class="u-lobowl" style="padding-top: 1.25em">
+                    <ul>
+                        <li>Als de prijsopgave boven de <strong>&euro;50</strong> komt, dient de klant gebeld te worden.</li>
+                        <li>Voor het vervangen van LED bij een glasplaat in een hanglamp rekenen wij materiaal + arbeidskosten (duur: 20 à 30 minuten).</li>
+                        <li>Bij vervanging onder garantie blijft de oorspronkelijke aankoopdatum geldig.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="l-grid" style="grid-template-columns: 2fr 1fr">
+                <fieldset>
+                    <legend>Materialen en kosten</legend>
+                    <div>
+                        <label>Gebruikte materialen</label>
+
+                        <textarea></textarea>
+                    </div>
+                </fieldset>
+
+                <div class="u-lobowl" style="padding-top: 1.25em">
+                    <div>
+                        <label>Arbeidskosten</label>
+                        <input type="text">
+                    </div>
+
+                    <p>&times; Artikelnr 18 (&euro;0,80 p/m)</p>
+
+                    <div>
+                        <label>Totaal</label>
+                        <input type="text">
+                    </div>
+                </div>
+            </section>
+        </form>
+    </main>
+</body>
+</html>
