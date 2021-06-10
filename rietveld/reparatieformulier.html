@@ -313,9 +313,9 @@
                         <label style="margin-bottom: .25em">Bij ons gekocht</label>
 
                         <div class="l-flex">
-                            <label for="payment-ideal" class="l-flex">
+                            <label for="boughthere" class="l-flex">
                                 <span class="u-styled-radio">
-                                    <input type="radio" name="aOrder_form[]" id="payment-ideal" value="ideal">
+                                    <input type="radio" name="boughtwhere" id="boughthere" value="ideal">
                                     <span>
                                         <span></span>
                                     </span>
@@ -324,9 +324,9 @@
                                 <span>Ja</span>
                             </label>
 
-                            <label for="payment-ideal" class="l-flex">
+                            <label for="notboughthere" class="l-flex">
                                 <span class="u-styled-radio">
-                                    <input type="radio" name="aOrder_form[]" id="payment-ideal" value="ideal">
+                                    <input type="radio" name="boughtwhere" id="notboughthere" value="ideal">
                                     <span>
                                         <span></span>
                                     </span>
@@ -341,9 +341,9 @@
                         <label style="margin-bottom: .25em">Kassa-/orderbon gezien:</label>
 
                         <div class="l-flex">
-                            <label for="payment-ideal" class="l-flex">
+                            <label for="orderseenyes" class="l-flex">
                                 <span class="u-styled-radio">
-                                    <input type="radio" name="aOrder_form[]" id="payment-ideal" value="ideal">
+                                    <input type="radio" name="orderseen" id="orderseenyes" value="ideal">
                                     <span>
                                         <span></span>
                                     </span>
@@ -352,9 +352,9 @@
                                 <span>Ja</span>
                             </label>
 
-                            <label for="payment-ideal" class="l-flex">
+                            <label for="orderseenno" class="l-flex">
                                 <span class="u-styled-radio">
-                                    <input type="radio" name="aOrder_form[]" id="payment-ideal" value="ideal">
+                                    <input type="radio" name="orderseen" id="orderseenno" value="ideal">
                                     <span>
                                         <span></span>
                                     </span>
@@ -366,7 +366,35 @@
                     </div>
 
                     <div>
-                        <label>Bonnummer</label>
+                        <label style="margin-bottom: .25em">Binnen de garantietermijn van 2 jaar?</label>
+
+                        <div class="l-flex">
+                            <label for="guaranteeyes" class="l-flex">
+                                <span class="u-styled-radio">
+                                    <input type="radio" name="guarantee" id="guaranteeyes" value="ideal">
+                                    <span>
+                                        <span></span>
+                                    </span>
+                                </span>
+
+                                <span>Ja</span>
+                            </label>
+
+                            <label for="guaranteeno" class="l-flex">
+                                <span class="u-styled-radio">
+                                    <input type="radio" name="guarantee" id="guaranteeno" value="ideal">
+                                    <span>
+                                        <span></span>
+                                    </span>
+                                </span>
+
+                                <span>Nee</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label>Ordernummer</label>
 
                         <div class="u-form-field-half">
                             <input type="text">
@@ -387,7 +415,7 @@
                     </div>
 
                     <div>
-                        <label>Bestelnummer</label>
+                        <label>Bestelnummer <span style="display: block; font-size: smaller; color: var(--rv-grey)">indien een niet-Lumidora artikel</span></label>
 
                         <div class="u-form-field-quarter">
                             <input type="text">
@@ -504,7 +532,7 @@
                     </div>
 
                     <div>
-                        <label>Met toebehoren</label>
+                        <label>Met toebehoren <span style="display: block; font-size: smaller; color: var(--rv-grey)">(bijvoorbeeld incl./excl. montagebeugel)</span></label>
                         <input type="text">
                     </div>
                 </fieldset>
@@ -532,11 +560,6 @@
                 <fieldset class="u-lobowl">
                     <div>
                         <label>Behandeld door</label>
-                        <input type="text">
-                    </div>
-
-                    <div>
-                        <label>Bepalende voor de garantietermijn</label>
                         <input type="text">
                     </div>
                 </fieldset>
