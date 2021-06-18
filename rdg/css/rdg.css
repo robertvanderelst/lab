@@ -511,6 +511,7 @@ button::-moz-focus-inner {
 [class*="u-button"] [class*="icon-"] {
     vertical-align: middle;
     margin-top: -.25em;
+    fill: #fff;
 }
 
 [class*="u-button"] [class*="icon-"] path {
