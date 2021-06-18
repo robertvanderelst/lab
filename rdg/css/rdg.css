@@ -186,6 +186,10 @@ section {
     display: flex;
 }
 
+.l-flex-wrap {
+    flex-wrap: wrap;
+}
+
 table {
     border-collapse: collapse;
 }
