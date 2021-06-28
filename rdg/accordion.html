@@ -1,0 +1,2200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rietveld components</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="css/rdg.css" rel="stylesheet">
+</head>
+<body class="no-js">
+    <script>
+        document.body.classList.remove("no-js");
+        document.body.classList.add("has-js");
+
+        if (/Mobi/.test(navigator.userAgent) || /Android/.test(navigator.userAgent)) {
+            document.getElementsByTagName('html')[0].classList.add('is-mobile');
+        }
+    </script>
+    <main class="container">
+        <h1>Components</h1>
+
+        <section>
+            <h2>Accordion</h2>
+
+            <div class="o-accordion" data-component="accordion">
+
+            <details class="m-accordion-category">
+                <span class="anchor-shift sr-only" id="m-accordion-category-1"></span>
+                <summary class="has-icon">Bestellen
+                    <span class="u-icon">
+                        <svg viewBox="0 0 32 32" role="img">
+                            <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+                        </svg>
+                    </span>
+                </summary>
+
+                <div class="m-accordion-nested">
+                    <details id="m-accordion-item-101">
+                        <span class="anchor-shift sr-only"></span>
+                        <summary class="l-flex">
+                            <span class="u-icon">
+                                <svg viewBox="0 0 32 32" role="img">
+                                    <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+                                </svg>
+                            </span>
+                            <span>Hoe kan ik een bestelling plaatsen?</span>
+                        </summary>
+                        <div>
+                            <p>
+                                U plaatst een bestelling via onze website. Telefonisch bestellen is niet mogelijk. Plaats uw producten in de digitale winkelwagen via de oranje knop 'in winkelwagen'. U opent vervolgens uw winkelwagen en klikt op de oranje knop 'Verder met bestellen'. Nu kunt u uw gegevens invullen en kiezen voor de gewenste bezorgdatum. <br>
+                                <br>
+                                Wanneer u dit heeft gedaan kiest u de gewenste betaalmethode en dient u de voorwaarden te accepteren. Onderaan de pagina vindt u weer een oranje knop 'Doorgaan met bestellen'. Nadat u op deze knop heeft gedrukt, ziet u een overzicht van uw bestelling. U kunt, na het controleren van uw bestelling, klikken op de oranje balk zodat uw bestelling wordt voltooid. U wordt doorgestuurd naar de betaalmethode van uw keuze. <br>
+                                <br>
+                                Als u heeft gekozen voor betaling via bankoverschrijving, ontvangt u van ons een orderbevestiging met uw factuur. Wij nemen een order altijd pas in behandeling na ontvangst van uw betaling.<br>
+                                <br><span class="faq-tags">[order plaatsen, bestelling plaatsen, bestellen, telefonisch bestellen, telefonisch order plaatsen, winkelwagen, artikelen in winkelmandje, artikelen in winkelwagen, product in winkelwagen, product in winkelmandje, bestelformulier, orderformulier]</span>
+                            </p>
+                        </div>
+                    </details>
+
+<details id="m-accordion-item-62">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Kan ik tijdens mijn bestelling een afwijkend factuuradres opgeven?</span>
+    </summary>
+    <div>
+        <p>
+            Tijdens het plaatsen van uw bestelling kunt u een factuuradres en een afleveradres invullen. Deze twee kunnen van elkaar afwijken.
+            <br><span class="faq-tags">[factuuradres, zakelijk adres, bedrijf, zakelijk, afleveradres]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-30">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Wat zijn de verzendkosten?</span>
+    </summary>
+    <div>
+        <p>
+            Wij verzenden bestellingen gratis. Uw bestelling wordt standaard verzonden via DPD of - indien het een zeer groot pakket betreft - DHL. <br>
+Wilt u uw bestelling liever in de avonduren ontvangen? Dan is dit ook mogelijk. U kunt dit tijdens het plaatsen van uw bestelling aangeven. Voor een avondlevering rekenen wij een toeslag van €3,99.
+            <br><span class="faq-tags">[verzendkosten, kosten levering, kosten verzending, verzending, portokosten, porto, avondlevering, leveringstoeslag]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-113">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Kan ik mijn adresgegevens na het plaatsen van de bestelling nog wijzigen?</span>
+    </summary>
+    <div>
+        <p>
+            Wilt u uw afleveradres of factuuradres nog wijzigen na het plaatsen van uw order? <br>
+<br>
+<b>Factuuradres wijzigen</b><br>
+Wanneer wij uw betaling hebben verwerkt, is het wijzigen van het factuuradres niet meer mogelijk. Als u toch het factuuradres wilt wijzigen, dan heeft u de mogelijkheid om gebruik te maken van uw herroepingsrecht. Indien u heeft gekozen voor een betaling via bankoverschrijving en uw betaling is nog niet verwerkt, dan kan uw factuuradres nog aangepast worden. <br>
+<br>
+<b>Afleveradres wijzigen</b><br>
+Wij kunnen het afleveradres alleen voor u wijzigen wanneer uw pakket nog niet is aangemeld bij de pakketdienst. U kunt in dat geval het beste telefonisch contact met ons opnemen zodat wij het adres tijdig aan kunnen passen. Ziet u via uw klantpagina dat uw pakket is aangemeld bij de pakketdienst? Dan kunt u uw adres op de volgende manieren wijzigen:<br>
+DPD - op de dag van levering ontvangt u een e-mail van DPD met daarin een verwacht levertijdvak. In deze e-mail vindt u een link waarmee u uw adres kunt wijzigen. <br>
+Red Je Pakketje - neem telefonisch of per e-mail contact op met Red Je Pakketje om uw adres te wijzigen. <br>
+DHL - neemt u alstublieft telefonisch contact met ons op, zodat wij DHL kunnen bellen om te vragen of uw adres nog gewijzigd kan worden. <br>
+<br>
+
+            <br><span class="faq-tags">[adres wijzigen, adresgegevens, adreswijziging, factuuradres, afleveradres, wijziging]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-159">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Kan ik als zakelijke klant bij jullie bestellen?</span>
+    </summary>
+    <div>
+        <p>
+            Als zakelijke klant bent u van harte welkom om bij ons te bestellen. Wij hanteren echter geen speciale inkoopprijzen of inkooprichtlijnen voor bedrijven. De bestel- en betalingsvoorwaarden van onze (web)winkel zijn gericht op particuliere klanten. Om deze reden en om privacyredenen kunnen wij uw order helaas niet voor u invoeren. Daarom vragen wij u vriendelijk uw order zelf te plaatsen via onze website. Mocht u vaker bij ons willen bestellen of wilt u grote aantallen inkopen, dan kunt u ons een e-mail sturen.&nbsp;<br>
+
+            <br><span class="faq-tags">[installateur, B2B, zakelijke korting, zakelijke klant, zakelijk bestellen, binnenhuisarchitect, architect, project, ]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-6">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Krijg ik korting op een bestelling?</span>
+    </summary>
+    <div>
+        <p>
+            Wij hanteren vaste lage prijzen voor al onze artikelen. Daarnaast geven wij de laagste prijsgarantie. Om deze reden kunnen wij doorgaans helaas geen korting aanbieden op bestellingen. Indien u een zeer groot aantal artikelen bij ons wilt bestellen en wilt weten of u korting kunt krijgen op uw order, kunt u een e-mail sturen naar helpdesk@rietveldlicht.nl. In die e-mail dient u de gewenste aantallen en artikelnummers te vermelden die u wilt bestellen. De Helpdesk zal daarna contact met u opnemen om aan te geven of u korting kunt krijgen op uw order of niet.
+            <br><span class="faq-tags">[korting, discount, sale, grote order, grote bestelling, prijsaanvraag, prijsgarantie, kortingsrichtlijnen]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-77">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Mijn Belgische postcode wordt niet geaccepteerd. Wat nu?</span>
+    </summary>
+    <div>
+        <p>
+            U kunt uw bestelling plaatsen via onze Belgische website: www.rietveldlicht.be.
+            <br><span class="faq-tags">[België, belgisch, belgische website]</span>
+        </p>
+    </div>
+</details>
+    </div>
+</details>
+<details class="m-accordion-category">
+    <span class="anchor-shift sr-only" id="m-accordion-category-2"></span>
+    <summary class="has-icon">Betalen
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+    </summary>
+    <div class="m-accordion-nested">
+
+<details id="m-accordion-item-26">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Hoe kan ik mijn bestelling betalen?</span>
+    </summary>
+    <div>
+        <p>
+            U dient uw bestelling voor verzending te betalen. Op rekening bestellen is niet mogelijk. Zodra wij de betaling hebben ontvangen, nemen wij uw order in behandeling. <br>
+<br>
+U kunt betalen via iDeal, PayPal, creditcard of via bankoverschrijving. Bij betaling via iDEAL, creditcard of PayPal ontvangen wij uw betaling vrijwel direct. In uitzonderlijke gevallen is er sprake van een vertraging bij iDEAL of PayPal. Artikelen worden voor u gereserveerd zodra wij uw betaling hebben ontvangen. Wanneer u via bankoverschrijving betaalt, kan het dus enige tijd duren voordat wij uw betaling hebben ontvangen en voordat de artikelen voor u gereserveerd zijn. <br>
+<br>
+Hieronder vindt u informatie over de verschillende betaalmethodes:<br>
+<br>
+<b>iDEAL</b><br>
+<br>
+Met iDEAL kunt u vertrouwd, veilig en gemakkelijk uw aankopen afrekenen. U rekent af in uw vertrouwde internet betaalomgeving, op basis van specifieke beveiligingsmethodes van uw eigen bank. Als gebruiker van internetbankieren kunt u direct gebruik maken van iDEAL, zonder dat u zich daarvoor hoeft aan te melden.<br>
+<br>
+Bij het afrekenen van de bestelling kunt u aangeven dat u met iDEAL wilt betalen. Klik dan op de iDEAL-betaalknop en selecteer uw bank. Vervolgens wordt u doorgeleid naar uw eigen bank waar de betaalopdracht voor u klaar staat. U wordt door uw bank gevraagd een aantal gegevens in te vullen en u autoriseert de betaling. Het bedrag wordt direct van uw betaalrekening afgeschreven en wij worden vervolgens geïnformeerd dat de bestelling is betaald. Zodra wij het bedrag hebben ontvangen, wordt uw bestelling aan u verzonden.<br>
+<br>
+<b>PayPal of creditcard</b><br>
+<br>
+PayPal is een veilige en snelle manier om online te betalen. Als u geen PayPal account heeft kunt u in PayPal als gast met uw creditcard betalen. Wanneer u via creditcard wilt betalen, wordt u dus automatisch doorgestuurd naar de website van PayPal. U kunt daar klikken op de knop ‘betalen als gast’. U hoeft dan niet in te loggen bij PayPal. U kunt vervolgens uw creditcardgegevens invoeren en uw betaling afronden. Wanneer u wel een PayPal account heeft, kunt u eenvoudig bij PayPal inloggen en de betaling voltooien. <br>
+U bent gratis en automatisch via PayPal verzekerd indien er niet zou worden geleverd. Uw betaling wordt automatisch direct verwerkt. <br>
+<br>
+<b>Bankoverschrijving</b><br>
+<br>
+Bij het afrekenen kunt u kiezen voor de betaaloptie Bankoverschrijving. U krijgt na het kiezen van betaling per bankoverschrijving een overzicht van het te betalen bedrag en een e-mail met de bestelgegevens en onze bankgegevens. U kunt dan zelf een bankoverschrijving doen op een voor u geschikt moment. <b>N.b. een bankoverschrijving kan wel 2 werkdagen duren.</b> Wanneer wij uw betaling hebben ontvangen, stellen wij u hiervan op de hoogte per e-mail. In deze mail vindt u een link naar een pagina waar u de gewenste bezorgdatum aan kunt geven.
+            <br><span class="faq-tags">[betaalmethodes, betalen, ideal, paypal, creditcard, bankoverschrijving, bankoverboeking, overschrijving, betaling, hoe betalen, wanneer betalen, vooraf betalen, op rekening kopen, op rekening, op zicht]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-29">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Waar vind ik mijn factuur? </span>
+    </summary>
+    <div>
+        <p>
+            U ontvangt uw factuur digitaal. Nadat u uw order heeft geplaatst, ontvangt u een orderbevestiging per e-mail. Bij deze orderbevestiging ontvangt u de factuur in een bijlage. De factuur wordt niet per post gestuurd en wordt ook niet als pakbon bij uw bestelling geleverd.
+            <br><span class="faq-tags">[Factuur, bon, bestelbon, orderbevestiging, creditnota, proforma, pakbon]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-95">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Wat is het bankrekeningnummer van Rietveld Licht en Wonen?</span>
+    </summary>
+    <div>
+        <p>
+            Ons IBAN-nummer is NL22RABO0139850961. <br>
+Bic: RABONL2U.<br>
+Rabobank, Papendrecht, Nederland. <br>
+<br>
+Wanneer u een bedrag naar onze rekening overmaakt, doet u dit dan alstublieft altijd onder vermelding van het betreffende ordernummer.
+            <br><span class="faq-tags">[rekeningnummer, IBAN, iban-nummer, rekening, betaling, overschrijving, bankbetaling, bankrekening, bankrekeningnummer, overboeking]</span>
+        </p>
+    </div>
+</details>
+    </div>
+</details>
+<details class="m-accordion-category">
+    <span class="anchor-shift sr-only" id="m-accordion-category-3"></span>
+    <summary class="has-icon">Bezorgen
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+    </summary>
+    <div class="m-accordion-nested">
+
+<details id="m-accordion-item-63">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Krijg ik een Track &amp; Trace e-mail van de pakketdienst?</span>
+    </summary>
+    <div>
+        <p>
+            Een standaard levering wordt verzorgd door DPD. Zeer grote pakketten (zoals bepaalde kapstokken) worden geleverd door DHL. <br>
+<br>
+Bezorging door DPD: U ontvangt in uw orderbevestiging een link naar uw klantpagina, waarin u ook uw Track &amp; Tracepagina vindt en een tijdvak van levering op de dag van bezorging. In de meeste gevallen ontvangt u ook van DPD zelf een e-mail met een tijdsindicatie van de bezorging. Door middel van deze e-mail kunt u tot een half uur voor de geplande levertijd aangeven dat u het pakket liever op een andere datum wilt ontvangen of op een ander adres. U kunt ook aangeven dat het pakket direct bij een Pickup Parcelshop moeten worden geleverd óf dat het pakket bij uw huis achtergelaten mag worden. Rietveld Licht en Wonen heeft geen inzage in de instructies die u aan DPD geeft en kan hiervoor niet aansprakelijk worden gesteld. <br>
+<br>
+Bezorging door DHL: u ontvangt een e-mail met een Track &amp; Trace link waarmee u de zending kunt volgen.  <br>
+<br>
+Bezorging in de avonduren: Uw bestelling wordt verzonden via Red Je Pakketje. Rond 16:00 uur ontvangt u een e-mail met een tijdsindicatie van de bezorging. Ongeveer 5 minuten voor de bezorging, ontvangt u een SMS en kunt u de chauffeur live volgen. <br>
+
+            <br><span class="faq-tags">[Track &amp; Trace, track and trace, tracking, pakket volgen, pakket, levering, traceren]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-32">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Kan ik kiezen voor een bezorgdatum?</span>
+    </summary>
+    <div>
+        <p>
+            Indien u betaalt via iDEAL of via Paypal/creditcard, kunt u tijdens het bestelproces kiezen voor een gewenste bezorgdatum. Als u betaalt via bankoverschrijving, kunt u een bezorgdag kiezen nadat wij uw betaling hebben ontvangen en verwerkt. Wanneer wij uw betaling hebben ontvangen, stellen wij u hiervan op de hoogte per e-mail. In deze e-mail vindt u een link naar een pagina waar u de gewenste bezorgdatum aan kunt geven.<br>
+<br>
+Als het artikel wat u heeft besteld niet voorradig is, ontvangt u van ons een e-mail zodra het artikel weer op voorraad is en uw bestelling klaarstaat om verzonden te worden. In die e-mail kunt u kiezen voor een gewenste bezorgdag. <br>
+De verzendafdeling is werkzaam van maandag tot en met vrijdag.
+            <br><span class="faq-tags">[bezorgdatum, leverdatum, levertijd, bezorgdag, levering]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-33">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Kan ik kiezen voor een bezorgtijd?</span>
+    </summary>
+    <div>
+        <p>
+            Het is helaas niet mogelijk om een dagdeel of tijdvak te kiezen voor de bezorging. Op de dag van de bezorging ontvangt u normaal gesproken een e-mail van DPD (standaard bezorging) met een verwacht levertijdvak. Heeft u deze e-mail niet ontvangen? Klikt u dan op de link in uw klantpagina (deze vindt u in uw orderbevestiging) om te zien hoe laat uw pakket wordt geleverd. <br>
+<br>
+Wilt u het liefst op de dag van bestellen of in de avonduren uw bestelling ontvangen? Wanneer u voor 12:00 uur bestelt, kunt u uw bestelling nog dezelfde avond laten leveren. Bestelt u na 12:00 uur, dan kunt u een avondlevering op een andere datum selecteren. In dat geval wordt uw bestelling op de gekozen datum tussen 16:00 uur en 22:00 uur bezorgd. Rond 16:00 uur ontvangt u een e-mail met een tijdsindicatie van de bezorging. Vijf minuten voor de bezorging ontvangt u een SMS met een link om de chauffeur live te kunnen volgen. Voor deze avondlevering rekenen wij een toeslag van €3,99.<br>
+<br>
+<br>
+
+            <br><span class="faq-tags">[tijdvak, levertijdvak, tijdsindicatie, levering, hoe laat wordt mijn pakket geleverd, bezorgtijd, avondlevering, zelfde dag, red je pakketje, tijdvak]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-161">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Hoe kan ik mijn pakket volgen?</span>
+    </summary>
+    <div>
+        <p>
+            U kunt uw pakket(ten) volgen via de Track &amp; Tracepagina. U vindt de link naar uw Track &amp; Tracepagina in uw klantpagina. Uw klantpagina vindt u door in uw orderbevestiging op 'Klantpagina' te klikken.
+            <br><span class="faq-tags">[Track &amp; Trace, track and trace, traceren, tracking, pakket, pakketdienst, klantpagina]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-73">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Met welke vervoerder bezorgen jullie mijn bestelling?</span>
+    </summary>
+    <div>
+        <p>
+            Wij verzenden standaard bestellingen met DPD. <br>
+Zeer grote bestellingen en lampen met zeer grote afmetingen worden door DHL worden geleverd. <br>
+Wanneer u kiest voor levering op de dag van bestelling of een avondbezorging, maken wij gebruik van Red Je Pakketje.
+            <br><span class="faq-tags">[pakketdienst, vervoerder, koerier, vervoersdienst, pakketbezorger, dpd, dhl, red je pakketje]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-75">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Wat gebeurt er als ik niet thuis aanwezig ben op het moment van levering?</span>
+    </summary>
+    <div>
+        <p>
+            Indien u niet op het afleveradres aanwezig bent bij de afleverpoging, kan de pakketbezorger ervoor kiezen het pakket bij een van uw buren te leveren. In veel gevallen zal de pakketbezorger ervoor kiezen het pakket te leveren bij de dichtstbijzijnde Pickup Parcelshop. U vindt het adres en de openingstijden van de betreffende Parcelshop op uw Track &amp; Tracepagina. U kunt het pakket gedurende een week ophalen bij de Parcelshop op vertoon van een geldig legitimatiebewijs. Hierna zal het pakket naar ons geretourneerd worden. Wij merken dit aan als een weigering en zullen de gemaakte verzendkosten per pakket in mindering brengen op de terugbetaling van het aankoopbedrag van uw order. <br>
+<br>
+Wanneer u niet op het afleveradres aanwezig bent bij de afleverpoging door Red Je Pakketje (avondlevering), zal de pakketbezorger het pakket weer meenemen en het de volgende werkdag opnieuw proberen aan te bieden. Wanneer u dan weer niet aanwezig bent, zal het pakket naar ons geretourneerd worden. Wij merken dit aan als een weigering en zullen de gemaakte verzendkosten per pakket in mindering brengen op de terugbetaling van het aankoopbedrag van uw order.
+
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-67">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Kan ik een pakket bij een Pickup Parcelshop laten leveren?</span>
+    </summary>
+    <div>
+        <p>
+            Het is helaas niet mogelijk om uw bestelling direct bij een Pickup Parcelshop te laten leveren. U kunt dus ook niet het adres van een Pickup Parcelshop opgeven tijdens uw bestelling. Geef tijdens het bestellen uw eigen adres op. U ontvangt op de dag van levering een e-mail van DPD waarmee u middels een link aan kunt geven dat uw pakket bij een Parcelshop geleverd moet worden. <br>
+<br>
+Bent u niet thuis tijdens een leverpoging van DPD? Dan zal de chauffeur er in de meeste gevallen voor kiezen uw pakket bij een Pickup Parcelshop te leveren. Via <a href="https://www.dpd.com/nl/business_customers/services/nationaal/e_commerce_services/pickup/pickup_finder">de website van DPD</a> kunt u opzoeken waar de dichtstbijzijnde Pickup Parcelshop is. Echter, wij kunnen niet garanderen dat bij die Pickup Parcelshop uw bestelling zal worden geleverd indien u niet aanwezig bent. De chauffeur kan ook kiezen voor een andere nabijgelegen Pickup Parcelshop. Dit is afhankelijk van de route van de chauffeur. Als uw bestelling bij een Pickup Parcelshop is geleverd, kunt u via uw Track &amp; Tracepagina zien bij welke Pickup Parcelshop uw bestelling is geleverd. U vindt daar ook het adres en de openingstijden.<br>
+
+            <br><span class="faq-tags">[Pickup Parcelshop, parcelshop, pakketpunt, pakketshop, niet thuis]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-64">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Wordt er in het weekend bezorgd?</span>
+    </summary>
+    <div>
+        <p>
+            Het is mogelijk om uw bestelling op zaterdag te laten bezorgen. U kunt voor een zaterdaglevering kiezen tijdens het plaatsen van uw bestelling. U ontvangt in uw orderbevestiging een link naar uw klantpagina, waarin u ook uw Track &amp; Tracepagina vindt en een tijdvak van levering op de dag van bezorging. <br>
+<br>
+
+            <br><span class="faq-tags">[weekend, zaterdag, weekendlevering, zaterdaglevering, bezorging, levering]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-155">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Kan ik iets wijzigen in de levering van mijn pakket als het pakket al verzonden is?</span>
+    </summary>
+    <div>
+        <p>
+            Wanneer uw order via DPD is verzonden, ontvangt u op de dag van levering 's morgens een e-mail waarin het verwachte tijdstip van levering staat aangegeven. Door middel van deze e-mail kunt u ook direct aan DPD wijzigingen doorgeven. U kunt de volgende zaken doorgeven:<br>
+<br>
+1. Adreswijziging (het pakket zal dan de volgende werkdag pas aangeboden worden).<br>
+2. Wijziging van afleverdag.<br>
+3. Neerzettoestemming. Hiermee geeft u DPD toestemming om het pakket bij uw adres achter te laten zonder dat u tekent voor de levering. Hiermee neemt u de volledige verantwoordelijkheid over het pakket op u. Wanneer het pakket dus bijvoorbeeld bij uw adres wordt gestolen, zijn Rietveld Licht en DPD hier niet verantwoordelijk voor. <br>
+4. Levering bij een Pickup Parcelshop. Hiermee geeft u aan dat het pakket bij de dichtstbijzijnde Parcelshop geleverd mag worden. Dit gebeurt de volgende werkdag. <br>
+<br>
+Wanneer uw zending met <b>DHL</b> is verzonden, kunnen er op de afleverdatum helaas geen wijzigingen meer worden doorgegeven.<br>
+Wanneer uw zending met <b>Red Je Pakketje</b> is verzonden, kunnen er nog wijzigingen worden doorgegeven via de <a href="https://redjepakketje.nl/contact" target="_blank" rel="noreferrer">klantenservice van Red Je Pakketje</a> die bereikbaar is van 9:00 tot 22:30.
+            <br><span class="faq-tags">[wijzigen, levering, dpd, parcelshop, buren, neerzettoestemming, adreswijziging, wijziging, pakketdienst]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-61">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Kan een bestelling aan een postbusadres worden verzonden?</span>
+    </summary>
+    <div>
+        <p>
+            In verband met de grootte van de meeste van onze artikelen is het helaas niet mogelijk een bestelling te leveren op een postbusadres.
+            <br><span class="faq-tags">[postbus, postbusadres]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-103">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Naar welke landen levert Rietveld Licht? </span>
+    </summary>
+    <div>
+        <p>
+            Wij verzenden via onze (internationale) webwinkel naar Nederland, België, Duitsland, Luxemburg, Oostenrijk, Tsjechië, Spanje en Frankrijk. Let op: verzending naar eilanden is niet mogelijk. U kunt een bestelling naar een buitenlands adres plaatsen via onze internationale webwinkels, te vinden door middel van het vlaggetje rechts bovenaan in de webwinkel. <br>
+<br>
+Voor het verzenden van onze lampen via onze webwinkel worden geen verzendkosten berekend, ongeacht de ordergrootte.
+            <br><span class="faq-tags">[landen, internationaal, belgië, duitsland, luxemburg, oostenrijk, tsjechië, spanje, UK, verenigd koninkrijk, united kingdom, frankrijk, eilanden, eiland, buitenland, adresfout, internationaal]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-126">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Hoe plaats ik een order die naar het buitenland verzonden moet worden? </span>
+    </summary>
+    <div>
+        <p>
+            U kunt een bestelling naar een buitenlands adres plaatsen via onze internationale webwinkels, te vinden door middel van het vlaggetje rechts bovenaan in de webwinkel. Verzending is alleen mogelijk naar Nederland, België, Duitsland, Luxemburg, Oostenrijk, Tsjechië, Spanje en Frankrijk. Let op: verzending naar eilanden is niet mogelijk.
+            <br><span class="faq-tags">[buitenland, internationaal]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-162">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Mijn pakket is zoek, wat nu?</span>
+    </summary>
+    <div>
+        <p>
+            Wanneer op uw Track &amp; Tracepagina staat dat uw pakket geleverd is, maar u heeft het niet ontvangen, kunt u het best <a href="https://www.rietveldlicht.nl/contact">contact</a> opnemen met onze helpdesk. Wij zullen dan een onderzoek opstarten naar uw pakket. Hiervoor zullen wij u in de meeste gevallen vragen een verklaring in te vullen en te ondertekenen waarin u aangeeft het pakket niet te hebben ontvangen. Zodra wij deze verklaring correct ingevuld van u hebben ontvangen, zullen wij ervoor zorgen dat uw pakket alsnog zo spoedig mogelijk wordt bezorgd of opnieuw naar u wordt verzonden.
+            <br><span class="faq-tags">[Levering, kwijt, zoek, ontvangen, niet geleverd]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-104">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Ik heb een klacht of vraag over de levering door de pakketdienst. Waar kan ik terecht?</span>
+    </summary>
+    <div>
+        <p>
+            Wanneer u een klacht of vraag heeft over de levering door de pakketdienst, kunt u contact met ons opnemen. Wij zullen dan uw vraag of klacht doorzetten naar de pakketdienst en - indien nodig - meewerken aan een oplossing van het probleem. <br>
+<br>
+Rietveld Licht en Wonen kan niet aansprakelijk gesteld worden voor enige geleden schade als gevolg van onvoorziene omstandigheden of fouten tijdens het transport door de pakketdienst of ten tijde van de levering door de pakketdienst. Hiermee doelen wij op kosten die zijn ontstaan doordat u bijvoorbeeld een elektricien heeft ingehuurd op de verwachte leverdatum en het pakket is niet op tijd geleverd. Wanneer een artikel beschadigd bij u wordt geleverd, zijn wij hier uiteraard wel aansprakelijk voor.
+            <br><span class="faq-tags">[klacht, dpd, dhl, rjp, red je pakketje, levering, niet geleverd, bezorgdienst, chauffeur]</span>
+        </p>
+    </div>
+</details>
+    </div>
+</details>
+<details class="m-accordion-category">
+    <span class="anchor-shift sr-only" id="m-accordion-category-4"></span>
+    <summary class="has-icon">Levertijd &amp; Voorraad
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+    </summary>
+    <div class="m-accordion-nested">
+
+<details id="m-accordion-item-31">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Hoe snel kan mijn voorradige order geleverd worden?</span>
+    </summary>
+    <div>
+        <p>
+            Indien u vóór 23:59 uur bestelt en betaalt via onze Nederlandse webwinkel, wordt uw bestelling de volgende werkdag gratis bezorgd. <br>
+<br>
+Wanneer u op maandag tot en met vrijdag vóór 12:00 uur bestelt en betaalt, kan uw bestelling tegen een bezorgtoeslag van €3,99 nog dezelfde dag bij u geleverd worden tussen 17:00 en 22:00 uur. Tevens is het op deze manier mogelijk om op zaterdag geplaatste bestellingen maandagavond te laten bezorgen.
+            <br><span class="faq-tags">[levertijd, leverdatum]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-127">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Waar kan ik zien wat de levertijd van een artikel is?</span>
+    </summary>
+    <div>
+        <p>
+            Op onze website staat bij alle artikelen op de productpagina vermeld of het artikel op voorraad is of niet. Als een artikel niet voorradig is, zal bij artikelen van ons eigen merk Lumidora de verwachte levertijd op de productpagina worden aangegeven. Wanneer u een artikel in uw winkelmandje plaatst, staat de verwachte levertijd daar nogmaals aangegeven.
+            <br><span class="faq-tags">[levertijd, niet op voorraad, voorradig, voorraad, levertermijn]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-131">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>De levertijd van mijn bestelde artikel is opgeschoven, wat nu?</span>
+    </summary>
+    <div>
+        <p>
+            Wanneer een artikel is uitverkocht proberen wij de verwachte levertijd zo actueel mogelijk te houden op onze website. Dit doen wij in voortdurend overleg met onze fabrikanten. Het is echter mogelijk dat levertijden uitlopen door omstandigheden waar wij helaas geen grip op hebben. Wij kunnen hiervoor niet aansprakelijk worden gesteld. Wel hebben wij de plicht u van zo accuraat mogelijke informatie te voorzien na overleg met onze fabrikanten en leveranciers. <br>
+
+            <br><span class="faq-tags">[levertijd, leverdatum, levertermijn, uitverkocht, vertraagd, vertraging]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-128">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Wat gebeurt er als het door mij bestelde product uitverkocht is? </span>
+    </summary>
+    <div>
+        <p>
+            Indien een besteld product onverhoopt uitverkocht en niet meer na te leveren is, vervalt de koopovereenkomst. Alle gemelde of vermelde leveringstermijnen zijn slechts een indicatie en kunnen dan ook niet leiden tot enig recht of tot enige aansprakelijkheid.
+            <br><span class="faq-tags">[niet leverbaar, uitverkocht]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-18">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Ik kan niet het gewenste aantal artikelen selecteren, wat nu?</span>
+    </summary>
+    <div>
+        <p>
+            Wanneer u niet het gewenste aantal artikelen kunt selecteren, betekent dit dat er nog maar een beperkt aantal van dit artikel op voorraad is. Het aantal dat u nog wel kunt selecteren betreft de laatste exemplaren van dit artikel. Dit is het geval bij artikelen die uit ons assortiment gaan en niet meer nabesteld kunnen worden. <br>
+
+            <br><span class="faq-tags">[niet op voorraad, niet genoeg, te weinig, aantal, hoeveelheid]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-17">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Het artikel is niet (voldoende) op voorraad. Kan ik het al wel bestellen?</span>
+    </summary>
+    <div>
+        <p>
+            Wanneer een artikel tijdelijk niet voorradig is, wordt onderscheid gemaakt tussen <br>
+<br>
+A. Artikelen van ons eigen merk Lumidora - bij het artikel staat vermeld wat de verwachte levertijd of leverdatum is. Het is mogelijk om het artikel alvast te bestellen.  Het artikel is dan voor u gereserveerd wanneer het weer bij ons op voorraad komt. Zodra het artikel weer op voorraad is, ontvangt u een automatische e-mail waarin u zelf een gewenste leverdatum kunt kiezen.<br>
+<br>
+Indien u een artikel dat niet op voorraad is nog niet wilt bestellen, kunt u uw e-mailadres invullen in het groene vlak op de website (‘hou mij op de hoogte’). Het artikel wordt in dit geval niet voor u gereserveerd. U ontvangt een e-mail zodra het artikel weer voorradig is en vervolgens kunt u overgaan tot bestelling. Houdt u er alstublieft wel rekening mee dat wij niet altijd grote aantallen van artikelen bestellen en dat het dus mogelijk is dat een artikel snel weer uitverkocht is. <br>
+<br>
+B. Artikelen van externe leveranciers - bij het artikel staat geen verwachte leverdatum vermeld. Wij zijn hierin afhankelijk van de leverancier en kunnen daarom geen betrouwbare indicatie van de levertermijn geven. U kunt het artikel pas bestellen wanneer het voorradig is. <br>
+<br>
+<br>
+<br>
+
+            <br><span class="faq-tags">[niet op voorraad, niet voorradig, voorradig, bestelling, bestellen, reserveren, reservering, aantal, hoeveelheid, herinnering, notificatie]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-59">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Kan een artikel vanuit jullie showroom verzonden worden?</span>
+    </summary>
+    <div>
+        <p>
+            Onze voorraad voor alle online bestellingen bevindt zich in ons verzendmagazijn. De voorraad voor winkelklanten bevindt zich bij onze showroom. Het zijn dus twee aparte voorraden die niet uitwisselbaar zijn. Indien u graag de artikelen uit onze showroom voorraad wilt bestellen, dient u naar onze showroom te komen in Sliedrecht.<br>
+<br>
+Mocht u bij uw bezoek aan de winkel een artikel willen kopen en is het door u gewenste artikel in onze winkel niet voorradig, dan kunt u dit wel direct bestellen en betalen. Zodra het artikel weer voorradig is, ontvangt u een automatische e-mail waarin u zelf de gewenste leverdatum kunt kiezen. Vervolgens wordt het artikel zonder kosten verzonden aan het door u opgegeven adres. Zo hoeft u niet nogmaals naar onze winkel in Sliedrecht te komen.
+            <br><span class="faq-tags">[showroom, winkel, voorraad, magazijn]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-163">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Waarom is de levertermijn van mijn bestelling gewijzigd?</span>
+    </summary>
+    <div>
+        <p>
+            Door onvoorziene omstandigheden tijdens het productieproces of tijdens het transport van de fabrikant naar ons magazijn kan het helaas voorkomen dat er vertraging ontstaat in de levering van producten. Wij proberen onze klanten altijd zo goed mogelijk op de hoogte te houden van eventuele vertragingen. <br>
+<br>
+Alle gemelde of vermelde leveringstermijnen zijn slechts een indicatie en kunnen dan ook niet leiden tot enig recht of aansprakelijkheid.
+            <br><span class="faq-tags">[vertraging, vertraagd, levertermijn, levertijd, voorradig, niet op voorraad, ]</span>
+        </p>
+    </div>
+</details>
+    </div>
+</details>
+<details class="m-accordion-category">
+    <span class="anchor-shift sr-only" id="m-accordion-category-5"></span>
+    <summary class="has-icon">Retourneren &amp; Annuleren
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+    </summary>
+    <div class="m-accordion-nested">
+
+<details id="m-accordion-item-36">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Hoe kan ik een artikel retourneren?</span>
+    </summary>
+    <div>
+        <p>
+            Wanneer een artikel niet aan uw wensen voldoet, mag u het retourneren. Omdat u gebruikmaakt van uw herroepingsrecht, is retourneren niet kosteloos. Als u uw retourzending aanmaakt via ons retourportaal, betaalt u wel minder dan gewoonlijk. De kosten van het retourneren bedragen <b>€6,00 per pakket. Dit bedrag wordt ingehouden op het retourbedrag.</b> <br>
+<br>
+<b>De retourzending dient aan de volgende eisen te voldoen:</b><br>
+<br>
+- Het artikel dient binnen de zichttermijn van 30 dagen geretourneerd te worden.<br>
+- Het artikel dient in originele staat te zijn.<br>
+- Het artikel dient goed en veilig ingepakt te zijn, voor zover mogelijk in de complete originele verpakking (inclusief binnenverpakking). Eventuele luchtkussens of andere beschermingsmaterialen dienen ook voor zover mogelijk aanwezig te zijn.<br>
+- De verpakking van het artikel mag niet beschreven zijn. Ons adres dient u dan ook op een briefje te schrijven dat u op de doos plakt.<br>
+- Het artikel mag niet gebruikt zijn en er mogen geen wijzigingen aan het artikel zijn aangebracht.<br>
+<br>
+<b>Ieder pakket dient ons ingevulde <a href="https://www.rietveldlicht.nl/v3/public/Retour_formulier.pdf?v=6" target="_blank">Retourformulier</a> te bevatten.</b> <br>
+Uw ordernummer vindt u op uw (digitale) orderbevestiging. Het is voor een snelle afhandeling van uw retourzending van het grootste belang dat u uw ordernummer vermeldt op het retourformulier. <br>
+<br>
+<b>N.B.</b> U maakt <b>voor ieder afzonderlijk pakket</b> dat u retourneert een retourlabel aan. <b>De kosten van €6,00 per pakket worden ingehouden op het retourbedrag.</b>  Als u kiest voor afhalen bij u thuis, hoeft u geen verzendlabel te printen. De chauffeur neemt het label mee en plakt dit ter plekke bij u op het pakket. Als u kiest voor retour brengen bij een Parcel Shop, dan moet u wel zelf het label printen en dit op de doos plakken. Alleen een pakket met label kunt u afgeven bij een Parcel Shop.<br>
+<br>
+<b><a target="_blank" href="https://www.return-my-parcel.com/DPD-NL/rietveldlicht?lang=nl_NL">Klik hier om gebruik te maken van ons retourportaal.</a></b><br>
+<br>
+Stuurt u uw pakket(ten) liever terug met een andere pakketdienst? Dan kunt u uw zending adresseren aan:<br>
+<br>
+<b>Rietveld Licht<br>
+Nieuwland Parc 6<br>
+2952 DA  Alblasserdam</b><br>
+<br>
+In dat geval verzorgt en betaalt u zelf een retourlabel en zullen de kosten daarvan niet verrekend worden met een eventuele terugbetaling. U kunt bij het retourneren gebruikmaken van iedere pakketdienst, behalve van DHL. Omdat DHL ook op zaterdag en zondag levert en ons retourmagazijn dan gesloten is, dient u uw retourzending via een andere pakketdienst dan DHL te versturen. <br>
+<br>
+Het is ook mogelijk om de bestelling terug te brengen in onze winkel in Sliedrecht wanneer deze geopend is. Let op: zolang onze showroom nog alleen op afspraak geopend is in verband met de coronamaatregelen is het niet mogelijk om (een deel van) uw order in de showroom te retourneren. U kunt hiervoor ons retouradres in Alblasserdam gebruiken.<br>
+<br>
+Wanneer uw retourzending bij ons is aangekomen, zal deze zo snel mogelijk - echter uiterlijk binnen twee weken - verwerkt worden. U ontvangt een e-mail van ons wanneer uw retourzending verwerkt is. <br>
+
+            <br><span class="faq-tags">[retour, retourneren, retourzending, retourvoorwaarden, retourinformatie, retoursturen, geretourneerd, herroepingsrecht, retourbon, pakbon, retourformulier, retourtermijn, terugsturen]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-121">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Aan welke voorwaarden moet een retourzending voldoen?</span>
+    </summary>
+    <div>
+        <p>
+            De retour te sturen artikelen moeten in originele staat zijn, verpakt in de originele verpakking inclusief de complete originele binnenverpakking. Eventuele beschermende luchtkussenfolie aan de buitenzijde dient ook aanwezig te zijn. De verpakkingsdozen mogen niet zijn beschreven. Kortom: het artikel dient verpakt te zijn zoals het verpakt was op het moment van levering.
+            <br><span class="faq-tags">[retourvoorwaarden, retourinstructies, retour, verpakking, doos, originele staat, terugsturen, retourneren, voorwaarden]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-38">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Binnen welke termijn kan ik een artikel retourneren?</span>
+    </summary>
+    <div>
+        <p>
+            Het is mogelijk om artikelen te retourneren wanneer deze niet aan uw verwachtingen voldoen. De artikelen dienen binnen de zichttermijn van 30 dagen geretourneerd te worden. <br>
+
+            <br><span class="faq-tags">[zichttermijn, retourtermijn, herroepingsrecht, herroeping, annulering, annuleren]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-135">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Welke gegevens of documenten moet ik toevoegen aan mijn retourzending?</span>
+    </summary>
+    <div>
+        <p>
+            Voor een voorspoedige afhandeling van uw retourzending is het belangrijk dat u een ingevuld <a href="https://www.rietveldlicht.nl/v3/public/Retour_formulier.pdf?v=6" target="_blank">retourformulier</a> aan uw retourzending toevoegt.
+            <br><span class="faq-tags">[retourformulier, retourdocument, pakbon, retourbon]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-156">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Met welke pakketdienst kan ik artikelen retourneren?</span>
+    </summary>
+    <div>
+        <p>
+            U kunt bij het retourneren gebruikmaken van ons <a target="_blank" href="https://www.return-my-parcel.com/DPD-NL/rietveldlicht?lang=nl_NL">retourportaal</a>. Omdat u gebruikmaakt van uw herroepingsrecht, is retourneren niet kosteloos. Als u uw retourzending aanmaakt via ons retourportaal, betaalt u wel minder dan gewoonlijk. De kosten van het retourneren bedragen <b>€6,00 per pakket</b>. Dit bedrag wordt ingehouden op het retourbedrag. <b>N.B.</b> U maakt voor ieder afzonderlijk pakket dat u retourneert een retourlabel aan. <br>
+<br>
+Stuurt u uw pakket(ten) liever terug met een andere pakketdienst? In dat geval verzorgt en betaalt u zelf een retourlabel en zullen de kosten daarvan niet verrekend worden met een eventuele terugbetaling. U kunt bij het retourneren gebruikmaken van iedere pakketdienst, behalve van DHL. Omdat DHL ook op zaterdag en zondag levert en ons retourmagazijn dan gesloten is, dient u uw retourzending via een andere pakketdienst dan DHL te versturen.<br>
+
+            <br><span class="faq-tags">[retourneren, pakketdienst, dhl, retourzending, dpd, postnl, retour, bezorgdienst]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-24">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Kan ik een bestelling annuleren?</span>
+    </summary>
+    <div>
+        <p>
+            Wanneer wij uw bestelling en betaling hebben ontvangen en uw bestelling is voorradig, dan wordt uw bestelling direct verwerkt in ons volledig geautomatiseerde systeem. Dit geldt ook voor bestellingen waarbij de gekozen leverdatum pas over een aantal dagen is. Dit betekent dat bestellingen (die voorradig zijn) niet meer kunnen worden geannuleerd. Bestellingen die niet voorradig zijn, kunnen wel worden geannuleerd.
+            <br><span class="faq-tags">[annulering, annuleren, herroepen, herroepingsrecht]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-120">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Wat is het retouradres van Rietveld Licht en Wonen?</span>
+    </summary>
+    <div>
+        <p>
+            Ons retouradres is:<br>
+<br>
+Rietveld Licht &amp; Wonen<br>
+Nieuwland Parc 6<br>
+2952 DA  Alblasserdam.
+            <br><span class="faq-tags">[retouradres, retour, adres, contact, alblasserdam, sliedrecht, retourneren]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-37">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Hoe stuur ik een artikel retour als het defect of beschadigd is?</span>
+    </summary>
+    <div>
+        <p>
+            Indien het door u ontvangen artikel defect of beschadigd is, dient u contact op te nemen met onze helpdesk. De helpdesk zal u dan meer informatie geven omtrent de te volgen procedure.<br>
+<br>
+Indien er sprake is van een ondeugdelijk (defect of beschadigd) product, heeft Rietveld Licht &amp; Wonen het recht om het product te vervangen of te repareren voordat er een plicht bestaat om het aankoopbedrag terug te betalen. <br>
+<br>
+Rietveld Licht &amp; Wonen stelt vast of de garantie van toepassing is en bepaalt de wijze van repareren en/of verzenden.<br>
+<br>
+De verzendkosten die gepaard gaan met het vervangen of repareren van een product komen, indien de klacht gegrond is en er een afspraak gemaakt is met onze klantenservice, binnen de garantietermijn voor rekening van Rietveld Licht &amp; Wonen. U kunt hierbij gebruikmaken van ons <a target="_blank" href="https://www.return-my-parcel.com/DPD-NL/rietveldlicht?lang=nl_NL">retourportaal</a>. Wanneer u de retourzending zelf verzorgt, vergoeden wij alleen de standaard verzendkosten (geen aangetekende levering of expresselevering of andere toeslagen). <br>
+<br>
+Indien u besluit geen gebruik te willen maken van de door Rietveld Licht &amp; Wonen aangeboden oplossing, kunt u het product op eigen kosten retourneren. U kunt hiervoor onze <a href="https://www.rietveldlicht.nl/retour">standaard retourprocedure</a> volgen.
+            <br><span class="faq-tags">[defect, kapot, beschadigd, kras, vlek, schade, reparatie, repareren, garantie, ondeugdelijk, ]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-34">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Voor wie zijn de retourkosten als ik een artikel retourneer?</span>
+    </summary>
+    <div>
+        <p>
+            De kosten voor het retour sturen zijn voor uw eigen rekening. Als u uw retourzending aanmaakt via ons <a target="_blank" href="https://www.return-my-parcel.com/DPD-NL/rietveldlicht?lang=nl_NL">retourportaal</a>, betaalt u wel minder dan gewoonlijk. De kosten van het retourneren bedragen <b>€6,00 per pakket</b>. Dit bedrag wordt ingehouden op het retourbedrag. <b>N.B.</b> U maakt <b>voor ieder afzonderlijk pakket</b> dat u retourneert een retourlabel aan. <br>
+<br>
+Het is mogelijk dat uw order in meerdere pakketten naar u wordt verzonden. In dat geval zijn de verzendkosten van al deze pakketten voor uw rekening. <br>
+<br>
+Voor artikelen met een afwijkende maat en/of hoog gewicht vindt u de retourinstructies in uw orderbevestiging. De retourkosten hiervan wijken af van de hierboven genoemde standaard retourkosten. <br>
+<br>
+De eventueel gemaakte montagekosten of kosten voor niet-standaard (bijvoorbeeld aangetekende) levering zijn ook voor uw rekening.
+            <br><span class="faq-tags">[retourkosten, retourzending, retourneren, retour, kosten, franco, aangetekend, verzendkosten, retourlabel]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-87">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Mag ik een order retour brengen in de winkel in Sliedrecht?</span>
+    </summary>
+    <div>
+        <p>
+            U mag (een deel van) uw order ook onder openingstijden retourneren in onze winkel in Sliedrecht. De retourvoorwaarden die gelden voor het retour zenden van een bestelling, gelden ook voor het terugbrengen in de winkel. Wanneer u naar de winkel komt, vragen wij u ons ingevulde <a href="https://www.rietveldlicht.nl/v3/public/Retour_formulier.pdf?v=6">retourformulier</a> mee te nemen. <br>
+<br>
+<b>Let op: zolang onze showroom nog alleen op afspraak geopend is in verband met de coronamaatregelen is het niet mogelijk om (een deel van) uw order in de showroom te retourneren. U kunt hiervoor ons retouradres in Alblasserdam gebruiken.</b>
+            <br><span class="faq-tags">[retourneren, retour, winkel, showroom, sliedrecht]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-35">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Kan ik een artikel ruilen?</span>
+    </summary>
+    <div>
+        <p>
+            Indien het bestelde artikel niet aan uw wensen voldoet, mag u het <a href="/retour">retourneren</a>. Vervolgens ontvangt u het aankoopbedrag terug, mits het retour gestuurde artikel aan onze retourvoorwaarden voldoet. U kunt vervolgens zelf een nieuwe bestelling plaatsen. Zo blijven het twee gescheiden processen; dit werkt het snelst en is het meest overzichtelijk.
+            <br><span class="faq-tags">[ruilen, omruilen, ander artikel]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-110">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Waarom moet ik de retourkosten zelf betalen?</span>
+    </summary>
+    <div>
+        <p>
+            Wij hebben voor deze procedure gekozen omdat nu alleen de klant die daadwerkelijk een artikel retourneert, de retourkosten ook zelf draagt. Er zijn webshops waarbij de retourkosten niet voor rekening van de klant komen, echter het is dan natuurlijk wel zo dat het bedrijf de retourkosten kostendekkend maakt door deze kosten in de verkoopprijs van het artikel te verwerken. Met als gevolg dat alle klanten, ook de klanten die het product behouden, te maken krijgen met een prijsopslag. In feite betaalt u ook bij deze bedrijven de retourkosten. Door onze werkwijze komen de retourkosten helemaal voor rekening van de klanten die ook daadwerkelijk het product retourneren.<br>
+<br>
+Daarnaast hebben wij in het verleden ervaren dat, indien wij de klanten "gratis" retour laten sturen het aantal ​zeer grote ​multiple choice bestellingen enorm toeneemt. Aangezien het voor de artikelen die wij verkopen niet wenselijk is dat ze regelmatig op en neer gestuurd worden, hebben wij gekozen voor een retourprocedure die dit ontmoedigt.<br>
+<br>
+Als u uw retourzending aanmaakt via ons <a target="_blank" href="https://www.return-my-parcel.com/DPD-NL/rietveldlicht?lang=nl_NL">retourportaal</a>, betaalt u wel minder dan gewoonlijk. De kosten van het retourneren bedragen <b>€6,00 per pakket</b>. Dit bedrag wordt ingehouden op het retourbedrag. <b>N.B.</b> U maakt <b>voor ieder afzonderlijk pakket</b> dat u retourneert een retourlabel aan.
+            <br><span class="faq-tags">[retourkosten, verzendkosten, verzending, retourneren, retour, portokosten, franco, retourlabel]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-122">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Wanneer ontvang ik mijn geld terug nadat ik iets heb geretourneerd?</span>
+    </summary>
+    <div>
+        <p>
+            Uw retourzending zal binnen 14 dagen na ontvangst door ons in behandeling worden genomen. Vervolgens zal het bedrag binnen vier werkdagen na het verwerken van uw retourzending op uw rekening worden teruggestort.
+            <br><span class="faq-tags">[retour, geld terug, retourbedrag, aankoopbedrag terug, terugstorten, teruggestort, retourbehandeling, retourverwerking]</span>
+        </p>
+    </div>
+</details>
+    </div>
+</details>
+<details class="m-accordion-category">
+    <span class="anchor-shift sr-only" id="m-accordion-category-6"></span>
+    <summary class="has-icon">Garantie
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+    </summary>
+    <div class="m-accordion-nested">
+
+<details id="m-accordion-item-42">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Hoe lang is de garantietermijn?</span>
+    </summary>
+    <div>
+        <p>
+            U heeft - vanaf de dag dat uw bestelling is geleverd - twee jaar garantie op uw aankoop. Op LED lichtbronnen heeft u ook twee jaar garantie. Op andere lichtbronnen (zoals gloeilampen en halogeenlampen) heeft u een half jaar garantie.<br>
+Bij vervangingen onder de garantie blijft de oorspronkelijke aankoopdatum bepalend voor de garantietermijn. <br>
+
+            <br><span class="faq-tags">[garantietermijn, garantie, garantievoorwaarden]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-10">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Waar heb ik geen garantie op?</span>
+    </summary>
+    <div>
+        <p>
+            Op de garantie kan geen aanspraak gemaakt worden als het defect is veroorzaakt door:<br>
+<br>
+<br>
+- veranderingen in of aan het artikel die door u of derden zijn aangebracht,<br>
+<br>
+- gebreken die zijn ontstaan door onoordeelkundig gebruik of enig ander gebruik dan waarvoor het artikel is bedoeld,<br>
+<br>
+- beschadiging door opzet of grove onachtzaamheid,<br>
+<br>
+- van buiten komend onheil zoals blikseminslag, blikseminductie etc,<br>
+<br>
+- buitengewone of extreme weersomstandigheden,<br>
+<br>
+- oververhitting door gebruik van een te hoog wattage gloei- of halogeenlamp,<br>
+<br>
+- blootstelling aan vochtigheid, extreme warmte of zonlicht of extreme koude,<br>
+<br>
+<br>
+Glaswerk en gratis meegeleverde en bijgevoegde batterijen vallen niet onder de garantie.<br>
+<br>
+Indirecte kosten, veroorzaakt door het buiten bedrijf zijn van het defecte artikel of het moeten verwijderen en weer moeten aanbrengen door uzelf of door derden, kunnen niet voor vergoeding in aanmerking komen.
+            <br><span class="faq-tags">[garantie, garantietermijn, garantievoorwaarden, beschadigd, defect, gebroken, batterijen, vergoeding, reparatiekosten, reparatie, ]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-133">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Wat zijn de garantievoorwaarden van Rietveld Licht &amp; Wonen?</span>
+    </summary>
+    <div>
+        <p>
+            Rietveld Licht &amp; Wonen garandeert dat elk door haar geleverd verlichtingsarmatuur voldoet aan normale eisen van deugdelijkheid en bruikbaarheid en aan bestaande overheidsvoorschriften. Als bij normaal met de bestemming corresponderend gebruik gebreken optreden in of aan het artikel worden die door Rietveld Licht &amp; Wonen binnen de garantieperiode kosteloos hersteld. <br>
+<br>
+Op de garantie kan geen aanspraak gemaakt worden als het defect is veroorzaakt door:<br>
+<br>
+- veranderingen in of aan het artikel die door u of derden zijn aangebracht<br>
+- gebreken die zijn ontstaan door onoordeelkundig gebruik of enig ander gebruik dan waarvoor het artikel is bedoeld<br>
+- beschadiging door opzet of grove onachtzaamheid<br>
+- van buiten komend onheil zoals blikseminslag, blikseminductie etc.<br>
+- oververhitting door gebruik van een te hoog wattage gloei- of halogeenlamp<br>
+- blootstelling aan vochtigheid, extreme warmte of zonlicht of extreme koude. <br>
+- schade aan buitenlampen ontstaan door buitengewone of extreme weersomstandigheden.<br>
+<br>
+Ook gevolgschade veroorzaakt door het defect gaan of zijn van het artikel valt niet onder de garantie. <br>
+<br>
+Omdat onze producten voortdurend in ontwikkeling zijn en worden vernieuwd of verbeterd kan het voorkomen dat wanneer een product vervangen moet worden onder garantie het vervangende product afwijkt van het product dat u had. Indien u meerdere exemplaren van een product heeft gekocht zal alleen het product dat defect is indien nodig onder garantie worden vervangen. Het afwijken van het vervangende product kan geen reden zijn om ook uw andere exemplaren te vervangen of aan te passen op onze kosten.
+            <br><span class="faq-tags">[garantie, garantievoorwaarden, garantietermijn]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-9">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Wat moet ik doen als het artikel binnen de garantietermijn kapot gaat?</span>
+    </summary>
+    <div>
+        <p>
+            Mocht het artikel stuk gaan binnen de garantietermijn, dan kunt u contact opnemen met onze helpdesk.
+            <br><span class="faq-tags">[garantie, garantietermijn, garantievoorwaarden]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-134">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Voor wiens rekening zijn de extra kosten die zijn ontstaan door het defect zijn van een product?</span>
+    </summary>
+    <div>
+        <p>
+            Indirecte kosten, veroorzaakt door het buiten bedrijf zijn van een defect artikel of het moeten verwijderen en weer moeten aanbrengen door uzelf of door derden, kunnen niet voor vergoeding in aanmerking komen.<br>
+
+            <br><span class="faq-tags">[garantie, garantievoorwaarden, reparatie, elektricien, montagekosten, monteur, installateur]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-109">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Wie betaalt de verzendkosten wanneer ik een artikel onder garantie naar Rietveld Licht &amp; Wonen opstuur?</span>
+    </summary>
+    <div>
+        <p>
+            Wanneer er sprake is van een ondeugdelijk (defect of beschadigd) product, stelt Rietveld Licht &amp; Wonen vast of de garantie van toepassing is en bepaalt de wijze van repareren en/of verzenden. Rietveld Licht &amp; Wonen heeft het recht om het product te vervangen of te repareren voordat er een plicht bestaat om het aankoopbedrag terug te betalen. <br>
+<br>
+De verzendkosten die gepaard gaan met het vervangen of repareren van een product komen, indien de klacht gegrond is en er een afspraak gemaakt is met onze klantenservice, binnen de garantietermijn voor rekening van Rietveld Licht &amp; Wonen. U kunt hierbij gebruikmaken van ons <a target="_blank" href="https://www.return-my-parcel.com/DPD-NL/rietveldlicht?lang=nl_NL">retourportaal</a>. Wanneer u de retourzending zelf verzorgt, vergoeden wij alleen de standaard verzendkosten (geen aangetekende verzending, expresse-toeslag of andere toeslagen). <br>
+<br>
+Indien u besluit geen gebruik te willen maken van de door Rietveld Licht &amp; Wonen aangeboden oplossing, kunt u het product op eigen kosten retourneren. U kunt hiervoor onze <a href="https://www.rietveldlicht.nl/retour">standaard retourprocedure</a> volgen.
+            <br><span class="faq-tags">[ondeugdelijk, schade, kapot, defect, beschadigd, gebroken, reparatie, garantie, garantievoorwaarden, verzendkosten, retourkosten, vergoeding, franco, retourlabel, vervanging]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-139">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Is Rietveld Licht &amp; Wonen aansprakelijk voor gevolgschade van kortsluiting? </span>
+    </summary>
+    <div>
+        <p>
+            Een sluiting of een volledige kortsluiting in een elektrisch apparaat zoals een lamp veroorzaakt geen kortstondige spanningspiek maar juist een kortstondige spanningsdaling. Omdat bij een lage weerstand* kortstondig een veel grotere stroom gaat vloeien schakelt de zekeringsautomaat of smeltveiligheid direct uit. Door de veel grotere stroom die kortstondig vloeit, voordat de zekering doorsmelt, daalt de spanning zeer sterk tot een fractie van de nominale waarde.<br>
+Dit veiligheidsproces heeft geen invloed op andere apparaten in huis of zelfs dezelfde wandcontactdoos en is uitsluitend een proces tussen het defecte artikel en de zekering in de meterkast, en kan dan ook geen schade aanrichten aan andere elektrische apparaten.<br>
+<br>
+*Een lagere weerstand dan normaal noemt men een sluiting en een heel lage weerstand of (hoegenaamd) geen weerstand noemt men een kortsluiting.
+            <br><span class="faq-tags">[Kortsluiting, defect, garantie, garantievoorwaarden]</span>
+        </p>
+    </div>
+</details>
+    </div>
+</details>
+<details class="m-accordion-category">
+    <span class="anchor-shift sr-only" id="m-accordion-category-7"></span>
+    <summary class="has-icon">Service &amp; voorwaarden
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+    </summary>
+    <div class="m-accordion-nested">
+
+<details id="m-accordion-item-49">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Ik heb een vraag of klacht; waar kan ik terecht?</span>
+    </summary>
+    <div>
+        <p>
+            Bij vragen of klachten kunt u contact met ons opnemen per mail (helpdesk@rietveldlicht.nl) of per telefoon (0031 (0) 78 615 44 15). <br>
+<br>
+Openingstijden Helpdesk:<br>
+<br>
+Ma t/m vr 09:00 - 17:00 <br>
+Zaterdag Gesloten <br>
+Zondag Gesloten
+            <br><span class="faq-tags">[vraag, vragen, klacht, klachten, contact, helpdesk, e-mailadres, mailadres, telefoonnummer, telefoon, bellen]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-76">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Ik heb een verkeerd artikel ontvangen, wat nu?</span>
+    </summary>
+    <div>
+        <p>
+            Wanneer u een verkeerd artikel heeft ontvangen, lossen wij dit graag voor u op. Wij vragen u contact op te nemen met onze helpdesk zodat wij ervoor kunnen zorgen dat u zo snel mogelijk het juiste, door u bestelde artikel, ontvangt.<br>
+<br>
+Let u er op dat een samengesteld artikel (te herkennen aan een artikelnummer dat begint met een 3) bestaat uit meerdere artikelnummers en dat deze artikelnummers op de dozen staan gedrukt. U kunt op de website en op uw factuur nakijken uit welke artikelnummers uw bestelde artikel bestaat. Op deze manier kunt u controleren of u het juiste artikel heeft ontvangen.
+            <br><span class="faq-tags">[verkeerd artikel, foutief geleverd, verkeerde levering, foute levering, artikel]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-50">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Wat zijn jullie contactgegevens?</span>
+    </summary>
+    <div>
+        <p>
+            U kunt ons per mail (helpdesk@rietveldlicht.nl) en per telefoon (0031 (0) 78 615 44 15) bereiken. Telefonisch zijn wij bereikbaar van maandag tot en met vrijdag tussen 09:00 uur en 17:00 uur.
+            <br><span class="faq-tags">[contact, contactgegevens, openingstijden, helpdesk, customer service, klantenservice]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-99">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Kamer van koophandel en BTW</span>
+    </summary>
+    <div>
+        <p>
+            Rietveld Licht B.V.<br>
+K.v.K. 82365490<br>
+BTW nr. NL8624.36.734.B.01 (Nederland)<br>
+BTW nr. BE0834.672.033 (België)
+            <br><span class="faq-tags">[kvk, kamer van koophandel, btw, btw nummer, btw-nummer]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-13">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Ik heb een artikel ontvangen dat beschadigd/defect is. Hoe wordt dit opgelost?</span>
+    </summary>
+    <div>
+        <p>
+            Wanneer een artikel verkeerd geleverd, beschadigd of defect is, dient u hierover binnen één maand na aanschaf contact met ons op te nemen. <br>
+<br>
+Wanneer een artikel beschadigd of defect is, ontvangen wij graag een foto van de beschadiging of het defect. Indien het artikel defect is, kunt u dit in sommige gevallen niet fotograferen. Wij vragen u dan een e-mail te sturen met een beschrijving van het defect of telefonisch contact op te nemen. <br>
+
+            <br><span class="faq-tags">[beschadigd, defect, kapot, schade, gebroken, customer service, klantenservice, helpdesk, reclamatie]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-12">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Ik heb een artikel ontvangen dat ik niet heb besteld. Hoe wordt dit opgelost?</span>
+    </summary>
+    <div>
+        <p>
+            Wanneer u een verkeerd artikel heeft ontvangen, lossen wij dit graag voor u op. Wij vragen u contact op te nemen met onze helpdesk zodat wij ervoor kunnen zorgen dat u zo snel mogelijk het juiste, door u bestelde artikel, ontvangt.<br>
+<br>
+Let u er op dat een samengesteld artikel (te herkennen aan een artikelnummer dat begint met een 3) bestaat uit meerdere artikelnummers en dat deze artikelnummers op de dozen staan gedrukt. U kunt op de website en op uw factuur nakijken uit welke artikelnummers uw bestelde artikel bestaat. Op deze manier kunt u controleren of u het juiste artikel heeft ontvangen.
+            <br><span class="faq-tags">[verkeerde levering, verkeerd artikel, foute levering, foutief]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-100">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Hoe werkt de laagste prijsgarantie van Rietveld Licht en Wonen? </span>
+    </summary>
+    <div>
+        <p>
+            Wanneer u een order bij ons heeft geplaatst of een artikel in onze winkel heeft gekocht en u vindt ditzelfde artikel bij een andere Nederlandse winkel <b>op voorraad</b> voor een lagere prijs, kunt u dit binnen één maand na ontvangst van het artikel bij ons melden. Wij storten dan het prijsverschil terug op uw rekening.
+            <br><span class="faq-tags">[laagste prijsgarantie, lagere prijs, goedkoper, prijsgarantie, ergens anders goedkoper, prijsverschil]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-58">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Verkopen jullie ook cadeaubonnen?</span>
+    </summary>
+    <div>
+        <p>
+            Wij verkopen geen cadeaubonnen.
+            <br><span class="faq-tags">[cadeaubon, vvv-bon, kadobon]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-14">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Kunnen artikelen door jullie bij mij thuis worden gemonteerd?</span>
+    </summary>
+    <div>
+        <p>
+            Helaas kunnen wij de lampen niet thuis voor u monteren. Indien u vragen heeft over de montage, kunt u contact met ons opnemen.
+            <br><span class="faq-tags">[montage, monteur, installateur, installeren, montageservice]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-125">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Kan ik erop vertrouwen dat de prijs van het door mij bestelde artikel niet wordt verhoogd?</span>
+    </summary>
+    <div>
+        <p>
+            Rietveld Licht &amp; Wonen garandeert dat de prijs zoals vermeld bij het artikel op de dag van bestelling en zoals vermeld op de factuur niet wordt verhoogd. Wij kunnen niet aansprakelijk gesteld worden voor gevolgen van de weergave van foutieve prijzen veroorzaakt door de internetserver of door hackers, computervirussen en andere omstandigheden waarin sprake is van overmacht. <br>
+
+            <br><span class="faq-tags">[prijsgarantie, goedkoper, duurder, prijs]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-130">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>De informatie op jullie website klopt niet.</span>
+    </summary>
+    <div>
+        <p>
+            De informatie op onze website, zoals tips, levertijden, foto's en artikelomschrijvingen, wordt met zorgvuldigheid samengesteld. Wij kunnen echter niet aansprakelijk worden gesteld voor eventuele fouten of onzorgvuldigheden in deze teksten. Uiteraard vernemen wij het graag van u als u een fout op onze website ontdekt.
+            <br><span class="faq-tags">[foutieve informatie, fout, tekst, omschrijving]</span>
+        </p>
+    </div>
+</details>
+    </div>
+</details>
+<details class="m-accordion-category">
+    <span class="anchor-shift sr-only" id="m-accordion-category-8"></span>
+    <summary class="has-icon">Showroom
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+    </summary>
+    <div class="m-accordion-nested">
+
+<details id="m-accordion-item-51">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Hebben jullie ook een winkel/showroom?</span>
+    </summary>
+    <div>
+        <p>
+            Wij hebben een winkel/showroom in Sliedrecht (Lelystraat 120, 3364AJ). Hier kunt u bijna al onze artikelen in het echt bekijken. Per artikel staat op onze website vermeld of het artikel in onze showroom te bezichtigen is. Bij elk voorradige artikel staat ook onze huidige winkelvoorraad vermeld.
+            <br><span class="faq-tags">[winkel, showroom, sliedrecht, toonzaal]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-98">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Adres en openingstijden van de showroom?</span>
+    </summary>
+    <div>
+        <p>
+            Het adres van onze showroom is: <br>
+<br>
+Lelystraat 120 <br>
+3364 AJ Sliedrecht <br>
+<br>
+Openingstijden Showroom: <br>
+<br>
+Maandag 13:00 - 17:30 <br>
+Dinsdag 09:00 - 17:30 <br>
+Woensdag 09:00 - 17:30 <br>
+Donderdag 09:00 - 20:00 (koopavond) <br>
+Vrijdag 09:00 - 17:30 <br>
+Zaterdag 09:00 - 17:30 <br>
+Zondag gesloten
+            <br><span class="faq-tags">[adres, showroom, winkel, adresgegevens, sliedrecht, openingstijden, geopend]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-53">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Als ik in de winkel een artikel heb gezien wat ik mooi vind, kan ik het dan direct meenemen?</span>
+    </summary>
+    <div>
+        <p>
+            Indien u op onze website een artikel heeft gezien en deze in het echt wilt bekijken in onze winkel, is dit uiteraard mogelijk (mits bij het artikel staat vermeld dat dit te zien is in onze showroom). Mocht het artikel vervolgens naar wens zijn en voorradig, dan kunt u het direct betalen en meenemen. Op onze website staat bij het artikel vermeld wat de voorraad is in onze winkel in Sliedrecht. Houdt u er wel rekening mee dat dit een momentopname is en er geen rechten ontleend kunnen worden aan de voorraadinformatie op de website.
+            <br><span class="faq-tags">[winkel, showroom, toonzaal]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-55">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Ik heb een mooi meubel/schilderij/accessoire gezien in de winkel, kan ik dit kopen?</span>
+    </summary>
+    <div>
+        <p>
+            Veel van de in de winkel getoonde schilderijen en accessoires zijn te koop en worden direct vanuit de winkel verkocht. Helaas zijn de meubels (kasten, tafels, banken en stoelen) niet te koop. Deze meubels worden gebruikt om de juiste sfeerbeelden te creëren ten behoeve van onze verlichting.
+            <br><span class="faq-tags">[schilderij, schilderijen, meubels, meubel, kast, stoel, fauteuil, dressoir, koffietafel, salontafel, tafel, wanddecoratie, decoratie]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-136">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Is jullie showroom rolstoelvriendelijk? </span>
+    </summary>
+    <div>
+        <p>
+            Onze showroom is rolstoelvriendelijk met uitzondering van de sale-afdeling die helaas alleen met een trap te bereiken is. <br>
+Er is ook een invalidentoilet aanwezig.
+            <br><span class="faq-tags">[rolstoel, showroom, rolstoelvriendelijk, invalide, invalidentoilet, slecht ter been]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-137">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Is er een verschoningsruimte in de showroom in Sliedrecht?</span>
+    </summary>
+    <div>
+        <p>
+            Bij de toiletten in onze showroom is ook een mogelijkheid om uw kind te verschonen.
+            <br><span class="faq-tags">[verschoningsruimte, verschonen, kind, baby, luier, commode]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-57">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Hoe kan ik betalen in de winkel?</span>
+    </summary>
+    <div>
+        <p>
+            U kunt in onze winkel pinnen met uw Nederlandse bankpas of creditcard. Met een buitenlandse bankpas kunt u alleen pinnen als deze het Maestro Logo bevat. Wij accepteren geen VVV-bonnen. <br>
+<br>
+Als voorzorgsmaatregel tegen het coronavirus kunt u tijdelijk niet betalen met contant geld. Onze excuses voor het ongemak.
+            <br><span class="faq-tags">[pinnen, contant, betalen, pinbetaling, bankpas, visa, american express, creditcard, vvv-bon, cadeaubon, tegoedbon]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-60">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Kan ik een artikel reserveren in de winkel?</span>
+    </summary>
+    <div>
+        <p>
+            Indien u graag een bezoek wilt brengen aan onze winkel om het artikel te bekijken en (eventueel) direct mee te nemen, dan is het mogelijk om een artikel voor u te reserveren (mits dit in onze winkel op dat moment voorradig is). U kunt hiervoor contact opnemen met de Helpdesk. Zij kunnen het artikel voor een bepaalde tijd voor u reserveren.
+            <br><span class="faq-tags">[reservering, apart houden, apart leggen, reserveren]</span>
+        </p>
+    </div>
+</details>
+    </div>
+</details>
+<details class="m-accordion-category">
+    <span class="anchor-shift sr-only" id="m-accordion-category-9"></span>
+    <summary class="has-icon">Contact
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+    </summary>
+    <div class="m-accordion-nested">
+
+<details id="m-accordion-item-152">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Wat is jullie telefoonnummer?</span>
+    </summary>
+    <div>
+        <p>
+            U kunt ons telefonisch bereiken op: (0031) (0)78 615 44 15
+            <br><span class="faq-tags">[telefoonnummer, telefonisch, contact, bellen, telefoon]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-153">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Wat is jullie e-mailadres</span>
+    </summary>
+    <div>
+        <p>
+            Ons e-mailadres is: helpdesk@rietveldlicht.nl
+            <br><span class="faq-tags">[mailadres, e-mail, mailen, e-mailen, e-mailadres, contact]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-150">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Wat is het adres van de showroom?</span>
+    </summary>
+    <div>
+        <p>
+            Rietveld Licht &amp; Wonen<br>
+Lelystraat 120<br>
+3364 AJ Sliedrecht
+            <br><span class="faq-tags">[adres, winkel, showroom, toonzaal, bezoek]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-151">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Wat is het retouradres?</span>
+    </summary>
+    <div>
+        <p>
+            Rietveld Licht &amp; Wonen<br>
+t.a.v. Retouren<br>
+Nieuwland Parc 6<br>
+2952 DA Alblasserdam
+            <br><span class="faq-tags">[retourneren, retour, retouradres, retourgegevens, retoursturen, terugsturen, adres]</span>
+        </p>
+    </div>
+</details>
+    </div>
+</details>
+<details class="m-accordion-category">
+    <span class="anchor-shift sr-only" id="m-accordion-category-10"></span>
+    <summary class="has-icon">Vragen over verlichting
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+    </summary>
+    <div class="m-accordion-nested">
+
+<details id="m-accordion-item-68">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Wat betekent 'lumen'?</span>
+    </summary>
+    <div>
+        <p>
+            Het aantal lumen geeft de lichtopbrengst van een lamp aan. Bij een hoeveelheid lumen kunt u (globaal genomen) het laatste cijfer eraf halen om de vergelijking te maken met de lichtopbrengst van een gloeilamp. Voorbeeld: een lichtopbrengst van 772 lumen komt overeen met een gloeilamp van ongeveer 77 Watt.<br>
+<br>
+Meer weten? Lees dan ons blog item over lumen: <a href="https://www.rietveldlicht.nl/blog/lumen-wat-betekent-dit-nu-eigenlijk">Lumen, wat betekent dit nu eigenlijk?</a>
+            <br><span class="faq-tags">[Lumen, lichtopbrengst, fel, zwak, sterk, licht, wattage, blog]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-70">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Wat betekent 'kelvin'?</span>
+    </summary>
+    <div>
+        <p>
+            Het aantal kelvin (afgekort als K) geeft de lichtkleur van de lamp aan. Van 1700K t/m 2700K spreken we van warm wit licht . Ook LED verlichting is verkrijgbaar in een warme lichtkleur. Van 3000K t/m 4000K spreken we van koel wit licht. Deze lichtkleur is niet meer warm, maar ook niet te kil. Vanaf 6500K spreken we van daglicht. <br>
+<br>
+Meer weten? Lees dan ons blog item over lichtkleur: <a href="https://www.rietveldlicht.nl/blog/welke-lichtkleur-moet-ik-kiezen">Welke lichtkleur moet ik kiezen?</a>
+            <br><span class="faq-tags">[kelvin, lichtkleur, warm, koud, 2200, 2700, 3000, 4000, licht kleur, blog]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-118">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Wat betekent IP-waarde? </span>
+    </summary>
+    <div>
+        <p>
+            Om aan te geven hoe goed een lamp beschermd is tegen vocht, wordt de zogenaamde IP-waarde gebruikt. Een IP waarde bestaat uit twee cijfers, bijvoorbeeld IP65. Het eerste cijfer (de 6) is een indicator voor stofdichtheid. Het laatste cijfer (de 5) is een indicator voor de waterdichtheid. <br>
+<br>
+Wanneer u een lamp koopt voor in uw badkamer, wilt u natuurlijk zeker weten dat de lamp beschermd is tegen vocht. Om de 'waterdichtheid' van een lamp aan te geven, wordt de zogenaamde IP-waarde gebruikt. Een IP-waarde bestaat uit twee cijfers, bijvoorbeeld IP65. Het laatste cijfer (de 5) is een indicator voor de waterdichtheid. Een badkamer is verdeeld in vier IP-zones:<br>
+<br>
+<b>Zone 0</b> - in een bad. Benodigde IP-waarde: IP6<b>8</b>. Gebruik laagspanning (12 Volt). <br>
+<b>Zone 1</b> - direct boven een bad of een douchecabine. Benodigde IP-waarde: tenminste IP6<b>5</b>. <br>
+<b>Zone 2</b> - een straal van 60 centimeter rondom een bad, douchecabine of wastafel. Benodigde IP waarde: tenminste IP4<b>4</b>. <br>
+<b>Zone 3</b> is de rest van de badkamer. Deze zone hoeft niet aan een IP-waarde te voldoen. Bij lampen die in deze zone gebruikt kunnen worden, staat aangegeven dat ze geschikt zijn voor in de badkamer behalve in zone 1 en 2. <br>
+<br>
+Lampen die in de badkamer gebruikt kunnen worden, zijn gecategoriseerd onder 'badkamerlampen' op onze website. <br>
+<br>
+<b>Aanvullingen:</b> <br>
+Zone 1 bevindt zich tot 225 centimeter vanaf de vloer.<br>
+De genoemde afmetingen kunt u meten vanaf het metaal van de lamp.<br>
+<br>
+<img src="https://www.rietveldlicht.nl/v3/images/badkamerzones.jpg" alt="Illustratie van de vier IP-zones"><br>
+
+            <br><span class="faq-tags">[IP, afdichting, waterdicht, spatwaterdicht, waterproof, badkamer, badkamerlamp]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-94">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Wat is vast ingebouwd LED?</span>
+    </summary>
+    <div>
+        <p>
+            Bij lampen met een vast ingebouwde LED lichtbron zit - zoals de naam al doet vermoeden - de lichtbron vast ingebouwd in het armatuur. Vaak bestaat de lichtbron uit meerdere LEDjes die samen de lichtbron vormen. Het voordeel van vast ingebouwd LED is dat het zeer weinig ruimte inneemt en dus toegepast kan worden in zeer strakke, moderne armaturen. Daarnaast is de verwachte levensduur van ingebouwd LED zeer lang en is LED zeer energiezuinig. <br>
+Armaturen met vast ingebouwd LED hebben een driver (transformator) in het armatuur om het Voltage om te zetten van 220-240 Volt naar het benodigde Voltage voor de lichtbron. Deze driver kan - indien nodig - vervangen worden. Als de LED lichtbron zelf defect is en niet meer door de fabrikant te repareren is, is het gehele armatuur daarmee aan het eind van zijn levensduur gekomen.
+            <br><span class="faq-tags">[ingebouwd, LED, vast ingebouwd]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-11">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Kan ik bij jullie terecht voor het maken van een lichtplan?</span>
+    </summary>
+    <div>
+        <p>
+            Wij geven u graag advies over verlichting en over onze producten. In onze showroom is altijd een vakbekwaam team aanwezig dat u met enthousiasme vertelt over verlichting. <br>
+Voor een officieel lichtplan adviseren wij u om contact op te nemen met een (binnenhuis)architect. <br>
+<br>
+<br>
+
+            <br><span class="faq-tags">[lichtplan, verlichtingsplan, architect, interieurstylist, advies, verlichtingsadvies, lichtadvies]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-117">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Wat betekent een energielabel?</span>
+    </summary>
+    <div>
+        <p>
+            Een energielabel geeft aan hoe zuinig de lichtbron (van het armatuur) is. Lichtbronnen met een A-label zijn zeer zuinig en de lichtbronnen met een G-label hebben het hoogste energieverbruik. LED lichtbronnen (ook ingebouwde LED verlichting) heeft een A-label. Halogeenverlichting heeft een B-, C- of D-label.
+            <br><span class="faq-tags">[energielabel, label, energieverbruik, energiezuinig]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-129">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Waar vind ik de afmetingen van een artikel?</span>
+    </summary>
+    <div>
+        <p>
+            De afmetingen van onze artikelen worden zo zorgvuldig mogelijk vermeld op de artikelpagina. Echter zijn de afmetingen altijd een indicatie en kunnen ze in de praktijk enigszins afwijken van wat op de website vermeld staat. Wij kunnen hiervoor niet aansprakelijk worden gesteld.<br>
+Zaagmaten (de diameter van het zaaggat voor een inbouwspot) worden globaal gemeten en dienen slechts ter indicatie. Wij raden u aan de plafondgaten voor inbouwspots pas te maken wanneer u de bestelde inbouwspots in uw bezit heeft en zeker weet dat u de spots daadwerkelijk wilt gaan gebruiken.<br>
+
+            <br><span class="faq-tags">[afmetingen, specificaties, afmeting, breedte, hoogte, diepte, lengte, diameter, zaaggat, zaagmaat]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-132">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Worden er een snoer en stekker bij jullie wandlampen geleverd?</span>
+    </summary>
+    <div>
+        <p>
+            Al onze wandlampen en spots worden geleverd zonder snoer en stekker, tenzij anders vermeld.
+            <br><span class="faq-tags">[snoer, stekker]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-107">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Hoe kan het dat mijn nieuwe lamp afwijkt van eenzelfde lamp die ik eerder heb besteld?</span>
+    </summary>
+    <div>
+        <p>
+            Het is mogelijk dat een artikel enigszins afwijkt van eenzelfde artikel dat eerder bij ons is aangeschaft. Dit komt doordat onze artikelen voortdurend vernieuwd en ontwikkeld worden. Het is mogelijk dat het door u aangeschafte model in de tussentijd een upgrade heeft ondergaan en daarom iets afwijkt van het eerder aangeschafte exemplaar. Ook wanneer een product onder garantie wordt vervangen, kan het nieuwe product daarom afwijken van het product dat u had. Indien u meerdere exemplaren van een product heeft gekocht zal alleen het product dat defect is, indien nodig, onder garantie worden vervangen. Het afwijken van het vervangende product kan geen reden zijn om ook uw andere exemplaren te vervangen of aan te passen op onze kosten. Wij kunnen niet aansprakelijk gesteld worden voor eventuele (montage)kosten als gevolg hiervan. <br>
+<br>
+
+            <br><span class="faq-tags">[anders, afwijkend, niet hetzelfde]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-157">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Wat is de ideale hoogte voor een hanglamp boven de eettafel?</span>
+    </summary>
+    <div>
+        <p>
+            De 'ideale' hoogte waarop je een hanglamp boven de eettafel hangt is 75 cm. Dit is uiteraard een richtlijn. Uw eigen lengte speelt ook een rol. Als uw lamp tussen de 60 cm en 80 cm van het tafelblad hangt, is het goed.<br>
+
+            <br><span class="faq-tags">[hoogte, hanglamp, eettafel, hoog]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-158">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Kan ik nog een gloeilamp of halogeenlamp gebruiken in mijn nieuwe lamp?</span>
+    </summary>
+    <div>
+        <p>
+            Nieuwe lampen hebben fittingen die af worden gestemd op led lampen. Led lampen geven nauwelijks warmte af. De fittingen van nieuwe producten kunnen de warmte van de ouderwetse gloei- of halogeenlamp niet aan. De kans is groot dat de fitting door de warmte zal smelten. Wij adviseren u daarom om altijd een led lamp te gebruiken in onze producten.<br>
+
+            <br><span class="faq-tags">[halogeen, halogeenlamp, gloeilamp, ouderwets, led]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-164">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Hoe kies ik een lichtbron bij een armatuur?</span>
+    </summary>
+    <div>
+        <p>
+            Wanneer het armatuur van uw keuze zonder lichtbronnen wordt geleverd, vindt u onder de producttekst en specificaties een kopje 'Geschikte lichtbronnen'. Hier ziet u alle lichtbronnen uit ons assortiment die in het bewuste armatuur gebruikt kunnen worden. Bij iedere lichtbron ziet u onder de foto twee staafjes: één voor het aantal Kelvin (lichtkleur) en één voor het aantal Lumen (lichtsterkte). Dit geeft u in één oogopslag een indruk van de lichtkleur en lichtsterkte van de lichtbron. Een laag aantal Kelvin betekent een warmere lichtkleur en een laag aantal Lumen betekent een lagere lichtopbrengst.
+            <br><span class="faq-tags">[lichtbron, gloeilamp, LED, kiezen, selecteren, peer, fitting]</span>
+        </p>
+    </div>
+</details>
+    </div>
+</details>
+<details class="m-accordion-category">
+    <span class="anchor-shift sr-only" id="m-accordion-category-11"></span>
+    <summary class="has-icon">Technische vragen
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+    </summary>
+    <div class="m-accordion-nested">
+
+<details id="m-accordion-item-147">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Welke dimmer heb ik nodig? </span>
+    </summary>
+    <div>
+        <p>
+            Op de productpagina staat altijd bij een lamp aangegeven of de lamp dimbaar is of niet. U vindt deze informatie onder de productafbeelding en onderaan bij de specificaties van het artikel. Als de lamp dimbaar is, staat er altijd aangegeven of de dimmer is ingebouwd, mee wordt geleverd of niet. Als de dimmer niet mee wordt geleverd, staat er in de tekst van het artikel met welke dimmer de lamp gedimd kan worden. <br>
+<br>
+<br>
+Meer weten? Lees dan ons blog item over dimmers: <a href="https://www.rietveldlicht.nl/blog/Welke-dimmer-moet-ik-kiezen">Welke dimmer moet ik kiezen?</a>
+            <br><span class="faq-tags">[dimmer, dimmen, dimbaarheid, gedimd, blog]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-160">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Hoe weet ik welke wanddimmer ik thuis heb?</span>
+    </summary>
+    <div>
+        <p>
+            Indien u een mooie lamp of lichtbron heeft gevonden die dimbaar is, wordt er in de omschrijving aangegeven welk type dimmer u moet gebruiken. Als u thuis al een wanddimmer heeft, moet u controleren of dit het juiste type is. Als u de dimmer knop en afdekplaat verwijdert, komt het technische gedeelte van de dimmer tevoorschijn. Op de dimmer staat een letter die staat voor welk lichttype kan worden gedimd. De R is geschikt voor 230 volt halogeen. De letter C voor 230 V halogeen, 12 V halogeen (elektronische trafo's) en dimbare LEDlampen. De L is voor 230V halogeen (spoelentrafo's). <br>
+Bij de lampen/lichtbronnen op onze website staat vermeld of de lamp moet worden gedimd met een fase afsnijding- (tronic) of fase aansnijdingsdimmer. <br>
+Uw dimmer is een fase aansnijdingsdimmer als er R, L op staat. Uw dimmer is een fase afsnijdingsdimmer (tronic) als er R, C op staat. Als er R, L, C op uw dimmer staat is het zowel een fase aansnijdings- als afsnijdingsdimmer. De dimmer kiest de juiste stand automatisch of u moet deze zelf instellen.
+            <br><span class="faq-tags">[wanddimmer, dimmer, dimmen, fase-afsnijding, fase-aansnijding, afsnijdingsdimmer, aansnijdingsdimmer, leddimmer, LED dimmer]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-114">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Hoe werkt een schemerschakelaar?</span>
+    </summary>
+    <div>
+        <p>
+            Een schemerschakelaar reageert op donker en licht. Een lamp met schemerschakelaar gaat automatisch aan wanneer het donker wordt en gaat automatisch uit wanneer het weer licht wordt. In ons assortiment hebben we ook een lichtbron met schemerschakelaar. Deze lichtsensor zit niet op het armatuur van een lamp, maar op de lichtbron zelf.<br>
+<br>
+
+            <br><span class="faq-tags">[schemerschakelaar, schemersensor, sensor, lichtsensor]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-115">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Hoe werkt een bewegingsmelder?</span>
+    </summary>
+    <div>
+        <p>
+            Een lamp met een bewegingssensor gaat aan wanneer er beweging wordt gedetecteerd. Na enige tijd (deze is instelbaar) gaat de lamp weer uit. Naast de tijd, kunt u ook vaak de detectiehoek instellen. Een lamp met bewegingssensor wordt vaak toegepast vanwege praktische overwegingen of om inbraak te voorkomen.<br>
+
+            <br><span class="faq-tags">[bewegingsmelder, bewegingssensor, sensor, bewegingsschakelaar]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-143">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Wat is lekstroom?</span>
+    </summary>
+    <div>
+        <p>
+            Het komt wel eens voor dat een LED lamp zachtjes blijft branden na het uitzetten van de lamp. Dit wordt veroorzaakt door 'lekstroom'. <br>
+Wat is nou lekstroom? De naam verklapt het natuurlijk al een beetje; hoewel de stroom is uitgeschakeld door middel van een schakelaar/dimmer, lekt er toch een klein beetje stroom. LED lampen hebben maar een zeer kleine spanning nodig om te branden. Wanneer er sprake is van lekstroom, kan dit kleine beetje stroom al voldoende zijn om een LED lamp te laten branden. Lekstroom komt vrij vaak voor, maar werd vroeger helemaal niet opgemerkt. Een ouderwetse gloeilamp of halogeenlamp is tenslotte helemaal niet onder de indruk van zo’n klein beetje stroom.<br>
+<br>
+Het zachtjes blijven branden is over het algemeen eenvoudig op te lossen door een tweepolige of dubbelpolige schakelaar. Mocht u een LED lamp hebben die maar niet echt uit wilt gaan, raden wij u aan om uw eenpolige schakelaar te (laten) vervangen door een tweepolige of dubbelpolige schakelaar.<br>
+<br>
+U kunt ook een Busch-Jaeger Compensator plaatsen, om het euvel op te lossen. De Busch-Jaeger compensator wordt parallel over de verlichting geplaatst en 'verbruikt' de lekstroom, zodat deze kleine spanning niet door de lampen gebruikt kan worden en de LED lampen niet zachtjes kunnen branden wanneer de lamp is uitgeschakeld.<br>
+<br>
+Als u uw lamp heeft aangesloten met een snoer en stekker en de LED lampen blijven zachtjes branden na het uitschakelen van de lamp, raden wij u aan om de stekker uit het stopcontact te halen, deze 180 graden te draaien en weer in het stopcontact te plaatsen. Over het algemeen is dit de oplossing bij bijvoorbeeld een vloerlamp. <br>
+
+            <br><span class="faq-tags">[lekstroom, nagloeien, zacht branden]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-69">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Een lichtbron met E27/E14 fitting werkt niet, wat moet ik doen?</span>
+    </summary>
+    <div>
+        <p>
+            Als een lichtbron met een grote (E27) of kleine fitting (E14) niet brandt, kan het zo zijn dat de lichtbron onvoldoende contact maakt met de fitting van uw lamp. U kunt dit eenvoudig oplossen: In de fitting van uw lamp ziet u twee metalen lipjes. Nadat u de stroom heeft uitgeschakeld, kunt u door middel van een platte schroevendraaier, beide lipjes voorzichtige iets naar boven buigen. De lipjes maken nu beter contact met uw lichtbron en het probleem zou verholpen moeten zijn.
+            <br><span class="faq-tags">[defect, kapot, lichtbron, led, brandt niet, doet het niet]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-175">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Hoe kan ik de bevestigingsbeugel monteren wanneer die smaller is dan de centraaldoos? </span>
+    </summary>
+    <div>
+        <p>
+            Wanneer de beugel van de lamp kleiner is dan de centraaldoos, kunt u hem als volgt bevestigen: <br>
+1. Haal de deksel van de centraaldoos. <br>
+2. Boor gaten in de deksel <br>
+3. Zet de beugel vast op de deksel met bouten en moertjes. <br>
+4. Schroef de deksel weer op de centraaldoos. <br>
+De beugel zit op die manier stevig vast.
+            <br><span class="faq-tags">[bevestigingsbeugel, beugel, centraaldoos, klein, smal, monteren, montage, installeren, installatie]</span>
+        </p>
+    </div>
+</details>
+    </div>
+</details>
+<details class="m-accordion-category">
+    <span class="anchor-shift sr-only" id="m-accordion-category-12"></span>
+    <summary class="has-icon">Waterdichte lampen voor badkamer of buiten
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+    </summary>
+    <div class="m-accordion-nested">
+
+<details id="m-accordion-item-90">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Welke IP-waarde moet een badkamerlamp hebben? </span>
+    </summary>
+    <div>
+        <p>
+            Wanneer u een lamp koopt voor in uw badkamer, wilt u natuurlijk zeker weten dat de lamp beschermd is tegen vocht. Om de 'waterdichtheid' van een lamp aan te geven, wordt de zogenaamde IP-waarde gebruikt. Een IP-waarde bestaat uit twee cijfers, bijvoorbeeld IP65. Het laatste cijfer (de 5) is een indicator voor de waterdichtheid. Een badkamer is verdeeld in vier IP-zones:<br>
+<br>
+<b>Zone 0</b> - in een bad. Benodigde IP-waarde: IP6<b>8</b>. Gebruik laagspanning (12 Volt). <br>
+<b>Zone 1</b> - direct boven een bad of een douchecabine. Benodigde IP-waarde: tenminste IP6<b>5</b>. <br>
+<b>Zone 2</b> - een straal van 60 centimeter rondom een bad, douchecabine of wastafel. Benodigde IP waarde: tenminste IP4<b>4</b>. <br>
+<b>Zone 3</b> is de rest van de badkamer. Deze zone hoeft niet aan een IP-waarde te voldoen. Bij lampen die in deze zone gebruikt kunnen worden, staat aangegeven dat ze geschikt zijn voor in de badkamer behalve in zone 1 en 2. <br>
+<br>
+Lampen die in de badkamer gebruikt kunnen worden, zijn gecategoriseerd onder 'badkamerlampen' op onze website. <br>
+<br>
+<b>Aanvullingen:</b> <br>
+Zone 1 bevindt zich tot 225 centimeter vanaf de vloer.<br>
+De genoemde afmetingen kunt u meten vanaf het metaal van de lamp.<br>
+<br>
+<img src="https://www.rietveldlicht.nl/v3/images/badkamerzones.jpg" alt="Illustratie van de vier IP-zones">
+            <br><span class="faq-tags">[badkamer, badkamerlamp, IP-waarde, IP, waterdicht, waterproof, watervast]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-119">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Welke IP waarde moet een buitenlamp hebben? </span>
+    </summary>
+    <div>
+        <p>
+            Wanneer u een lamp koopt voor buiten, wilt u natuurlijk zeker weten dat de lamp waterdicht is. Om de waterdichtheid van een lamp aan te geven, wordt de zogenaamde IP waarde gebruikt. Een IP waarde bestaat uit twee cijfers, bijvoorbeeld IP65. Het laatste cijfer (de 5) is een indicator voor de waterdichtheid. Voor buiten gelden de volgende IP waardes:<br>
+<br>
+- Gebruikt u een plafondlamp onder een afdak? Dan dient u een lamp met een minimale IP waarde van 23 aan te schaffen.<br>
+- Wilt u een wandlamp op de buitenmuur plaatsen? Dan dient de lamp een minimale IP waarde van 54 te hebben.<br>
+- Gebruikt u grondspots? Deze dienen een waarde van IP67 te hebben. <br>
+<br>
+Lampen die buiten gebruikt kunnen worden, zijn gecategoriseerd onder 'buitenverlichting' op onze website. <br>
+<br>
+Hoewel theoretisch gezien een buitenlamp met een afdichtingsklasse IP54 stofdicht is en volgens de norm bestand is tegen vocht, is de praktijk soms anders.<br>
+Wanneer er sprake is van extreme weersomstandigheden zoals een flinke stortbui of een storm, kan het voorkomen dat er water in de buitenlamp terecht komt. Dit is vrijwel niet te voorkomen. Wij raden u daarom aan om, wanneer er sprake is geweest van extreme weersomstandigheden, uw lamp na te kijken en indien gewenst even open te maken en droog te maken met een droge doek.<br>
+
+            <br><span class="faq-tags">[buitenlamp, buiten, afdak, veranda, luifel, carport, waterdicht, watervast, waterproof, IP-waarde, IP-klasse]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-144">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Er zit water in mijn buitenlamp, wat nu?</span>
+    </summary>
+    <div>
+        <p>
+            In een buitenlamp kan zich enig condens vormen; dit is geen constructiefout maar normaal bij schommelingen in temperatuur en luchtvochtigheidsgraad. Hoe beter een buitenlamp waterdicht is gemaakt, des te meer kans er is op enige condensvorming omdat dan de buitenlamp bijna luchtdicht afsluit. Condens treedt namelijk op als de luchtvochtigheid binnenin de lamp anders is dan buiten. U hoeft zich over dit natuurverschijnsel geen zorgen te maken.
+            <br><span class="faq-tags">[condens, water, lekkage, lek]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-116">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Hoe onderhoud ik mijn RVS buitenverlichting?</span>
+    </summary>
+    <div>
+        <p>
+            RVS betekent Roestvaststaal en niet - zoals het vaak ten onrechte wordt genoemd - Roest Vrij Staal. Dus alle lampen die van RVS gemaakt zijn, kunnen op den duur vormen van aanslag of roest vertonen. Daarom is het belangrijk om een buitenlamp met een zachte doek en warm water regelmatig schoon te maken. Dit om onzuiverheden zoals zand, vuil, insecten of gras te verwijderen. Als dit op het armatuur blijft zitten, kan er geen zuurstof bij deze punten komen en dit kan vervolgens roest veroorzaken. Als ondanks het regelmatige reinigen roest of aanslag is ontstaan,  kunt u dit eenvoudig verwijderen met een RVS reiniger, bijvoorbeeld HG snelreiniger RVS.
+            <br><span class="faq-tags">[RVS, roestvrijstaal, staal, onderhoud, roest, aanslag, corrosie, oxidatie]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-123">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Hoe onderhoud ik mijn aluminium buitenlamp?</span>
+    </summary>
+    <div>
+        <p>
+            Aluminium wordt veel gebruikt om buitenlampen van te maken, aangezien het goed bestand is tegen water. Als er echter vuil (denk aan stof, uitlaatgassen, vogelpoep et cetera) op het aluminium van uw buitenlamp komt, zorgt dit ervoor dat het aluminium als het ware niet meer kan ademen. Het materiaal gaat daardoor oxideren en kan een witte aanslag gaan vertonen. Dit is normaal en kan opgelost worden door het aluminium met enige regelmaat schoon te maken. U kunt daarvoor het best een zachte doek met schoonmaakazijn gebruiken. Als het armatuur al wat erger vervuild en/of geoxideerd is, kunt u ook vloeibaar schuurmiddel (bijvoorbeeld Cif) gebruiken. <br>
+Aluminium zal nooit 'doorroesten' en de oxidatie is dus enkel een cosmetisch probleem dat eenvoudig te voorkomen is door het armatuur regelmatig schoon te maken.
+            <br><span class="faq-tags">[aluminium, roest, aanslag, corrosie, onderhoud, schoonmaken, buitenlamp, oxidatie]</span>
+        </p>
+    </div>
+</details>
+<details id="m-accordion-item-138">
+    <span class="anchor-shift sr-only"></span>
+    <summary class="l-flex">
+        <span class="u-icon">
+            <svg viewBox="0 0 32 32" role="img">
+                <use class="icon-filter" xlink:href="/v3/images/sprite-dynamic.svg#icon-arrow"></use>
+            </svg>
+        </span>
+        <span>Kan ik tegelijkertijd een tijdschakelaar en een schemerschakelaar gebruiken op mijn buitenlampen?</span>
+    </summary>
+    <div>
+        <p>
+            Het gelijktijdig gebruiken van een tijdschakelaar en een schemerschakelaar op een buitenlamp is mogelijk en zelfs erg praktisch. Wanneer u alleen een tijdschakelaar monteert, bent u door de seizoenen heen bezig met het bijstellen van de inschakeltijd. Als u naast een tijdschakelaar ook een schemerschakelaar gebruikt, is dat bijstellen verleden tijd. <br>
+<br>
+U kunt het best de inschakeltijd op de tijdschakelaar instellen alsof het winter is (bijvoorbeeld 16:00 uur). Tevens stelt u een uitschakeltijd in, bijvoorbeeld 23:30 uur. Als u dan tegelijkertijd een schemerschakelaar gebruikt, zullen de buitenlampen in de zomer pas inschakelen als het schemerig wordt. <br>
+<br>
+Als u alleen een schemerschakelaar gebruikt, branden uw buitenlampen de hele nacht door. De tijdschakelaar zorgt ervoor dat ze weer uitgaan op de gewenste tijd.
+            <br><span class="faq-tags">[tijdschakelaar, schemerschakelaar, schemersensor, sensor, nachtsensor]</span>
+        </p>
+    </div>
+</details>
+    </div>
+</details>
+                </div>
+        </section>
+</body>
+</html>

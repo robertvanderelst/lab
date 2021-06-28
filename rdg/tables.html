@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rietveld components</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="css/rdg.css" rel="stylesheet">
+</head>
+<body>
+    <main class="container">
+        <h1>Components</h1>
+        <section>
+
+            <style>
+            table {
+              border-collapse: collapse;
+              border: 0;
+            }
+            th,
+            td {
+              /* background-clip: padding-box; */
+              /* scroll-snap-align: start; */
+            }
+            tbody tr:nth-child(2n+3) {
+              background: var(--rv-grey-ultralight);
+            }
+            thead {
+              z-index: 1000;
+              position: relative;
+            }
+            thead th {
+              position: sticky;
+              top: 0;
+              border-top: 0;
+              border-left: 0;
+              /* background-clip: padding-box; */
+              text-align: left;
+            }
+            thead th.pin {
+              left: 0;
+              z-index: 1001;
+              border-left: 0;
+            }
+
+            thead th h3 {
+                margin: 0;
+            }
+
+            thead th,
+            tbody th {
+                background: #fff;
+            }
+
+            tbody th {
+              position: sticky;
+              left: 0;
+              z-index: 2;
+            }
+
+            tbody tr:nth-child(2n+3) th {
+                background: var(--rv-grey-ultralight);
+            }
+
+            tbody tr:last-child,
+            tbody tr:last-child th {
+                background: #fff;
+            }
+
+            tbody tr:last-child {
+                border-top: 1px solid var(--rv-grey-ultralight);
+            }
+
+            thead th:nth-child(n+3),
+            tbody td + td {
+                border-left: 1px solid var(--rv-grey-verylight);
+            }
+
+            tbody tr:last-child td + td {
+                border-left: none;
+            }
+
+            tbody td {
+                min-width: 16em;
+                max-width: 24em;
+            }
+
+            tbody .u-price {
+                font-size: 1rem;
+            }
+
+            tbody a {
+                font-size: 1rem;
+            }
+            </style>
+            <h2>Table</h2>
+            <p>Table with zebra stripings</p>
+
+            <h2>Scrollable table</h2>
+
+            <div style="overflow-y: hidden; overflow-x: auto">
+                <table class="u-table-scrollable">
+                    <thead>
+                        <tr>
+                            <th scope="row" class="pin">&nbsp;</th>
+                            <th scope="col">
+                                <h3 class="h4-like"><a href="/artikel/-73124">73124</a></h3>
+                                <a class="compare-delete-button" href="#" data-art="73124"></a>
+                            </th>
+                            <th scope="col">
+                                <h3 class="h4-like"><a href="/artikel/-73759">73759</a></h3>
+                                <a class="compare-delete-button" href="#" data-art="73759"></a>
+                            </th>
+                            <th scope="col">
+                                <h3 class="h4-like"><a href="/artikel/-73124">73124</a></h3>
+                                <a class="compare-delete-button" href="#" data-art="73124"></a>
+                            </th>
+                            <th scope="col">
+                                <h3 class="h4-like"><a href="/artikel/-73759">73759</a></h3>
+                                <a class="compare-delete-button" href="#" data-art="73759"></a>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">&nbsp;</th>
+                            <td>
+                                <picture class="has-ratio-3-2">
+                                    <img src="https://www.rietveldlicht.nl/fotos/middel/73124.jpg" loading="lazy" alt="">
+                                </picture>
+                            </td>
+                            <td>
+                                <picture class="has-ratio-3-2">
+                                    <img src="https://www.rietveldlicht.nl/fotos/middel/73759.jpg" loading="lazy" alt="">
+                                </picture>
+                            </td>
+                            <td>
+                                <picture class="has-ratio-3-2">
+                                    <img src="https://www.rietveldlicht.nl/fotos/middel/73124.jpg" loading="lazy" alt="">
+                                </picture>
+                            </td>
+                            <td>
+                                <picture class="has-ratio-3-2">
+                                    <img src="https://www.rietveldlicht.nl/fotos/middel/73759.jpg" loading="lazy" alt="">
+                                </picture>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">&nbsp;</th>
+                            <td><span class="u-price">&euro; 179,00</span></td>
+                            <td><span class="u-price">&euro; 79,90</span></td>
+                            <td><span class="u-price">&euro; 179,00</span></td>
+                            <td><span class="u-price">&euro; 79,90</span></td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">categorie</th>
+                            <td>hanglampen</td>
+                            <td>hanglampen, plafondlampen</td>
+                            <td>hanglampen</td>
+                            <td>hanglampen, plafondlampen</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">overige categorie</th>
+                            <td>eetkamerlampen</td>
+                            <td>eetkamerlampen</td>
+                            <td>eetkamerlampen</td>
+                            <td>eetkamerlampen</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">stijl</th>
+                            <td>retro, modern</td>
+                            <td>industrie-look, modern, landelijk / rustiek</td>
+                            <td>retro, modern</td>
+                            <td>industrie-look, modern, landelijk / rustiek</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">materiaal</th>
+                            <td>glas, rookglas, metaal</td>
+                            <td>metaal</td>
+                            <td>glas, rookglas, metaal</td>
+                            <td>metaal</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">kleur</th>
+                            <td>zwart, mat, antraciet donkergrijs, grijs</td>
+                            <td>zwart, mat</td>
+                            <td>zwart, mat, antraciet donkergrijs, grijs</td>
+                            <td>zwart, mat</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">lampfitting</th>
+                            <td>grote fitting E27</td>
+                            <td>grote fitting E27</td>
+                            <td>grote fitting E27</td>
+                            <td>grote fitting E27</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">vorm</th>
+                            <td>rond, langwerpig, bolvormig</td>
+                            <td>rond</td>
+                            <td>rond, langwerpig, bolvormig</td>
+                            <td>rond</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">lichtbron</th>
+                            <td>gloeilamp, max.60 watt, led, exclusief led, zelf vervangbaar</td>
+                            <td>gloeilamp, max.60 watt, led, exclusief led, zelf vervangbaar</td>
+                            <td>gloeilamp, max.60 watt, led, exclusief led, zelf vervangbaar</td>
+                            <td>gloeilamp, max.60 watt, led, exclusief led, zelf vervangbaar</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">verstelbaarheid</th>
+                            <td>hoogte verstelling</td>
+                            <td>kantelbaar, hoogte verstelling</td>
+                            <td>hoogte verstelling</td>
+                            <td>kantelbaar, hoogte verstelling</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">lichtkleur</th>
+                            <td>lichtbron afhankelijk</td>
+                            <td>lichtbron afhankelijk</td>
+                            <td>lichtbron afhankelijk</td>
+                            <td>lichtbron afhankelijk</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">dimmen</th>
+                            <td>is dimbaar, muurdimmer, lichtbron afhankelijk</td>
+                            <td>is dimbaar, muurdimmer, lichtbron afhankelijk</td>
+                            <td>is dimbaar, muurdimmer, lichtbron afhankelijk</td>
+                            <td>is dimbaar, muurdimmer, lichtbron afhankelijk</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">geleverd</th>
+                            <td>zonder lichtbron</td>
+                            <td>zonder lichtbron</td>
+                            <td>zonder lichtbron</td>
+                            <td>zonder lichtbron</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">aantal kapjes/glazen</th>
+                            <td>3</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>1</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">aantal lichtbronnen / fittingen</th>
+                            <td>3</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>1</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">energieverbruik</th>
+                            <td>A+ t/m E</td>
+                            <td>A+ t/m E</td>
+                            <td>A+ t/m E</td>
+                            <td>A+ t/m E</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">Tablet / Mobile / App</th>
+                            <td>geschikt voor Philips Hue White lichtbron, geschikt voor Philips Hue Color lichtbron</td>
+                            <td>geschikt voor Philips Hue White lichtbron, geschikt voor Philips Hue Color lichtbron</td>
+                            <td>geschikt voor Philips Hue White lichtbron, geschikt voor Philips Hue Color lichtbron</td>
+                            <td>geschikt voor Philips Hue White lichtbron, geschikt voor Philips Hue Color lichtbron</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">totaal: hoogte minimaal</th>
+                            <td>100.00 cm</td>
+                            <td>-</td>
+                            <td>100.00 cm</td>
+                            <td>-</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">totaal: hoogte maximaal</th>
+                            <td>180.00 cm</td>
+                            <td>110.00 cm</td>
+                            <td>180.00 cm</td>
+                            <td>110.00 cm</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">totaal: diepte</th>
+                            <td>24.00 cm</td>
+                            <td>22.00 cm</td>
+                            <td>24.00 cm</td>
+                            <td>22.00 cm</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">totaal: breedte</th>
+                            <td>114.00 cm</td>
+                            <td>-</td>
+                            <td>114.00 cm</td>
+                            <td>-</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">totaal: breedte minimaal</th>
+                            <td>-</td>
+                            <td>22.00 cm</td>
+                            <td>-</td>
+                            <td>22.00 cm</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">totaal: breedte maximaal</th>
+                            <td>-</td>
+                            <td>100.00 cm</td>
+                            <td>-</td>
+                            <td>100.00 cm</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">kap: hoogte</th>
+                            <td>23.00 cm</td>
+                            <td>16.00 cm</td>
+                            <td>23.00 cm</td>
+                            <td>16.00 cm</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">kap: diameter</th>
+                            <td>24.00 cm</td>
+                            <td>22.00 cm</td>
+                            <td>24.00 cm</td>
+                            <td>22.00 cm</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">bevestigingsbeugel: lengte</th>
+                            <td>63.00 cm</td>
+                            <td>-</td>
+                            <td>63.00 cm</td>
+                            <td>-</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">bevestigingsbeugel: diameter</th>
+                            <td>-</td>
+                            <td>12.50 cm</td>
+                            <td>-</td>
+                            <td>12.50 cm</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">glas: hoogte</th>
+                            <td>23.00 cm</td>
+                            <td>-</td>
+                            <td>23.00 cm</td>
+                            <td>-</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">glas: diameter</th>
+                            <td>24.00 cm</td>
+                            <td>-</td>
+                            <td>24.00 cm</td>
+                            <td>-</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">plafondkap: hoogte</th>
+                            <td>2.50 cm</td>
+                            <td>2.50 cm</td>
+                            <td>2.50 cm</td>
+                            <td>2.50 cm</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">plafondkap: diepte</th>
+                            <td>8.00 cm</td>
+                            <td>-</td>
+                            <td>8.00 cm</td>
+                            <td>-</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">plafondkap: diameter</th>
+                            <td>-</td>
+                            <td>13.00 cm</td>
+                            <td>-</td>
+                            <td>13.00 cm</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">plafondkap: breedte</th>
+                            <td>100.00 cm</td>
+                            <td>-</td>
+                            <td>100.00 cm</td>
+                            <td>-</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">&nbsp;</th>
+                            <td><a href="/jx_cart?aAction[]=add&amp;art=73124" class="u-button u-button-cta"><span>Bestellen</span></a></td>
+                            <td><a href="/jx_cart?aAction[]=add&amp;art=73759" class="u-button u-button-cta"><span>Bestellen</span></a></td>
+                            <td><a href="/jx_cart?aAction[]=add&amp;art=73124" class="u-button u-button-cta"><span>Bestellen</span></a></td>
+                            <td><a href="/jx_cart?aAction[]=add&amp;art=73759" class="u-button u-button-cta"><span>Bestellen</span></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+</body>
+</html>
