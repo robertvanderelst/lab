@@ -14,17 +14,28 @@
         <section>
 
             <style>
+            .test {
+                background-image:
+                    linear-gradient(to right, white, white),
+                    linear-gradient(to right, white, white),
+                    linear-gradient(to right, white 0%, white 8rem, rgba(0, 0, 0, .2) 8rem, rgba(255, 255, 255, 0) 8.5rem),
+                    linear-gradient(to left, rgba(0, 0, 0, .2), rgba(255, 255, 255, 0));
+
+                background-position: left center, right center, left center, right center;
+                background-repeat: no-repeat;
+                background-color: white;
+                background-size: 8.5rem 100%, .5rem 100%, 8.5rem 100%, .5rem 100%;
+                background-attachment: local, local, scroll, scroll;
+
+                overflow-y: hidden;
+                overflow-x: auto
+            }
             table {
               border-collapse: collapse;
               border: 0;
             }
-            th,
-            td {
-              /* background-clip: padding-box; */
-              /* scroll-snap-align: start; */
-            }
             tbody tr:nth-child(2n+3) {
-              background: var(--rv-grey-ultralight);
+              background: rgba(0,0,0,.05);
             }
             thead {
               z-index: 1000;
@@ -35,28 +46,25 @@
               top: 0;
               border-top: 0;
               border-left: 0;
-              /* background-clip: padding-box; */
               text-align: left;
             }
             thead th.pin {
               left: 0;
               z-index: 1001;
               border-left: 0;
+              background: #fff;
             }
 
             thead th h3 {
                 margin: 0;
             }
 
-            thead th,
-            tbody th {
+            tbody th[scope="row"] {
+                position: sticky;
+                left: 0;
+                z-index: 2;
+                background: rgba(0,255,0,.25);
                 background: #fff;
-            }
-
-            tbody th {
-              position: sticky;
-              left: 0;
-              z-index: 2;
             }
 
             tbody tr:nth-child(2n+3) th {
@@ -99,7 +107,7 @@
 
             <h2>Scrollable table</h2>
 
-            <div style="overflow-y: hidden; overflow-x: auto">
+            <div class="test">
                 <table class="u-table-scrollable">
                     <thead>
                         <tr>
@@ -124,7 +132,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">&nbsp;</th>
+                            <th scope="row"><span style="display: block; width: 7.25rem;">&nbsp;</span></th>
                             <td>
                                 <picture class="has-ratio-3-2">
                                     <img src="https://www.rietveldlicht.nl/fotos/middel/73124.jpg" loading="lazy" alt="">
