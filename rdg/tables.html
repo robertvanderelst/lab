@@ -78,40 +78,35 @@
 
                     var components = {
                         tablescroll: function (el) {
-                            let pos = { top: 0, left: 0, x: 0, y: 0 };
+                            let pos = { left: 0, x: 0 };
 
-                            el.addEventListener('mousedown', function (e) {
-                                el.classList.add('is-scrolling');
-
+                            const mouseDownHandler = function(e) {
                                 pos = {
-                                    // The current scroll
                                     left: el.scrollLeft,
-                                    top: el.scrollTop,
-                                    // Get the current mouse position
                                     x: e.clientX,
-                                    y: e.clientY,
                                 };
-                            });
 
-                            el.addEventListener('mousemove', function (e) {
-                                if (el.classList.contains('is-scrolling')) {
-                                    // How far the mouse has been moved
-                                    const dx = e.clientX - pos.x;
-                                    const dy = e.clientY - pos.y;
+                                el.style.cursor = 'grabbing';
+                                el.style.userSelect = 'none';
 
-                                    // Scroll the element
-                                    el.scrollTop = pos.top - dy;
-                                    el.scrollLeft = pos.left - dx;
-                                }
-                            });
+                                el.addEventListener('mousemove', mouseMoveHandler);
+                                el.addEventListener('mouseup', mouseUpHandler);
+                            };
 
-                            el.addEventListener('mouseup', function () {
-                                el.classList.remove('is-scrolling');
-                            });
+                            const mouseMoveHandler = function(e) {
+                                const dx = e.clientX - pos.x;
+                                el.scrollLeft = pos.left - dx;
+                            };
 
-                            el.addEventListener('pointerleave', function () {
-                                el.classList.remove('is-scrolling');
-                            });
+                            const mouseUpHandler = function() {
+                                el.style.cursor = 'grab';
+                                el.style.removeProperty('user-select');
+
+                                el.removeEventListener('mousemove', mouseMoveHandler);
+                                el.removeEventListener('mouseup', mouseUpHandler);
+                            };
+
+                            el.addEventListener('mousedown', mouseDownHandler);
                         }
                     }
 
@@ -149,7 +144,8 @@
 
                 overflow: hidden;
 
-                cursor: ew-resize;
+                cursor: grab;
+                user-select: auto;
             }
 
             .test.is-scrolling {
