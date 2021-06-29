@@ -80,7 +80,7 @@
                         tablescroll: function (el) {
                             let pos = { top: 0, left: 0, x: 0, y: 0 };
 
-                            el.addEventListener('pointerdown', function (e) {
+                            el.addEventListener('mousedown', function (e) {
                                 el.classList.add('is-scrolling');
 
                                 pos = {
@@ -93,7 +93,7 @@
                                 };
                             });
 
-                            el.addEventListener('pointermove', function (e) {
+                            el.addEventListener('mousemove', function (e) {
                                 if (el.classList.contains('is-scrolling')) {
                                     // How far the mouse has been moved
                                     const dx = e.clientX - pos.x;
@@ -105,7 +105,7 @@
                                 }
                             });
 
-                            el.addEventListener('pointerup', function () {
+                            el.addEventListener('mouseup', function () {
                                 el.classList.remove('is-scrolling');
                             });
 
@@ -148,6 +148,8 @@
                 background-attachment: local, local, scroll, scroll;
 
                 overflow: hidden;
+
+                cursor: ew-resize;
             }
 
             .test.is-scrolling {
@@ -172,13 +174,6 @@
               border-left: 0;
               text-align: left;
             }
-            thead th.pin {
-              left: 0;
-              z-index: 1001;
-              border-left: 0;
-              background: #fff;
-            }
-
             thead th h3 {
                 margin: 0;
             }
@@ -195,9 +190,12 @@
                 background: var(--rv-grey-ultralight);
             }
 
-            tbody tr:last-child,
-            tbody tr:last-child th {
+            tbody tr:last-child {
                 background: none;
+            }
+
+            tbody tr:last-child th {
+                background: #fff;
             }
 
             tbody tr:last-child {
@@ -211,6 +209,14 @@
 
             tbody tr:last-child td + td {
                 border-left: none;
+            }
+
+            thead th.pin,
+            tbody th.pin {
+              left: 0;
+              z-index: 1001;
+              border-left: 0;
+              background: #fff;
             }
 
             tbody td {
@@ -573,7 +579,7 @@
                         </tr>
 
                         <tr>
-                            <th scope="row">&nbsp;</th>
+                            <th scope="row" class="pin">&nbsp;</th>
                             <td><a href="/jx_cart?aAction[]=add&amp;art=73124" class="u-button u-button-cta"><span>Bestellen</span></a></td>
                             <td><a href="/jx_cart?aAction[]=add&amp;art=73759" class="u-button u-button-cta"><span>Bestellen</span></a></td>
                             <td><a href="/jx_cart?aAction[]=add&amp;art=73124" class="u-button u-button-cta"><span>Bestellen</span></a></td>
