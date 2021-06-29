@@ -12,6 +12,122 @@
     <main class="container">
         <h1>Components</h1>
         <section>
+            <script>
+                document.body.classList.remove("no-js");
+                document.body.classList.add("has-js");
+
+                if (/Mobi/.test(navigator.userAgent) || /Android/.test(navigator.userAgent)) {
+                    document.getElementsByTagName('html')[0].classList.add('is-mobile');
+                }
+
+                (function () {
+                    "use strict";
+
+                    function QS(el) {
+                        return document.querySelector(el);
+                    }
+
+                    function QSA(el) {
+                        return document.querySelectorAll(el);
+                    }
+
+                    function THROTTLE(func, wait, options) {
+
+                        var context, args, result,
+                            timeout = null,
+                            previous = 0,
+                            later = function () {
+                                previous = options.leading === false ? 0 : Date.now();
+                                timeout = null;
+                                result = func.apply(context, args);
+                                if (!timeout) {
+                                    context = args = null;
+                                }
+                            };
+
+                        return function () {
+                            var now = Date.now(),
+                                remaining;
+
+                            if (!previous && options.leading === false) {
+                                previous = now;
+                            }
+
+                            remaining = wait - (now - previous);
+                            context = this;
+                            args = arguments;
+
+                            if (remaining <= 0 || remaining > wait) {
+                                if (timeout) {
+                                    clearTimeout(timeout);
+                                    timeout = null;
+                                }
+
+                                previous = now;
+                                result = func.apply(context, args);
+
+                                if (!timeout) {
+                                    context = args = null;
+                                }
+                            } else if (!timeout && options.trailing !== false) {
+                                timeout = setTimeout(later, remaining);
+                            }
+                            return result;
+                        };
+                    }
+
+                    var components = {
+                        tablescroll: function (el) {
+                            let pos = { top: 0, left: 0, x: 0, y: 0 };
+
+                            el.addEventListener('pointerdown', function (e) {
+                                el.classList.add('is-scrolling');
+
+                                pos = {
+                                    // The current scroll
+                                    left: el.scrollLeft,
+                                    top: el.scrollTop,
+                                    // Get the current mouse position
+                                    x: e.clientX,
+                                    y: e.clientY,
+                                };
+                            });
+
+                            el.addEventListener('pointermove', function (e) {
+                                if (el.classList.contains('is-scrolling')) {
+                                    // How far the mouse has been moved
+                                    const dx = e.clientX - pos.x;
+                                    const dy = e.clientY - pos.y;
+
+                                    // Scroll the element
+                                    el.scrollTop = pos.top - dy;
+                                    el.scrollLeft = pos.left - dx;
+                                }
+                            });
+
+                            el.addEventListener('pointerup', function () {
+                                el.classList.remove('is-scrolling');
+                            });
+                        }
+                    }
+
+                    document.addEventListener('DOMContentLoaded', function () {
+                        // Check for components
+                        var componentList = QSA('[data-component]');
+
+                            // Run functions/methods
+                        [].forEach.call(componentList, function (component) {
+                            if(component.dataset.component) {
+                                components[component.dataset.component](component);
+                            } else {
+                                console.log(components.dataset.component + ' does not exist');
+                            }
+                        });
+                    });
+                }());
+
+            </script>
+
 
             <style>
             .test {
@@ -27,8 +143,12 @@
                 background-size: 8.5rem 100%, .5rem 100%, 8.5rem 100%, .5rem 100%;
                 background-attachment: local, local, scroll, scroll;
 
-                overflow-y: hidden;
-                overflow-x: auto
+                overflow: hidden;
+            }
+
+            .test.is-scrolling {
+                cursor: grabbing;
+                user-select: none;
             }
             table {
               border-collapse: collapse;
@@ -128,7 +248,7 @@
 
             <h2>Scrollable table</h2>
 
-            <div class="test">
+            <div class="test" data-component="tablescroll">
                 <table class="u-table-scrollable">
                     <thead>
                         <tr>
@@ -459,5 +579,7 @@
                 </table>
             </div>
         </section>
+
+
 </body>
 </html>
