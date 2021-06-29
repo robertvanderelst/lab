@@ -108,6 +108,10 @@
                             el.addEventListener('pointerup', function () {
                                 el.classList.remove('is-scrolling');
                             });
+
+                            el.addEventListener('pointerleave', function () {
+                                el.classList.remove('is-scrolling');
+                            });
                         }
                     }
 
