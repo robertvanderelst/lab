@@ -203,17 +203,14 @@
                 background: #fff;
             }
 
-            tbody tr:last-child {
-                border-top: 1px solid rgba(0,0,0,.05);
-            }
-
             thead th:nth-child(n+3),
             tbody td + td {
                 border-left: 1px solid var(--rv-grey-verylight);
             }
 
-            tbody tr:last-child td + td {
-                border-left: none;
+            tbody tr:last-child td {
+                padding: 1em .5em 0;
+                text-align: center;
             }
 
             thead th.pin,
