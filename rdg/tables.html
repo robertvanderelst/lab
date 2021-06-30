@@ -133,31 +133,36 @@
                 background-image:
                     linear-gradient(to right, white, white),
                     linear-gradient(to right, white, white),
-                    linear-gradient(to right, white 0%, white 8rem, rgba(0, 0, 0, .2) 8rem, rgba(255, 255, 255, 0) 8.5rem),
+                    linear-gradient(to right, white 0%, white 10em, rgba(0, 0, 0, .2) 10em, rgba(255, 255, 255, 0) 10.5em),
                     linear-gradient(to left, rgba(0, 0, 0, .2), rgba(255, 255, 255, 0));
 
                 background-position: left center, right center, left center, right center;
                 background-repeat: no-repeat;
                 background-color: white;
-                background-size: 8.5rem 100%, .5rem 100%, 8.5rem 100%, .5rem 100%;
+                background-size: 10.5em 100%, .5em 100%, 10.5em 100%, .5em 100%;
                 background-attachment: local, local, scroll, scroll;
 
                 overflow: hidden;
 
                 cursor: grab;
                 user-select: auto;
+
+                font-size: clamp(12px, calc(12px + 2 * ((100vw - 320px) / 960)), 14px);
+            }
+
+            .is-mobile .test {
+                overflow-x: auto;
+                overflow-y: hidden;
             }
 
             .test.is-scrolling {
                 cursor: grabbing;
                 user-select: none;
             }
+
             table {
               border-collapse: collapse;
               border: 0;
-            }
-            tbody tr:nth-child(2n+3) {
-              background: rgba(0,0,0,.05);
             }
             thead {
               z-index: 1000;
@@ -170,20 +175,24 @@
               border-left: 0;
               text-align: left;
             }
+
             thead th h3 {
                 margin: 0;
+            }
+
+            tbody tr:nth-child(2n+3) {
+              background: rgba(0,0,0,.05);
+            }
+
+            tbody tr:nth-child(2n+3) th {
+                background: var(--rv-grey-ultralight);
             }
 
             tbody th[scope="row"] {
                 position: sticky;
                 left: 0;
                 z-index: 2;
-                /* background: rgba(0,255,0,.25); */
                 background: #fff;
-            }
-
-            tbody tr:nth-child(2n+3) th {
-                background: var(--rv-grey-ultralight);
             }
 
             tbody tr:last-child {
@@ -231,11 +240,10 @@
             .a-button-delete {
                 position: absolute;
                 top: -.5em;
-                right: 0;
-                width: 2.5em;
-                height: 2.5em;
-                padding: .75em;
-                background: #fcc;
+                right: .5em;
+                width: 2em;
+                height: 2em;
+                padding: .5em;
                 border: none;
             }
 
@@ -287,7 +295,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row"><span style="display: block; width: 7.25rem;">&nbsp;</span></th>
+                            <th scope="row"><span style="display: block; width: 9em;">&nbsp;</span></th>
                             <td>
                                 <picture class="has-ratio-3-2">
                                     <img src="https://www.rietveldlicht.nl/fotos/middel/73124.jpg" loading="lazy" alt="">
