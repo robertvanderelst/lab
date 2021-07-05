@@ -19,7 +19,7 @@
     </script>
 
     <main class="container">
-        <section>
+        <section class="u-lobowl">
             <h2>Card (concept)</h2>
 
             <style>
@@ -64,6 +64,12 @@
                     padding-left: .5em;
                 }
 
+                .m-card-data > * + * {
+                    margin-top: .5em;
+                    border-top: 1px solid #e2e2e2;
+                    padding-top: .5em;
+                }
+
                 .a-card-caption {
                     flex: 1 1 100%;
                 }
@@ -76,13 +82,6 @@
                 .a-card-price .u-price {
                     font-size: 1em;
                     line-height: 1.2;
-                }
-
-                .a-card-description,
-                .a-card-energylabel {
-                    margin-top: .5em;
-                    border-top: 1px solid #e2e2e2;
-                    padding-top: .5em;
                 }
 
                 [class*="a-ribbon-"] {
@@ -196,10 +195,14 @@
                     [class*="a-ribbon-"] {
                         --opacity: .5;
                     }
+
+                    .a-ribbon-black {
+                        --opacity: 1;
+                    }
                 }
             </style>
 
-            <ul class="l-grid l-card-grid" style="margin-top: 1em">
+            <ul class="l-grid l-card-grid">
                 <li class="m-card l-flex">
                     <span id="article-13152" class="u-anchor-shift"></span>
 
@@ -554,7 +557,7 @@
                         </div>
                         <p class="a-card-description u-text-small">Dit bolletje heeft een vermogen van <strong>4 Watt</strong>, is <strong>dimbaar</strong> en heeft een diameter van <strong>4,5cm</strong>. Tevens te verkrijgen in andere kleuren om het persoonlijker te maken</p>
 
-                        <div class="o-ranges" style="margin-top: .25em; border-top: 1px solid #e2e2e2; padding-top: .25em">
+                        <div class="o-ranges">
                             <h4>Lichtkleur: 2200 K</h4>
 
                             <div class="m-range-tight">
@@ -578,7 +581,7 @@
                             Dit artikel heeft energielabel:
                             <span class="u-icon">
                                 <svg viewBox="0 0 32 32" role="img">
-                                    <title>A</title>
+                                    <title>Energielabel A</title>
                                     <use class="icon-energylabel-a" xlink:href="images/sprite-dynamic.svg#icon-energylabel-a"></use>
                                 </svg>
                             </span>
@@ -609,7 +612,7 @@
                         </div>
                         <p class="a-card-description u-text-small">Dit bolletje heeft een vermogen van <strong>4 Watt</strong>, is <strong>dimbaar</strong> en heeft een diameter van <strong>4,5cm</strong></p>
 
-                        <div class="o-ranges" style="margin-top: .25em; border-top: 1px solid #e2e2e2; padding-top: .25em">
+                        <div class="o-ranges">
                             <h4>Lichtkleur: 2200 K</h4>
 
                             <div class="m-range-tight">
@@ -633,7 +636,7 @@
                             Dit artikel heeft energielabel:
                             <span class="u-icon">
                                 <svg viewBox="0 0 32 32" role="img">
-                                    <title>B</title>
+                                    <title>Energielabel B</title>
                                     <use class="icon-energylabel-b" xlink:href="images/sprite-dynamic.svg#icon-energylabel-b"></use>
                                 </svg>
                             </span>
@@ -663,7 +666,7 @@
                         </div>
                         <p class="a-card-description u-text-small">Dit bolletje heeft een vermogen van <strong>4 Watt</strong></p>
 
-                        <div class="o-ranges" style="margin-top: .25em; border-top: 1px solid #e2e2e2; padding-top: .25em">
+                        <div class="o-ranges">
                             <h4>Lichtkleur: 2200 K</h4>
 
                             <div class="m-range-tight">
@@ -687,7 +690,7 @@
                             Dit artikel heeft energielabel:
                             <span class="u-icon">
                                 <svg viewBox="0 0 32 32" role="img">
-                                    <title>C</title>
+                                    <title>Energielabel C</title>
                                     <use class="icon-energylabel-c" xlink:href="images/sprite-dynamic.svg#icon-energylabel-c"></use>
                                 </svg>
                             </span>
@@ -723,7 +726,7 @@
                         </div>
                         <p class="a-card-description u-text-small">Dit bolletje heeft een vermogen van <strong>4 Watt</strong>, is <strong>dimbaar</strong> en heeft een diameter van <strong>4,5cm</strong></p>
 
-                        <div class="o-ranges" style="margin-top: .25em; border-top: 1px solid #e2e2e2; padding-top: .25em">
+                        <div class="o-ranges">
                             <h4>Lichtkleur: 2200 K</h4>
 
                             <div class="m-range-tight">
@@ -747,7 +750,7 @@
                             Dit artikel heeft energielabel:
                             <span class="u-icon">
                                 <svg viewBox="0 0 32 32" role="img">
-                                    <title>D</title>
+                                    <title>Energielabel D</title>
                                     <use class="icon-energylabel-d" xlink:href="images/sprite-dynamic.svg#icon-energylabel-d"></use>
                                 </svg>
                             </span>
