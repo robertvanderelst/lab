@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fallback test</title>
+    <style>
+    .l-center{
+       width:100%;
+       max-width:1280px;
+       padding: 0 1em;
+       margin-left:auto;
+       margin-right:auto
+    }
+
+    body {
+        font-size: calc(16px + 2 * ((100vw - 320px) / 960));
+        font-size: clamp(16px, calc(16px + 2 * ((100vw - 320px) / 960)), 18px);
+        line-height: 1.33333;
+        font-weight: 400;
+        color: var(--rv-grey-verydark);
+        padding-top: 3em;
+    }
+
+    h1 {
+        font-size: calc(24px + 28 * ((100vw - 320px) / 960));
+        font-size: clamp(24px, calc(24px + 28 * ((100vw - 320px) / 960)), 52px);
+        font-weight: 900;
+        line-height: 1;
+        color: var(--rv-grey-ultradark);
+    }
+
+    h2,
+    .h2-like,
+    h3,
+    .h3-like,
+    h4,
+    .h4-like {
+        font-weight: 700;
+        line-height: 1.2;
+        color: var(--rv-grey-ultradark);
+
+    }
+
+    h2,
+    h3,
+    h4 {
+        margin-top: 1.5rem;
+    }
+
+    h2 + *,
+    h3 + *,
+    h4 + * {
+        margin-top: .5rem;
+    }
+
+    h2,
+    .h2-like {
+        font-size: calc(20px + 8 * ((100vw - 320px) / 960));
+        font-size: clamp(20px, calc(20px + 8 * ((100vw - 320px) / 960)), 28px);
+    }
+
+    h3,
+    .h3-like {
+        font-size: calc(18px + 4 * ((100vw - 320px) / 960));
+        font-size: clamp(18px, calc(18px + 4 * ((100vw - 320px) / 960)), 22px);
+    }
+
+    h4,
+    .h4-like,
+    .u-text-intro,
+    .u-text-regular {
+        font-size: calc(16px + 2 * ((100vw - 320px) / 960));
+        font-size: clamp(16px, calc(16px + 2 * ((100vw - 320px) / 960)), 18px);
+    }
+
+    .u-text-intro {
+        font-weight: 700;
+    }
+
+    .u-text-regular {
+        font-weight: 400;
+    }
+
+    .lato {
+        font-family: "Lato";
+        color: red;
+    }
+
+    .fallback {
+        font-family: "Trebuchet MS"; /* FALLBACK FONT FOUND */
+        color: blue;
+    }
+
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <div class="l-center">
+                <div style="position: absolute;" class="lato">
+                    <h1>Test</h1>
+                    <p>test</p>
+                    <h2>Test</h2>
+                    <p>Test</p>
+                </div>
+
+                <div style="position: absolute;" class="fallback">
+                    <h1>Test</h1>
+                    <p>test</p>
+                    <h2>Test</h2>
+                    <p>Test</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+</body>
+</html>
