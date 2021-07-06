@@ -144,6 +144,12 @@
             -webkit-appearance: none;
         }
 
+        h1 {
+            color: #fff;
+            padding-left: 1em;
+            align-self: center;
+        }
+
         label {
             display: block;
         }
@@ -255,17 +261,34 @@
             flex: 0 0 5em;
         }
 
+        @media print {
+            header picture {
+                display: none;
+            }
 
+            h1 {
+                padding: 0;
+                color: #000;
+            }
+
+            * {
+                color: #000;
+            }
+
+            body {
+                font-size: smaller;
+            }
+        }
     </style>
 </head>
 <body>
     <header style="background: var(--rv-grey-ultradark)">
         <section class="l-flex">
             <picture>
-                <img src="images/logo-rietveld-small.svg">
+                <img src="../images/logo-rietveld-small.svg">
             </picture>
 
-            <h1 style="color: #fff; padding-left: 1em; align-self: center">Reparatieopdracht</h1>
+            <h1>Reparatieopdracht</h1>
         </section>
     </header>
     <main>
@@ -273,30 +296,18 @@
             <section>
                 <p><strong>Bij ophalen van uw reparatieopdracht deze bon meenemen</strong></p>
             </section>
-            <section class="l-grid" style="grid-template-columns: 2fr 1fr">
-                <fieldset class="u-lobowl">
-                    <legend>Klantgegevens</legend>
-                    <div>
-                        <label>Naam</label>
-
-                        <input type="text">
-                    </div>
-
-                    <div>
-                        <label>Telefoon</label>
-
-                        <input type="tel">
-                    </div>
-
-                    <div>
-                        <label>E-mailadres</label>
-
-                        <input type="email">
-                    </div>
-                </fieldset>
-
+            <section class="l-grid" style="grid-template-columns: 1fr 2fr">
                 <fieldset class="u-lobowl">
                     <legend>Ordergegevens</legend>
+
+                    <div>
+                        <label>Ordernummer</label>
+
+                        <div class="u-form-field-half">
+                            <input type="text">
+                        </div>
+                    </div>
+
                     <div>
                         <label>Datum</label>
 
@@ -309,7 +320,7 @@
                         <input type="date">
                     </div>
 
-                    <div>
+                    <!--<div>
                         <label style="margin-bottom: .25em">Bij ons gekocht</label>
 
                         <div class="l-flex">
@@ -363,7 +374,7 @@
                                 <span>Nee</span>
                             </label>
                         </div>
-                    </div>
+                    </div>-->
 
                     <div>
                         <label style="margin-bottom: .25em">Binnen de garantietermijn van 2 jaar?</label>
@@ -392,35 +403,49 @@
                             </label>
                         </div>
                     </div>
+                </fieldset>
+
+                <fieldset class="u-lobowl">
+                    <legend>Klantgegevens</legend>
+                    <div>
+                        <label>Naam</label>
+
+                        <input type="text">
+                    </div>
 
                     <div>
-                        <label>Ordernummer</label>
+                        <label>Telefoon</label>
+
+                        <input type="tel">
+                    </div>
+
+                    <div>
+                        <label>E-mailadres</label>
+
+                        <input type="email">
+                    </div>
+                </fieldset>
+
+            </section>
+
+            <section class="l-grid" style="grid-template-columns: 1fr 2fr">
+                <fieldset class="u-lobowl">
+                    <legend>Productgegevens</legend>
+                    <div>
+                        <label>Artikel-/bestelnummer</label>
 
                         <div class="u-form-field-half">
                             <input type="text">
                         </div>
                     </div>
 
-            </section>
-
-            <section class="l-grid" style="grid-template-columns: 2fr 1fr">
-                <fieldset class="u-lobowl">
-                    <legend>Productgegevens</legend>
-                    <div>
-                        <label>Artikelnummer</label>
-
-                        <div class="u-form-field-quarter">
-                            <input type="text">
-                        </div>
-                    </div>
-
-                    <div>
+                    <!-- <div>
                         <label>Bestelnummer <span style="display: block; font-size: smaller; color: var(--rv-grey)">indien een niet-Lumidora artikel</span></label>
 
                         <div class="u-form-field-quarter">
                             <input type="text">
                         </div>
-                    </div>
+                    </div> -->
 
                     <div>
                         <label>Wat voor merk en type dimmer wordt er gebruikt? <span style="display: block; font-size: smaller; color: var(--rv-grey)">bij 12 Volt en LED</span></label>
@@ -536,41 +561,20 @@
                         <input type="text">
                     </div>
                 </fieldset>
-            </section>
 
-            <section class="l-grid" style="grid-template-columns: 2fr 1fr">
                 <fieldset class="u-lobowl">
                     <legend>Klacht</legend>
+
                     <div>
                         <label>Klachtomschrijving</label>
-
                         <textarea></textarea>
                     </div>
-                </fieldset>
 
-                <div class="u-lobowl" style="padding-top: 1.25em">
-                    <p>Onze onderzoekskosten zijn <strong>&euro;10</strong> bij een verlopen garantieperiode. Betreft het een artikel die niet van Rietveld Licht is, dan rekenen wij <strong>&euro;20</strong>.</p>
-
-                    <p>De reparatie kan ongeveer twee weken duren.</p>
-                </div>
-
-            </section>
-
-            <section class="l-grid" style="grid-template-columns: 2fr 1fr">
-                <fieldset class="u-lobowl">
                     <div>
                         <label>Behandeld door</label>
                         <input type="text">
                     </div>
                 </fieldset>
-
-                <div class="u-lobowl" style="padding-top: 1.25em">
-                    <ul>
-                        <li>Als de prijsopgave boven de <strong>&euro;50</strong> komt, dient de klant gebeld te worden.</li>
-                        <li>Voor het vervangen van LED bij een glasplaat in een hanglamp rekenen wij materiaal + arbeidskosten (duur: 20 à 30 minuten).</li>
-                        <li>Bij vervanging onder garantie blijft de oorspronkelijke aankoopdatum geldig.</li>
-                    </ul>
-                </div>
             </section>
 
             <section class="l-grid" style="grid-template-columns: 2fr 1fr">
@@ -598,6 +602,22 @@
                 </div>
             </section>
         </form>
+
+        <div class="u-lobowl" style="padding-top: 1.25em">
+            <p>Onze onderzoekskosten zijn <strong>&euro;10</strong> bij een verlopen garantieperiode. Betreft het een artikel die niet van Rietveld Licht is, dan rekenen wij <strong>&euro;20</strong>.</p>
+
+            <p>De reparatie kan ongeveer twee weken duren.</p>
+        </div>
+
+        <div class="u-lobowl" style="padding-top: 1.25em">
+            <ul>
+                <li>Als de prijsopgave boven de <strong>&euro;50</strong> komt, dient de klant gebeld te worden.</li>
+                <li>Voor het vervangen van LED bij een glasplaat in een hanglamp rekenen wij materiaal + arbeidskosten (duur: 20 à 30 minuten).</li>
+                <li>Bij vervanging onder garantie blijft de oorspronkelijke aankoopdatum geldig.</li>
+            </ul>
+        </div>
     </main>
+
+
 </body>
 </html>
