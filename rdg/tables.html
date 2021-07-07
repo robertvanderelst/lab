@@ -127,9 +127,31 @@
 
             </script>
 
-
             <style>
-            .test {
+            /* TABLE DEFAULT */
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                border: 0;
+            }
+
+            table th {
+                text-align: left;
+            }
+
+            .u-table-subheader {
+                font-size: 1rem;
+                padding: 1em .5em 0;
+            }
+
+            .u-table-subheader ~ tr:nth-child(even) {
+                background: var(--rv-grey-ultralight);
+            }
+
+            /* TABLE SCROLLABLE */
+
+            .u-table-scrollable  {
                 background-image:
                     linear-gradient(to right, white, white),
                     linear-gradient(to right, white, white),
@@ -151,29 +173,17 @@
                 font-size: clamp(12px, calc(12px + 2 * ((100vw - 320px) / 960)), 14px);
             }
 
-            .test.is-scrolling {
+            .u-table-scrollable is-scrolling {
                 cursor: grabbing;
                 user-select: none;
             }
 
-            table {
-                width: 100%;
-                border-collapse: collapse;
-                border: 0;
-            }
-
-            table th {
-                text-align: left;
-            }
-
-            /* table tr:nth-child(odd) {
-                background: var(--rv-grey-ultralight);
-            } */
-            thead {
+            .u-table-scrollable thead {
               z-index: 1000;
               position: relative;
             }
-            thead th {
+
+            .u-table-scrollable thead th {
               position: sticky;
               top: 0;
               border-top: 0;
@@ -181,61 +191,60 @@
               text-align: left;
             }
 
-            thead th h3 {
+            .u-table-scrollable thead th h3 {
                 margin: 0;
             }
 
-            tbody tr:nth-child(2n+3) {
+            .u-table-scrollable tbody tr:nth-child(2n+3) {
               background: rgba(0,0,0,.05);
             }
 
-            tbody tr:nth-child(2n+3) th {
+            .u-table-scrollable tbody tr:nth-child(2n+3) th {
                 background: var(--rv-grey-ultralight);
             }
 
-            tbody th[scope="row"] {
+            .u-table-scrollable tbody th[scope="row"] {
                 position: sticky;
                 left: 0;
                 z-index: 2;
                 background: #fff;
             }
 
-            tbody tr:last-child {
+            .u-table-scrollable tbody tr:last-child {
                 background: none;
             }
 
-            tbody tr:last-child th {
+            .u-table-scrollable tbody tr:last-child th {
                 background: #fff;
             }
 
-            thead th:nth-child(n+3),
-            tbody td + td {
+            .u-table-scrollable thead th:nth-child(n+3),
+            .u-table-scrollable tbody td + td {
                 border-left: 1px solid var(--rv-grey-verylight);
             }
 
-            tbody tr:last-child td {
+            .u-table-scrollable tbody tr:last-child td {
                 padding: 1em .5em;
                 text-align: center;
             }
 
-            thead th.pin,
-            tbody th.pin {
+            .u-table-pin {
               left: 0;
               z-index: 1001;
               border-left: 0;
               background: #fff;
             }
 
-            tbody td {
+            .u-table-scrollable tbody td {
                 min-width: 16em;
                 max-width: 24em;
             }
 
-            tbody .u-price {
+            .u-table-scrollable tbody .u-price {
                 font-size: 1rem;
             }
 
-            tbody a {
+            .u-table-scrollable tbody a {
                 font-size: 1rem;
             }
 
@@ -265,10 +274,10 @@
                 padding: 0 .5em 1em;
             }
             </style>
-            <h2>Table</h2>
-            <p>Table with zebra stripings</p>
 
-            <table>
+            <h2>Table with zebra striping (default)</h2>
+
+            <table class="u-table-zebrastriping">
                 <tbody>
                     <tr class="u-table-subheader">
                         <th scope="col" colspan="2">Totaal</th>
@@ -346,11 +355,11 @@
 
             <h2>Scrollable table</h2>
 
-            <div class="test" data-component="tablescroll">
-                <table class="u-table-scrollable">
+            <div class="u-table-scrollable" data-component="tablescroll">
+                <table >
                     <thead>
                         <tr>
-                            <th scope="row" class="pin">&nbsp;</th>
+                            <th scope="row" class="u-table-pin">&nbsp;</th>
                             <th scope="col">
                                 <h3 class="h4-like"><a href="/artikel/-73124">73124</a></h3>
                                 <button class="a-button-delete" data-art="73124">
@@ -687,7 +696,7 @@
                         </tr>
 
                         <tr>
-                            <th scope="row" class="pin">&nbsp;</th>
+                            <th scope="row" class="u-table-pin">&nbsp;</th>
                             <td><a href="/jx_cart?aAction[]=add&amp;art=73124" class="u-button u-button-cta"><span>Bestellen</span></a></td>
                             <td><a href="/jx_cart?aAction[]=add&amp;art=73759" class="u-button u-button-cta"><span>Bestellen</span></a></td>
                             <td><a href="/jx_cart?aAction[]=add&amp;art=73124" class="u-button u-button-cta"><span>Bestellen</span></a></td>
