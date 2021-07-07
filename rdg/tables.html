@@ -157,9 +157,18 @@
             }
 
             table {
-              border-collapse: collapse;
-              border: 0;
+                width: 100%;
+                border-collapse: collapse;
+                border: 0;
             }
+
+            table th {
+                text-align: left;
+            }
+
+            /* table tr:nth-child(odd) {
+                background: var(--rv-grey-ultralight);
+            } */
             thead {
               z-index: 1000;
               position: relative;
@@ -258,6 +267,82 @@
             </style>
             <h2>Table</h2>
             <p>Table with zebra stripings</p>
+
+            <table>
+                <tbody>
+                    <tr class="u-table-subheader">
+                        <th scope="col" colspan="2">Totaal</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Breedte</th>
+                        <td>114.00 cm</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Hoogte minimaal</th>
+                        <td>100.00 cm</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Hoogte maximaal</th>
+                        <td>180.00 cm</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Diepte</th>
+                        <td>24.00 cm</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr class="u-table-subheader">
+                        <th scope="col" colspan="2">Kap</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Hoogte</th>
+                        <td>23.00 cm</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Diameter</th>
+                        <td>24.00 cm</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr class="u-table-subheader">
+                        <th scope="col" colspan="2">Bevestigingsbeugel</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Lengte</th>
+                        <td>63.00 cm</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr class="u-table-subheader">
+                        <th scope="col" colspan="2">Glas</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Hoogte</th>
+                        <td>23.00 cm</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Diameter</th>
+                        <td>24.00 cm</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr class="u-table-subheader">
+                        <th scope="col" colspan="2">Plafondkap</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Breedte</th>
+                        <td>100.00 cm</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Hoogte</th>
+                        <td>2.50 cm</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Diepte</th>
+                        <td>8.00 cm</td>
+                    </tr>
+                </tbody>
+            </table>
 
             <h2>Scrollable table</h2>
 
