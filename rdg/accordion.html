@@ -17,6 +17,24 @@
             document.getElementsByTagName('html')[0].classList.add('is-mobile');
         }
     </script>
+
+    <style>
+    .o-accordion > details + details {
+        margin-top: 0;
+        border-top: 1px solid #e2e2e2;
+    }
+
+    .o-accordion summary {
+        font-weight: 700;
+        display: block;
+        margin: 0;
+        padding: .5rem 1.5rem .5rem .5rem;
+        list-style: none;
+        cursor: pointer;
+        outline: 0;
+    }
+    </style>
+
     <main class="container">
         <h1>Components</h1>
 
