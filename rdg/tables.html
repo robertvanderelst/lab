@@ -138,6 +138,8 @@
 
             table th {
                 text-align: left;
+                white-space: nowrap;
+                width: 30%;
             }
 
             .u-table-subheader {
@@ -184,11 +186,8 @@
             }
 
             .u-table-scrollable thead th {
-              position: sticky;
-              top: 0;
-              border-top: 0;
-              border-left: 0;
-              text-align: left;
+                position: sticky;
+                top: 0;
             }
 
             .u-table-scrollable thead th h3 {
@@ -196,11 +195,7 @@
             }
 
             .u-table-scrollable tbody tr:nth-child(2n+3) {
-              background: rgba(0,0,0,.05);
-            }
-
-            .u-table-scrollable tbody tr:nth-child(2n+3) th {
-                background: var(--rv-grey-ultralight);
+                background: rgba(0,0,0,.05);
             }
 
             .u-table-scrollable tbody th[scope="row"] {
@@ -208,6 +203,11 @@
                 left: 0;
                 z-index: 2;
                 background: #fff;
+                white-space: normal;
+            }
+
+            .u-table-scrollable tbody tr:nth-child(2n+3) th {
+                background: var(--rv-grey-ultralight);
             }
 
             .u-table-scrollable tbody tr:last-child {
@@ -223,6 +223,11 @@
                 border-left: 1px solid var(--rv-grey-verylight);
             }
 
+            .u-table-scrollable tbody td {
+                min-width: 16em;
+                max-width: 24em;
+            }
+
             .u-table-scrollable tbody tr:last-child td {
                 padding: 1em .5em;
                 text-align: center;
@@ -233,11 +238,6 @@
               z-index: 1001;
               border-left: 0;
               background: #fff;
-            }
-
-            .u-table-scrollable tbody td {
-                min-width: 16em;
-                max-width: 24em;
             }
 
             .u-table-scrollable tbody .u-price {
@@ -260,7 +260,7 @@
                 fill: var(--rv-red);
             }
 
-            .u-icon {
+            /* .u-icon {
                 width: 1.5em;
                 height: 1.5em;
             }
@@ -268,7 +268,7 @@
             .u-icon svg {
                 width: 100%;
                 height: 100%;
-            }
+            } */
 
             .u-table-price {
                 padding: 0 .5em 1em;
