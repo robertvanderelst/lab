@@ -43,6 +43,11 @@
     .o-accordion summary .u-icon {
         flex: 0 0 1.5em;
         transform: rotate(-90deg);
+        transition: transform .3s;
+    }
+
+    .o-accordion summary[open] .u-icon {
+        transform: rotate(0);
     }
 
     .o-accordion summary span {
