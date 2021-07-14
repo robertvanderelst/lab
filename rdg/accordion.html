@@ -35,8 +35,15 @@
     }
 
     .o-accordion summary:hover {
-        background: #fcc;
+        background: var(--rv-grey-ultralight);
     }
+
+    .o-accordion summary:focus {
+        outline: 1px solid var(--rv-grey-light);
+        outline-offset: 2px;
+    }
+
+
 
     .o-accordion summary .u-icon {
         flex: 0 0 1.5em;
