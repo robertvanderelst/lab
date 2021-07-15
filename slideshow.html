@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Slideshow</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        section {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+        }
+
+        section:first-child {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <section id="slide-1" style="width: 100%; height: 100%;">
+        <div id="slide-1-box-1" style="position: absolute; top: 100px; left: 100px; width: 100px; height: 100px; background: red;"></div>
+        <div id="slide-1-box-2" style="position: absolute; top: 150px; left: 150px; width: 100px; height: 100px; background: blue;"></div>
+        <div id="slide-1-box-3" style="position: absolute; top: 200px; left: 200px; width: 100px; height: 100px; background: green;"></div>
+    </section>
+
+    <section id="slide-2" style="width: 100%; height: 100%; background: #cfc">
+        test 2
+    </section>
+
+    <section id="slide-3" style="width: 100%; height: 100%; background: #ccf">
+        test 3
+    </section>
+
+    <section id="slide-4" style="width: 100%; height: 100%; background: #ffc">
+        test 4
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+
+    <script>
+        gsap.to("#slide-1-box-1", {duration: 1, ease: "elastic.out(1, 0.3)", x: 200});
+        gsap.to("#slide-1-box-2", {duration: 1, ease: "elastic.out(1, 0.3)", x: 300});
+        gsap.to("#slide-1-box-3", {duration: 1, ease: "elastic.out(1, 0.3)", x: 400});
+    </script>
+</body>
+</html>
