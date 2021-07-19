@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Slideshow</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            font-size: calc(16px + 2 * ((100vw - 320px) / 960));
+            font-size: clamp(16px, calc(16px + 2 * ((100vw - 320px) / 960)), 18px);
+            line-height: 1.33333;
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            background: #262626;
+        }
+
+        section {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        h1 {
+            font-size: calc(24px + 28 * ((100vw - 320px) / 960));
+            font-size: clamp(24px, calc(24px + 28 * ((100vw - 320px) / 960)), 52px);
+            font-weight: 900;
+            line-height: 1;
+            color: #fff;
+        }
+        img {
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <section id="slide-1" style="width: 100%; height: 100%;">
+        <div id="slide-1-box-1" style="position: absolute; top: 50%; left: 50%; width: 50%; transform: translate(-50%, -50%);">
+            <h1 style="margin-bottom: .25em">Welkom bij</h1>
+            <img src="logo-rietveld-small.svg">
+        </div>
+
+        <div id="transition-1-box-1" style="position: absolute; top: 0; left: 100%; right:0%; bottom: 0; background: #fecb09; z-index: 100"></div>
+
+        <div id="slide-2-box-1" style="position: absolute; top: 50%; left: 50%; width: 50%; transform: translate(-50%, -50%); opacity: 0;">
+            <h1>Vergeet niet uw smartphone te gebruiken</h1>
+        </div>
+
+        <div id="transition-1-box-2" style="position: absolute; top: 0; left: 100%; right:0%; bottom: 0; background: #00adef; z-index: 100"></div>
+    </section>
+
+    <!--<section id="slide-3" style="width: 100%; height: 100%;">
+        <div id="slide-3-box-1" style="position: absolute; top: 0%; left: 0%; width: 33.33333vh;height: 33.33333vh; background: #00adef; border-radius: 50%; transform: translateX(-50%); opacity: 0"></div>
+        <div id="slide-3-box-2" style="position: absolute; top: 33.33333%; left: 0%; width: 33.33333vh;height: 33.33333vh; background: #00adef; border-radius: 50%; transform: translateX(-50%); opacity: 0"></div>
+        <div id="slide-3-box-3" style="position: absolute; top: 66.66667%; left: 0%; width: 33.33333vh;height: 33.33333vh; background: #00adef; border-radius: 50%; transform: translateX(-50%); opacity: 0"></div>
+    </section> -->
+
+    <!--<section id="slide-4" style="width: 100%; height: 100%; background: #ffc">
+        test 4
+    </section> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+
+    <script>
+        var tl = gsap.timeline({
+            repeat: 1000
+        });
+
+        /* Transition test */
+        tl.to("#transition-1-box-1", {duration: .25, delay: 3, left: 0});
+
+        tl.set("#slide-1-box-1", {opacity: 0});
+
+        tl.set("#slide-2-box-1", {opacity: 1});
+
+        tl.to("#transition-1-box-1", {duration: .25, right: '100%'});
+
+        tl.to("#transition-1-box-1", {duration: .25, right: '100%'});
+
+        tl.to("#transition-1-box-2", {duration: .25, delay: 3, left: 0});
+
+        tl.set("#slide-1-box-1", {opacity: 1});
+
+        tl.set("#slide-2-box-1", {opacity: 0});
+
+        tl.to("#transition-1-box-2", {duration: .25, right: '100%'});
+        /* Slide 2*/
+
+        // tl.to("#slide-1-box-1", {duration: 1, opacity: 1});
+        //
+        // tl.to("#slide-2-box-1", {duration: 1, opacity: 1});
+        // tl.to("#slide-2-box-1", {duration: 1, delay: 1, opacity: 0});
+        //
+        // /* Slide 3 */
+        //
+        // tl.to("#slide-3-box-1", {duration: 1, opacity: 1});
+        // tl.to("#slide-3-box-2", {duration: 1, opacity: 1});
+        // tl.to("#slide-3-box-3", {duration: 1, opacity: 1});
+        // tl.to("#slide-3-box-1", {duration: 1, delay: 1, opacity: 0});
+        // tl.to("#slide-3-box-2", {duration: 1, opacity: 0});
+        // tl.to("#slide-3-box-3", {duration: 1, opacity: 0});
+
+
+
+    </script>
+</body>
+</html>
